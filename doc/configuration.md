@@ -64,8 +64,48 @@ npm install -g firebase-tools
 
 Domain: https://project2-60db1.firebaseapp.com/ (Type: Default)
 
-I still haven't to start with these step:
+Go to the directory: project2/
+
+(/Users/andre.ceres/Projects/project2)
+
+ng build
+(ng build -prod)
+
+Go to the directory: project2/dist/
+
+Login to your Firebase account:
 
 firebase login
+
+(Allow Firebase to collect anonymous CLI usage information? Yes)
+(Firebase CLI Login Successful)
+
 firebase init
+
+Default Firebase project for this directory: project2/ (project2-60db1)
+
+a) Writing configuration info to firebase.json...
+b) Writing project information to .firebaserc...
+
+(Firebase initialization complete!)
+
+I still haven't to start with these step:
+
+The CLI will ask what folder to use as the public directory. For our project we want to use the dist/ directory instead of Firebase's default public/ directory. So type in the command line dist.
+
+a) What do you want to use as your public directory? dist/
+b) Configure as a single-page app (rewrite all urls to /index.html)? Yes
+c) File dist//index.html already exists. Overwrite? No
+d) Skipping write of dist//index.html
+
 firebase deploy
+(firebase deploy --only hosting)
+
+Deploying to 'project2-60db1'...
+i  deploying hosting
+i  hosting: preparing dist/ directory for upload...
+✔  hosting: 8 files uploaded successfully
+i  starting release process (may take several minutes)...
+
+Project Console: https://console.firebase.google.com/project/project2-60db1/overview
+Hosting URL: https://project2-60db1.firebaseapp.com
