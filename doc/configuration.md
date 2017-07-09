@@ -109,3 +109,9 @@ i  starting release process (may take several minutes)...
 
 Project Console: https://console.firebase.google.com/project/project2-60db1/overview
 Hosting URL: https://project2-60db1.firebaseapp.com
+
+#### Firebase: Permissions for project
+
+The user: Tanja should be added!
+
+https://console.cloud.google.com/iam-admin/iam/project?project=project2-60db1&authuser=0&consoleReturnUrl=https:%2F%2Fconsole.firebase.google.com%2Fproject%2Fproject2-60db1%2Fanalytics&consoleUI=FIREBASE
