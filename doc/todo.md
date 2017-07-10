@@ -1,9 +1,29 @@
 # Rezept Web Applikation
 
-## Tanja
+## Generelles
 
-- ...
+### Rezept finden, sortieren und filtern
+### Rezept detailliert anzeigen
 
-## André
+## Verwalten von Rezepte
 
-- ...
+### Rezept erfassen (Admin, Member)
+### Rezept bearbeiten (Admin, Member)
+### Rezept löschen (Admin, Member)
+### Rezept kategorisieren (Admin, Member)
+### Bilder für ein Rezept hochladen (Admin, Member)
+
+### Stammdatenverwaltung (z.B. Kategorie oder Land, hier: Italienische Küche, Japanische Küche, ...) / Hauptgerichte: Fisch, Fleisch / Richtung: Vegetarisch, Fleisch, Dessert
+
+## Rating
+### Rezept bewerten (Admin, Member)
+
+### (Ev. Kommentar hinschreiben)
+
+## Security (Login)
+
+### Login für das Verwalten der Rezepte
+### Registration (Member)
+### User Management (Admin, Member)
+
+(Falls Zeit (Optional): Rezept als E-Mail weiterleiten / weiterempfehlen)

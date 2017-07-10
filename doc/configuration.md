@@ -111,6 +111,7 @@ i  starting release process (may take several minutes)...
 
 Project Console: https://console.firebase.google.com/project/project2-60db1/overview
 Hosting URL: https://project2-60db1.firebaseapp.com
+Google Cloud Platform (Dashboard): https://console.cloud.google.com/home/dashboard?project=project2-60db1
 
 #### Firebase: Permissions for project
 
