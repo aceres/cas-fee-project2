@@ -12,8 +12,8 @@ Run `ng serve` for a server and navigate to http://localhost:4200/.
 
 ## GitHub
 
-- Access information
+- Access data
 
 ## Firebase
 
-- Access information
+- Access data
