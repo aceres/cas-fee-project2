@@ -126,3 +126,17 @@ For the authentication:
 npm install promise-polyfill --save-exact
 
 URL: https://alligator.io/angular/firebase-authentication-angularfire2/
+
+#### Style with primeNG
+
+The file: angular-cli.json
+
+Add these lines:
+
+"styles": [
+  "../node_modules/primeng/resources/primeng.min.css",
+  "../node_modules/primeng/resources/themes/omega/theme.css",
+  "styles.css"
+]
+
+Rebuild and reserve the web application then!
