@@ -8,6 +8,9 @@
 - 1. Prototyp mit Angular 4 fertigstellen
 - Authentification
 - REST-API definieren
+- SASS
+- Responsive Templage primeNG
+- Navigation (responsiv-mässig)
 
 {
   recipes: {

@@ -119,7 +119,7 @@ The user: Tanja should be added!
 
 https://console.cloud.google.com/iam-admin/iam/project?project=project2-60db1&authuser=0&consoleReturnUrl=https:%2F%2Fconsole.firebase.google.com%2Fproject%2Fproject2-60db1%2Fanalytics&consoleUI=FIREBASE
 
-#### More dependencies for this project
+### More dependencies for this project
 
 For the authentication:
 
@@ -127,7 +127,7 @@ npm install promise-polyfill --save-exact
 
 URL: https://alligator.io/angular/firebase-authentication-angularfire2/
 
-#### Style with primeNG
+### Style with primeNG
 
 The file: angular-cli.json
 
@@ -140,3 +140,9 @@ Add these lines:
 ]
 
 Rebuild and reserve the web application then!
+
+### Installation: font-aewsome (locally and not globally)
+
+FontAwesome is needed for the PrimeNG
+
+npm install font-awesome --save

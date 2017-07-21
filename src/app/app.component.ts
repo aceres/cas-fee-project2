@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
 import { Car } from 'app/domain/car';
 import { CarService} from 'app/services/carservice';
+import { MenuItem } from 'primeng/primeng';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { CarService} from 'app/services/carservice';
   styleUrls: ['./app.component.css'],
   providers: [CarService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   // Standard Angular CLI
   title = 'Web Application: Fooby';
 
@@ -44,8 +45,36 @@ export class AppComponent {
 
   cars: Car[];
 
+  // MegaMenu
+  items: MenuItem[];
+
   ngOnInit() {
     this.carService.getCarsSmall().then(cars => this.cars = cars);
+
+    this.items = [
+      {
+        label: 'File',
+        items: [{
+          label: 'New',
+          icon: 'fa-plus',
+          items: [
+            {label: 'Project'},
+            {label: 'Other'},
+          ]
+        },
+          {label: 'Open'},
+          {label: 'Quit'}
+        ]
+      },
+      {
+        label: 'Edit',
+        icon: 'fa-edit',
+        items: [
+          {label: 'Undo', icon: 'fa-mail-forward'},
+          {label: 'Redo', icon: 'fa-mail-reply'}
+        ]
+      }
+    ];
   }
 
   showDialogToAdd() {

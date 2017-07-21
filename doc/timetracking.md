@@ -9,6 +9,7 @@ André
 1h - Tutorial: Authentication / Firebase (https://github.com/designcourse/angular-auth-demo)
 1h - Implementation: Authentication (AngularFire)
 2h - primeNG / CRUD / Documentation
+2h - Figure out - how to build a navigation component with primeNG, Install Font Aewsome
 
 Tanja
 =====
