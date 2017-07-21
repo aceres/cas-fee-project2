@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
 
   cars: Car[];
 
-  // MegaMenu
+  // MenuBar
   items: MenuItem[];
 
   ngOnInit() {
