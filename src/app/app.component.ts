@@ -53,7 +53,8 @@ export class AppComponent implements OnInit {
 
     this.items = [
       {
-        label: 'File',
+        label: 'Rezepte',
+        icon: 'fa-cutlery',
         items: [{
           label: 'New',
           icon: 'fa-plus',
@@ -67,11 +68,11 @@ export class AppComponent implements OnInit {
         ]
       },
       {
-        label: 'Edit',
-        icon: 'fa-edit',
+        label: 'Administration',
+        icon: 'fa-user-circle-o',
         items: [
-          {label: 'Undo', icon: 'fa-mail-forward'},
-          {label: 'Redo', icon: 'fa-mail-reply'}
+          {label: 'Add new receipt', icon: 'fa-pencil'},
+          {label: 'Show all receipt', icon: 'fa-search'}
         ]
       }
     ];
