@@ -1,60 +1,29 @@
-<p-menubar [model]="items">
-  <div *ngIf="!(authService.user | async)">
-    <input type="text" pInputText [(ngModel)]="email" placeholder="E-Mail">
-    <input type="password" pInputText [(ngModel)]="password" placeholder="Password">
-    <button pButton type="button" label="Login" (click)="login()" [disabled]="!email || !password">
-    </button>
-    <button pButton type="button" label="Sign up" (click)="signup()" [disabled]="!email || !password">
-    </button>
-  </div>
-  <button pButton label="Logout" icon="fa-sign-out" (click)="logout()" *ngIf="authService.user | async"></button>
-</p-menubar>
-
-<h1 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h1>
-
-<button pButton type="button" label="Logout" (click)="logout()" *ngIf="authService.user | async">
-</button>
-
 <div>
   <h1>
     Welcome to {{title}}!!
   </h1>
 </div>
 
+<h1 *ngIf="authService.user | async">Welcome {{ (authService.user | async)?.email }}!</h1>
 
-<p-dataTable *ngIf="authService.user | async" [value]="cars" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" rows="15" [responsive]="true">
-  <p-header>CRUD for Cars</p-header>
-  <p-column field="vin" header="Vin" [sortable]="true"></p-column>
-  <p-column field="year" header="Year" [sortable]="true"></p-column>
-  <p-column field="brand" header="Brand" [sortable]="true"></p-column>
-  <p-column field="color" header="Color" [sortable]="true"></p-column>
-  <p-footer><div class="ui-helper-clearfix" style="width:100%"><button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()" label="Add"></button></div></p-footer>
-</p-dataTable>
+<div *ngIf="!(authService.user | async)">
+    <div class="form-group">
+      <label for="inputEmail">E-Mail</label>
+      <input type="text" class="form-control" id="inputEmail" [(ngModel)]="email" placeholder="E-Mail">
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Password</label>
+      <input type="password" class="form-control" id="inputPassword" [(ngModel)]="password" placeholder="Password">
+    </div>
+    <button class="btn btn-default" (click)="login()" [disabled]="!email || !password">
+      <i class="fa fa-envelope-o"></i> Login
+    </button>
+    <button class="btn btn-default" (click)="signup()" [disabled]="!email || !password">
+      <i class="fa fa-key"></i> Signup
+    </button>
+</div>
 
-<p-dialog header="Car Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
-  <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="car">
-    <div class="ui-grid-row">
-      <div class="ui-grid-col-4"><label for="vin">Vin</label></div>
-      <div class="ui-grid-col-8"><input pInputText id="vin" [(ngModel)]="car.vin" /></div>
-    </div>
-    <div class="ui-grid-row">
-      <div class="ui-grid-col-4"><label for="year">Year</label></div>
-      <div class="ui-grid-col-8"><input pInputText id="year" [(ngModel)]="car.year" /></div>
-    </div>
-    <div class="ui-grid-row">
-      <div class="ui-grid-col-4"><label for="brand">Brand</label></div>
-      <div class="ui-grid-col-8"><input pInputText id="brand" [(ngModel)]="car.brand" /></div>
-    </div>
-    <div class="ui-grid-row">
-      <div class="ui-grid-col-4"><label for="color">Color</label></div>
-      <div class="ui-grid-col-8"><input pInputText id="color" [(ngModel)]="car.color" /></div>
-    </div>
-  </div>
-  <p-footer>
-    <div class="ui-dialog-buttonpane ui-helper-clearfix">
-      <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
-      <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
-    </div>
-  </p-footer>
-</p-dialog>
+<button class="btn btn-default" icon="fa-sign-out" (click)="logout()" *ngIf="authService.user | async">
+  <i class="fa fa-user"></i>Logout
+</button>
 

@@ -7,7 +7,6 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AccordionModule, InputTextModule, ButtonModule, DataTableModule, DialogModule, MenubarModule } from 'primeng/primeng';
 
 import { AuthService } from './auth.service';
 
@@ -24,13 +23,7 @@ import { AppComponent } from './app.component';
     RouterModule.forRoot([]),
     HttpModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AccordionModule,
-    InputTextModule,
-    ButtonModule,
-    DataTableModule,
-    DialogModule,
-    MenubarModule
+    AngularFireAuthModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

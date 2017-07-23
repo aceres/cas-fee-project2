@@ -32,11 +32,21 @@ npm install firebase angularfire2 --save
 
 ## Style Framework
 
+#### NO primeNG Anymore!!! We use ngx-bootstrap
+
 https://www.primefaces.org/primeng/#/
 
 ### Installation (local)
 
 npm install primeng --save
+
+--
+
+(npm uninstall primeng -S --save)
+
+#### ngx-bootstap
+
+npm install ngx-bootstrap --save
 
 ## Firebase
 
@@ -129,6 +139,8 @@ URL: https://alligator.io/angular/firebase-authentication-angularfire2/
 
 ### Style with primeNG
 
+#### NO primeNG Anymore!!! We use ngx-bootstrap
+
 The file: angular-cli.json
 
 Add these lines:
@@ -140,6 +152,14 @@ Add these lines:
 ]
 
 Rebuild and reserve the web application then!
+
+--
+
+(npm uninstall primeng -S --save)
+
+#### ngx-bootstap
+
+npm install ngx-bootstrap --save
 
 ### Installation: font-aewsome (locally and not globally)
 
