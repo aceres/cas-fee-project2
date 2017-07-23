@@ -8,7 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent {
   // Standard Angular CLI
-  title = 'Web Application: Fooby';
+  title = 'What to cook?';
 
   // Authentication
   email: string;
