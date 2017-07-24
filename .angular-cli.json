@@ -20,13 +20,9 @@
       "prefix": "app",
       "styles": [
         "../node_modules/font-awesome/css/font-awesome.min.css",
-        "../src/styles/styles.css",
-        "../src/styles/ie10-viewport-bug-workaround.css"
+        "styles.css"
       ],
-      "scripts": [
-        "javascripts/bootstrap.min.js",
-        "javascripts/ie-emulation-modes-warning.js"
-      ],
+      "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

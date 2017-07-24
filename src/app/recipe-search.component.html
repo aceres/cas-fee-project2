@@ -1,0 +1,10 @@
+<div id="search-component">
+  <h4>Find recipe</h4>
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <div>
+    <div *ngFor="let recipe of recipes | async"
+         (click)="gotoDetail(recipe)" class="search-result" >
+      {{recipe.name}}
+    </div>
+  </div>
+</div>

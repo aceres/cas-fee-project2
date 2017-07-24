@@ -64,6 +64,15 @@
 
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
+      <h4>Top recipes!</h4>
+      <div class="">
+        <a *ngFor="let recipe of recipes"  [routerLink]="['/recipe-detail', recipe.id]"  class="">
+          <div>
+            <h4>{{recipe.name}}</h4>
+          </div>
+        </a>
+      </div>
+
       <router-outlet *ngIf="authService.user | async"></router-outlet>
 
       <div class="row placeholders">

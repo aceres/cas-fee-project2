@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
 
+import { Recipe }        from './recipe';
+import { RecipeService } from './recipe.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,7 +17,7 @@ export class AppComponent {
   email: string;
   password: string;
 
-  constructor(public authService: AuthService) {}
+  constructor(public authService: AuthService, private recipeService: RecipeService) {}
 
   signup() {
     this.authService.signup(this.email, this.password);
@@ -28,5 +31,13 @@ export class AppComponent {
 
   logout() {
     this.authService.logout();
+  }
+
+  // Search recipe
+  recipes: Recipe[] = [];
+
+  ngOnInit(): void {
+    this.recipeService.getRecipes()
+      .then(recipes => this.recipes = recipes.slice(1, 5));
   }
 }

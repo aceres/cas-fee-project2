@@ -8,5 +8,10 @@
       <label for="name">Name:</label>
       <input [(ngModel)]="recipe.name" name="name" id="name" class="form-control" placeholder="Recipe" />
     </div>
-    <button (click)="goBack()" class="btn">Back</button>
+    <button (click)="goBack()" class="btn">
+      <i class="fa fa-arrow-left"></i> Back
+    </button>
+    <button (click)="save()" class="btn">
+      <i class="fa fa-save"></i> Save
+    </button>
 </div>

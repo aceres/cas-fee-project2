@@ -20,6 +20,25 @@ export class RecipesListComponent implements OnInit {
     this.recipeService.getRecipes().then(recipes => this.recipes = recipes);
   }
 
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.recipeService.create(name)
+      .then(recipe => {
+        this.recipes.push(recipe);
+        this.selectedRecipe = null;
+      });
+  }
+
+  delete(recipe: Recipe): void {
+    this.recipeService
+      .delete(recipe.id)
+      .then(() => {
+        this.recipes = this.recipes.filter(h => h !== recipe);
+        if (this.selectedRecipe === recipe) { this.selectedRecipe = null; }
+      });
+  }
+
   ngOnInit(): void {
     this.getRecipes();
   }
