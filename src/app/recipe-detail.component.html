@@ -1,0 +1,12 @@
+<div *ngIf="recipe">
+  <h2 class="page-header">Detail of recipe: {{recipe.name}}</h2>
+    <div class="form-group">
+      <label for="id">ID:</label>
+      <input [(ngModel)]="recipe.id" name="id" id="id" class="form-control" placeholder="ID" >
+    </div>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input [(ngModel)]="recipe.name" name="name" id="name" class="form-control" placeholder="Recipe" />
+    </div>
+    <button (click)="goBack()" class="btn">Back</button>
+</div>

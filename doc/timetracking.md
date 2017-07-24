@@ -11,6 +11,7 @@ André
 2h - primeNG / CRUD / Documentation
 2h - Figure out - how to build a navigation component with primeNG, Install Font Aewsome
 2h - Remove primeNG, Install: ngx-bootstrap, trying and testing (style framework)
+5h - Routing / Views - Angular 4
 
 Tanja
 =====

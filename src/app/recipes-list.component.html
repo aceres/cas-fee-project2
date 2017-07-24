@@ -1,0 +1,36 @@
+<h1 class="page-header">List of recipes</h1>
+
+<div *ngIf="selectedRecipe">
+  <h2>
+    {{selectedRecipe.name | uppercase}} is my recipe
+  </h2>
+  <button (click)="gotoDetail()" class="btn">View Details</button>
+</div>
+
+<h2 class="sub-header">Recipes</h2>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>
+          ID
+        </th>
+        <th>
+          Recipe
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let recipe of recipes" [class.selected]="recipe === selectedRecipe" (click)="onSelect(recipe)">
+        <td>
+          {{recipe.id}}
+        </td>
+        <td>
+          {{recipe.name}}
+        </td>
+        <td>
+          <button class="btn">View Details</button>
+        </td>
+      </tr>
+  </table>
+</div>
