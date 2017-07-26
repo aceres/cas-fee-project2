@@ -166,3 +166,10 @@ npm install ngx-bootstrap --save
 FontAwesome is needed for the PrimeNG
 
 npm install font-awesome --save
+
+### Installation
+
+https://www.npmjs.com/package/angular2-in-memory-web-api
+
+For the temporary solution. An in-memory web api for Angular demos and tests.
+It will intercept HTTP requests that would otherwise go to the remote server via the Angular XHRBackend service.

@@ -22,7 +22,7 @@ export class RecipeService {
       .catch(this.handleError);
   }
 
-  // See the "Take it slow" appendix
+  // TODO: See the "Take it slow" appendix
   getRecipesSlowly(): Promise<Recipe[]> {
     return new Promise(resolve => {
       // Simulate server latency with 2 second delay

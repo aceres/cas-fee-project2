@@ -1,6 +1,6 @@
 # 1. Meeting
 
-## 5. August 2017
+## 12. August 2017
 
 - Projekt 2 - Projekt-Info nochmals anschauen
 - Milestones setzen
