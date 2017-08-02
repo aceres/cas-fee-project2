@@ -9,8 +9,6 @@
 - Authentification
 - REST-API definieren
 - SASS
-- Responsive Templage primeNG
-- Navigation (responsiv-mässig)
 
 {
   recipes: {

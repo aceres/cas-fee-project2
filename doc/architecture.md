@@ -1,3 +1,3 @@
-# Overview and Architecture (Backend, Fronend, Firebase, Server, Interface, ...)
+# Overview and Architecture (Backend, Frontend, Firebase, Server, Interface, ...)
 
 ...

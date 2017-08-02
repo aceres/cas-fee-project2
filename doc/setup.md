@@ -2,7 +2,13 @@
 
 ## Start the web application
 
-Run `ng serve` for a server and navigate to http://localhost:4200/.
+a) git clone URL
+
+b) npm install
+
+c) Run `ng serve` for a server and navigate to http://localhost:4200/.
+
+d) Alternative: Firebase Hosting
 
 ## Some installation is needed before to run the web application
 
