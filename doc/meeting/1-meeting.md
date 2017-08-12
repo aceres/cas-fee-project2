@@ -108,3 +108,23 @@ Registration und Login
     Schweizerisch, Italienisch, Französisch, Thailändich
   ]
 }
+
+Get Recipes:
+
+> curl -i http://localhost:4200/recipes/
+
+Get Recipe (Detail)
+
+> curl -i http://localhost:4200/recipes/1
+
+Create Recipe:
+
+> curl -i -X POST http://localhost:4200/recipes --data '{recipe: "spaghetti"}' -H 'Content-Type: application/json';
+
+Update Recipe:
+
+> curl -i -X PUT http://localhost:4200/recipes/1 --data '{description&quot;:&quot;blabla&quot;}' -H 'Content-Type: application/json';
+
+Delete Recipe:
+
+> curl -i -X DELETE http://localhost:4200/recipes/1
