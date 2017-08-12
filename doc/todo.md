@@ -8,6 +8,7 @@
 ## Verwalten von Rezepte
 
 ### Rezept erfassen (Admin, Member)
+### Rezept anschauen (ev. blättern)
 ### Rezept bearbeiten (Admin, Member)
 ### Rezept löschen (Admin, Member)
 ### Rezept kategorisieren (Admin, Member)
@@ -25,5 +26,7 @@
 ### Login für das Verwalten der Rezepte
 ### Registration (Member)
 ### User Management (Admin, Member)
+
+### Einkaufsliste / Rezept ausdrucken
 
 (Falls Zeit (Optional): Rezept als E-Mail weiterleiten / weiterempfehlen)
