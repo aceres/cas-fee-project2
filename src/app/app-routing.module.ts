@@ -1,17 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AppComponent } from './app.component';
+import { AdminComponent } from './admin.component';
 import { RecipesListComponent } from './recipes-list.component';
 import { RecipeDetailComponent } from './recipe-detail.component';
 import { RecipeAddComponent } from './recipe-add.component';
 import { DashboardComponent } from './dashboard.component';
+import { PageNotFoundComponent } from './not-found.component';
+import { CrisisListComponent } from './crisis-list.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'recipes', component: RecipesListComponent },
-  { path: 'recipe-detail/:id', component: RecipeDetailComponent },
-  { path: 'recipe-add', component: RecipeAddComponent },
+  { path: 'public', component: DashboardComponent },
+  { path: 'admin', component: AdminComponent, children: [
+    { path : '', component: AdminComponent},
+    { path : 'recipes', component: RecipesListComponent},
+    { path : 'recipe-detail/:id', component: RecipeDetailComponent},
+    { path : 'recipe-add', component: RecipeAddComponent},
+    { path : 'crisis-list', component: CrisisListComponent}
+  ] },
+  { path : '', redirectTo: '/public', pathMatch: 'full'},
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

@@ -16,7 +16,7 @@ import { RecipeSearchService } from './recipe-search.service';
 import { Recipe } from './recipe';
 
 @Component({
-  selector: 'recipe-search',
+  selector: 'app-recipe-search',
   templateUrl: './recipe-search.component.html',
   providers: [RecipeSearchService]
 })

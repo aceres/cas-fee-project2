@@ -128,3 +128,7 @@ Update Recipe:
 Delete Recipe:
 
 > curl -i -X DELETE http://localhost:4200/recipes/1
+
+# 2. Meeting
+
+## 17. August 2017

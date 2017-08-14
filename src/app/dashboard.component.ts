@@ -4,7 +4,7 @@ import { Recipe } from './recipe';
 import { RecipeService } from './recipe.service';
 
 @Component({
-  selector: 'dashboard',
+  selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
