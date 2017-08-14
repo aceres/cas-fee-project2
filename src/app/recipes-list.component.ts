@@ -48,6 +48,6 @@ export class RecipesListComponent implements OnInit {
   }
 
   gotoDetail(): void {
-    this.router.navigate(['/recipe-detail', this.selectedRecipe.id]);
+    this.router.navigate(['/admin/recipe-detail', this.selectedRecipe.id]);
   }
 }
