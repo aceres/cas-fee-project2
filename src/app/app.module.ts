@@ -23,7 +23,7 @@ import { RecipesListComponent } from './recipes-list.component';
 import { RecipeDetailComponent } from './recipe-detail.component';
 import { RecipeAddComponent } from './recipe-add.component';
 import { RecipeSearchComponent } from './recipe-search.component';
-import { CrisisListComponent } from './crisis-list.component';
+import { CrisisCenterComponent } from './crisis-center.component';
 import { PageNotFoundComponent } from './not-found.component';
 
 @NgModule({
@@ -45,7 +45,7 @@ import { PageNotFoundComponent } from './not-found.component';
     RecipeAddComponent,
     RecipeDetailComponent,
     RecipeSearchComponent,
-    CrisisListComponent,
+    CrisisCenterComponent,
     PageNotFoundComponent
   ],
   providers: [AuthService, RecipeService],
