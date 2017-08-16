@@ -28,5 +28,6 @@
 ### User Management (Admin, Member)
 
 ### Einkaufsliste / Rezept ausdrucken
+### Rezept kalkulieren
 
 (Falls Zeit (Optional): Rezept als E-Mail weiterleiten / weiterempfehlen)
