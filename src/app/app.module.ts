@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
@@ -35,6 +36,7 @@ import { PageNotFoundComponent } from './not-found.component';
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
   declarations: [

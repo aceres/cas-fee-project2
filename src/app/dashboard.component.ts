@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import { Recipe } from './recipe';
 import { RecipeService } from './recipe.service';
@@ -12,7 +13,11 @@ export class DashboardComponent {
   // Standard Angular CLI
   title = 'What to cook?';
 
-  constructor(private recipeService: RecipeService) {}
+  items: FirebaseListObservable<any[]>;
+
+  constructor(private recipeService: RecipeService, db: AngularFireDatabase) {
+    this.items = db.list('/items');
+  }
 
   // Search recipe
   recipes: Recipe[] = [];
