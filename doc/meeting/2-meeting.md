@@ -7,4 +7,7 @@
 - SASS (umschalten auf SASS)
 - Auth Guard fertig machen
 - Frage: Ob ab September möglich wäre, jeweils Mi. ab 16 Uhr, für eine Unterstützung oder Frage vorbeizukommen
+- alle CURLS vervollständigen
+
+- Überlegung: Registration
 

@@ -28,6 +28,6 @@
 ### User Management (Admin, Member)
 
 ### Einkaufsliste / Rezept ausdrucken
-### Rezept kalkulieren
+### Rezept kalkulieren (Menge der Personen zum Kochen - frontendmässig)
 
 (Falls Zeit (Optional): Rezept als E-Mail weiterleiten / weiterempfehlen)
