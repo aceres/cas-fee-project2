@@ -9,6 +9,7 @@
 - Frage: Ob ab September möglich wäre, jeweils Mi. ab 16 Uhr, für eine Unterstützung oder Frage vorbeizukommen
 - alle CURLS vervollständigen
 - Notification (Überlegung)
+- Templates trennen
 
-- Überlegung: Registration
+- Überlegung: Registration / Administration - Responsive?
 

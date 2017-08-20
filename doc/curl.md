@@ -120,6 +120,8 @@ Registration und Login
 
 ## CURLs
 
+### Still not finish (we still have to test it)
+
 Get Recipes:
 
 > curl -i http://localhost:4200/recipes/

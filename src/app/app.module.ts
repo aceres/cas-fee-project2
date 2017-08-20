@@ -19,6 +19,7 @@ import { RecipeService } from './recipe.service';
 
 import { AppComponent } from './app.component';
 import { AdminComponent } from './admin.component';
+import { RegisterComponent } from './register.component';
 import { DashboardComponent } from './dashboard.component';
 import { RecipesListComponent } from './recipes-list.component';
 import { RecipeDetailComponent } from './recipe-detail.component';
@@ -42,6 +43,7 @@ import { PageNotFoundComponent } from './not-found.component';
   declarations: [
     AppComponent,
     AdminComponent,
+    RegisterComponent,
     DashboardComponent,
     RecipesListComponent,
     RecipeAddComponent,

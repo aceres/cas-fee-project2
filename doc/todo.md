@@ -2,7 +2,7 @@
 
 ## Generelles
 
-### Rezept finden, sortieren und filtern
+### Rezept finden, sortieren
 ### Rezept detailliert anzeigen
 
 ## Verwalten von Rezepte

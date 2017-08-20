@@ -9,4 +9,3 @@
 - Authentification
 - REST-API definieren
 - SASS
-- ...

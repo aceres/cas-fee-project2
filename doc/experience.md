@@ -3,4 +3,4 @@
 - Highlights
 - Templates (Public / Secure)
 - Ausprobieren ngPrime / ngBootstrap
-- Auth
+- AuthGuard / Registration
