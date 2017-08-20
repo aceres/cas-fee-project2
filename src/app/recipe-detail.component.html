@@ -1,17 +1,14 @@
 <div *ngIf="recipe">
-  <h2 class="page-header">Detail of recipe: {{recipe.name}}</h2>
+  <h2 class="page-header">Rezept: {{recipe.name}}</h2>
     <div class="form-group">
-      <label for="id">ID:</label>
-      <input [(ngModel)]="recipe.id" name="id" id="id" class="form-control" placeholder="ID" >
+      <label for="id">Nr.:</label>
+      <input [(ngModel)]="recipe.id" name="id" id="id" class="form-control" placeholder="Nr." >
     </div>
     <div class="form-group">
       <label for="name">Name:</label>
-      <input [(ngModel)]="recipe.name" name="name" id="name" class="form-control" placeholder="Recipe" />
+      <input [(ngModel)]="recipe.name" name="name" id="name" class="form-control" placeholder="Rezept" />
     </div>
     <button (click)="goBack()" class="btn">
-      <i class="fa fa-arrow-left"></i> Back
-    </button>
-    <button (click)="save()" class="btn">
-      <i class="fa fa-save"></i> Save
+      <i class="fa fa-arrow-left"></i> Zurück
     </button>
 </div>

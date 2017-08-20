@@ -1,0 +1,7 @@
+.search-result {
+  background-color: #EEE;
+  display: table;
+  border-bottom: 1px solid #CCC;
+  width: 100%;
+  padding: 3px 12px;
+}

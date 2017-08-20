@@ -13,7 +13,6 @@ import { CrisisCenterComponent } from './crisis-center.component';
 const appRoutes: Routes = [
   { path: 'public', component: DashboardComponent },
   { path: 'admin', component: AdminComponent, children: [
-    { path : '', component: AdminComponent},
     { path : 'recipes', component: RecipesListComponent},
     { path : 'recipe-detail/:id', component: RecipeDetailComponent},
     { path : 'recipe-add', component: RecipeAddComponent},

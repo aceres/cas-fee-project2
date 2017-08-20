@@ -18,6 +18,7 @@ import { Recipe } from './recipe';
 @Component({
   selector: 'app-recipe-search',
   templateUrl: './recipe-search.component.html',
+  styleUrls: ['./recipe-search.component.css'],
   providers: [RecipeSearchService]
 })
 export class RecipeSearchComponent implements OnInit {

@@ -1,7 +1,13 @@
-<h2 class="page-header">Add new recipe</h2>
-<div class="form-group">
-  <label for="name">Name:</label>
-  <input name="name" id="name" class="form-control" placeholder="Recipe" />
-</div>
-<button class="btn">Save</button> <button class="btn">Cancel</button>
+<h2 class="page-header">Neues Rezept erfassen</h2>
 
+<div class="form-group">
+  <label for="name">Rezept:</label>
+  <input name="name" id="name" class="form-control" placeholder="Rezept"  #recipeName />
+</div>
+
+<button class="btn" (click)="add(recipeName.value); recipeName.value=''">
+  <i class="fa add_circle_outline"></i> Speichern
+</button>
+<button class="btn">
+  Abbrechen
+</button>
