@@ -173,3 +173,12 @@ https://www.npmjs.com/package/angular2-in-memory-web-api
 
 For the temporary solution. An in-memory web api for Angular demos and tests.
 It will intercept HTTP requests that would otherwise go to the remote server via the Angular XHRBackend service.
+
+### Realtime-Database Rules (Original Version) - Firebase
+
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
