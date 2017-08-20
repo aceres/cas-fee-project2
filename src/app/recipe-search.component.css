@@ -5,3 +5,8 @@
   width: 100%;
   padding: 3px 12px;
 }
+
+.search-result:hover {
+  background-color: #CCC;
+  cursor: pointer;
+}
