@@ -6,5 +6,4 @@ export class Register {
     public country: string,
     public inputStreet?: string
   ) {  }
-
 }
