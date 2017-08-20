@@ -13,10 +13,10 @@ export class DashboardComponent {
   // Standard Angular CLI
   title = 'What to cook?';
 
-  items: FirebaseListObservable<any[]>;
+  allRecipes: FirebaseListObservable<any[]>;
 
   constructor(private recipeService: RecipeService, db: AngularFireDatabase) {
-    this.items = db.list('/items');
+    this.allRecipes = db.list('/recipes');
   }
 
   // Search recipe
