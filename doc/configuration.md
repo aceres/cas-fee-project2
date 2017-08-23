@@ -177,8 +177,8 @@ It will intercept HTTP requests that would otherwise go to the remote server via
 ### Realtime-Database Rules (Original Version) - Firebase
 
 {
-  "rules": {
-    ".read": "auth != null",
-    ".write": "auth != null"
-  }
+	"rules": {
+     ".read": "auth != null",
+     ".write": "auth != null"
+   }
 }

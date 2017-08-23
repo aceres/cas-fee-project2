@@ -27,6 +27,8 @@ import { RecipeAddComponent } from './recipe-add.component';
 import { RecipeSearchComponent } from './recipe-search.component';
 import { CrisisCenterComponent } from './crisis-center.component';
 import { PageNotFoundComponent } from './not-found.component';
+import { NavComponent } from "./nav/nav.component";
+import { CarouselComponent } from "./carousel/carousel.component";
 
 @NgModule({
   imports: [
@@ -50,7 +52,9 @@ import { PageNotFoundComponent } from './not-found.component';
     RecipeDetailComponent,
     RecipeSearchComponent,
     CrisisCenterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NavComponent,
+    CarouselComponent
   ],
   providers: [AuthService, RecipeService],
   bootstrap: [AppComponent]
