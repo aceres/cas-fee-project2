@@ -4,3 +4,5 @@
 - Templates (Public / Secure)
 - Ausprobieren ngPrime / ngBootstrap
 - AuthGuard / Registration
+- Templates (Organization)
+- Lazy Loading
