@@ -10,6 +10,7 @@
 - alle CURLS vervollständigen
 - Notification (Überlegung)
 - Templates trennen
+- Rezept erfassen (add / post)
 
 - Überlegung: Registration / Administration - Responsive?
 
