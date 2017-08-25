@@ -1,7 +1,16 @@
 Check JSON via Online whether this JSON is valid: https://jsonformatter.curiousconcept.com/
 
+## POST method (create a new object)
+
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"id":4, "receipt": "Test"}' 'https://project2-60db1.firebaseio.com/recipes.json'
+
+## PUT method
+
+curl -H "Accept: application/json" -H "Content-type: application/json" -X PUT -d '{"id":4, "receipt": "Test"}' 'https://project2-60db1.firebaseio.com/recipes.json'
+
 curl -X PUT -d '[
   {
+    "id": 2,
     "receipt": "Spaghetti Bolognese",
     "description": "Zauberhaft wie in Tessin...",
     "user": "Tanja Sennhauser",
@@ -45,7 +54,8 @@ curl -X PUT -d '[
     ]
   },
   {
-    "receipt": "Spaghetti Carbonara",
+    "id": 3,
+    "receipt": "Spiegelei",
     "description": "Zauberhaft wie in Tessin...",
     "user": "Tanja Sennhauser",
     "insertedDate": 1471865163,
@@ -86,5 +96,106 @@ curl -X PUT -d '[
         "memo": "Achtung ..."
       }
     ]
-  }
+  },
+ {
+   "id": 4,
+   "receipt": "Pierogi",
+   "description": "Zauberhaft wie in Polen...",
+   "user": "André Ceres",
+   "insertedDate": 1471865163,
+   "dauer": "200 Minjten",
+   "cuisine": "Italienisch",
+   "menge": "4 Personen",
+   "category": "Hauptspeise",
+   "difficulty": "einfach",
+   "rating": 100,
+   "einkaufsliste": [
+     {
+       "name": "Karotten",
+       "amount": "2"
+     },
+     {
+       "name": "Pfeffer",
+       "amount": "1 Prise"
+     },
+     {
+       "name": "Hackfleisch",
+       "amount": "400 g"
+     }
+   ],
+   "zubereitenUndKochen": [
+     {
+       "step": 1,
+       "photo": "bild1.svg",
+       "memo": "Zuerst musst man die Pfanne ..."
+     },
+     {
+       "step": 2,
+       "photo": "bild2.svg",
+       "memo": "Danach Zwiebeln dünsten ..."
+     },
+     {
+       "step": 3,
+       "photo": "",
+       "memo": "Achtung ..."
+     }
+   ]
+ }
 ]' 'https://project2-60db1.firebaseio.com/recipes.json'
+
+## DELETE method
+
+curl -X DELETE https://project2-60db1.firebaseio.com/recipes.json
+
+## GET method
+
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://project2-60db1.firebaseio.com/recipes.json
+
+## PUT method ???
+
+curl -X PUT -d '{"id":4, "receipt":"Pierogi 2"}' https://project2-60db1.firebaseio.com/recipes.json
+
+curl  -X PUT -d  '{ 
+       "id": 4, 
+       "receipt": "Pierogi 2", 
+       "description": "Zauberhaft wie in Polen...", 
+       "user": "André Ceres", 
+       "insertedDate": 1471865163, 
+       "dauer": "200 Minjten", 
+       "cuisine": "Italienisch", 
+       "menge": "4 Personen", 
+       "category": "Hauptspeise", 
+       "difficulty": "einfach", 
+       "rating": 100, 
+       "einkaufsliste": [ 
+         { 
+           "name": "Karotten", 
+           "amount": "2" 
+         }, 
+         { 
+           "name": "Pfeffer", 
+           "amount": "1 Prise" 
+         }, 
+         { 
+           "name": "Hackfleisch", 
+           "amount": "400 g" 
+         } 
+       ], 
+       "zubereitenUndKochen": [ 
+         { 
+           "step": 1, 
+           "photo": "bild1.svg", 
+           "memo": "Zuerst musst man die Pfanne ..." 
+         }, 
+         { 
+           "step": 2, 
+           "photo": "bild2.svg", 
+           "memo": "Danach Zwiebeln dünsten ..." 
+         }, 
+         { 
+           "step": 3, 
+           "photo": "", 
+           "memo": "Achtung ..." 
+         } 
+       ] 
+     }' https://project2-60db1.firebaseio.com/recipes.json

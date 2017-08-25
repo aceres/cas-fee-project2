@@ -7,11 +7,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/public">{{title}}</a>
+      <a class="navbar-brand" [routerLink]="['/public']">{{title}}</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="(authService.user | async)"><a href="/admin">Administration</a></li>
+        <li *ngIf="(authService.user | async)"><a [routerLink]="['/admin']">Administration</a></li>
         <li><a href="#">Über uns</a></li>
         <li><a href="#">Hilfe</a></li>
       </ul>
@@ -26,17 +26,17 @@
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
-        <li class="active"><a href="/admin/recipes" routerLinkActive="active">Ihre Rezepte <span class="sr-only">(Aktuell)</span></a></li>
-        <li><a href="/admin/recipe-add" routerLinkActive="active">Neues Rezept erfassen</a></li>
+        <li class="active"><a [routerLink]="['/admin/recipes']" routerLinkActive="active">Ihre Rezepte <span class="sr-only">(Aktuell)</span></a></li>
+        <li><a [routerLink]="['/admin/recipe-add']" routerLinkActive="active">Neues Rezept erfassen</a></li>
       </ul>
       <!-- TODO: Rollen definieren -->
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
-        <li><a routerLink="/admin/country-kitchen" routerLinkActive="active">Landküche verwalten</a></li>
-        <li><a routerLink="/admin/menu-art" routerLinkActive="active">Menüart verwalten</a></li>
-        <li><a routerLink="/admin/difficulty" routerLinkActive="active">Schwierigkeitsgrad verwalten</a></li>
+        <li><a [routerLink]="['/admin/country-kitchen']" routerLinkActive="active">Landküche verwalten</a></li>
+        <li><a [routerLink]="['/admin/menu-art']" routerLinkActive="active">Menüart verwalten</a></li>
+        <li><a [routerLink]="['/admin/difficulty']" routerLinkActive="active">Schwierigkeitsgrad verwalten</a></li>
       </ul>
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
-        <li><a routerLink="/admin/crisis-center" routerLinkActive="active">Wartungsarbeiten</a></li>
+        <li><a [routerLink]="['/admin/crisis-center']" routerLinkActive="active">Wartungsarbeiten</a></li>
       </ul>
 
       <h4 *ngIf="authService.user | async">Willkommen {{ (authService.user | async)?.email }}!</h4>
