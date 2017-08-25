@@ -2,15 +2,12 @@ Check JSON via Online whether this JSON is valid: https://jsonformatter.curiousc
 
 ## POST method (create a new object)
 
-curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"id":4, "receipt": "Test"}' 'https://project2-60db1.firebaseio.com/recipes.json'
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"id":10, "receipt": "Test"}' 'https://project2-60db1.firebaseio.com/recipes.json'
 
 ## PUT method
 
-curl -H "Accept: application/json" -H "Content-type: application/json" -X PUT -d '{"id":4, "receipt": "Test"}' 'https://project2-60db1.firebaseio.com/recipes.json'
-
-curl -X PUT -d '[
-  {
-    "id": 2,
+curl -X POST -d '{
+    "id": 1,
     "receipt": "Spaghetti Bolognese",
     "description": "Zauberhaft wie in Tessin...",
     "user": "Tanja Sennhauser",
@@ -52,9 +49,10 @@ curl -X PUT -d '[
         "memo": "Achtung ..."
       }
     ]
-  },
-  {
-    "id": 3,
+  }' 'https://project2-60db1.firebaseio.com/recipes.json'
+  
+curl -X POST -d '{
+    "id": 2,
     "receipt": "Spiegelei",
     "description": "Zauberhaft wie in Tessin...",
     "user": "Tanja Sennhauser",
@@ -96,9 +94,10 @@ curl -X PUT -d '[
         "memo": "Achtung ..."
       }
     ]
-  },
- {
-   "id": 4,
+  }' 'https://project2-60db1.firebaseio.com/recipes.json'
+
+curl -X POST -d '{
+   "id": 3
    "receipt": "Pierogi",
    "description": "Zauberhaft wie in Polen...",
    "user": "André Ceres",
@@ -140,22 +139,33 @@ curl -X PUT -d '[
        "memo": "Achtung ..."
      }
    ]
- }
-]' 'https://project2-60db1.firebaseio.com/recipes.json'
+ }' 'https://project2-60db1.firebaseio.com/recipes.json'
 
-## DELETE method
+## DELETE ALL RECIPES method
 
 curl -X DELETE https://project2-60db1.firebaseio.com/recipes.json
 
-## GET method
+## DELETE ID method
+
+curl -X DELETE https://project2-60db1.firebaseio.com/recipes?id=2
+
+curl -X DELETE https://project2-60db1.firebaseio.com/recipes/-KsQ0GjUlF7ABCu2cIaM.json
+
+## GET ALL method
 
 curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://project2-60db1.firebaseio.com/recipes.json
 
+## GET ID method ???
+
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://project2-60db1.firebaseio.com/recipes.json?id=2
+
 ## PUT method ???
 
-curl -X PUT -d '{"id":4, "receipt":"Pierogi 2"}' https://project2-60db1.firebaseio.com/recipes.json
+curl -H "Accept: application/json" -H "Content-type: application/json" -X PUT -d '{"id":1, "receipt": "Test"}' 'https://project2-60db1.firebaseio.com/recipes.json'
 
-curl  -X PUT -d  '{ 
+curl -X PUT -d '{"receipt":"Pierogi 2"}' https://project2-60db1.firebaseio.com/recipes.json
+
+curl  -X POST -d  '{ 
        "id": 4, 
        "receipt": "Pierogi 2", 
        "description": "Zauberhaft wie in Polen...", 
