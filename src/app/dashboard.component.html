@@ -1,63 +1,140 @@
 <div class="navbar-wrapper">
-  <div class="container">
+  <div class="container-full">
     <app-nav></app-nav>
   </div>
 </div>
 
 <app-carousel></app-carousel>
 
-<div class="container marketing">
+<section class="favorites">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="section-heading"><span>Rezepte</span> die jeder mag</h2>
+      </div>
+      <div class="col-md-4 col-sm-4 col-xs-12" *ngFor="let recipe of allRecipes | async">
+        <div class="favorite_item">
+          <div class="bg-image-wrap">
+            <div class="bg-image-top">
+              <img src="./assets/img/spaghetti.png" alt="{{recipe.receipt}}">
+            </div>
+            <div class="favorite_item_info">
+              <div class="favorite_item_header">
+                <div class="favorite_item_title">
+                  <h3>{{recipe.receipt}}</h3>
+                </div>
+              </div>
+              <div class="favorite_item_content">
+                <p>{{recipe.description}} Rating: {{recipe.rating}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="facorite_item_button favorite_item_button">
+            <p><a class="btn btn-default" href="#" role="button">Zum Rezept</a></p>
+          </div>
+        </div>
+      </div>
 
-  <div class="row">
-    <div class="col-lg-4" *ngFor="let recipe of allRecipes | async">
-      <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="{{recipe.receipt}}" width="140" height="140">
-      <h2>{{recipe.receipt}}</h2>
-      <p>{{recipe.description}} Rating: {{recipe.rating}}</p>
-      <p><a class="btn btn-default" href="#" role="button">Detailansicht &raquo;</a></p>
     </div>
   </div>
+</section>
 
-  <hr class="featurette-divider">
-
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-    </div>
-    <div class="col-md-5">
-      <img class="featurette-image img-responsive center-block" src="./assets/img/preview.svg" alt="Generic placeholder image">
-    </div>
-  </div>
-
-  <hr class="featurette-divider">
-
-  <div class="row featurette">
-    <div class="col-md-7 col-md-push-5">
-      <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-    </div>
-    <div class="col-md-5 col-md-pull-7">
-      <img class="featurette-image img-responsive center-block" src="./assets/img/preview.svg" alt="Generic placeholder image">
+<section class="tip">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-sm-7 col-xs-12">
+        <h2 class="tip-heading">Auch schon probiert?</h2>
+        <p>Zwetschgen-Tomatensuppe</p>
+        <p><a class="btn btn-tip" href="#" role="button">Zum Rezept</a></p>
+      </div>
+      <div class="col-md-5 col-sm-5 col-xs-12">
+        <img class="featurette-image img-responsive center-block" src="./assets/img/tomaten_suppe.jpg" alt="Generic placeholder image">
+      </div>
     </div>
   </div>
+</section>
 
-  <hr class="featurette-divider">
+<section class="categories">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="section-heading">Was möchtest du <span>zubereiten</span>?</h2>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="category-card">
+          <div class="category-img-bg">
+            <img class="card-img-top" src="./assets/img/breakfast.svg" alt="Frühstück">
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Frühstück</h4>
+          </div>
+        </div>
+      </div>
 
-  <div class="row featurette">
-    <div class="col-md-7">
-      <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-    </div>
-    <div class="col-md-5">
-      <img class="featurette-image img-responsive center-block" src="./assets/img/preview.svg" alt="Generic placeholder image">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="category-card">
+          <div class="category-img-bg">
+            <img class="card-img-top" src="./assets/img/starter.svg" alt="Vorspeise">
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Vorspeise</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="category-card">
+          <div class="category-img-bg">
+            <img class="card-img-top" src="./assets/img/main-course.svg" alt="Hauptspeise">
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Hauptgericht</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="category-card">
+          <div class="category-img-bg">
+            <img class="card-img-top" src="./assets/img/snack.svg" alt="Snack">
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Snack</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="category-card">
+          <div class="category-img-bg">
+            <img class="card-img-top" src="./assets/img/side-dish.svg" alt="Beilage">
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Beilage</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="category-card">
+          <div class="category-img-bg">
+            <img class="card-img-top" src="./assets/img/dessert.svg" alt="Dessert">
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Dessert</h4>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
+</section>
 
+<div class="container-fluid">
   <hr class="featurette-divider">
 
   <footer>
     <p class="pull-right"><a href="#">Nach oben</a></p>
     <p>&copy; 2017 What to cook? &middot; Alle Rechte vorbehalten. &middot; <a href="#">Privat</a> &middot; <a href="#">Terms</a></p>
   </footer>
-
 </div>

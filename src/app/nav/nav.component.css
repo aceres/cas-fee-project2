@@ -1,0 +1,38 @@
+.navbar-default {
+  border-color: transparent;
+  border-radius: 0;
+  box-shadow:none;
+  font-family: "Merriweather Sans", Arial, sans-serif;
+}
+
+.navbar-wrapper {
+  border-radius: initial;
+  margin-top: 0 !important;
+}
+
+.nav .open > a,
+.nav .open > a:focus,
+.nav .open > a:hover {
+  background-color: transparent;
+}
+
+@media (min-width: 992px) {
+  .navbar-default{
+    background:transparent;
+    border: transparent;
+  }
+
+  .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .active > a:focus,
+  .navbar-default .navbar-nav > .active > a:hover {
+    background-color: transparent;
+    border-bottom: 2px solid #ffc000;
+    bottom: 0;
+    color: #fff;
+    content: "";
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    color: #fff;
+  }
+}

@@ -4,9 +4,28 @@
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-  padding-top: 50px;
+  padding-top: 0;
 }
 
+section {
+  padding: 50px 0;
+}
+
+
+h1, h2, h4, h5, h6 {
+  color: #5A5A5A;
+  font-family: "Happy Monkey", Arial, sans-serif;
+}
+
+h3 {
+  color: #FFC000;
+  font-family: "Happy Monkey", Arial, sans-serif;
+}
+
+p {
+  color: #5A5A5A;
+  font-family: "Merriweather Sans", Arial, sans-serif;
+}
 
 /*
  * Global add-ons
@@ -106,4 +125,10 @@ body {
 .placeholder img {
   display: inline-block;
   border-radius: 50%;
+}
+
+@media (min-width: 992px) {
+  section {
+    padding: 100px 0;
+  }
 }
