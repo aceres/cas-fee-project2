@@ -12,6 +12,7 @@
 - Templates trennen
 - Integration
 - Clean up memoryDB
+- Suche (Liste) - Autocomplete
 
 - Rezept erfassen (add / post)
 --- View Add Steps (Überlegung)
