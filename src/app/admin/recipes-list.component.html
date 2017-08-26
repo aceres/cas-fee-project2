@@ -7,22 +7,6 @@
   <button (click)="gotoDetail()" class="btn">Zur Detailansicht</button>
 </div>
 
-<h4 class="page-header">Neues Rezept erfassen</h4>
-<form>
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input name="name" id="name" class="form-control" placeholder="Rezept" #recipeName />
-  </div>
-  <button class="btn" (click)="add(recipeName.value); recipeName.value=''">
-    <i class="fa add_circle_outline"></i> Hinzufügen
-  </button>
-  <button class="btn">
-    Abbrechen
-  </button>
-</form>
-
-<hr>
-
 <app-recipe-search></app-recipe-search>
 
 <div class="table-responsive">

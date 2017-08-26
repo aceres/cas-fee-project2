@@ -1,5 +1,4 @@
 export class Register {
-
   constructor(
     public id: number,
     public name: string,

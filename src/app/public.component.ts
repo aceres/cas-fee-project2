@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
-import { Recipe } from './recipe';
-import { RecipeService } from './recipe.service';
+import { Recipe } from './services/recipe';
+import { RecipeService } from './services/recipe.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-public',
+  templateUrl: './public.component.html',
+  styleUrls: ['./public.component.css']
 })
-export class DashboardComponent {
+export class PublicComponent {
   // Standard Angular CLI
   title = 'What to cook?';
 

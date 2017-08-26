@@ -12,8 +12,8 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-import { RecipeSearchService } from './recipe-search.service';
-import { Recipe } from './recipe';
+import { RecipeSearchService } from '../services/recipe-search.service';
+import { Recipe } from '../services/recipe';
 
 @Component({
   selector: 'app-recipe-search',

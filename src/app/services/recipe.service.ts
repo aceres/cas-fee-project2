@@ -4,19 +4,16 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { Recipe } from './recipe';
-// import { RECIPES } from './mock-recipes';
 
 @Injectable()
 export class RecipeService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  // private recipesUrl = 'api/recipes';  // URL to web api
   private recipesUrl = 'https://project2-60db1.firebaseio.com/recipes.json';
 
   constructor(private http: Http) { }
 
   getRecipes(): Promise<Recipe[]> {
-    // return Promise.resolve(RECIPES);
     return this.http.get(this.recipesUrl)
       .toPromise()
       .then(response => response.json().data as Recipe[])

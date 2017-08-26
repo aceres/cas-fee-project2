@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// App
 import { AppComponent } from './app.component';
-import { AdminComponent } from './admin.component';
-import { RegisterComponent } from './register.component';
-import { RecipesListComponent } from './recipes-list.component';
-import { RecipeDetailComponent } from './recipe-detail.component';
-import { RecipeAddComponent } from './recipe-add.component';
-import { DashboardComponent } from './dashboard.component';
 import { PageNotFoundComponent } from './not-found.component';
 import { CrisisCenterComponent } from './crisis-center.component';
+// Public
+import { PublicComponent } from './public.component';
+// Admin
+import { AdminComponent } from './admin/admin.component';
+import { RecipesListComponent } from './admin/recipes-list.component';
+import { RecipeDetailComponent } from './admin/recipe-detail.component';
+import { RecipeAddComponent } from './admin/recipe-add.component';
+// Register
+import { RegisterComponent } from './register/register.component';
 
 const appRoutes: Routes = [
-  { path: 'public', component: DashboardComponent },
+  { path: 'public', component: PublicComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'admin', component: AdminComponent, children: [
     { path: 'recipes', component: RecipesListComponent},

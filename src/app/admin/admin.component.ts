@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth.service';
+import { AuthService } from '../services/auth.service';
 
-import { Recipe } from './recipe';
-import { RecipeService } from './recipe.service';
+import { Recipe } from '../services/recipe';
+import { RecipeService } from '../services/recipe.service';
 
 @Component({
   selector: 'app-admin',

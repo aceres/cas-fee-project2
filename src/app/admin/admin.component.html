@@ -29,7 +29,6 @@
         <li class="active"><a [routerLink]="['/admin/recipes']" routerLinkActive="active">Ihre Rezepte <span class="sr-only">(Aktuell)</span></a></li>
         <li><a [routerLink]="['/admin/recipe-add']" routerLinkActive="active">Neues Rezept erfassen</a></li>
       </ul>
-      <!-- TODO: Rollen definieren -->
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
         <li><a [routerLink]="['/admin/country-kitchen']" routerLinkActive="active">Landküche verwalten</a></li>
         <li><a [routerLink]="['/admin/menu-art']" routerLinkActive="active">Menüart verwalten</a></li>

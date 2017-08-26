@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 
-import { Recipe } from './recipe';
-import { RecipeService } from './recipe.service';
+import { Recipe } from '../services/recipe';
+import { RecipeService } from '../services/recipe.service';
 
 @Component({
   selector: 'app-recipes-list',

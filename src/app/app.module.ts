@@ -8,27 +8,37 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+// Router
 import { AppRoutingModule } from './app-routing.module';
 
+// TODO: Clean up
 // Imports for loading & configuring the in-memory web api
 // import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { InMemoryDataService } from './in-memory-data.service';
+// import { InMemoryDataService } from './services/in-memory-data.service';
 
-import { AuthService } from './auth.service';
-import { RecipeService } from './recipe.service';
+// Services
+import { AuthService } from './services/auth.service';
+import { RecipeService } from './services/recipe.service';
 
+// App
 import { AppComponent } from './app.component';
-import { AdminComponent } from './admin.component';
-import { RegisterComponent } from './register.component';
-import { DashboardComponent } from './dashboard.component';
-import { RecipesListComponent } from './recipes-list.component';
-import { RecipeDetailComponent } from './recipe-detail.component';
-import { RecipeAddComponent } from './recipe-add.component';
-import { RecipeSearchComponent } from './recipe-search.component';
 import { CrisisCenterComponent } from './crisis-center.component';
 import { PageNotFoundComponent } from './not-found.component';
+
+// Public
+import { PublicComponent } from './public.component';
 import { NavComponent } from "./nav/nav.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+
+// Admin
+import { AdminComponent } from './admin/admin.component';
+import { RecipesListComponent } from './admin/recipes-list.component';
+import { RecipeDetailComponent } from './admin/recipe-detail.component';
+import { RecipeAddComponent } from './admin/recipe-add.component';
+import { RecipeSearchComponent } from './admin/recipe-search.component';
+
+// Register
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   imports: [
@@ -37,24 +47,29 @@ import { CarouselComponent } from "./carousel/carousel.component";
     FormsModule,
     AppRoutingModule,
     HttpModule,
+    // TODO: Clean up
     // InMemoryWebApiModule.forRoot(InMemoryDataService),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
   declarations: [
+    // App
     AppComponent,
+    PageNotFoundComponent,
+    CrisisCenterComponent,
+    // Public
+    PublicComponent,
+    NavComponent,
+    CarouselComponent,
+    // Admin
     AdminComponent,
-    RegisterComponent,
-    DashboardComponent,
     RecipesListComponent,
     RecipeAddComponent,
     RecipeDetailComponent,
     RecipeSearchComponent,
-    CrisisCenterComponent,
-    PageNotFoundComponent,
-    NavComponent,
-    CarouselComponent
+    // Register
+    RegisterComponent
   ],
   providers: [AuthService, RecipeService],
   bootstrap: [AppComponent]
