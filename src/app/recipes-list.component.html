@@ -2,7 +2,7 @@
 
 <div *ngIf="selectedRecipe">
   <h2>
-    {{selectedRecipe.name | uppercase}} ist mein gewähltes Rezept
+    {{selectedRecipe.receipt | uppercase}} ist mein gewähltes Rezept
   </h2>
   <button (click)="gotoDetail()" class="btn">Zur Detailansicht</button>
 </div>
@@ -39,18 +39,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let recipe of recipes" [class.selected]="recipe === selectedRecipe" (click)="onSelect(recipe)">
+      <tr *ngFor="let recipe of allRecipes | async" [class.selected]="recipe === selectedRecipe" (click)="onSelect(recipe)">
         <td>
           {{recipe.id}}
         </td>
         <td>
-          {{recipe.name}}
+          {{recipe.receipt}}
         </td>
         <td>
           <button class="btn">
             <i class="fa fa-eye"></i> Detailansicht
           </button>
-          <button class="btn" (click)="delete(recipe); $event.stopPropagation()">
+          <button class="btn" (click)="delete(recipe.id); $event.stopPropagation()">
             <i class="fa fa-trash-o"></i> Löschen
           </button>
         </td>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 
 import { Recipe } from './recipe';
@@ -12,12 +13,19 @@ export class RecipesListComponent implements OnInit {
   recipes: Recipe[];
   selectedRecipe: Recipe;
 
-  constructor(
-    private router: Router,
-    private recipeService: RecipeService) { }
+  // constructor(
+  //   private router: Router,
+  //   private recipeService: RecipeService) { }
+
+  allRecipes: FirebaseListObservable<any[]>;
+
+  constructor(private router: Router, private recipeService: RecipeService, db: AngularFireDatabase) {
+    this.allRecipes = db.list('/recipes');
+  }
 
   getRecipes(): void {
-    this.recipeService.getRecipes().then(recipes => this.recipes = recipes);
+    // this.recipeService.getRecipes().then(recipes => this.allRecipes = recipes);
+    this.recipeService.getRecipes().then(recipes => this.allRecipes);
   }
 
   add(name: string): void {

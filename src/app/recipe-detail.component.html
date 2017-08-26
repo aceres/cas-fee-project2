@@ -1,12 +1,12 @@
 <div *ngIf="recipe">
-  <h2 class="page-header">Rezept: {{recipe.name}}</h2>
+  <h2 class="page-header">Rezept: {{recipe.receipt}}</h2>
     <div class="form-group">
       <label for="id">Nr.:</label>
       <input [(ngModel)]="recipe.id" name="id" id="id" class="form-control" placeholder="Nr." >
     </div>
     <div class="form-group">
       <label for="name">Name:</label>
-      <input [(ngModel)]="recipe.name" name="name" id="name" class="form-control" placeholder="Rezept" />
+      <input [(ngModel)]="recipe.receipt" name="name" id="name" class="form-control" placeholder="Rezept" />
     </div>
     <button (click)="goBack()" class="btn">
       <i class="fa fa-arrow-left"></i> Zurück

@@ -10,7 +10,13 @@
 - alle CURLS vervollständigen
 - Notification (Überlegung)
 - Templates trennen
+- Integration
+- Clean up memoryDB
+
 - Rezept erfassen (add / post)
+--- View Add Steps (Überlegung)
+--- https://angular.io/guide/forms
+--- Siehe auch: Registration
 
 - Überlegung: Registration / Administration - Responsive?
 

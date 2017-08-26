@@ -10,7 +10,8 @@ import { Recipe } from './recipe';
 export class RecipeService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private recipesUrl = 'api/recipes';  // URL to web api
+  // private recipesUrl = 'api/recipes';  // URL to web api
+  private recipesUrl = 'https://project2-60db1.firebaseio.com/recipes.json';
 
   constructor(private http: Http) { }
 
@@ -31,7 +32,7 @@ export class RecipeService {
   }
 
   getRecipe(id: number): Promise<Recipe> {
-    const url = `${this.recipesUrl}/${id}`;
+    const url = `${this.recipesUrl}?id=${id}`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as Recipe)
@@ -48,7 +49,7 @@ export class RecipeService {
 
   create(name: string): Promise<Recipe> {
     return this.http
-      .post(this.recipesUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .post(this.recipesUrl, JSON.stringify({receipt: name}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Recipe)
       .catch(this.handleError);

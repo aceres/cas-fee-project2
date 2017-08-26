@@ -24,6 +24,8 @@ export class DashboardComponent {
 
   ngOnInit(): void {
     this.recipeService.getRecipes()
-      .then(recipes => this.recipes = recipes.slice(1, 5));
+      .then(recipes => this.recipes);
+      // TODO: Why was this not working
+      // .then(recipes => this.recipes = recipes.slice(1, 5));
   }
 }

@@ -97,7 +97,7 @@ curl -X POST -d '{
   }' 'https://project2-60db1.firebaseio.com/recipes.json'
 
 curl -X POST -d '{
-   "id": 3
+   "id": 3,
    "receipt": "Pierogi",
    "description": "Zauberhaft wie in Polen...",
    "user": "André Ceres",
@@ -140,6 +140,52 @@ curl -X POST -d '{
      }
    ]
  }' 'https://project2-60db1.firebaseio.com/recipes.json'
+ 
+ 
+ curl -X POST -d '{
+    "id": 4,
+    "receipt": "Fisch mit Gemüse",
+    "description": "Zauberhaft wie in Polen...",
+    "user": "André Ceres",
+    "insertedDate": 1471865163,
+    "dauer": "200 Minjten",
+    "cuisine": "Italienisch",
+    "menge": "4 Personen",
+    "category": "Hauptspeise",
+    "difficulty": "einfach",
+    "rating": 100,
+    "einkaufsliste": [
+      {
+        "name": "Karotten",
+        "amount": "2"
+      },
+      {
+        "name": "Pfeffer",
+        "amount": "1 Prise"
+      },
+      {
+        "name": "Hackfleisch",
+        "amount": "400 g"
+      }
+    ],
+    "zubereitenUndKochen": [
+      {
+        "step": 1,
+        "photo": "bild1.svg",
+        "memo": "Zuerst musst man die Pfanne ..."
+      },
+      {
+        "step": 2,
+        "photo": "bild2.svg",
+        "memo": "Danach Zwiebeln dünsten ..."
+      },
+      {
+        "step": 3,
+        "photo": "",
+        "memo": "Achtung ..."
+      }
+    ]
+  }' 'https://project2-60db1.firebaseio.com/recipes.json'
 
 ## DELETE ALL RECIPES method
 
@@ -164,48 +210,3 @@ curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET
 curl -H "Accept: application/json" -H "Content-type: application/json" -X PUT -d '{"id":1, "receipt": "Test"}' 'https://project2-60db1.firebaseio.com/recipes.json'
 
 curl -X PUT -d '{"receipt":"Pierogi 2"}' https://project2-60db1.firebaseio.com/recipes.json
-
-curl  -X POST -d  '{ 
-       "id": 4, 
-       "receipt": "Pierogi 2", 
-       "description": "Zauberhaft wie in Polen...", 
-       "user": "André Ceres", 
-       "insertedDate": 1471865163, 
-       "dauer": "200 Minjten", 
-       "cuisine": "Italienisch", 
-       "menge": "4 Personen", 
-       "category": "Hauptspeise", 
-       "difficulty": "einfach", 
-       "rating": 100, 
-       "einkaufsliste": [ 
-         { 
-           "name": "Karotten", 
-           "amount": "2" 
-         }, 
-         { 
-           "name": "Pfeffer", 
-           "amount": "1 Prise" 
-         }, 
-         { 
-           "name": "Hackfleisch", 
-           "amount": "400 g" 
-         } 
-       ], 
-       "zubereitenUndKochen": [ 
-         { 
-           "step": 1, 
-           "photo": "bild1.svg", 
-           "memo": "Zuerst musst man die Pfanne ..." 
-         }, 
-         { 
-           "step": 2, 
-           "photo": "bild2.svg", 
-           "memo": "Danach Zwiebeln dünsten ..." 
-         }, 
-         { 
-           "step": 3, 
-           "photo": "", 
-           "memo": "Achtung ..." 
-         } 
-       ] 
-     }' https://project2-60db1.firebaseio.com/recipes.json
