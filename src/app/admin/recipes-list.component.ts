@@ -13,10 +13,6 @@ export class RecipesListComponent implements OnInit {
   recipes: Recipe[];
   selectedRecipe: Recipe;
 
-  // constructor(
-  //   private router: Router,
-  //   private recipeService: RecipeService) { }
-
   allRecipes: FirebaseListObservable<any[]>;
 
   constructor(private router: Router, private recipeService: RecipeService, db: AngularFireDatabase) {

@@ -5,4 +5,4 @@
 - Ausprobieren ngPrime / ngBootstrap
 - AuthGuard / Registration (Login)
 - Templates (Organization)
-- Lazy Loading
+- Lazy Loading (https://namitamalik.github.io/Lazy-Loading-with-Angular2-Routing/)

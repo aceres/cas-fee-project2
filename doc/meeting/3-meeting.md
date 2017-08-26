@@ -20,8 +20,9 @@
 
 #### TODO bei André
 
-- ...
+- in-memory-web-api deinstallieren
+- 
 
 ## Pendenzen oder Probleme
 
-- ...
+- Überlegung: Ihre Rezepte (Users - nur ihre Rezepte / Admin - alle Rezepte)
