@@ -14,7 +14,7 @@
 ### Rezept kategorisieren (Admin, Member)
 ### Bilder für ein Rezept hochladen (Admin, Member)
 
-### Stammdatenverwaltung (z.B. Kategorie oder Land, hier: Italienische Küche, Japanische Küche, ...) / Hauptgerichte: Fisch, Fleisch / Richtung: Vegetarisch, Fleisch, Dessert
+### Stammdatenverwaltung z.B. Kategorie oder Land, hier: Italienische Küche, Japanische Küche, ... / Hauptgerichte: Fisch, Fleisch / Richtung: Vegetarisch, Fleisch, Dessert
 
 ## Rating
 ### Rezept bewerten (Admin, Member)

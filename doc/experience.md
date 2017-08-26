@@ -1,8 +1,8 @@
 # Überlegung / Erfahrung (für die Präsentation):
 
 - Highlights
-- Templates (Public / Secure)
+- Templates (Public / Secure (Registered User / Admin))
 - Ausprobieren ngPrime / ngBootstrap
-- AuthGuard / Registration
+- AuthGuard / Registration (Login)
 - Templates (Organization)
 - Lazy Loading
