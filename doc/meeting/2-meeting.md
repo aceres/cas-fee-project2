@@ -33,7 +33,7 @@
 
 - Templates auseinander nehmen und schön nach Themen strukturieren
 - Template / CSS testen (Umlagern)
-- Suche: AutoComplete (via Firebase)
+- Suche: AutoComplete (via Firebase) - https://angular.io/tutorial/toh-pt6 (auf Firebase umstellen)
 - Angular 4 einarbeiten
 - CURLs vervollständigen und testen
 - AuthGuard anschauen und umsetzen
