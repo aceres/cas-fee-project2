@@ -140,52 +140,51 @@ curl -X POST -d '{
      }
    ]
  }' 'https://project2-60db1.firebaseio.com/recipes.json'
- 
- 
- curl -X POST -d '{
-    "id": 4,
-    "receipt": "Fisch mit Gemüse",
-    "description": "Zauberhaft wie in Polen...",
-    "user": "André Ceres",
-    "insertedDate": 1471865163,
-    "dauer": "200 Minjten",
-    "cuisine": "Italienisch",
-    "menge": "4 Personen",
-    "category": "Hauptspeise",
-    "difficulty": "einfach",
-    "rating": 0,
-    "einkaufsliste": [
-      {
-        "name": "Karotten",
-        "amount": "2"
-      },
-      {
-        "name": "Pfeffer",
-        "amount": "1 Prise"
-      },
-      {
-        "name": "Hackfleisch",
-        "amount": "400 g"
-      }
-    ],
-    "zubereitenUndKochen": [
-      {
-        "step": 1,
-        "photo": "bild1.svg",
-        "memo": "Zuerst musst man die Pfanne ..."
-      },
-      {
-        "step": 2,
-        "photo": "bild2.svg",
-        "memo": "Danach Zwiebeln dünsten ..."
-      },
-      {
-        "step": 3,
-        "photo": "",
-        "memo": "Achtung ..."
-      }
-    ]
-  }' 'https://project2-60db1.firebaseio.com/recipes.json'
+
+curl -X POST -d '{
+  "id": 4,
+  "receipt": "Fisch mit Gemüse",
+  "description": "Zauberhaft wie in Polen...",
+  "user": "André Ceres",
+  "insertedDate": 1471865163,
+  "dauer": "200 Minjten",
+  "cuisine": "Italienisch",
+  "menge": "4 Personen",
+  "category": "Hauptspeise",
+  "difficulty": "einfach",
+  "rating": 0,
+  "einkaufsliste": [
+    {
+      "name": "Karotten",
+      "amount": "2"
+    },
+    {
+      "name": "Pfeffer",
+      "amount": "1 Prise"
+    },
+    {
+      "name": "Hackfleisch",
+      "amount": "400 g"
+    }
+  ],
+  "zubereitenUndKochen": [
+    {
+      "step": 1,
+      "photo": "bild1.svg",
+      "memo": "Zuerst musst man die Pfanne ..."
+    },
+    {
+      "step": 2,
+      "photo": "bild2.svg",
+      "memo": "Danach Zwiebeln dünsten ..."
+    },
+    {
+      "step": 3,
+      "photo": "",
+      "memo": "Achtung ..."
+    }
+  ]
+}' 'https://project2-60db1.firebaseio.com/recipes.json'
 
 ## DELETE ALL RECIPES method
 

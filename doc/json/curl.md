@@ -4,7 +4,7 @@
 - https://erichonorez.wordpress.com/2013/02/10/how-create-a-rest-api-with-node-js-and-express/
 - http://coenraets.org/blog/2012/10/creating-a-rest-api-using-node-js-express-and-mongodb/
 
-## Sample Data
+## Idea of the Sample Data
 
 Rezept: Spaghetti Bolognese
 
@@ -82,7 +82,7 @@ Memo erfassen
   }
 }
 
-Registration und Login
+## Registration und Login
 
 {
   [
@@ -100,11 +100,15 @@ Registration und Login
   ]
 }
 
+## Menu Art
+
 {
   menuArt: [
     "Vorspeise", "Hauptspeise", "Dessert", "Beilage", "Frühstück", "Kleine Gerichte"
   ]
 }
+
+## Grade
 
 {
   schwierigkeitsgrad: [
@@ -112,32 +116,10 @@ Registration und Login
   ]
 }
 
+## Cuisine
+
 {
   cuisine: [
     "Schweizerisch", "Italienisch", "Französisch", "Thailändich"
   ]
 }
-
-## CURLs
-
-### Still not finish (we still have to test it)
-
-Get Recipes:
-
-> curl -i http://localhost:4200/recipes/
-
-Get Recipe (Detail)
-
-> curl -i http://localhost:4200/recipes/1
-
-Create Recipe:
-
-> curl -i -X POST http://localhost:4200/recipes --data '{recipe: "spaghetti"}' -H 'Content-Type: application/json';
-
-Update Recipe:
-
-> curl -i -X PUT http://localhost:4200/recipes/1 --data '{description&quot;:&quot;blabla&quot;}' -H 'Content-Type: application/json';
-
-Delete Recipe:
-
-> curl -i -X DELETE http://localhost:4200/recipes/1
