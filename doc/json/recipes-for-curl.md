@@ -153,7 +153,7 @@ curl -X POST -d '{
     "menge": "4 Personen",
     "category": "Hauptspeise",
     "difficulty": "einfach",
-    "rating": 100,
+    "rating": 0,
     "einkaufsliste": [
       {
         "name": "Karotten",
