@@ -37,7 +37,7 @@
 - Angular 4 einarbeiten
 - CURLs vervollständigen und testen
 - AuthGuard anschauen und umsetzen
-- E-Mail an HSR - Mittwoch - Unterstützung (am Nachmittag)
+- E-Mail an HSR - Mittwoch - ob Unterstützung noch möglich ist (am Nachmittag, ab 16 Uhr)
 
 ## Pendenzen oder Probleme
 
