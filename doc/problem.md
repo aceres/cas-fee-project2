@@ -1,4 +1,4 @@
-# List of problems (help)
+# List of problems (We need help!)
 
 - Without CDN?
 - Registration / AuthGard
@@ -15,4 +15,5 @@ File: app.module.ts
 // TODO: Clean up
 // InMemoryWebApiModule.forRoot(InMemoryDataService),
 
+- AutoComplete / ERROR: Cannot find a differ supporting object '[object Object]' of type 'object'. NgFor only supports binding to Iterables such as Arrays
 - ...

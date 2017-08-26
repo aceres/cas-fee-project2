@@ -13,7 +13,10 @@ export class RecipeSearchService {
 
   search(term: string): Observable<Recipe[]> {
     return this.http
-      .get(`api/recipes/?name=${term}`)
-      .map(response => response.json().data as Recipe[]);
+      // .get(`api/recipes/?name=${term}`)
+      // TODO: Why does it not work?
+      .get(`https://project2-60db1.firebaseio.com/recipes.json?receipt=${term}`)
+      //.map(response => Array.of(response.json()) as Recipe[]);
+      .map(response => response.json() as Recipe[]);
   }
 }

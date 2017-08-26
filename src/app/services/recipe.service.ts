@@ -16,7 +16,9 @@ export class RecipeService {
   getRecipes(): Promise<Recipe[]> {
     return this.http.get(this.recipesUrl)
       .toPromise()
-      .then(response => response.json().data as Recipe[])
+      // TODO: Is this different?
+      //.then(response => response.json().data as Recipe[])
+      .then(response => response.json() as Recipe[])
       .catch(this.handleError);
   }
 

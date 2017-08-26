@@ -1,4 +1,4 @@
 export class Recipe {
   id: number;
-  name: string;
+  receipt: string;
 }

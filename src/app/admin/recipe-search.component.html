@@ -3,7 +3,7 @@
   <div>
     <div *ngFor="let recipe of recipes | async"
          (click)="gotoDetail(recipe)" class="search-result" >
-      {{recipe.name}}
+      {{recipe}}
     </div>
   </div>
 </div>
