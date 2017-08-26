@@ -3,21 +3,46 @@
 ## 26. August 2017
 
 - Rollen definieren (Admin, Register User, Public)
-- TODOs in der Code
-- SASS (umschalten auf SASS)
-- Auth Guard fertig machen
-- Frage: Ob ab September möglich wäre, jeweils Mi. ab 16 Uhr, für eine Unterstützung oder Frage vorbeizukommen
-- alle CURLS vervollständigen
+- TODOs in der Code aufräumen
+- SASS (Umschalten auf SASS)
+- AuthGuard fertig machen
+- Frage: Ob ab September möglich wäre, jeweils Mi. ab 16 Uhr, für eine Unterstützung oder allfällige Fragen vorbeizukommen
+- Alle CURLS vervollständigen
 - Notification (Überlegung)
-- Templates trennen
-- Integration
-- Clean up memoryDB
-- Suche (Liste) - Autocomplete
+- Integration (Style von Tanja)
 
-- Rezept erfassen (add / post)
---- View Add Steps (Überlegung)
---- https://angular.io/guide/forms
---- Siehe auch: Registration
+## Weiteres Vorgehen
 
-- Überlegung: Registration / Administration - Responsive?
+### Status bei Tanja
+
+- ...
+
+#### TODO bei Tanja
+
+- Rezept erfassen (Formular erstellen)
+- Neues Rezept anlegen via Firebase (POST method)
+- https://angular.io/guide/forms anschauen
+- Registrationsseite vergleichen (Validation)
+- Angular 4 einarbeiten
+
+### Status bei André
+
+- ...
+
+#### TODO bei André
+
+- Templates auseinander nehmen und schön nach Themen strukturieren
+- Template / CSS testen (Umlagern)
+- Suche: AutoComplete (via Firebase)
+- Angular 4 einarbeiten
+- CURLs vervollständigen und testen
+- AuthGuard anschauen und umsetzen
+- E-Mail an HSR - Mittwoch - Unterstützung (am Nachmittag)
+
+## Pendenzen oder Probleme
+
+- Überlegung: Registration / Administration - Inwiefern soll es responsive sein?
+- Notification (Überlegung)
+- SASS
+- Rollen
 

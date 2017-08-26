@@ -2,10 +2,33 @@
 
 ## 12. August 2017
 
-- Projekt 2 - Projekt-Info nochmals anschauen
+- Projekt 2 - Projektaufstellung nochmals anschauen
+- Projektumfang anschauen und besprechen
 - Milestones setzen
-- Wireframes -> Tanja (Mock)
-- 1. Prototyp mit Angular 4 fertigstellen
-- Authentification
+- Wireframes - Tanja wird dies umsetzen
+- 1. Prototyp mit Angular 4 fortfahren
+- Authentification (Login) auseinandersetzen
 - REST-API definieren
-- SASS
+- SASS anschauen
+
+## Weiteres Vorgehen
+
+### Status bei Tanja
+
+- ...
+
+#### TODO bei Tanja
+
+- ...
+
+### Status bei André
+
+- ...
+
+#### TODO bei André
+
+- ...
+
+## Pendenzen oder Probleme
+
+- ...
