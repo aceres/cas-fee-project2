@@ -49,8 +49,10 @@ import { RegisterComponent } from './register/register.component';
     HttpModule,
     // TODO: Clean up
     // InMemoryWebApiModule.forRoot(InMemoryDataService),
+    // Database
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    // Auth
     AngularFireAuthModule
   ],
   declarations: [

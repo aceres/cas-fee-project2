@@ -8,7 +8,14 @@ import { Recipe } from './recipe';
 @Injectable()
 export class RecipeService {
 
-  private headers = new Headers({'Content-Type': 'application/json'});
+  private headers = new Headers({
+    'Content-Type': 'application/json;charset=utf-8',
+    'Access-Control-Allow-Credentials': true,
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
+    'Access-Control-Allow-Headers': 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'
+  })
+
   private recipesUrl = 'https://project2-60db1.firebaseio.com/recipes.json';
 
   constructor(private http: Http) { }
@@ -17,7 +24,7 @@ export class RecipeService {
     return this.http.get(this.recipesUrl)
       .toPromise()
       // TODO: Is this different?
-      //.then(response => response.json().data as Recipe[])
+      // .then(response => response.json().data as Recipe[])
       .then(response => response.json() as Recipe[])
       .catch(this.handleError);
   }
@@ -38,8 +45,9 @@ export class RecipeService {
       .catch(this.handleError);
   }
 
-  delete(id: number): Promise<void> {
-    const url = `${this.recipesUrl}/${id}`;
+  remove(recipe): Promise<void> {
+    console.log('Remove' , recipe.$key);
+    const url = `${this.recipesUrl}/${recipe.$key}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)

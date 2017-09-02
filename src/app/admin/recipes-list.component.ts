@@ -1,3 +1,4 @@
+// import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
@@ -14,6 +15,12 @@ export class RecipesListComponent implements OnInit {
   selectedRecipe: Recipe;
 
   allRecipes: FirebaseListObservable<any[]>;
+
+  // @Input()
+  // recipe:  Recipe;
+
+  // @Output()
+  // deleteReceiptEvent = new EventEmitter<string>();
 
   constructor(private router: Router, private recipeService: RecipeService, db: AngularFireDatabase) {
     this.allRecipes = db.list('/recipes');
@@ -34,12 +41,16 @@ export class RecipesListComponent implements OnInit {
       });
   }
 
-  delete(recipe: Recipe): void {
+  // remove() {
+  //   this.deleteReceiptEvent.emit(this.recipe.$key)
+  // }
+
+  remove(id): void {
     this.recipeService
-      .delete(recipe.id)
+      .remove(id)
       .then(() => {
-        this.recipes = this.recipes.filter(h => h !== recipe);
-        if (this.selectedRecipe === recipe) { this.selectedRecipe = null; }
+        // this.recipes = this.recipes.filter(h => h !== recipe);
+        // if (this.selectedRecipe === recipe) { this.selectedRecipe = null; }
       });
   }
 
