@@ -20,13 +20,15 @@ export class RecipeAddComponent implements OnInit {
     this.recipeService.getRecipes().then(recipes => this.recipes = recipes);
   }
 
-  add(name: string): void {
+  add(name: string, description: string): void {
     name = name.trim();
-    if (!name) { return; }
-    this.recipeService.create(name)
+    description = description.trim();
+    if (!name && !description) { return; }
+    this.recipeService.create(name, description)
       .then(recipe => {
-        this.recipes.push(recipe);
-        this.selectedRecipe = null;
+        // TODO: Have a look with the tutor
+        // this.recipes.push(recipe);
+        // this.selectedRecipe = null;
       });
   }
 

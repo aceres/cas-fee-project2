@@ -16,12 +16,13 @@ export class RecipeService {
     'Access-Control-Allow-Headers': 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'
   })
 
-  private recipesUrl = 'https://project2-60db1.firebaseio.com/recipes.json';
+  private recipesUrl = 'https://project2-60db1.firebaseio.com/recipes';
 
   constructor(private http: Http) { }
 
   getRecipes(): Promise<Recipe[]> {
-    return this.http.get(this.recipesUrl)
+    const url = `${this.recipesUrl}.json`;
+    return this.http.get(`${this.recipesUrl}.json`)
       .toPromise()
       // TODO: Is this different?
       // .then(response => response.json().data as Recipe[])
@@ -38,7 +39,7 @@ export class RecipeService {
   }
 
   getRecipe(id: number): Promise<Recipe> {
-    const url = `${this.recipesUrl}?id=${id}`;
+    const url = `${this.recipesUrl}?id=${id}.json`;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json().data as Recipe)
@@ -47,23 +48,24 @@ export class RecipeService {
 
   remove(recipe): Promise<void> {
     console.log('Remove' , recipe.$key);
-    const url = `${this.recipesUrl}/${recipe.$key}`;
+    const url = `${this.recipesUrl}/${recipe.$key}.json`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)
       .catch(this.handleError);
   }
 
-  create(name: string): Promise<Recipe> {
+  create(name: string, description: string): Promise<Recipe> {
+    const url = `${this.recipesUrl}.json`;
     return this.http
-      .post(this.recipesUrl, JSON.stringify({receipt: name}), {headers: this.headers})
+      .post(url, JSON.stringify({receipt: name, description: description}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Recipe)
       .catch(this.handleError);
   }
 
   update(recipe: Recipe): Promise<Recipe> {
-    const url = `${this.recipesUrl}/${recipe.id}`;
+    const url = `${this.recipesUrl}/${recipe.id}.json`;
     return this.http
       .put(url, JSON.stringify(recipe), {headers: this.headers})
       .toPromise()

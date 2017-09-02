@@ -4,8 +4,12 @@
   <label for="name">Rezept:</label>
   <input name="name" id="name" class="form-control" placeholder="Rezept"  #recipeName />
 </div>
+<div class="form-group">
+  <label for="description">Description:</label>
+  <input name="description" id="description" class="form-control" placeholder="Beschreibung"  #recipeDescription />
+</div>
 
-<button class="btn" (click)="add(recipeName.value); recipeName.value=''">
+<button class="btn" (click)="add(recipeName.value, recipeDescription.value); recipeName.value=''; recipeDescription.value=''">
   <i class="fa add_circle_outline"></i> Speichern
 </button>
 <button class="btn">

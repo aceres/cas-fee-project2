@@ -31,13 +31,14 @@ export class RecipesListComponent implements OnInit {
     this.recipeService.getRecipes().then(recipes => this.allRecipes);
   }
 
-  add(name: string): void {
+  add(name: string, description: string): void {
     name = name.trim();
-    if (!name) { return; }
-    this.recipeService.create(name)
+    description = description.trim();
+    if (!name && !description) { return; }
+    this.recipeService.create(name, description)
       .then(recipe => {
-        this.recipes.push(recipe);
-        this.selectedRecipe = null;
+        //this.recipes.push(recipe);
+        //this.selectedRecipe = null;
       });
   }
 
