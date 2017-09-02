@@ -26,16 +26,16 @@
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
-        <li class="active"><a [routerLink]="['/admin/recipes']" routerLinkActive="active">Ihre Rezepte <span class="sr-only">(Aktuell)</span></a></li>
-        <li><a [routerLink]="['/admin/recipe-add']" routerLinkActive="active">Neues Rezept erfassen</a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipes']">Ihre Rezepte <span class="sr-only">(Aktuell)</span></a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipe-add']">Neues Rezept erfassen</a></li>
       </ul>
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
-        <li><a [routerLink]="['/admin/country-kitchen']" routerLinkActive="active">Landküche verwalten</a></li>
-        <li><a [routerLink]="['/admin/menu-art']" routerLinkActive="active">Menüart verwalten</a></li>
-        <li><a [routerLink]="['/admin/difficulty']" routerLinkActive="active">Schwierigkeitsgrad verwalten</a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-category']">Menüart</a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-cuisine']">Landküche</a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-difficulty']">Schwierigkeitsgrad</a></li>
       </ul>
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
-        <li><a [routerLink]="['/admin/crisis-center']" routerLinkActive="active">Wartungsarbeiten</a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/crisis-center']">Wartungsarbeiten</a></li>
       </ul>
 
       <h4 *ngIf="authService.user | async">Willkommen {{ (authService.user | async)?.email }}!</h4>

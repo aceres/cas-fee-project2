@@ -14,6 +14,9 @@ import { RecipeDetailComponent } from './admin/recipe-detail.component';
 import { RecipeAddComponent } from './admin/recipe-add.component';
 // Register
 import { RegisterComponent } from './register/register.component';
+// Master Data Basis
+import {BasisDataCategoryComponent} from "./admin/basis-data-category.component";
+import {BasisDataCuisineComponent} from "./admin/basis-data-cuisine.component";
 
 const appRoutes: Routes = [
   { path: 'public', component: PublicComponent },
@@ -23,6 +26,8 @@ const appRoutes: Routes = [
     { path: 'recipe-detail/:id', component: RecipeDetailComponent},
     { path: 'recipe-add', component: RecipeAddComponent},
     { path: 'crisis-center', component: CrisisCenterComponent},
+    { path: 'basis-data-category', component: BasisDataCategoryComponent},
+    { path: 'basis-data-cuisine', component: BasisDataCuisineComponent},
   ] },
   { path: '', redirectTo: '/public', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }

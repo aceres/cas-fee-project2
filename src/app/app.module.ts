@@ -37,6 +37,10 @@ import { RecipeDetailComponent } from './admin/recipe-detail.component';
 import { RecipeAddComponent } from './admin/recipe-add.component';
 import { RecipeSearchComponent } from './admin/recipe-search.component';
 
+// Master Data Basis
+import { BasisDataCategoryComponent } from './admin/basis-data-category.component';
+import { BasisDataCuisineComponent } from './admin/basis-data-cuisine.component';
+
 // Register
 import { RegisterComponent } from './register/register.component';
 
@@ -71,7 +75,10 @@ import { RegisterComponent } from './register/register.component';
     RecipeDetailComponent,
     RecipeSearchComponent,
     // Register
-    RegisterComponent
+    RegisterComponent,
+    // Master Data (Basis),
+    BasisDataCategoryComponent,
+    BasisDataCuisineComponent
   ],
   providers: [AuthService, RecipeService],
   bootstrap: [AppComponent]
