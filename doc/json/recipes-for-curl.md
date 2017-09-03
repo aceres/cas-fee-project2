@@ -198,12 +198,10 @@ curl -X DELETE https://project2-60db1.firebaseio.com/recipes/-KsQ0GjUlF7ABCu2cIa
 
 curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://project2-60db1.firebaseio.com/recipes.json
 
-## GET ID method ???
+## GET ID method
 
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://project2-60db1.firebaseio.com/recipes.json?id=2
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://project2-60db1.firebaseio.com/recipes/-Kt1ZtJKSz3liYR3vvev.json
 
-## PUT method ???
+## PUT method
 
-curl -H "Accept: application/json" -H "Content-type: application/json" -X PUT -d '{"id":1, "receipt": "Test"}' 'https://project2-60db1.firebaseio.com/recipes.json'
-
-curl -X PUT -d '{"receipt":"Pierogi 2"}' https://project2-60db1.firebaseio.com/recipes.json
+curl -X PUT -d '{"receipt":"Pierogi"}' https://project2-60db1.firebaseio.com/recipes/-Kt1ZtJKSz3liYR3vvev.json

@@ -2,10 +2,10 @@ Check JSON via Online whether this JSON is valid: https://jsonformatter.curiousc
 
 ## POST method (create a new object)
 
-curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"category": "Hauptspeise"}' 'https://project2-60db1.firebaseio.com/recipes.json'
+curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"category": "Überraschung"}' 'https://project2-60db1.firebaseio.com/categories.json'
 
 curl -X POST -d '{
-  "name": 
+  "category": "Dessert"
 }' 'https://project2-60db1.firebaseio.com/categories.json'
 
 ## DELETE ALL CATEGORIES method
@@ -20,15 +20,13 @@ curl -X DELETE https://project2-60db1.firebaseio.com/categories/-KsQ0GjUlF7ABCu2
 
 curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://project2-60db1.firebaseio.com/categories.json
 
-## GET ID method ???
+## GET ID method
 
-curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://project2-60db1.firebaseio.com/categories.json?id=2
+curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X GET https://project2-60db1.firebaseio.com/categories/-Kt5mqCdlD2lX7O5cMw9.json
 
-## PUT method ???
+## PUT method
 
-curl -H "Accept: application/json" -H "Content-type: application/json" -X PUT -d '{"key":1, "category": "Test"}' 'https://project2-60db1.firebaseio.com/categories.json'
-
-curl -X PUT -d '{"name":"Frühstück"}' https://project2-60db1.firebaseio.com/categories.json
+curl -X PUT -d '{"category":"Hauptmahlzeit"}' https://project2-60db1.firebaseio.com/categories/-Kt5mqCdlD2lX7O5cMw9.json
 
 ## Menu Art / Category JSON
 
