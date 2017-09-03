@@ -1,13 +1,18 @@
 <h2 class="page-header">Neue Menüart erfassen</h2>
 
-<div class="form-group">
-  <label for="name">Name:</label>
-  <input name="name" id="name" class="form-control" placeholder="Name"  #categoryName />
-</div>
-
-<button class="btn" (click)="add(categoryName.value); categoryName.value='';">
-  <i class="fa add_circle_outline"></i> Speichern
-</button>
+<form (ngSubmit)="onSubmit()" #categoryForm="ngForm">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input name="name" type="text" id="name" class="form-control" placeholder="Name" required #categoryName />
+    <div [hidden]="categoryName.valid || categoryName.pristine"
+         class="alert alert-danger">
+      Name is required!
+    </div>
+  </div>
+  <button class="btn" [disabled]="!categoryForm.form.valid" (click)="add(categoryName.value); categoryName.value='';">
+    <i class="fa add_circle_outline"></i> Speichern
+  </button>
+</form>
 
 <div class="table-responsive">
   <table class="table table-striped table-hover">
