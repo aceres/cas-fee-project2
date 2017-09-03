@@ -1,1 +1,43 @@
 <h2 class="page-header">Neue Menüart erfassen</h2>
+
+<div class="form-group">
+  <label for="name">Name:</label>
+  <input name="name" id="name" class="form-control" placeholder="Name"  #categoryName />
+</div>
+
+<button class="btn" (click)="add(categoryName.value); categoryName.value='';">
+  <i class="fa add_circle_outline"></i> Speichern
+</button>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>
+        Nr.
+      </th>
+      <th>
+        Kategorie
+      </th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let category of allCategories | async">
+      <td>
+        {{category.$key}}
+      </td>
+      <td>
+        {{category.category}}
+      </td>
+      <td>
+        <button class="btn">
+          <i class="fa fa-pencil"></i> Bearbeiten
+        </button>
+        <button class="btn" (click)="remove(category); $event.stopPropagation()">
+          <i class="fa fa-trash-o"></i> Löschen
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

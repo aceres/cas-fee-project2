@@ -19,6 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
 // Services
 import { AuthService } from './services/auth.service';
 import { RecipeService } from './services/recipe.service';
+import { BasisDataCategoryService } from "./services/basis-data-category.service";
+import { BasisDataCuisineService } from "./services/basis-data-cuisine.service";
 
 // App
 import { AppComponent } from './app.component';
@@ -80,7 +82,7 @@ import { RegisterComponent } from './register/register.component';
     BasisDataCategoryComponent,
     BasisDataCuisineComponent
   ],
-  providers: [AuthService, RecipeService],
+  providers: [AuthService, RecipeService, BasisDataCategoryService, BasisDataCuisineService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

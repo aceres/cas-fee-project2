@@ -4,7 +4,7 @@ Check JSON via Online whether this JSON is valid: https://jsonformatter.curiousc
 
 curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"id":10, "receipt": "Test"}' 'https://project2-60db1.firebaseio.com/recipes.json'
 
-## PUT method
+## POST method
 
 curl -X POST -d '{
     "id": 1,
@@ -191,8 +191,6 @@ curl -X POST -d '{
 curl -X DELETE https://project2-60db1.firebaseio.com/recipes.json
 
 ## DELETE ID method
-
-curl -X DELETE https://project2-60db1.firebaseio.com/recipes?id=2
 
 curl -X DELETE https://project2-60db1.firebaseio.com/recipes/-KsQ0GjUlF7ABCu2cIaM.json
 

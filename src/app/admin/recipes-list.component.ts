@@ -37,8 +37,8 @@ export class RecipesListComponent implements OnInit {
     if (!name && !description) { return; }
     this.recipeService.create(name, description)
       .then(recipe => {
-        //this.recipes.push(recipe);
-        //this.selectedRecipe = null;
+        // this.recipes.push(recipe);
+        // this.selectedRecipe = null;
       });
   }
 

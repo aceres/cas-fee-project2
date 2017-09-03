@@ -1,1 +1,43 @@
-<h2 class="page-header">Neue Landküche erfassen</h2>
+<h2 class="page-header">Neue Landesküche erfassen</h2>
+
+<div class="form-group">
+  <label for="name">Name:</label>
+  <input name="name" id="name" class="form-control" placeholder="Name"  #cuisineName />
+</div>
+
+<button class="btn" (click)="add(cuisineName.value); cuisineName.value='';">
+  <i class="fa add_circle_outline"></i> Speichern
+</button>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>
+        Nr.
+      </th>
+      <th>
+        Landesküche
+      </th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cuisine of allCuisines | async">
+      <td>
+        {{cuisine.$key}}
+      </td>
+      <td>
+        {{cuisine.cuisine}}
+      </td>
+      <td>
+        <button class="btn">
+          <i class="fa fa-pencil"></i> Bearbeiten
+        </button>
+        <button class="btn" (click)="remove(cuisine); $event.stopPropagation()">
+          <i class="fa fa-trash-o"></i> Löschen
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
