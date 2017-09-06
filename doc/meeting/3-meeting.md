@@ -26,5 +26,5 @@
 
 ## Pendenzen oder Probleme
 
-- Überlegung: Ihre Rezepte (Users - nur ihre Rezepte / Admin - alle Rezepte)
+- Überlegung: Ihre Rezepte (Users - nur ihre Rezepte / Admin - alle Rezepte / Rollen)
 - Pipes anschauen (Filter)

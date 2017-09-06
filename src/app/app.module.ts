@@ -31,6 +31,7 @@ import { PageNotFoundComponent } from './not-found.component';
 import { PublicComponent } from './public.component';
 import { NavComponent } from "./nav/nav.component";
 import { CarouselComponent } from "./carousel/carousel.component";
+import { SearchComponent } from "./search.component";
 
 // Admin
 import { AdminComponent } from './admin/admin.component';
@@ -70,6 +71,7 @@ import { RegisterComponent } from './register/register.component';
     PublicComponent,
     NavComponent,
     CarouselComponent,
+    SearchComponent,
     // Admin
     AdminComponent,
     RecipesListComponent,

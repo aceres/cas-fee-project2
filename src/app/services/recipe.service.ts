@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -8,17 +9,11 @@ import { Recipe } from './recipe';
 @Injectable()
 export class RecipeService {
 
-  private headers = new Headers({
-    'Content-Type': 'application/json;charset=utf-8',
-    'Access-Control-Allow-Credentials': true,
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
-    'Access-Control-Allow-Headers': 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'
-  })
+  private headers = new Headers({'Content-Type': 'application/json;charset=utf-8'});
 
   private recipesUrl = 'https://project2-60db1.firebaseio.com/recipes';
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private db: AngularFireDatabase) { }
 
   getRecipes(): Promise<Recipe[]> {
     const url = `${this.recipesUrl}.json`;
@@ -28,6 +23,17 @@ export class RecipeService {
       // .then(response => response.json().data as Recipe[])
       .then(response => response.json() as Recipe[])
       .catch(this.handleError);
+  }
+
+  searchRecipes(start, end): FirebaseListObservable<any> {
+    return this.db.list('recipes', {
+      query: {
+        orderByChild: 'receipt',
+        limitToFirst: 10,
+        startAt: start,
+        endAt: end
+      }
+    });
   }
 
   // TODO: See the "Take it slow" appendix

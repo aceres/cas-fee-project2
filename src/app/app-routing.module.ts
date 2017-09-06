@@ -15,8 +15,8 @@ import { RecipeAddComponent } from './admin/recipe-add.component';
 // Register
 import { RegisterComponent } from './register/register.component';
 // Master Data Basis
-import {BasisDataCategoryComponent} from "./admin/basis-data-category.component";
-import {BasisDataCuisineComponent} from "./admin/basis-data-cuisine.component";
+import {BasisDataCategoryComponent} from './admin/basis-data-category.component';
+import {BasisDataCuisineComponent} from './admin/basis-data-cuisine.component';
 
 const appRoutes: Routes = [
   { path: 'public', component: PublicComponent },
