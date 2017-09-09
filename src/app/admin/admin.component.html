@@ -30,8 +30,8 @@
         <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipe-add']">Neues Rezept erfassen</a></li>
       </ul>
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-category']">Menüart</a></li>
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-cuisine']">Landesküche</a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-category']">Kategorie</a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-cuisine']">Länderküche</a></li>
         <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-difficulty']">Schwierigkeitsgrad</a></li>
       </ul>
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
