@@ -1,0 +1,42 @@
+div.search {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  color: #FFF;
+}
+
+/* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
+  color: #FFF;
+}
+
+.foundResult {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  background-color: #FFF;
+  border-bottom: 1px solid #EEE;
+}
+
+.foundResult:hover {
+  background-color: #EEE;
+}
+
+input[type="text"] {
+  background-color: transparent;
+  border: 2px solid #FFF;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+  font-size: 18px;
+}
+
+p {
+  color: #000;
+  font-family: "Happy Monkey", Arial, sans-serif;
+  text-shadow: none;
+  padding: 10px;
+}

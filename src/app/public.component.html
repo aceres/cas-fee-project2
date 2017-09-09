@@ -12,9 +12,6 @@
       <div class="col-md-12 text-center">
         <h2 class="section-heading"><span>Rezepte</span> die jeder mag</h2>
       </div>
-      <input type="text" (keydown)="search($event)" placeholder="Suche Rezept...">
-      Autocomplete: <app-search></app-search>
-
       <div class="col-md-4 col-sm-4 col-xs-12" *ngFor="let recipe of allRecipes | async">
         <div class="favorite_item">
           <div class="bg-image-wrap">

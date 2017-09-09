@@ -1,13 +1,15 @@
-<input type="text" (keydown)="searchRecipe($event)" placeholder="Suche Rezept...">
-<div *ngFor="let recipe of recipes">
-  <p>
-    {{
-      recipe?.receipt
-    }}
-  </p>
-</div>
-<div *ngIf="recipes?.length < 1">
-  <p>
-    Kein Rezept gefunden!
-  </p>
+<div class="search">
+  <input type="text" (keydown)="searchRecipe($event)" placeholder="Suche Rezept...">
+  <div class="foundResult" *ngFor="let recipe of recipes">
+    <p>
+      {{
+        recipe?.receipt
+      }}
+    </p>
+  </div>
+  <div class="foundResult" *ngIf="recipes?.length < 1">
+    <p>
+      Kein Rezept gefunden!
+    </p>
+  </div>
 </div>

@@ -1,6 +1,6 @@
 # 3. Meeting
 
-## 9. September 2017
+## 16. September 2017
 
 - Status anschauen
 
@@ -28,3 +28,4 @@
 
 - Überlegung: Ihre Rezepte (Users - nur ihre Rezepte / Admin - alle Rezepte / Rollen)
 - Pipes anschauen (Filter)
+- ng animate
