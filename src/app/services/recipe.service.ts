@@ -44,11 +44,11 @@ export class RecipeService {
     });
   }
 
-  getRecipe(id: number): Promise<Recipe> {
-    const url = `${this.recipesUrl}?id=${id}.json`;
+  getRecipe(id: string): Promise<Recipe> {
+    const url = `${this.recipesUrl}/${id}.json`;
     return this.http.get(url)
       .toPromise()
-      .then(response => response.json().data as Recipe)
+      .then(response => response.json() as Recipe)
       .catch(this.handleError);
   }
 

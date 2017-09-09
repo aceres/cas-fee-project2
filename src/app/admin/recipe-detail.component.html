@@ -1,12 +1,15 @@
-<div *ngIf="recipe">
-  <h2 class="page-header">Rezept: {{recipe.receipt}}</h2>
-    <div class="form-group">
-      <label for="id">Nr.:</label>
-      <input [(ngModel)]="recipe.id" name="id" id="id" class="form-control" placeholder="Nr." >
-    </div>
+<h1 class="page-header">Rezept: {{(recipe | async).receipt}}</h1>
+
+<div>
     <div class="form-group">
       <label for="name">Name:</label>
-      <input [(ngModel)]="recipe.receipt" name="name" id="name" class="form-control" placeholder="Rezept" />
+      {{(recipe | async).receipt}}
+      <!--<input [(ngModel)]="recipe.receipt" name="name" id="name" class="form-control" placeholder="Rezept" />-->
+    </div>
+    <div class="form-group">
+      <label for="description">Beschreibung:</label>
+      {{(recipe | async).description}}
+      <!--<input [(ngModel)]="recipe.description" name="description" id="description" class="form-control" placeholder="Beschreibung" />-->
     </div>
     <button (click)="goBack()" class="btn">
       <i class="fa fa-arrow-left"></i> Zurück

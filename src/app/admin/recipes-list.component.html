@@ -1,11 +1,11 @@
 <h1 class="page-header">Ihre Rezepte</h1>
 
-<div *ngIf="selectedRecipe">
+<!--<div *ngIf="selectedRecipe">
   <h2>
     {{selectedRecipe.receipt | uppercase}} ist mein gewähltes Rezept
   </h2>
   <button (click)="gotoDetail()" class="btn">Zur Detailansicht</button>
-</div>
+</div>-->
 
 <app-recipe-search></app-recipe-search>
 
@@ -37,7 +37,7 @@
           {{recipe.description}}
         </td>
         <td>
-          <button class="btn">
+          <button class="btn" (click)="gotoDetail(recipe)">
             <i class="fa fa-eye"></i> Detailansicht
           </button>
           <button class="btn" (click)="remove(recipe); $event.stopPropagation()">

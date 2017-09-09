@@ -70,7 +70,9 @@ export class RecipesListComponent implements OnInit {
     this.selectedRecipe = recipe;
   }
 
-  gotoDetail(): void {
-    this.router.navigate(['/admin/recipe-detail', this.selectedRecipe.id]);
+  gotoDetail(recipe): void {
+    console.log('Recipe: ', recipe);
+    console.log('Recipe Key: ', recipe.$key);
+    this.router.navigate(['/admin/recipe-detail', recipe.$key]);
   }
 }
