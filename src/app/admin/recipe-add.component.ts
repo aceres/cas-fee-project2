@@ -30,9 +30,9 @@ export class RecipeAddComponent implements OnInit {
   ];
 
   public levels = [
-    { value: 'simple', display: 'einfach' },
-    { value: 'medium', display: 'mittel' },
-    { value: 'difficult', display: 'schwer' },
+    { value: 'simple', display: 'Einfach' },
+    { value: 'medium', display: 'Mittel' },
+    { value: 'difficult', display: 'Schwer' },
   ];
 
   public categories = [
@@ -54,7 +54,31 @@ export class RecipeAddComponent implements OnInit {
     { value: 'polish', display: 'polnisch' },
   ];
 
-  add(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, step1: string, step2: string, step3: string): void {
+  public units = [
+    { value: 'Blatt', display: 'Blatt' },
+    { value: 'Deziliter', display: 'Deziliter' },
+    { value: 'Dose', display: 'Dose' },
+    { value: 'Esslöffel', display: 'Esslöffel' },
+    { value: 'Flasche', display: 'Flasche' },
+    { value: 'Gramm', display: 'Gramm' },
+    { value: 'Glas', display: 'Glas' },
+    { value: 'Kilogramm', display: 'Kilogramm' },
+    { value: 'Kugel', display: 'Kugel' },
+    { value: 'Liter', display: 'Liter' },
+    { value: 'Milligramm', display: 'Milligramm' },
+    { value: 'Milliliter', display: 'Milliliter' },
+    { value: 'Packung', display: 'Packung' },
+    { value: 'Portion', display: 'Portion' },
+    { value: 'Riegel', display: 'Riegel' },
+    { value: 'Scheibe', display: 'Scheibe' },
+    { value: 'Stange', display: 'Stange' },
+    { value: 'Stück', display: 'Stück' },
+    { value: 'Tasse', display: 'Tasse' },
+    { value: 'Teelöffel', display: 'Teelöffel' },
+    { value: 'Würfel', display: 'Würfel' }
+  ];
+
+  add(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, step1: string, step2: string, step3: string, quantity: number, unit: string, ingredient: string): void {
     name = name.trim();
     description = description.trim();
     portion = portion.trim();
@@ -65,7 +89,7 @@ export class RecipeAddComponent implements OnInit {
     step2 = step2.trim();
     step3 = step3.trim();
     //if (!name && !description) { return; }
-    this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, step1, step2, step3)
+    this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, step1, step2, step3, quantity, unit, ingredient)
       .then(recipe => {
         // TODO: Have a look with the tutor
         // this.recipes.push(recipe);

@@ -6,12 +6,12 @@
 
 <div class="form-group">
   <label for="name">Rezeptname:</label>
-  <input name="name" id="name" class="form-control" placeholder="z.B. Feldsalat mit Balsamico-Vinaigrette"  #recipeName />
+  <input name="name" id="name" class="form-control" placeholder="Feldsalat mit Balsamico-Vinaigrette"  #recipeName />
 </div>
 
 <div class="form-group">
   <label for="description">Beschreibung:</label>
-  <textarea rows="2" name="description" id="description" class="form-control" placeholder="z.B. Feldsalat ist der beliebteste Wintersalat. "  #recipeDescription></textarea>
+  <textarea rows="2" name="description" id="description" class="form-control" placeholder="Feldsalat ist der beliebteste Wintersalat. "  #recipeDescription></textarea>
 </div>
 
 <div class="form-group">
@@ -49,22 +49,79 @@
 
 <hr>
 
+<div class="ingredients">
+  <p>Zutaten:</p>
+</div>
+
+<div class="form-group">
+  <table>
+    <thead>
+    <th>Menge</th>
+    <th>Einheit</th>
+    <th>Zutat</th>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <input type="number" name="quantity" id="quantity" class="form-control" placeholder="1" #recipeQuantity>
+      </td>
+      <td>
+        <select name="unit" form="unit" class="form-control" #recipeUnit>
+          <option *ngFor="let unit of units" [value]="unit.value">{{unit.display}}</option>
+        </select>
+      </td>
+      <td>
+        <input type="text" name="ingredient" id="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="number" name="quantity" id="quantity" class="form-control" placeholder="1" #recipeQuantity>
+      </td>
+      <td>
+        <select name="unit" form="unit" class="form-control" #recipeUnit>
+          <option *ngFor="let unit of units" [value]="unit.value">{{unit.display}}</option>
+        </select>
+      </td>
+      <td>
+        <input type="text" name="ingredient" id="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="number" name="quantity" id="quantity" class="form-control" placeholder="1" #recipeQuantity>
+      </td>
+      <td>
+        <select name="unit" form="unit" class="form-control" #recipeUnit>
+          <option *ngFor="let unit of units" [value]="unit.value">{{unit.display}}</option>
+        </select>
+      </td>
+      <td>
+        <input type="text" name="ingredient" id="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<hr>
+
 <div class="preparation">
   <p>Zubereitung:</p>
 </div>
 <div class="form-group">
   <label for="step1">Schritt 1</label>
-  <textarea rows="10" name="step1" id="step1" class="form-control" placeholder="z.B. Salat waschen. "  #recipeStep1></textarea>
+  <textarea rows="10" name="step1" id="step1" class="form-control" placeholder="Salat waschen. "  #recipeStep1></textarea>
   <br>
   <label for="step2">Schritt 2</label>
-  <textarea rows="10" name="step2" id="step2" class="form-control" placeholder="z.B. Salat in Stücke schneiden. "  #recipeStep2></textarea>
+  <textarea rows="10" name="step2" id="step2" class="form-control" placeholder="Salat in Stücke schneiden. "  #recipeStep2></textarea>
   <br>
   <label for="step3">Schritt 3</label>
-  <textarea rows="10" name="step3" id="step3" class="form-control" placeholder="z.B. Salat mit Baumnüssen anrichten. "  #recipeStep3></textarea>
+  <textarea rows="10" name="step3" id="step3" class="form-control" placeholder="Salat mit Baumnüssen anrichten. "  #recipeStep3></textarea>
 </div>
 
 
-<button class="btn" (click)="add(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, recipeStep1.value, recipeStep2.value, recipeStep3.value); recipeName.value=''; recipeDescription.value=''; recipePortion.value=''; recipePrepTime.value=''; recipeLevel.value=''; recipeCategory.value=''; recipeCuisine.value=''; recipeStep1.value=''; recipeStep2.value=''; recipeStep3.value=''">
+<button class="btn" (click)="add(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, recipeStep1.value, recipeStep2.value, recipeStep3.value, recipeQuantity.value, recipeUnit.value, recipeIngredient.value); recipeName.value=''; recipeDescription.value=''; recipePortion.value=''; recipePrepTime.value=''; recipeLevel.value=''; recipeCategory.value=''; recipeCuisine.value=''; recipeStep1.value=''; recipeStep2.value=''; recipeStep3.value=''; recipeQuantity.value=''; recipeUnit.value=''; recipeIngredient.value=''">
   <i class="fa add_circle_outline"></i> Speichern
 </button>
 <button class="btn">

@@ -11,4 +11,7 @@ export class Recipe {
   step1: string;
   step2: string;
   step3: string;
+  quantity: number;
+  unit: string;
+  ingredient: string;
 }

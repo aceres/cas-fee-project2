@@ -31,7 +31,7 @@ export class RecipesListComponent implements OnInit {
     this.recipeService.getRecipes().then(recipes => this.allRecipes);
   }
 
-  add(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, step1: string, step2: string, step3: string): void {
+  add(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, step1: string, step2: string, step3: string, quantity: number, unit: string, ingredient: string): void {
     name = name.trim();
     description = description.trim();
     portion = portion.trim();
@@ -42,7 +42,7 @@ export class RecipesListComponent implements OnInit {
     step2 = step2.trim();
     step3 = step3.trim();
     //if (!name && !description) { return; }
-    this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, step1, step2, step3)
+    this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, step1, step2, step3, quantity, unit, ingredient)
       .then(recipe => {
         // this.recipes.push(recipe);
         // this.selectedRecipe = null;
