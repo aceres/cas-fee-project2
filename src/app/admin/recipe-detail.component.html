@@ -1,17 +1,76 @@
 <h1 class="page-header">Rezept: {{(recipe | async).receipt}}</h1>
 
-<div>
+<form class="form-horizontal">
     <div class="form-group">
-      <label for="name">Name:</label>
-      {{(recipe | async).receipt}}
+      <label class="col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).receipt}}
+      </div>
       <!--<input [(ngModel)]="recipe.receipt" name="name" id="name" class="form-control" placeholder="Rezept" />-->
     </div>
     <div class="form-group">
-      <label for="description">Beschreibung:</label>
-      {{(recipe | async).description}}
+      <label class="col-sm-2" for="description">Beschreibung:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).description}}
+      </div>
       <!--<input [(ngModel)]="recipe.description" name="description" id="description" class="form-control" placeholder="Beschreibung" />-->
     </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="level">Schwierigkeitsgrad:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).level}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="cuisine">Länderküche:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).cuisine}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="category">Kategorie:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).category}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="portion">Portion:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).portion}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="prepTime">Vorbereitungszeit:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).prepTime}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="quantity">Menge:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).quantity}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="unit">Einheit:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).unit}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="ingredient">Zutat:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).ingredient}}
+      </div>
+    </div>
+
+    <h2>Einkaufsliste</h2>
+    <p>...</p>
+
+    <h2>Zubereitungsschritte</h2>
+    <p>...</p>
+
     <button (click)="goBack()" class="btn">
       <i class="fa fa-arrow-left"></i> Zurück
     </button>
-</div>
+</form>

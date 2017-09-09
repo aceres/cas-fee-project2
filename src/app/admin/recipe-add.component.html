@@ -124,6 +124,6 @@
 <button class="btn" (click)="add(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, recipeStep1.value, recipeStep2.value, recipeStep3.value, recipeQuantity.value, recipeUnit.value, recipeIngredient.value); recipeName.value=''; recipeDescription.value=''; recipePortion.value=''; recipePrepTime.value=''; recipeLevel.value=''; recipeCategory.value=''; recipeCuisine.value=''; recipeStep1.value=''; recipeStep2.value=''; recipeStep3.value=''; recipeQuantity.value=''; recipeUnit.value=''; recipeIngredient.value=''">
   <i class="fa add_circle_outline"></i> Speichern
 </button>
-<button class="btn">
+<button [routerLink]="'/admin/recipes'" class="btn">
   Abbrechen
 </button>
