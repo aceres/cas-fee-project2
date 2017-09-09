@@ -1,15 +1,70 @@
 <h2 class="page-header">Neues Rezept erfassen</h2>
 
-<div class="form-group">
-  <label for="name">Rezept:</label>
-  <input name="name" id="name" class="form-control" placeholder="Rezept"  #recipeName />
-</div>
-<div class="form-group">
-  <label for="description">Description:</label>
-  <input name="description" id="description" class="form-control" placeholder="Beschreibung"  #recipeDescription />
+<div class="info">
+  <p>Allgemeine Informationen</p>
 </div>
 
-<button class="btn" (click)="add(recipeName.value, recipeDescription.value); recipeName.value=''; recipeDescription.value=''">
+<div class="form-group">
+  <label for="name">Rezeptname:</label>
+  <input name="name" id="name" class="form-control" placeholder="z.B. Feldsalat mit Balsamico-Vinaigrette"  #recipeName />
+</div>
+
+<div class="form-group">
+  <label for="description">Beschreibung:</label>
+  <textarea rows="2" name="description" id="description" class="form-control" placeholder="z.B. Feldsalat ist der beliebteste Wintersalat. "  #recipeDescription></textarea>
+</div>
+
+<div class="form-group">
+  <label>Anzahl Personen:</label>
+  <select name="portion" class="form-control" #recipePortion>
+    <option *ngFor="let portion of portions" [value]="portion.value">{{portion.display}}</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="prepTime">Zubereitungszeit in Minuten:</label>
+  <input type="number" name="prepTime" id="prepTime" class="form-control" placeholder="90"  #recipePrepTime />
+</div>
+
+<div class="form-group">
+  <label>Schwierigkeitsgrad:</label>
+  <select name="level" class="form-control" #recipeLevel>
+    <option *ngFor="let level of levels" [value]="level.value">{{level.display}}</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label>Kategorie:</label>
+  <select name="category" class="form-control" #recipeCategory>
+    <option *ngFor="let category of categories" [value]="category.value">{{category.display}}</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label>Länderküche:</label>
+  <select name="cuisine" class="form-control" #recipeCuisine>
+    <option *ngFor="let cuisine of cuisines" [value]="cuisine.value">{{cuisine.display}}</option>
+  </select>
+</div>
+
+<hr>
+
+<div class="preparation">
+  <p>Zubereitung:</p>
+</div>
+<div class="form-group">
+  <label for="step1">Schritt 1</label>
+  <textarea rows="10" name="step1" id="step1" class="form-control" placeholder="z.B. Salat waschen. "  #recipeStep1></textarea>
+  <br>
+  <label for="step2">Schritt 2</label>
+  <textarea rows="10" name="step2" id="step2" class="form-control" placeholder="z.B. Salat in Stücke schneiden. "  #recipeStep2></textarea>
+  <br>
+  <label for="step3">Schritt 3</label>
+  <textarea rows="10" name="step3" id="step3" class="form-control" placeholder="z.B. Salat mit Baumnüssen anrichten. "  #recipeStep3></textarea>
+</div>
+
+
+<button class="btn" (click)="add(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, recipeStep1.value, recipeStep2.value, recipeStep3.value); recipeName.value=''; recipeDescription.value=''; recipePortion.value=''; recipePrepTime.value=''; recipeLevel.value=''; recipeCategory.value=''; recipeCuisine.value=''; recipeStep1.value=''; recipeStep2.value=''; recipeStep3.value=''">
   <i class="fa add_circle_outline"></i> Speichern
 </button>
 <button class="btn">

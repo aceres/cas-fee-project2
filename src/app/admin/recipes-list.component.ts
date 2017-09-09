@@ -31,11 +31,18 @@ export class RecipesListComponent implements OnInit {
     this.recipeService.getRecipes().then(recipes => this.allRecipes);
   }
 
-  add(name: string, description: string): void {
+  add(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, step1: string, step2: string, step3: string): void {
     name = name.trim();
     description = description.trim();
-    if (!name && !description) { return; }
-    this.recipeService.create(name, description)
+    portion = portion.trim();
+    level = level.trim();
+    category = category.trim();
+    cuisine = cuisine.trim();
+    step1 = step1.trim();
+    step2 = step2.trim();
+    step3 = step3.trim();
+    //if (!name && !description) { return; }
+    this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, step1, step2, step3)
       .then(recipe => {
         // this.recipes.push(recipe);
         // this.selectedRecipe = null;
