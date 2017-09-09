@@ -1,12 +1,5 @@
 <h1 class="page-header">Ihre Rezepte</h1>
 
-<!--<div *ngIf="selectedRecipe">
-  <h2>
-    {{selectedRecipe.receipt | uppercase}} ist mein gewähltes Rezept
-  </h2>
-  <button (click)="gotoDetail()" class="btn">Zur Detailansicht</button>
-</div>-->
-
 <app-recipe-search></app-recipe-search>
 
 <div class="table-responsive">
@@ -22,13 +15,19 @@
         <th>
           Beschreibung
         </th>
+        <th>
+          Kategorie
+        </th>
+        <th>
+          Länderküche
+        </th>
         <th></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let recipe of allRecipes | async" [class.selected]="recipe === selectedRecipe" (click)="onSelect(recipe)">
+      <tr *ngFor="let recipe of allRecipes | async" (click)="gotoDetail(recipe)">
         <td>
-          {{recipe.id}} {{recipe.$key}}
+          {{recipe.$key}}
         </td>
         <td>
           {{recipe.receipt}}
@@ -37,6 +36,12 @@
           {{recipe.description}}
         </td>
         <td>
+          {{recipe.category}}
+        </td>
+        <td>
+          {{recipe.cuisine}}
+        </td>
+        <td style="text-align: right">
           <button class="btn" (click)="gotoDetail(recipe)">
             <i class="fa fa-eye"></i> Detailansicht
           </button>
