@@ -54,7 +54,7 @@
 <form class="form-inline" #ingredientForm="ngForm">
   <div class="form-group">
     <label for="recipeQuantity">Menge</label>
-    <input type="number" placeholder="1" name="recipeQuantity" id="recipeQuantity" class="form-control" #recipeQuantity required>
+    <input type="number" placeholder="1" name="recipeQuantity" id="recipeQuantity" class="form-control" [(ngModel)]="ingredient.recipeQuantity" #recipeQuantity="ngModel" required>
     <div [hidden]="recipeQuantity.valid || recipeQuantity.pristine" class="alert alert-danger">
       Menge ist verlangt.
     </div>
@@ -67,7 +67,7 @@
   </div>
   <div class="form-group">
     <label for="recipeIngredient">Zutat</label>
-    <input type="text" name="recipeIngredient" id="recipeIngredient" class="form-control" placeholder="Gelatine" #recipeIngredient required>
+    <input type="text" name="recipeIngredient" id="recipeIngredient" class="form-control" placeholder="Gelatine" [(ngModel)]="ingredient.recipeIngredient" #recipeIngredient="ngModel" required>
     <div [hidden]="recipeIngredient.valid || recipeIngredient.pristine" class="alert alert-danger">
       Zutat ist verlangt.
     </div>
@@ -168,18 +168,24 @@
 
 <h1 class="page-header">Zubereiten und Kochen</h1>
 
-<form class="form-inline">
+<form class="form-inline" #stepForm="ngForm">
   <div class="form-group">
-    <label>Schrittbeschreibung</label>
-    <input #description class="form-control">
+    <label for="stepDescription">Schrittbeschreibung</label>
+    <input class="form-control" id="stepDescription" name="stepDescription" placeholder="..." required [(ngModel)]="step.stepDescription" #stepDescription="ngModel">
+    <div [hidden]="stepDescription.valid || stepDescription.pristine" class="alert alert-danger">
+      Beschreibung ist verlangt.
+    </div>
   </div>
   <div class="form-group">
-    <label>Foto</label>
-    <input #photo class="form-control">
+    <label for="photo">Foto</label>
+    <input class="form-control" id="photo" name="photo" placeholder="..." required [(ngModel)]="step.photo" #photo="ngModel">
+    <div [hidden]="photo.valid || photo.pristine" class="alert alert-danger">
+      Foto ist verlangt.
+    </div>
   </div>
   <div class="form-group">
     <label></label>
-    <button (click)="addStep(description.value, photo.value); description.value=''; photo.value=''" class="btn">
+    <button (click)="addStep(stepDescription.value, photo.value); stepDescription.value=''; photo.value=''" [disabled]="!stepForm.form.valid" class="btn">
       <i class="fa fa-floppy-o"></i> Hinzufügen
     </button>
   </div>
@@ -200,10 +206,10 @@
         Schritt: {{i}}
       </td>
       <td>
-        {{ step.photo }}
+        {{ step.stepDescription }}
       </td>
       <td>
-        {{ step.description }}
+        {{ step.photo }}
       </td>
       <td style="text-align: right;">
         <button (click)="removeStep(step)" class="btn">

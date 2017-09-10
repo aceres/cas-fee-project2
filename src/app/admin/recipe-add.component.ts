@@ -12,7 +12,7 @@ import { RecipeService } from '../services/recipe.service';
 
 class Step {
   constructor(
-    public description: string,
+    public stepDescription: string,
     public photo: string
   ) { }
 }
@@ -39,13 +39,13 @@ export class RecipeAddComponent implements OnInit {
   steps = [];
   ingredients = [];
 
+  // Initialize: For the validation
+  ingredient = {recipeQuantity: '', recipeIngredient: ''};
+  step = {description: '', photo: ''};
+
   constructor(
     private router: Router,
     private recipeService: RecipeService) { }
-
-  getRecipes(): void {
-    this.recipeService.getRecipes().then(recipes => this.recipes = recipes);
-  }
 
   add(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, step1: string, step2: string, step3: string, quantity: number, unit: string, ingredient: string): void {
     name = name.trim();
@@ -64,9 +64,9 @@ export class RecipeAddComponent implements OnInit {
       });
   }
 
-  addStep(description: string, photo: string) {
-    if (description) {
-      this.steps.push(new Step(description, photo));
+  addStep(stepDescription: string, photo: string) {
+    if (stepDescription) {
+      this.steps.push(new Step(stepDescription, photo));
     }
   }
 
