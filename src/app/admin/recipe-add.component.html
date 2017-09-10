@@ -1,4 +1,4 @@
-<h2 class="page-header">Neues Rezept erfassen</h2>
+<h1 class="page-header">Rezept erfassen</h1>
 
 <div class="info">
   <p>Allgemeine Informationen</p>
@@ -49,66 +49,163 @@
 
 <hr>
 
-<div class="ingredients">
-  <p>Zutaten:</p>
-</div>
+<h1 class="page-header">Zutaten / Einkaufsliste</h1>
 
-<div class="form-group">
-  <table>
-    <thead>
+<form class="form-inline">
+  <div class="form-group">
+    <label>Menge</label>
+    <input type="number" placeholder="1" name="quantity" class="form-control" #recipeQuantity>
+  </div>
+  <div class="form-group">
+    <label>Einheit</label>
+    <select name="unit" id="unit" class="form-control" #recipeUnit>
+      <option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.display}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Zutat</label>
+    <input type="text" name="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>
+  </div>
+  <div class="form-group">
+    <label></label>
+    <button (click)="addIngredient(recipeQuantity.value, recipeUnit.value, recipeIngredient.value); recipeQuantity.value=''; recipeIngredient.value=''" class="btn">
+      <i class="fa fa-floppy-o"></i> Hinzufügen
+    </button>
+  </div>
+</form>
+
+<table class="table table-striped table-hover">
+  <thead>
     <th>Menge</th>
     <th>Einheit</th>
     <th>Zutat</th>
-    </thead>
-    <tbody>
-    <tr>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ingredient of ingredients; let i = index;">
       <td>
-        <input type="number" name="quantity" id="quantity" class="form-control" placeholder="1" #recipeQuantity>
+        <input type="number" [ngModel]="ingredient.quantity" name="quantity" class="form-control" #recipeQuantity>
       </td>
       <td>
-        <select name="unit" form="unit" class="form-control" #recipeUnit>
-          <option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.display}}</option>
+        <select name="unit" form="unit" [(ngModel)]="ingredient.unit" class="form-control" #recipeUnit>
+          <option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.value}}</option>
         </select>
       </td>
       <td>
-        <input type="text" name="ingredient" id="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>
+        <input type="text" name="ingredient" [ngModel]="ingredient.ingredient" class="form-control" #recipeIngredient>
+      </td>
+      <td>
+        <button (click)="removeIngredient(ingredient)" class="btn">
+          <i class="fa fa-trash"></i>
+        </button>
       </td>
     </tr>
-    <tr>
-      <td>
-        <input type="number" name="quantity" id="quantity" class="form-control" placeholder="1" #recipeQuantity>
-      </td>
-      <td>
-        <select name="unit" form="unit" class="form-control" #recipeUnit>
-          <option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.display}}</option>
-        </select>
-      </td>
-      <td>
-        <input type="text" name="ingredient" id="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <input type="number" name="quantity" id="quantity" class="form-control" placeholder="1" #recipeQuantity>
-      </td>
-      <td>
-        <select name="unit" form="unit" class="form-control" #recipeUnit>
-          <option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.display}}</option>
-        </select>
-      </td>
-      <td>
-        <input type="text" name="ingredient" id="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>
+  </tbody>
+</table>
+
+<!--<div class="form-group">-->
+  <!--<table class="table table-striped table-hover">-->
+    <!--<thead>-->
+      <!--<th>Menge</th>-->
+      <!--<th>Einheit</th>-->
+      <!--<th>Zutat</th>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+      <!--<tr>-->
+        <!--<td>-->
+          <!--<input type="number" name="quantity" id="quantity" class="form-control" placeholder="1" #recipeQuantity>-->
+        <!--</td>-->
+        <!--<td>-->
+          <!--<select name="unit" form="unit" class="form-control" #recipeUnit>-->
+            <!--<option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.display}}</option>-->
+          <!--</select>-->
+        <!--</td>-->
+        <!--<td>-->
+          <!--<input type="text" name="ingredient" id="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>-->
+        <!--</td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<td>-->
+          <!--<input type="number" name="quantity" id="quantity" class="form-control" placeholder="1" #recipeQuantity>-->
+        <!--</td>-->
+        <!--<td>-->
+          <!--<select name="unit" form="unit" class="form-control" #recipeUnit>-->
+            <!--<option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.display}}</option>-->
+          <!--</select>-->
+        <!--</td>-->
+        <!--<td>-->
+          <!--<input type="text" name="ingredient" id="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>-->
+        <!--</td>-->
+      <!--</tr>-->
+      <!--<tr>-->
+        <!--<td>-->
+          <!--<input type="number" name="quantity" id="quantity" class="form-control" placeholder="1" #recipeQuantity>-->
+        <!--</td>-->
+        <!--<td>-->
+          <!--<select name="unit" form="unit" class="form-control" #recipeUnit>-->
+            <!--<option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.display}}</option>-->
+          <!--</select>-->
+        <!--</td>-->
+        <!--<td>-->
+          <!--<input type="text" name="ingredient" id="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>-->
+        <!--</td>-->
+      <!--</tr>-->
+    <!--</tbody>-->
+  <!--</table>-->
+<!--</div>-->
 
 <hr>
 
-<div class="preparation">
-  <p>Zubereitung:</p>
-</div>
+<h1 class="page-header">Zubereiten und Kochen</h1>
+
+<form class="form-inline">
+  <div class="form-group">
+    <label>Schrittbeschreibung</label>
+    <input #description class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Foto</label>
+    <input #photo class="form-control">
+  </div>
+  <div class="form-group">
+    <label></label>
+    <button (click)="addStep(description.value, photo.value); description.value=''; photo.value=''" class="btn">
+      <i class="fa fa-floppy-o"></i> Hinzufügen
+    </button>
+  </div>
+</form>
+
+<hr>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <th>Schritt</th>
+    <th>Beschreibung</th>
+    <th>Foto</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let step of steps; let i = index;">
+      <td>
+        Schritt: {{i}}
+      </td>
+      <td>
+        {{ step.photo }}
+      </td>
+      <td>
+        {{ step.description }}
+      </td>
+      <td style="text-align: right;">
+        <button (click)="removeStep(step)" class="btn">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 class="page-header">Zubereitung</h1>
+
 <div class="form-group">
   <label for="step1">Schritt 1</label>
   <textarea rows="10" name="step1" id="step1" class="form-control" placeholder="Salat waschen. "  #recipeStep1></textarea>
@@ -120,10 +217,9 @@
   <textarea rows="10" name="step3" id="step3" class="form-control" placeholder="Salat mit Baumnüssen anrichten. "  #recipeStep3></textarea>
 </div>
 
-
 <button class="btn" (click)="add(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, recipeStep1.value, recipeStep2.value, recipeStep3.value, recipeQuantity.value, recipeUnit.value, recipeIngredient.value); recipeName.value=''; recipeDescription.value=''; recipePortion.value=''; recipePrepTime.value=''; recipeLevel.value=''; recipeCategory.value=''; recipeCuisine.value=''; recipeStep1.value=''; recipeStep2.value=''; recipeStep3.value=''; recipeQuantity.value=''; recipeUnit.value=''; recipeIngredient.value=''">
-  <i class="fa add_circle_outline"></i> Speichern
+  <i class="fa fa-floppy-o"></i> Speichern
 </button>
 <button [routerLink]="'/admin/recipes'" class="btn">
-  Abbrechen
+  <i class="fa fa-ban"></i> Abbrechen
 </button>

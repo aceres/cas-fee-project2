@@ -10,6 +10,21 @@ import { listUnits } from '../global/list.units';
 import { Recipe } from '../services/recipe';
 import { RecipeService } from '../services/recipe.service';
 
+class Step {
+  constructor(
+    public description: string,
+    public photo: string
+  ) { }
+}
+
+class Ingredient {
+  constructor(
+    public quantity: number,
+    public unit: string,
+    public ingredient: string
+  ) { }
+}
+
 @Component({
   selector: 'app-recipes-add',
   templateUrl: './recipe-add.component.html'
@@ -21,6 +36,8 @@ export class RecipeAddComponent implements OnInit {
   listLevels = listLevels;
   listCuisines = listCuisines;
   listUnits = listUnits;
+  steps = [];
+  ingredients = [];
 
   constructor(
     private router: Router,
@@ -45,6 +62,27 @@ export class RecipeAddComponent implements OnInit {
         // this.recipes.push(recipe);
         // this.selectedRecipe = null;
       });
+  }
+
+  addStep(description: string, photo: string) {
+    if (description) {
+      this.steps.push(new Step(description, photo));
+    }
+  }
+
+  removeStep(index) {
+    this.steps.splice(index, 1);
+  }
+
+  addIngredient(quantity: number, unit: string, ingredient: string) {
+    console.log("quantity: ", quantity);
+    console.log("unit: ", unit);
+    console.log("ingredient: ", ingredient);
+    this.ingredients.push(new Ingredient(quantity, unit, ingredient));
+  }
+
+  removeIngredient(index) {
+    this.ingredients.splice(index, 1);
   }
 
   ngOnInit(): void { }
