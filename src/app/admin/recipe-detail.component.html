@@ -68,7 +68,7 @@
     <h1 class="page-header">Zubereitungsschritte</h1>
     <p>...</p>
 
-    <button class="btn" [routerLink]="['/admin/recipe-edit']">
+    <button class="btn" [routerLink]="['/admin/recipe-edit/' + key]">
       <i class="fa fa-pencil"></i> Bearbeiten
     </button>
     <button (click)="goBack()" class="btn">

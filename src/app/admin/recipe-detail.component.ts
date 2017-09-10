@@ -13,6 +13,7 @@ import { RecipeService } from '../services/recipe.service';
 })
 export class RecipeDetailComponent implements OnInit {
   recipe;
+  key;
 
   constructor(private recipeService: RecipeService, private route: ActivatedRoute, private location: Location) { }
 
@@ -21,6 +22,7 @@ export class RecipeDetailComponent implements OnInit {
       const id = urlParameters['id'];
       this.recipe = this.recipeService.getRecipe(id);
     });
+    this.key = this.route.snapshot.params['id'];
   }
 
   // TODO: Save / Update recipe

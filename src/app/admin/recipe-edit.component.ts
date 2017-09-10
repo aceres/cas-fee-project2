@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
@@ -11,13 +11,9 @@ import { RecipeService } from '../services/recipe.service';
   templateUrl: './recipe-edit.component.html'
 })
 export class RecipeEditComponent implements OnInit {
-  recipe;
   id;
   receipt;
   description;
-  level;
-  cuisine;
-  category;
 
   constructor(
     private recipeService: RecipeService,
@@ -27,12 +23,13 @@ export class RecipeEditComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
+    // this.recipe = this.recipeService.getRecipe(this.id);
 
-    this.recipe = this.recipeService.getRecipe(this.id);
-
-    // this.recipeService.getRecipeDetail(this.id).subscribe(recipe => {
-    //   console.log('recipe: ', recipe);
-    // });
+    this.recipeService.getRecipeDetail(this.id).subscribe(recipe => {
+      console.log('!!!!!! recipe: ', recipe);
+      this.receipt = recipe.receipt;
+      this.description = recipe.description;
+    });
 
   }
 

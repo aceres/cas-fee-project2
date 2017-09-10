@@ -26,7 +26,7 @@ const appRoutes: Routes = [
     { path: 'recipes', component: RecipesListComponent},
     { path: 'recipe-detail/:id', component: RecipeDetailComponent},
     { path: 'recipe-add', component: RecipeAddComponent},
-    { path: 'recipe-edit', component: RecipeEditComponent},
+    { path: 'recipe-edit/:id', component: RecipeEditComponent},
     { path: 'crisis-center', component: CrisisCenterComponent},
     { path: 'basis-data-category', component: BasisDataCategoryComponent},
     { path: 'basis-data-cuisine', component: BasisDataCuisineComponent},
