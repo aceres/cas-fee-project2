@@ -51,10 +51,13 @@
 
 <h1 class="page-header">Zutaten / Einkaufsliste</h1>
 
-<form class="form-inline">
+<form class="form-inline" #ingredientForm="ngForm">
   <div class="form-group">
-    <label>Menge</label>
-    <input type="number" placeholder="1" name="quantity" class="form-control" #recipeQuantity>
+    <label for="recipeQuantity">Menge</label>
+    <input type="number" placeholder="1" name="recipeQuantity" id="recipeQuantity" class="form-control" #recipeQuantity required>
+    <div [hidden]="recipeQuantity.valid || recipeQuantity.pristine" class="alert alert-danger">
+      Menge ist verlangt.
+    </div>
   </div>
   <div class="form-group">
     <label>Einheit</label>
@@ -63,12 +66,16 @@
     </select>
   </div>
   <div class="form-group">
-    <label>Zutat</label>
-    <input type="text" name="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>
+    <label for="recipeIngredient">Zutat</label>
+    <input type="text" name="recipeIngredient" id="recipeIngredient" class="form-control" placeholder="Gelatine" #recipeIngredient required>
+    <div [hidden]="recipeIngredient.valid || recipeIngredient.pristine" class="alert alert-danger">
+      Zutat ist verlangt.
+    </div>
   </div>
   <div class="form-group">
     <label></label>
-    <button (click)="addIngredient(recipeQuantity.value, recipeUnit.value, recipeIngredient.value); recipeQuantity.value=''; recipeIngredient.value=''" class="btn">
+    <button (click)="addIngredient(recipeQuantity.value, recipeUnit.value, recipeIngredient.value); recipeQuantity.value=''; recipeIngredient.value=''"
+            [disabled]="!ingredientForm.form.valid" class="btn">
       <i class="fa fa-floppy-o"></i> Hinzufügen
     </button>
   </div>
@@ -94,12 +101,15 @@
       <td>
         <input type="text" name="ingredient" [ngModel]="ingredient.ingredient" class="form-control" #recipeIngredient>
       </td>
-      <td>
+      <td style="text-align: right">
         <button (click)="removeIngredient(ingredient)" class="btn">
           <i class="fa fa-trash"></i>
         </button>
       </td>
     </tr>
+  </tbody>
+  <tbody *ngIf="ingredients.length === 0">
+    Keine Einträge vorhanden.
   </tbody>
 </table>
 
@@ -201,6 +211,9 @@
         </button>
       </td>
     </tr>
+  </tbody>
+  <tbody *ngIf="steps.length === 0">
+    Keine Einträge vorhanden.
   </tbody>
 </table>
 

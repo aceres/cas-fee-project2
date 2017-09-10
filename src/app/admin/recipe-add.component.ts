@@ -75,9 +75,6 @@ export class RecipeAddComponent implements OnInit {
   }
 
   addIngredient(quantity: number, unit: string, ingredient: string) {
-    console.log("quantity: ", quantity);
-    console.log("unit: ", unit);
-    console.log("ingredient: ", ingredient);
     this.ingredients.push(new Ingredient(quantity, unit, ingredient));
   }
 
