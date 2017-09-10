@@ -17,7 +17,7 @@
 <div class="form-group">
   <label>Anzahl Personen:</label>
   <select name="portion" class="form-control" #recipePortion>
-    <option *ngFor="let portion of portions" [value]="portion.value">{{portion.display}}</option>
+    <option *ngFor="let portion of listPortions" [value]="portion.value">{{portion.display}}</option>
   </select>
 </div>
 
@@ -29,21 +29,21 @@
 <div class="form-group">
   <label>Schwierigkeitsgrad:</label>
   <select name="level" class="form-control" #recipeLevel>
-    <option *ngFor="let level of levels" [value]="level.value">{{level.display}}</option>
+    <option *ngFor="let level of listLevels" [value]="level.value">{{level.display}}</option>
   </select>
 </div>
 
 <div class="form-group">
   <label>Kategorie:</label>
   <select name="category" class="form-control" #recipeCategory>
-    <option *ngFor="let category of categories" [value]="category.value">{{category.display}}</option>
+    <option *ngFor="let category of listCategories" [value]="category.value">{{category.display}}</option>
   </select>
 </div>
 
 <div class="form-group">
   <label>Länderküche:</label>
   <select name="cuisine" class="form-control" #recipeCuisine>
-    <option *ngFor="let cuisine of cuisines" [value]="cuisine.value">{{cuisine.display}}</option>
+    <option *ngFor="let cuisine of listCuisines" [value]="cuisine.value">{{cuisine.display}}</option>
   </select>
 </div>
 
@@ -67,7 +67,7 @@
       </td>
       <td>
         <select name="unit" form="unit" class="form-control" #recipeUnit>
-          <option *ngFor="let unit of units" [value]="unit.value">{{unit.display}}</option>
+          <option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.display}}</option>
         </select>
       </td>
       <td>
@@ -80,7 +80,7 @@
       </td>
       <td>
         <select name="unit" form="unit" class="form-control" #recipeUnit>
-          <option *ngFor="let unit of units" [value]="unit.value">{{unit.display}}</option>
+          <option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.display}}</option>
         </select>
       </td>
       <td>
@@ -93,7 +93,7 @@
       </td>
       <td>
         <select name="unit" form="unit" class="form-control" #recipeUnit>
-          <option *ngFor="let unit of units" [value]="unit.value">{{unit.display}}</option>
+          <option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.display}}</option>
         </select>
       </td>
       <td>
