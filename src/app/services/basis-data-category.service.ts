@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { environment } from '../../environments/environment';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -8,17 +9,12 @@ import { Category } from './basis-data-category';
 @Injectable()
 export class BasisDataCategoryService {
 
-  private headers = new Headers({
-    'Content-Type': 'application/json;charset=utf-8',
-    'Access-Control-Allow-Credentials': true,
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
-    'Access-Control-Allow-Headers': 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'
-  })
+  private headers = new Headers({'Content-Type': 'application/json;charset=utf-8'});
+  private categoriesUrl = environment.apiUrl + 'categories';
 
-  private categoriesUrl = 'https://project2-60db1.firebaseio.com/categories';
-
-  constructor(private http: Http) { }
+    constructor(
+    private http: Http
+  ) { }
 
   getCategories(): Promise<Category[]> {
     const url = `${this.categoriesUrl}.json`;

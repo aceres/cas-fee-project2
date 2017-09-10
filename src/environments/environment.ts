@@ -12,5 +12,6 @@ export const environment = {
     projectId: 'project2-60db1',
     storageBucket: 'project2-60db1.appspot.com',
     messagingSenderId: '1087806809587'
-  }
+  },
+  apiUrl: 'https://project2-60db1.firebaseio.com/'
 };

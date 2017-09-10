@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { environment } from '../../environments/environment';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -11,8 +12,7 @@ export class RecipeService {
   recipe: FirebaseObjectObservable<any>;
 
   private headers = new Headers({'Content-Type': 'application/json;charset=utf-8'});
-
-  private recipesUrl = 'https://project2-60db1.firebaseio.com/recipes';
+  private recipesUrl = environment.apiUrl + 'recipes';
 
   constructor(
     private http: Http,
@@ -23,8 +23,6 @@ export class RecipeService {
     const url = `${this.recipesUrl}.json`;
     return this.http.get(`${this.recipesUrl}.json`)
       .toPromise()
-      // TODO: Is this different?
-      // .then(response => response.json().data as Recipe[])
       .then(response => response.json() as Recipe[])
       .catch(this.handleError);
   }

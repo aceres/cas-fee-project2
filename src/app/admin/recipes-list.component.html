@@ -42,7 +42,7 @@
           {{recipe.cuisine}}
         </td>
         <td style="text-align: right">
-          <button class="btn" (click)="gotoDetail(recipe)">
+          <button class="btn" (click)="detail(recipe)">
             <i class="fa fa-eye"></i> Detailansicht
           </button>
           <button class="btn" (click)="remove(recipe); $event.stopPropagation()">

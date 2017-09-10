@@ -1,4 +1,3 @@
-// import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
@@ -36,7 +35,7 @@ export class RecipesListComponent implements OnInit {
     this.getRecipes();
   }
 
-  gotoDetail(recipe): void {
+  detail(recipe): void {
     this.router.navigate(['/admin/recipe-detail', recipe.$key]);
   }
 }

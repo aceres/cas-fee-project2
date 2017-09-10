@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
+import { environment } from '../../environments/environment';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -8,17 +9,12 @@ import { Cuisine } from './basis-data-cuisine';
 @Injectable()
 export class BasisDataCuisineService {
 
-  private headers = new Headers({
-    'Content-Type': 'application/json;charset=utf-8',
-    'Access-Control-Allow-Credentials': true,
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
-    'Access-Control-Allow-Headers': 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'
-  })
+  private headers = new Headers({'Content-Type': 'application/json;charset=utf-8'});
+  private cuisinesUrl = environment.apiUrl + 'cuisines';
 
-  private cuisinesUrl = 'https://project2-60db1.firebaseio.com/cuisines';
-
-  constructor(private http: Http) { }
+  constructor(
+    private http: Http
+  ) { }
 
   getCuisines(): Promise<Cuisine[]> {
     const url = `${this.cuisinesUrl}.json`;
