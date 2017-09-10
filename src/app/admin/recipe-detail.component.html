@@ -6,14 +6,12 @@
       <div class="col-sm-10">
         {{(recipe | async).receipt}}
       </div>
-      <!--<input [(ngModel)]="recipe.receipt" name="name" id="name" class="form-control" placeholder="Rezept" />-->
     </div>
     <div class="form-group">
       <label class="col-sm-2" for="description">Beschreibung:</label>
       <div class="col-sm-10">
         {{(recipe | async).description}}
       </div>
-      <!--<input [(ngModel)]="recipe.description" name="description" id="description" class="form-control" placeholder="Beschreibung" />-->
     </div>
     <div class="form-group">
       <label class="col-sm-2" for="level">Schwierigkeitsgrad:</label>
@@ -64,12 +62,15 @@
       </div>
     </div>
 
-    <h2>Einkaufsliste</h2>
+    <h1 class="page-header">Einkaufsliste</h1>
     <p>...</p>
 
-    <h2>Zubereitungsschritte</h2>
+    <h1 class="page-header">Zubereitungsschritte</h1>
     <p>...</p>
 
+    <button class="btn" [routerLink]="['/admin/recipe-edit']">
+      <i class="fa fa-pencil"></i> Bearbeiten
+    </button>
     <button (click)="goBack()" class="btn">
       <i class="fa fa-arrow-left"></i> Zurück
     </button>

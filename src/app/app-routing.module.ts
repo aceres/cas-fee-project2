@@ -12,6 +12,7 @@ import { AdminComponent } from './admin/admin.component';
 import { RecipesListComponent } from './admin/recipes-list.component';
 import { RecipeDetailComponent } from './admin/recipe-detail.component';
 import { RecipeAddComponent } from './admin/recipe-add.component';
+import { RecipeEditComponent } from './admin/recipe-edit.component';
 // Register
 import { RegisterComponent } from './register/register.component';
 // Master Data Basis
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
     { path: 'recipes', component: RecipesListComponent},
     { path: 'recipe-detail/:id', component: RecipeDetailComponent},
     { path: 'recipe-add', component: RecipeAddComponent},
+    { path: 'recipe-edit', component: RecipeEditComponent},
     { path: 'crisis-center', component: CrisisCenterComponent},
     { path: 'basis-data-category', component: BasisDataCategoryComponent},
     { path: 'basis-data-cuisine', component: BasisDataCuisineComponent},

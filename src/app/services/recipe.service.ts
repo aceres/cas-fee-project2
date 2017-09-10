@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import {AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2/database';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -8,12 +8,16 @@ import { Recipe } from './recipe';
 
 @Injectable()
 export class RecipeService {
+  recipe: FirebaseObjectObservable<any>;
 
   private headers = new Headers({'Content-Type': 'application/json;charset=utf-8'});
 
   private recipesUrl = 'https://project2-60db1.firebaseio.com/recipes';
 
-  constructor(private http: Http, private db: AngularFireDatabase) { }
+  constructor(
+    private http: Http,
+    private db: AngularFireDatabase
+  ) { }
 
   getRecipes(): Promise<Recipe[]> {
     const url = `${this.recipesUrl}.json`;
@@ -50,6 +54,16 @@ export class RecipeService {
       .toPromise()
       .then(response => response.json() as Recipe)
       .catch(this.handleError);
+  }
+
+  // getRecipe(id: string) {
+  //   this.recipe = this.db.object('recipe-detail/' + id) as FirebaseObjectObservable<Recipe>;
+  //   return this.recipe;
+  // }
+
+  getRecipeDetail(id) {
+    this.recipe = this.db.object('recipe-edit/' + id) as FirebaseObjectObservable<Recipe>;
+    return this.recipe;
   }
 
   remove(recipe): Promise<void> {

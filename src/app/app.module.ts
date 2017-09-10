@@ -38,6 +38,7 @@ import { AdminComponent } from './admin/admin.component';
 import { RecipesListComponent } from './admin/recipes-list.component';
 import { RecipeDetailComponent } from './admin/recipe-detail.component';
 import { RecipeAddComponent } from './admin/recipe-add.component';
+import { RecipeEditComponent } from "./admin/recipe-edit.component";
 import { RecipeSearchComponent } from './admin/recipe-search.component';
 
 // Master Data Basis
@@ -77,6 +78,7 @@ import { RegisterComponent } from './register/register.component';
     RecipesListComponent,
     RecipeAddComponent,
     RecipeDetailComponent,
+    RecipeEditComponent,
     RecipeSearchComponent,
     // Register
     RegisterComponent,
