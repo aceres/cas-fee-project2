@@ -12,7 +12,7 @@
 
 #### TODO bei Tanja
 
-- Stammdaten (Einfügen, Bearbeiten und Ändern)
+- ...
 
 ### Status bei André
 

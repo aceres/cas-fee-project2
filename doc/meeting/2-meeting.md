@@ -43,6 +43,6 @@
 
 - Überlegung: Registration / Administration - Inwiefern soll es responsive sein?
 - Notification (Überlegung)
-- SASS
+- SASS / LESS
 - Rollen
 

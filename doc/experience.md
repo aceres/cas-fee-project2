@@ -1,6 +1,7 @@
 # Überlegung / Erfahrung (für die Präsentation):
 
-- Highlights
+Highlights:
+
 - Templates (Public / Secure (Registered User / Admin))
 - Ausprobieren ngPrime / ngBootstrap
 - AuthGuard / Registration (Login)
