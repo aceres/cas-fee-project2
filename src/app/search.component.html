@@ -1,5 +1,10 @@
 <div class="search">
-  <input type="text" (keydown)="searchRecipe($event)" placeholder="Suche Rezept...">
+  <div class="right-inner-addon">
+    <i class="fa fa-search"></i>
+    <input type="search" class="form-control" (keydown)="searchRecipe($event)" placeholder="Suche Rezept...">
+  </div>
+</div>
+<div class="resultDropDown">
   <div class="foundResult" *ngFor="let recipe of recipes">
     <p>
       {{
@@ -7,7 +12,7 @@
       }}
     </p>
   </div>
-  <div class="foundResult" *ngIf="recipes?.length < 1">
+  <div class="foundResult" *ngIf="recipes?.length < 1 && recipes?.length === 0">
     <p>
       Kein Rezept gefunden!
     </p>

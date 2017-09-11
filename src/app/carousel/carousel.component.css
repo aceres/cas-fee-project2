@@ -24,6 +24,11 @@
   height: 500px;
 }
 
+/* TODO: Optimize the structure */
+.carousel-inner {
+  overflow: visible;
+}
+
 .carousel {
   margin-bottom: 0;
 }

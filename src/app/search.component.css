@@ -5,13 +5,27 @@ div.search {
   color: #FFF;
 }
 
-/* Chrome/Opera/Safari */
+/* Chrome / Opera / Safari */
 ::-webkit-input-placeholder {
   color: #FFF;
 }
 
+.resultDropDown {
+  width: 100%;
+  flex: 1;
+  height: 200px;
+  overflow: auto;
+  position: absolute;
+  left: 0;
+}
+
 .foundResult {
   display: flex;
+  opacity: 0.7;
+  flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   width: 100%;
   background-color: #FFF;
@@ -22,7 +36,7 @@ div.search {
   background-color: #EEE;
 }
 
-input[type="text"] {
+input[type="search"] {
   background-color: transparent;
   border: 2px solid #FFF;
   border-radius: 5px;
@@ -32,6 +46,20 @@ input[type="text"] {
   flex: 1;
   flex-flow: row wrap;
   font-size: 18px;
+}
+
+.right-inner-addon {
+  position: relative;
+  flex: 1;
+}
+.right-inner-addon input {
+  padding-right: 30px;
+}
+.right-inner-addon i {
+  position: absolute;
+  right: 0px;
+  padding: 10px 12px;
+  pointer-events: none;
 }
 
 p {
