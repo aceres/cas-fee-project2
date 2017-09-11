@@ -25,7 +25,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let recipe of allRecipes | async" (click)="gotoDetail(recipe)">
+      <tr *ngFor="let recipe of allRecipes | async" (click)="detail(recipe)">
         <td>
           {{recipe.$key}}
         </td>
