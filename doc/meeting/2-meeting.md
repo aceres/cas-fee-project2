@@ -35,6 +35,7 @@
 - Template / CSS testen (Umlagern)
 - Suche: AutoComplete (via Firebase) - https://angular.io/tutorial/toh-pt6 (auf Firebase umstellen)
 - Angular 4 einarbeiten
+- LESS installieren
 - CURLs vervollständigen und testen
 - AuthGuard anschauen und umsetzen
 - E-Mail an HSR - Mittwoch - ob Unterstützung noch möglich ist (am Nachmittag, ab 16 Uhr)
@@ -43,6 +44,5 @@
 
 - Überlegung: Registration / Administration - Inwiefern soll es responsive sein?
 - Notification (Überlegung)
-- SASS / LESS
 - Rollen
 

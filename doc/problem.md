@@ -11,12 +11,4 @@
 // TODO: Clean up
 // InMemoryWebApiModule.forRoot(InMemoryDataService),
 
-- LESS
-
-"styles": [
-        "../node_modules/font-awesome/css/font-awesome.min.css",
-        "styles.css",
-        "less/app.less"
-      ]
-      
-- ...      
+- ...

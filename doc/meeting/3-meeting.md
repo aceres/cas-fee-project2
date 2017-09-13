@@ -6,17 +6,22 @@
 
 ## Weiteres Vorgehen
 
+- Sauberen Stand (Code Reviews)
+
 ### Status bei Tanja
 
 - ...
 
 #### TODO bei Tanja
 
-- ...
+- LESS nutzen
 
 ### Status bei André
 
-- ...
+- LESS nutzen
+- Validation vervollständigen
+- AuthGuard fertig machen
+- Registration
 
 #### TODO bei André
 
@@ -27,5 +32,6 @@
 ## Pendenzen oder Probleme
 
 - Überlegung: Ihre Rezepte (Users - nur ihre Rezepte / Admin - alle Rezepte / Rollen)
+- Überlegung: Registration / Administration - Inwiefern soll es responsive sein?
 - Pipes anschauen (Filter)
 - ng animate
