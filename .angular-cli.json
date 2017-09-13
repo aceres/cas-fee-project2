@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
         "../node_modules/font-awesome/css/font-awesome.min.css",
-        "styles.css"
+        "styles.less"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
@@ -52,7 +52,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "less",
     "component": {}
   }
 }

@@ -7,7 +7,7 @@ import { RecipeService } from './services/recipe.service';
 @Component({
   selector: 'app-public',
   templateUrl: './public.component.html',
-  styleUrls: ['./public.component.css']
+  styleUrls: ['./public.component.less']
 })
 export class PublicComponent {
   // Standard Angular CLI

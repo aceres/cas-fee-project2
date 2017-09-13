@@ -28,7 +28,7 @@ class Ingredient {
 @Component({
   selector: 'app-recipes-add',
   templateUrl: './recipe-add.component.html',
-  styleUrls: ['./recipe-add.component.css']
+  styleUrls: ['./recipe-add.component.less']
 })
 export class RecipeAddComponent implements OnInit {
   recipes: Recipe[];

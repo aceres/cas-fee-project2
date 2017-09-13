@@ -1,0 +1,50 @@
+.navbar-default {
+  border-color: transparent;
+  border-radius: 0;
+  box-shadow:none;
+  font-family: "Merriweather Sans", Arial, sans-serif;
+}
+
+.navbar-wrapper {
+  border-radius: initial;
+  margin-top: 0 !important;
+}
+
+.nav .open > a,
+.nav .open > a:focus,
+.nav .open > a:hover {
+  background-color: transparent;
+}
+
+@media (min-width: 992px) {
+
+  .navbar-default {
+
+    background:transparent;
+    border: transparent;
+
+    ul.navbar-nav {
+      > .active {
+        a,
+        a:focus,
+        a:hover {
+          background-color: transparent;
+          border-bottom: 2px solid #ffc000;
+          bottom: 0;
+          color: #fff;
+          content: "";
+        }
+      }
+
+      > li > a {
+        color: #fff;
+
+        &:hover {
+          opacity: 0.4;
+          background: rgb(255, 192, 0); /* Fall-back for browsers that don't support rgba */
+          background: rgbargba(255, 192, 0, 0.5);
+        }
+      }
+    }
+  }
+}

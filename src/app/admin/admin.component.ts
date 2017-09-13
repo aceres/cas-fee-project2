@@ -7,7 +7,7 @@ import { RecipeService } from '../services/recipe.service';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  styleUrls: ['./admin.component.less']
 })
 export class AdminComponent {
   // Standard Angular CLI

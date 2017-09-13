@@ -5,7 +5,7 @@ import { Register } from '../services/register';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.less']
 })
 export class RegisterComponent {
   // Standard Angular CLI
