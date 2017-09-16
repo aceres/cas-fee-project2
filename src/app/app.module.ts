@@ -7,6 +7,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 // Router
 import { AppRoutingModule } from './app-routing.module';
@@ -19,8 +20,8 @@ import { AppRoutingModule } from './app-routing.module';
 // Services
 import { AuthService } from './services/auth.service';
 import { RecipeService } from './services/recipe.service';
-import { BasisDataCategoryService } from "./services/basis-data-category.service";
-import { BasisDataCuisineService } from "./services/basis-data-cuisine.service";
+import { BasisDataCategoryService } from './services/basis-data-category.service';
+import { BasisDataCuisineService } from './services/basis-data-cuisine.service';
 
 // App
 import { AppComponent } from './app.component';
@@ -40,7 +41,7 @@ import { AdminComponent } from './admin/admin.component';
 import { RecipesListComponent } from './admin/recipes-list.component';
 import { RecipeDetailComponent } from './admin/recipe-detail.component';
 import { RecipeAddComponent } from './admin/recipe-add.component';
-import { RecipeEditComponent } from "./admin/recipe-edit.component";
+import { RecipeEditComponent } from './admin/recipe-edit.component';
 import { RecipeSearchComponent } from './admin/recipe-search.component';
 
 // Master Data Basis
@@ -49,6 +50,9 @@ import { BasisDataCuisineComponent } from './admin/basis-data-cuisine.component'
 
 // Register
 import { RegisterComponent } from './register/register.component';
+
+// ngx-bootstrap
+import {DemoAlertContentComponent} from './directives/alert/alert.component';
 
 @NgModule({
   imports: [
@@ -63,7 +67,9 @@ import { RegisterComponent } from './register/register.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     // Auth
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    // ngx-bootstrap
+    AlertModule.forRoot()
   ],
   declarations: [
     // App
@@ -88,7 +94,9 @@ import { RegisterComponent } from './register/register.component';
     RegisterComponent,
     // Master Data (Basis),
     BasisDataCategoryComponent,
-    BasisDataCuisineComponent
+    BasisDataCuisineComponent,
+    // ngx-bootstrap
+    DemoAlertContentComponent
   ],
   providers: [AuthService, RecipeService, BasisDataCategoryService, BasisDataCuisineService],
   bootstrap: [AppComponent]
