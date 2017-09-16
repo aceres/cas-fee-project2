@@ -7,9 +7,11 @@
 <div class="resultDropDown">
   <div class="foundResult" *ngFor="let recipe of recipes">
     <p>
-      {{
-        recipe?.receipt
-      }}
+      <a (click)="detail(recipe)">
+        {{
+          recipe?.receipt
+        }}
+      </a>
     </p>
   </div>
   <div class="foundResult" *ngIf="recipes?.length < 1 && recipes?.length === 0">

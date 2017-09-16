@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './not-found.component';
 import { CrisisCenterComponent } from './crisis-center.component';
 // Public
 import { PublicComponent } from './public.component';
+import { PublicReceiptDetailComponent } from './detail.component';
 // Admin
 import { AdminComponent } from './admin/admin.component';
 import { RecipesListComponent } from './admin/recipes-list.component';
@@ -21,6 +22,7 @@ import {BasisDataCuisineComponent} from './admin/basis-data-cuisine.component';
 
 const appRoutes: Routes = [
   { path: 'public', component: PublicComponent },
+  { path: 'recipe-detail/:id', component: PublicReceiptDetailComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'admin', component: AdminComponent, children: [
     { path: 'recipes', component: RecipesListComponent},

@@ -1,0 +1,87 @@
+<div class="navbar-wrapper">
+  <div class="container-full">
+    <app-nav></app-nav>
+  </div>
+</div>
+
+<app-detail-cover></app-detail-cover>
+
+<section class="detail">
+  <h1 class="page-header">Rezept: {{(recipe | async).receipt}}</h1>
+
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).receipt}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="description">Beschreibung:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).description}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="level">Schwierigkeitsgrad:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).level}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="cuisine">Länderküche:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).cuisine}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="category">Kategorie:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).category}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="portion">Portion:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).portion}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="prepTime">Vorbereitungszeit:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).prepTime}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="quantity">Menge:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).quantity}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2" for="unit">Einheit:</label>
+      <div class="col-sm-10">
+        {{(recipe | async).unit}}
+      </div>
+    </div>
+
+    <h1 class="page-header">Einkaufsliste</h1>
+    <p>...</p>
+
+    <h1 class="page-header">Zubereitungsschritte</h1>
+    <p>...</p>
+
+    <button (click)="goBack()" class="btn">
+      <i class="fa fa-arrow-left"></i> Zurück
+    </button>
+  </form>
+</section>
+
+<div class="container-fluid">
+  <hr class="featurette-divider">
+
+  <footer>
+    <p class="pull-right"><a href="#">Nach oben</a></p>
+    <p>&copy; 2017 What to cook? &middot; Alle Rechte vorbehalten. &middot; <a href="#">Privat</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+</div>

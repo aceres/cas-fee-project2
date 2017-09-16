@@ -29,9 +29,11 @@ import { PageNotFoundComponent } from './not-found.component';
 
 // Public
 import { PublicComponent } from './public.component';
-import { NavComponent } from "./nav/nav.component";
-import { CarouselComponent } from "./carousel/carousel.component";
-import { SearchComponent } from "./search.component";
+import { NavComponent } from './nav/nav.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { DetailCoverComponent } from './detailcover/detail-cover.component';
+import { SearchComponent } from './search.component';
+import { PublicReceiptDetailComponent } from './detail.component';
 
 // Admin
 import { AdminComponent } from './admin/admin.component';
@@ -73,6 +75,8 @@ import { RegisterComponent } from './register/register.component';
     NavComponent,
     CarouselComponent,
     SearchComponent,
+    PublicReceiptDetailComponent,
+    DetailCoverComponent,
     // Admin
     AdminComponent,
     RecipesListComponent,
