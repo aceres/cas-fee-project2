@@ -8,6 +8,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 // Router
 import { AppRoutingModule } from './app-routing.module';
@@ -52,7 +53,8 @@ import { BasisDataCuisineComponent } from './admin/basis-data-cuisine.component'
 import { RegisterComponent } from './register/register.component';
 
 // ngx-bootstrap
-import {DemoAlertContentComponent} from './directives/alert/alert.component';
+import { AlertComponent } from './directives/alert/alert.component';
+import { PaginationLimitComponent } from './directives/pagination/pagination.component';
 
 @NgModule({
   imports: [
@@ -69,7 +71,8 @@ import {DemoAlertContentComponent} from './directives/alert/alert.component';
     // Auth
     AngularFireAuthModule,
     // ngx-bootstrap
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    PaginationModule.forRoot()
   ],
   declarations: [
     // App
@@ -96,7 +99,8 @@ import {DemoAlertContentComponent} from './directives/alert/alert.component';
     BasisDataCategoryComponent,
     BasisDataCuisineComponent,
     // ngx-bootstrap
-    DemoAlertContentComponent
+    AlertComponent,
+    PaginationLimitComponent
   ],
   providers: [AuthService, RecipeService, BasisDataCategoryService, BasisDataCuisineService],
   bootstrap: [AppComponent]
