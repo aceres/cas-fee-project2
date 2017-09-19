@@ -1,6 +1,6 @@
 # 3. Meeting
 
-## 16. September 2017
+## 23. September 2017
 
 - Status anschauen
 

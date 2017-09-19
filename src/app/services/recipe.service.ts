@@ -54,13 +54,8 @@ export class RecipeService {
       .catch(this.handleError);
   }
 
-  // getRecipe(id: string) {
-  //   this.recipe = this.db.object('recipe-detail/' + id) as FirebaseObjectObservable<Recipe>;
-  //   return this.recipe;
-  // }
-
-  getRecipeDetail(id) {
-    this.recipe = this.db.object('recipe-edit/' + id) as FirebaseObjectObservable<Recipe>;
+  getRecipeDetail(id: string) {
+    this.recipe = this.db.object(`${this.recipesUrl}/${id}`);
     return this.recipe;
   }
 
