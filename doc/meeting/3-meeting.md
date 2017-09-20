@@ -32,6 +32,6 @@
 ## Pendenzen oder Probleme
 
 - Überlegung: Ihre Rezepte (Users - nur ihre Rezepte / Admin - alle Rezepte / Rollen)
-- Überlegung: Registration / Administration - Inwiefern soll es responsive sein?
+- Überlegung: Registration / Administration - Inwiefern soll es responsive sein? -> Responsiv auch möglich!
 - Pipes anschauen (Filter)
 - ng animate
