@@ -3,6 +3,7 @@
   border-radius: 0;
   box-shadow: none;
   font-family: "Merriweather Sans", Arial, sans-serif;
+  margin-top: 20px;
 }
 
 .navbar-wrapper {
@@ -20,7 +21,7 @@
 
   .navbar-default {
 
-    background: transparent;
+    background-color: rgba(255, 255, 255, 0.7);
     border: transparent;
 
     ul.navbar-nav {
@@ -29,16 +30,13 @@
         a,
         a:focus,
         a:hover {
-          background-color: transparent;
-          border-bottom: 2px solid #ffc000;
-          bottom: 0;
-          color: #fff;
-          content: "";
+          color: inherit;
+          background-color: #ffc000;
         }
       }
 
       > li > a {
-        color: #fff;
+        color: inherit;
 
         &:hover {
           background: rgb(255, 192, 0); /* Fall-back for browsers that don't support rgba */
