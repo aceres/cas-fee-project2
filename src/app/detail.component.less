@@ -1,294 +1,196 @@
-/* GLOBAL STYLES
--------------------------------------------------- */
-/* Padding below the footer and lighter body text */
-
-body {
-  padding-bottom: 40px;
-  color: #5a5a5a;
-}
-
-/* CUSTOMIZE THE NAVBAR
--------------------------------------------------- */
-
-/* Special class on .container surrounding .navbar, used for positioning it into place. */
-.navbar-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 20;
-}
-
-/* Flip around the padding for proper display in narrow viewports */
-.navbar-wrapper > .container {
-  padding-right: 0;
-  padding-left: 0;
-}
-.navbar-wrapper .navbar {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.navbar-wrapper .navbar .container {
-  width: auto;
-}
-
-/* DETAIL CONTENT
--------------------------------------------------- */
-
-/* Center align the text within the three columns below the carousel */
-.marketing .col-lg-4 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-.marketing h2 {
-  font-weight: normal;
-}
-.marketing .col-lg-4 p {
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-
-/* Featurettes
-------------------------- */
-
-.featurette-divider {
-  margin: 80px 0; /* Space out the Bootstrap <hr> more */
-}
-
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
-.col-xs-12 {
-  padding-bottom: 20px;
-}
-
-.section-heading {
-  font-size: 30px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.section-heading span {
-  color: #ffc000;
-}
-
-.favorite_item {
-  background: #fff;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0);
-  -moz-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0);
-  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0);
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-  text-align: center;
-  transition: all ease .3s;
-  -moz-transition: all ease .3s;
-  -webkit-transition: all ease .3s;
-}
-
-.favorite_item h3 {
-  font-size: 22px;
-}
-
-.bg-image-wrap {
-  height: 23em;
-  left: -15%;
-  overflow: hidden;
-  position: relative;
-  width: 130%;
-}
-
-.bg-image-top {
-  background-position: center center;
-  background-size: cover;
-  border-radius: 0 0 50% 50%;
-  -moz-border-radius: 0 0 50% 50%;
-  -webkit-border-radius: 0 0 50% 50%;
-  display: block;
-  height: 22em;
-  margin-top: -9.5em;
-  overflow: hidden;
-  position: relative;
-  transition: all ease .4s;
-  -moz-transition: all ease .4s;
-  -webkit-transition: all ease .4s;
-  z-index: 2;
-}
-
-.bg-image-top img {
-  height: inherit;
-}
-
-.favorite_item_info {
-  bottom: inherit;
-  box-sizing: border-box;
-  left: 0;
-  padding: 0 6em;
-  position: absolute;
-  transition: all ease .4s;
-  -moz-transition: all ease .4s;
-  -webkit-transition: all ease .4s;
-  width: 100%;
-  z-index: 3;
-}
-
-.favorite_item_content {
-  margin-top: 0.65em;
-  max-height: 5em;
-}
-
-.favorite_item_button {
-  margin: 1.75em 0 2.6em;
-}
-
-.favorites {
-  background-color: #F4F2EE;
-}
-
-.tip {
-  background-color: #BAC64A;
-  background-image: url("/assets/img/food-pattern.png");
-}
-
-.categories {
-  background-image: url("/assets/img/cherry.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.btn-default {
-  background-color: #FFC000;
-  border: 2px solid #FFC000 !important;
-  color: #fff;
-}
-
-.btn-default:hover {
+.recipe-details {
   background-color: #fff;
-  border: 2px solid #FFC000;
+  font-family: inherit;
+}
+
+.recipe-image {
+
+}
+
+.recipe-details-heading {
   color: #FFC000;
-}
-
-.tip-heading {
-  color: #fff;
-  font-size: 30px;
-  margin-bottom: 30px;
-}
-
-.tip p {
-  color: #fff;
-  font-size: 16px;
-  padding-bottom: 20px;
-}
-
-.btn-tip {
-  background-color: #fff;
-  border: 2px solid #fff !important;
-  color: #BAC64A;
-}
-
-.btn-tip:hover {
-  background-color: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-}
-
-.category-card {
-  background-color: #F4F2EE;
-  border: 1px solid #F4F2EE;
-  border-radius:40px;
-  -moz-border-radius: 40px;
-  -webkit-border-radius: 40px;
-  margin: 20px auto;
-  padding: 50px;
-  width: 300px;
-}
-
-.category-img-bg {
-  background-color: #fff;
-  border: 1px solid #fff;
-  border-radius: 100%;
-  display: block;
-  height: 170px;
-  margin: 0 auto;
-  width: 170px;
-}
-
-.card-img-top {
-  float: left;
-  height: 100%;
-  left: 20%;
-  max-height: 100px;
-  position: relative;
-  top: 20%;
-  vertical-align: center;
-}
-
-.card-title {
-  font-size: 24px;
+  margin-top: 0;
+  padding: 48px 0 0 0;
   text-align: center;
 }
-/* RESPONSIVE CSS
--------------------------------------------------- */
 
-@media (max-width: 479px) {
+.recipe-details-description {
+  text-align: center;
+}
 
-  .col-lg-4 {
-    width: 100%;
-  }
+.meta-container {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.meta-list {
+  line-height: 30px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.meta-info {
+  margin-left: 10px;
+  min-width: 200px;
+}
+
+.meta-info-preptime:before,
+.meta-info-level:before,
+.meta-info-cuisine:before,
+.like-list-likes:before {
+  background-size: 20px;
+  content: "";
+  display: block;
+  float: left;
+  height: 20px;
+  margin: 4px 8px 0 0;
+  width: 20px;
+}
+
+.meta-info-preptime:before {
+  background-image: url(/assets/img/clock.svg);
+}
+
+.meta-info-level:before {
+  background-image: url(/assets/img/level.svg);
+}
+
+.meta-info-cuisine:before {
+  background-image: url(/assets/img/cuisine.svg);
+}
+
+.meta-value {
+  float: right;
+  min-width: 100px;
+}
+
+.like-group {
+  padding: 10px 0 50px;
+}
+
+.like-list {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.like-list-likes:before {
+  background-image: url(/assets/img/heart.svg);
+  margin: 2px 8px 0 0;
+}
+
+.like-group li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 18px;
+}
+
+.preparation {
+  background-color: #F4F2EE;
+}
+
+.preparation-heading {
+  color: #BAC64A;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.preparation-ingredients {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.preparation-ingredients-heading {
+  color: inherit;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.preparation-ingredients-item {
+  line-height: 25px;
+  padding: 0 20px;
+}
+
+.preparation-ingredients-ingredient {
+  float: right;
+  min-width: 150px;
+}
+
+.preparation-steps-step {
+  margin: 20px;
+}
+
+span.step {
+  background: transparent;
+  border: 3px solid #BAC64A;
+  border-radius: 100%;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  color: #BAC64A;
+  display: inline-block;
+  font-family: "Happy Monkey", Arial, sans-serif;
+  font-size: 32px;
+  height: 40px;
+  line-height: 34px;
+  margin: 10px 0;
+  text-align: center;
+  width: 40px;
+}
+
+.back {
+  padding: 20px;
 }
 
 @media (min-width: 768px) {
-  .favorite_item_info {
-    padding: 0 4em;
+  .preparation-ingredients {
+    padding: 20px 100px;
+    margin: 0 100px;
   }
 
-  .bg-image-top {
-    height: 20em;
+  .preparation-steps {
+    padding: 20px 0;
   }
 }
 
 @media (min-width: 992px) {
-
-  .featurette-heading {
-    margin-top: 120px;
+  .recipe-details-heading {
+    padding: 0;
   }
 
-  .section-heading {
-    font-size: 50px;
-    margin-bottom: 50px;
-    text-align: center;
+  .preparation-ingredients {
+    padding: 20px 80px;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  section {
+    padding: 40px;
   }
 
-  .bg-image-wrap {
-    height: 27.6em;
+  .recipe-details-heading {
+    padding: 0;
   }
 
-  .bg-image-top {
-    height: 25em;
+  .meta-container {
+    margin: 50px auto;
   }
 
-  .favorite_item_info {
-    bottom: 30px;
-    padding: 0 6em;
+  .preparation-heading {
+    padding: 0 0 50px 0;
   }
 
-  .categories {
-    background-position: -25% 80%;
-    background-size: 80% auto;
+  .preparation-ingredients {
+    margin: 0;
   }
 
-  .tip-heading {
-    font-size: 50px;
-    margin-bottom: 50px;
+  .preparation-ingredients-item {
+    padding: 0 40px;
   }
 
-  .tip p {
-    font-size: 20px;
+  .preparation-steps {
+    padding: 0;
   }
 }

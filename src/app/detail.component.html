@@ -1,81 +1,191 @@
 <div class="navbar-wrapper">
-  <div class="container-full">
+  <div class="container">
     <app-nav></app-nav>
   </div>
 </div>
 
-<app-detail-cover></app-detail-cover>
-
-<section class="detail">
-  <h1 class="page-header">Rezept: {{(recipe | async).receipt}}</h1>
-
-  <form class="form-horizontal">
-    <div class="form-group">
-      <label class="col-sm-2" for="name">Name:</label>
-      <div class="col-sm-10">
-        {{(recipe | async).receipt}}
+<section class="recipe-details">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="recipe-image">
+          <img class="featurette-image img-responsive center-block" src="http://via.placeholder.com/1125x750" alt="Generic placeholder image">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h1 class="recipe-details-heading">{{(recipe | async).receipt}}</h1>
+        <p class="recipe-details-description">{{(recipe | async).description}}</p>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="meta-container">
+              <ul class="meta-list">
+                <li>
+                  <span class="meta-info-preptime">Zubereitungszeit:</span>
+                  <span class="meta-value">{{(recipe | async).prepTime}} min.</span>
+                </li>
+                <li>
+                  <span class="meta-info-level">Schwierigkeitsgrad:</span>
+                  <span class="meta-value">{{(recipe | async).level}}</span>
+                </li>
+                <li>
+                  <span class="meta-info-cuisine">Länderküche:</span>
+                  <span class="meta-value">{{(recipe | async).cuisine}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="like-group">
+              <ul class="like-list">
+                <li>
+                  <span class="like-list-likes">{{recipe.rating}}</span>
+                </li>
+                <li>
+                  <a class="btn btn-default" href="#" role="button">Rezept speichern</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="form-group">
-      <label class="col-sm-2" for="description">Beschreibung:</label>
-      <div class="col-sm-10">
-        {{(recipe | async).description}}
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2" for="level">Schwierigkeitsgrad:</label>
-      <div class="col-sm-10">
-        {{(recipe | async).level}}
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2" for="cuisine">Länderküche:</label>
-      <div class="col-sm-10">
-        {{(recipe | async).cuisine}}
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2" for="category">Kategorie:</label>
-      <div class="col-sm-10">
-        {{(recipe | async).category}}
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2" for="portion">Portion:</label>
-      <div class="col-sm-10">
-        {{(recipe | async).portion}}
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2" for="prepTime">Vorbereitungszeit:</label>
-      <div class="col-sm-10">
-        {{(recipe | async).prepTime}}
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2" for="quantity">Menge:</label>
-      <div class="col-sm-10">
-        {{(recipe | async).quantity}}
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2" for="unit">Einheit:</label>
-      <div class="col-sm-10">
-        {{(recipe | async).unit}}
-      </div>
-    </div>
-
-    <h1 class="page-header">Einkaufsliste</h1>
-    <p>...</p>
-
-    <h1 class="page-header">Zubereitungsschritte</h1>
-    <p>...</p>
-
-    <button (click)="goBack()" class="btn">
-      <i class="fa fa-arrow-left"></i> Zurück
-    </button>
-  </form>
+  </div>
 </section>
+
+<section class="preparation">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="preparation-heading">Zubereitung</h2>
+      </div>
+      <div class="col-md-6">
+        <div class="preparation-ingredients">
+          <h3 class="preparation-ingredients-heading">Zutaten für {{(recipe | async).portion}} Personen</h3>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">250</span>
+            <span class="preparation-ingredients-unit">g</span>
+            <span class="preparation-ingredients-ingredient">Schweinefleisch</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">0.5</span>
+            <span class="preparation-ingredients-unit">Stk.</span>
+            <span class="preparation-ingredients-ingredient">Hähnchen</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">2</span>
+            <span class="preparation-ingredients-unit">Stk.</span>
+            <span class="preparation-ingredients-ingredient">Zwiebeln</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">125</span>
+            <span class="preparation-ingredients-unit">ml</span>
+            <span class="preparation-ingredients-ingredient">Öl</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">125</span>
+            <span class="preparation-ingredients-unit">g</span>
+            <span class="preparation-ingredients-ingredient">Schinken</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">2</span>
+            <span class="preparation-ingredients-unit">Stk.</span>
+            <span class="preparation-ingredients-ingredient">Safran</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">1</span>
+            <span class="preparation-ingredients-unit">l</span>
+            <span class="preparation-ingredients-ingredient">Fleischbrühe</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">350</span>
+            <span class="preparation-ingredients-unit">g</span>
+            <span class="preparation-ingredients-ingredient">Reis</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">2</span>
+            <span class="preparation-ingredients-unit">Stk.</span>
+            <span class="preparation-ingredients-ingredient">Paprikaschoten</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">4</span>
+            <span class="preparation-ingredients-unit">Stk.</span>
+            <span class="preparation-ingredients-ingredient">Tomaten</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">100</span>
+            <span class="preparation-ingredients-unit">g</span>
+            <span class="preparation-ingredients-ingredient">Erbsen</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">100</span>
+            <span class="preparation-ingredients-unit">g</span>
+            <span class="preparation-ingredients-ingredient">Brechbohnen</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">1</span>
+            <span class="preparation-ingredients-unit">Dose</span>
+            <span class="preparation-ingredients-ingredient">Muschel</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">125</span>
+            <span class="preparation-ingredients-unit">g</span>
+            <span class="preparation-ingredients-ingredient">Krabben (gekocht)</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity">65</span>
+            <span class="preparation-ingredients-unit">g</span>
+            <span class="preparation-ingredients-ingredient">Champignons</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity"></span>
+            <span class="preparation-ingredients-unit">etwas</span>
+            <span class="preparation-ingredients-ingredient">Cayennepfeffer</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity"></span>
+            <span class="preparation-ingredients-unit">etwas</span>
+            <span class="preparation-ingredients-ingredient">Salz</span>
+          </div>
+          <div class="preparation-ingredients-item">
+            <span class="preparation-ingredients-quantity"></span>
+            <span class="preparation-ingredients-unit">etwas</span>
+            <span class="preparation-ingredients-ingredient">Pfeffer</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="preparation-steps">
+          <div class="preparation-steps-step">
+            <span class="step">1</span>
+            <p>Schweinefleisch würfeln, Hähnchen in Stücke zerlegen. Beides in einer tiefen Pfanne oder einem Topf mit gehackten Zwiebeln in der Hälfte des Öls anbraten und bräunen, salzen und pfeffern. In feine Streifen geschnittenen Schinken dazugeben und kurz mitrösten, mit Safran vermischte Brühe angießen und 3o Minuten kochen. Lorbeerblatt 20 Minuten mitkochen, dann herausnehmen. Reis hinzufügen, 15 Minuten weiterkochen.</p>
+          </div>
+          <div class="preparation-steps-step">
+            <span class="step">2</span>
+            <p>Unterdessen Paprikaschoten entkernen und in Streifen schneiden, Tomaten abziehen und in Scheiben schneiden. Beides im restlichen Öl anschmoren, Erbsen und Bohnen dazugeben und etwas Brühe angießen, das Gemüse fast garen und in den Reistopf geben, mit Muscheln, Krabben und geschnittenen Champignons unter den Reis heben, die Paella mit Salz, Pfeffer und Cayennepfeffer abschmecken und nochmals 1o Minuten durchziehen lassen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="back">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="back">
+          <button (click)="goBack()" class="btn">
+            <i class="fa fa-arrow-left"></i> Zurück
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <div class="container-fluid">
   <hr class="featurette-divider">
