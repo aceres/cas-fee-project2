@@ -4,6 +4,7 @@
   box-shadow: none;
   font-family: "Merriweather Sans", Arial, sans-serif;
   margin-top: 20px;
+  text-transform: uppercase;
 }
 
 .navbar-wrapper {
@@ -27,10 +28,12 @@
     ul.navbar-nav {
 
       > .active {
+        color: #FFF;
+
         a,
         a:focus,
         a:hover {
-          color: inherit;
+          color: #FFF;
           background-color: #ffc000;
         }
       }
@@ -39,6 +42,7 @@
         color: inherit;
 
         &:hover {
+          color: #FFF;
           background: rgb(255, 192, 0); /* Fall-back for browsers that don't support rgba */
           background: rgbargba(255, 192, 0, 0.5);
         }
