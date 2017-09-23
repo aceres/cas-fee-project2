@@ -2,43 +2,43 @@
 
 <form class="form-horizontal">
     <div class="form-group">
-      <label class="col-sm-2" for="name">Name:</label>
+      <label class="col-sm-2  ">Name:</label>
       <div class="col-sm-10">
         {{(recipe | async)?.receipt}}
       </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-2" for="description">Beschreibung:</label>
+      <label class="col-sm-2">Beschreibung:</label>
       <div class="col-sm-10">
         {{(recipe | async)?.description}}
       </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-2" for="level">Schwierigkeitsgrad:</label>
+      <label class="col-sm-2">Schwierigkeitsgrad:</label>
       <div class="col-sm-10">
         {{(recipe | async)?.level}}
       </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-2" for="cuisine">Länderküche:</label>
+      <label class="col-sm-2">Länderküche:</label>
       <div class="col-sm-10">
         {{(recipe | async)?.cuisine}}
       </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-2" for="category">Kategorie:</label>
+      <label class="col-sm-2">Kategorie:</label>
       <div class="col-sm-10">
         {{(recipe | async)?.category}}
       </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-2" for="portion">Portion:</label>
+      <label class="col-sm-2">Portion:</label>
       <div class="col-sm-10">
         {{(recipe | async)?.portion}}
       </div>
     </div>
     <div class="form-group">
-      <label class="col-sm-2" for="prepTime">Vorbereitungszeit:</label>
+      <label class="col-sm-2">Vorbereitungszeit:</label>
       <div class="col-sm-10">
         {{(recipe | async)?.prepTime}} Minuten
       </div>

@@ -25,12 +25,6 @@ export class RecipeDetailComponent implements OnInit {
     this.key = this.route.snapshot.params['id'];
   }
 
-  // TODO: Save / Update recipe
-  // save(): void {
-  //   this.recipeService.update(this.recipe)
-  //     .then(() => this.goBack());
-  // }
-
   goBack(): void {
     this.location.back();
   }

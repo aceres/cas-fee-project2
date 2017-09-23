@@ -51,7 +51,7 @@
 
 <hr>
 
-<h1 class="page-header">Zutaten / Einkaufsliste</h1>
+<h1 class="page-header">Einkaufsliste (Zutaten)</h1>
 
 <form class="form-inline" #ingredientForm="ngForm">
   <div class="form-group">
@@ -115,60 +115,9 @@
   </tbody>
 </table>
 
-<!--<div class="form-group">-->
-  <!--<table class="table table-striped table-hover">-->
-    <!--<thead>-->
-      <!--<th>Menge</th>-->
-      <!--<th>Einheit</th>-->
-      <!--<th>Zutat</th>-->
-    <!--</thead>-->
-    <!--<tbody>-->
-      <!--<tr>-->
-        <!--<td>-->
-          <!--<input type="number" name="quantity" id="quantity" class="form-control" placeholder="1" #recipeQuantity>-->
-        <!--</td>-->
-        <!--<td>-->
-          <!--<select name="unit" form="unit" class="form-control" #recipeUnit>-->
-            <!--<option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.display}}</option>-->
-          <!--</select>-->
-        <!--</td>-->
-        <!--<td>-->
-          <!--<input type="text" name="ingredient" id="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>-->
-        <!--</td>-->
-      <!--</tr>-->
-      <!--<tr>-->
-        <!--<td>-->
-          <!--<input type="number" name="quantity" id="quantity" class="form-control" placeholder="1" #recipeQuantity>-->
-        <!--</td>-->
-        <!--<td>-->
-          <!--<select name="unit" form="unit" class="form-control" #recipeUnit>-->
-            <!--<option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.display}}</option>-->
-          <!--</select>-->
-        <!--</td>-->
-        <!--<td>-->
-          <!--<input type="text" name="ingredient" id="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>-->
-        <!--</td>-->
-      <!--</tr>-->
-      <!--<tr>-->
-        <!--<td>-->
-          <!--<input type="number" name="quantity" id="quantity" class="form-control" placeholder="1" #recipeQuantity>-->
-        <!--</td>-->
-        <!--<td>-->
-          <!--<select name="unit" form="unit" class="form-control" #recipeUnit>-->
-            <!--<option *ngFor="let unit of listUnits" [value]="unit.value">{{unit.display}}</option>-->
-          <!--</select>-->
-        <!--</td>-->
-        <!--<td>-->
-          <!--<input type="text" name="ingredient" id="ingredient" class="form-control" placeholder="Gelatine" #recipeIngredient>-->
-        <!--</td>-->
-      <!--</tr>-->
-    <!--</tbody>-->
-  <!--</table>-->
-<!--</div>-->
-
 <hr>
 
-<h1 class="page-header">Zubereiten und Kochen</h1>
+<h1 class="page-header">Zubereitungsschritte</h1>
 
 <form class="form-inline" #stepForm="ngForm">
   <div class="form-group">
@@ -224,19 +173,6 @@
     Keine Einträge vorhanden.
   </tbody>
 </table>
-
-<h1 class="page-header">Zubereitung</h1>
-
-<div class="form-group">
-  <label for="step1">Schritt 1</label>
-  <textarea rows="10" name="step1" id="step1" class="form-control" placeholder="Salat waschen. "  #recipeStep1></textarea>
-  <br>
-  <label for="step2">Schritt 2</label>
-  <textarea rows="10" name="step2" id="step2" class="form-control" placeholder="Salat in Stücke schneiden. "  #recipeStep2></textarea>
-  <br>
-  <label for="step3">Schritt 3</label>
-  <textarea rows="10" name="step3" id="step3" class="form-control" placeholder="Salat mit Baumnüssen anrichten. "  #recipeStep3></textarea>
-</div>
 
 <button class="btn btn-default" (click)="add(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, recipeStep1.value, recipeStep2.value, recipeStep3.value, recipeQuantity.value, recipeUnit.value, recipeIngredient.value); recipeName.value=''; recipeDescription.value=''; recipePortion.value=''; recipePrepTime.value=''; recipeLevel.value=''; recipeCategory.value=''; recipeCuisine.value=''; recipeStep1.value=''; recipeStep2.value=''; recipeStep3.value=''; recipeQuantity.value=''; recipeUnit.value=''; recipeIngredient.value=''">
   <i class="fa fa-floppy-o"></i> Speichern
