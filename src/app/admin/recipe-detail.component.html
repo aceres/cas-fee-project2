@@ -40,38 +40,64 @@
     <div class="form-group">
       <label class="col-sm-2" for="prepTime">Vorbereitungszeit:</label>
       <div class="col-sm-10">
-        {{(recipe | async)?.prepTime}}
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2" for="quantity">Menge:</label>
-      <div class="col-sm-10">
-        {{(recipe | async)?.quantity}}
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2" for="unit">Einheit:</label>
-      <div class="col-sm-10">
-        {{(recipe | async)?.unit}}
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-sm-2" for="ingredient">Zutat:</label>
-      <div class="col-sm-10">
-        {{(recipe | async)?.ingredient}}
+        {{(recipe | async)?.prepTime}} Minuten
       </div>
     </div>
 
-    <h1 class="page-header">Einkaufsliste</h1>
-    <p>...</p>
+    <h1 class="page-header">Einkaufsliste (Zutaten)</h1>
+    <table class="table table-striped table-hover">
+      <thead>
+      <th>Menge</th>
+      <th>Einiheit</th>
+      <th>Zutat</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let ingredient of (recipe | async)?.ingredients; let i = index;">
+        <td>
+          {{ ingredient.quantity }}
+        </td>
+        <td>
+          {{ ingredient.unit }}
+        </td>
+        <td>
+          {{ ingredient.ingredient }}
+        </td>
+      </tr>
+      </tbody>
+      <!--<tbody *ngIf="steps.length === 0">-->
+      <!--Keine Einträge vorhanden.-->
+      <!--</tbody>-->
+    </table>
 
-    <h1 class="page-header">Zubereitungsschritte</h1>
-    <p>...</p>
+  <h1 class="page-header">Zubereitungsschritte</h1>
+  <table class="table table-striped table-hover">
+      <thead>
+      <th>Schritt</th>
+      <th>Beschreibung</th>
+      <th>Foto</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let step of (recipe | async)?.steps; let i = index;">
+        <td>
+          {{ i+1 }}
+        </td>
+        <td>
+          {{ step.stepDescription }}
+        </td>
+        <td>
+          {{ step.photo }}
+        </td>
+      </tr>
+      </tbody>
+      <!--<tbody *ngIf="steps.length === 0">-->
+      <!--Keine Einträge vorhanden.-->
+      <!--</tbody>-->
+    </table>
 
-    <button class="btn" [routerLink]="['/admin/recipe-edit/' + key]">
+    <button class="btn btn-default" [routerLink]="['/admin/recipe-edit/' + key]">
       <i class="fa fa-pencil"></i> Bearbeiten
     </button>
-    <button (click)="goBack()" class="btn">
+    <button (click)="goBack()" class="btn btn-default">
       <i class="fa fa-arrow-left"></i> Zurück
     </button>
 </form>

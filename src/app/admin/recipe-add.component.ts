@@ -41,27 +41,41 @@ export class RecipeAddComponent implements OnInit {
   ingredients = [];
 
   // Initialize: For the validation
-  ingredient = {recipeQuantity: '', recipeIngredient: ''};
-  step = {description: '', photo: ''};
+  // TODO: This doesn't work for now
+  ingredient = { recipeQuantity: '', recipeIngredient: '' };
+  step = { description: '', photo: '' };
 
   constructor(
     private router: Router,
     private recipeService: RecipeService) { }
 
-  add(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, step1: string, step2: string, step3: string, quantity: number, unit: string, ingredient: string): void {
-    name = name.trim();
-    description = description.trim();
-    portion = portion.trim();
-    level = level.trim();
-    category = category.trim();
-    cuisine = cuisine.trim();
-    step1 = step1.trim();
-    step2 = step2.trim();
-    step3 = step3.trim();
-    this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, step1, step2, step3, quantity, unit, ingredient)
-      .then(recipe => {
-        // this.recipes.push(recipe);
-        // this.selectedRecipe = null;
+  add(name: string,
+      description: string,
+      portion: string,
+      prepTime: number,
+      level: string,
+      category: string,
+      cuisine: string,
+      steps: any[],
+      quantity: number,
+      unit: string,
+      ingredients: any[]): void {
+            name = name.trim();
+            description = description.trim();
+            portion = portion.trim();
+            prepTime = prepTime;
+            level = level.trim();
+            category = category.trim();
+            cuisine = cuisine.trim();
+            steps = this.steps;
+            quantity = quantity;
+            unit = unit;
+            ingredients = this.ingredients;
+
+            this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, steps, quantity, unit, ingredients)
+            .then(recipe => {
+              // this.recipes.push(recipe);
+              // this.selectedRecipe = null;
       });
   }
 

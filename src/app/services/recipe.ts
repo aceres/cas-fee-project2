@@ -8,10 +8,8 @@ export class Recipe {
   level: string;
   category: string;
   cuisine: string;
-  step1: string;
-  step2: string;
-  step3: string;
+  steps: any[];
   quantity: number;
   unit: string;
-  ingredient: string;
+  ingredients: any[];
 }
