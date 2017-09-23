@@ -9,7 +9,5 @@ export class Recipe {
   category: string;
   cuisine: string;
   steps: any[];
-  quantity: number;
-  unit: string;
   ingredients: any[];
 }

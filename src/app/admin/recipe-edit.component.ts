@@ -12,6 +12,21 @@ import { listUnits } from '../global/list.units';
 import { Recipe } from '../services/recipe';
 import { RecipeService } from '../services/recipe.service';
 
+class Step {
+  constructor(
+    public stepDescription: string,
+    public photo: string
+  ) { }
+}
+
+class Ingredient {
+  constructor(
+    public quantity: number,
+    public unit: string,
+    public ingredient: string
+  ) { }
+}
+
 @Component({
   selector: 'app-recipe-edit',
   templateUrl: './recipe-edit.component.html'
@@ -48,7 +63,6 @@ export class RecipeEditComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
-
     this.recipeService.getRecipeDetail(this.id).subscribe(recipe => {
       console.log('Edit recipe: ', recipe);
       this.receipt = recipe.receipt;
@@ -61,6 +75,62 @@ export class RecipeEditComponent implements OnInit {
       this.steps = recipe.steps;
       this.ingredients = recipe.ingredients;
     });
+  }
+
+  update(
+      receipt: string,
+      description: string,
+      portion: string,
+      prepTime: number,
+      level: string,
+      category: string,
+      cuisine: string,
+      steps: any[],
+      ingredients: any[]): void {
+    receipt = receipt.trim();
+    description = description.trim();
+    portion = portion.trim();
+    prepTime = prepTime;
+    level = level.trim();
+    category = category.trim();
+    cuisine = cuisine.trim();
+    steps = this.steps;
+    ingredients = this.ingredients;
+
+    console.log("id:", this.id);
+    console.log("receipt:", receipt);
+    console.log("description:", description);
+    console.log("portion:", portion);
+    console.log("prepTime:", prepTime);
+    console.log("level:", level);
+    console.log("category:", category);
+    console.log("cuisine:", cuisine);
+    console.log("steps:", steps);
+    console.log("ingredients:", ingredients);
+
+    this.recipeService.update(this.id, receipt, description, portion, prepTime, level, category, cuisine, steps, ingredients)
+      .then(recipe => {
+        // this.recipes.push(recipe);
+        // this.selectedRecipe = null;
+      });
+  }
+
+  addStep(stepDescription: string, photo: string) {
+    if (stepDescription) {
+      this.steps.push(new Step(stepDescription, photo));
+    }
+  }
+
+  removeStep(index) {
+    this.steps.splice(index, 1);
+  }
+
+  addIngredient(quantity: number, unit: string, ingredient: string) {
+    this.ingredients.push(new Ingredient(quantity, unit, ingredient));
+  }
+
+  removeIngredient(index) {
+    this.ingredients.splice(index, 1);
   }
 
   goBack(): void {

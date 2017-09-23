@@ -57,8 +57,6 @@ export class RecipeAddComponent implements OnInit {
       category: string,
       cuisine: string,
       steps: any[],
-      quantity: number,
-      unit: string,
       ingredients: any[]): void {
             name = name.trim();
             description = description.trim();
@@ -68,11 +66,9 @@ export class RecipeAddComponent implements OnInit {
             category = category.trim();
             cuisine = cuisine.trim();
             steps = this.steps;
-            quantity = quantity;
-            unit = unit;
             ingredients = this.ingredients;
 
-            this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, steps, quantity, unit, ingredients)
+            this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, steps, ingredients)
             .then(recipe => {
               // this.recipes.push(recipe);
               // this.selectedRecipe = null;

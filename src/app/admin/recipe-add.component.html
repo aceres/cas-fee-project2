@@ -174,7 +174,7 @@
   </tbody>
 </table>
 
-<button class="btn btn-default" (click)="add(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, recipeStep1.value, recipeStep2.value, recipeStep3.value, recipeQuantity.value, recipeUnit.value, recipeIngredient.value); recipeName.value=''; recipeDescription.value=''; recipePortion.value=''; recipePrepTime.value=''; recipeLevel.value=''; recipeCategory.value=''; recipeCuisine.value=''; recipeStep1.value=''; recipeStep2.value=''; recipeStep3.value=''; recipeQuantity.value=''; recipeUnit.value=''; recipeIngredient.value=''">
+<button class="btn btn-default" (click)="add(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, steps, ingredients); recipeName.value=''; recipeDescription.value=''; recipePortion.value=''; recipePrepTime.value=''; recipeLevel.value=''; recipeCategory.value=''; recipeCuisine.value='';">
   <i class="fa fa-floppy-o"></i> Speichern
 </button>
 <button [routerLink]="'/admin/recipes'" class="btn btn-default">

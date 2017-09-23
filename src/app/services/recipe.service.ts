@@ -68,21 +68,21 @@ export class RecipeService {
       .catch(this.handleError);
   }
 
-  create(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, steps: any[], quantity: number, unit: string, ingredients: any[]): Promise<Recipe> {
+  create(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, steps: any[], ingredients: any[]): Promise<Recipe> {
     const url = `${this.recipesUrl}.json`;
     return this.http
-      .post(url, JSON.stringify({receipt: name, description: description, portion: portion, prepTime: prepTime, level: level, category: category, cuisine: cuisine, steps, quantity: quantity, unit: unit, ingredients}), {headers: this.headers})
+      .post(url, JSON.stringify({receipt: name, description: description, portion: portion, prepTime: prepTime, level: level, category: category, cuisine: cuisine, steps: steps, ingredients: ingredients}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Recipe)
       .catch(this.handleError);
   }
 
-  update(recipe: Recipe): Promise<Recipe> {
-    const url = `${this.recipesUrl}/${recipe.id}.json`;
+  update(id: string, name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, steps: any[], ingredients: any[]): Promise<Recipe> {
+    const url = `${this.recipesUrl}/${id}.json`;
     return this.http
-      .put(url, JSON.stringify(recipe), {headers: this.headers})
+      .put(url, JSON.stringify({receipt: name, description: description, portion: portion, prepTime: prepTime, level: level, category: category, cuisine: cuisine, steps: steps, ingredients: ingredients}), {headers: this.headers})
       .toPromise()
-      .then(() => recipe)
+      .then(res => res.json().data as Recipe)
       .catch(this.handleError);
   }
 
