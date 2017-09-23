@@ -24,22 +24,12 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-3 col-md-2 sidebar">
-      <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipes']">Ihre Rezepte <span class="sr-only">(Aktuell)</span></a></li>
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipe-add']">Neues Rezept erfassen</a></li>
-      </ul>
-      <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-category']">Kategorie</a></li>
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-cuisine']">Länderküche</a></li>
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-difficulty']">Schwierigkeitsgrad</a></li>
-      </ul>
-      <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/crisis-center']">Wartungsarbeiten</a></li>
-      </ul>
 
-      <h4 *ngIf="authService.user | async">Willkommen {{ (authService.user | async)?.email }}!</h4>
-      <div class="form-group" *ngIf="authService.user | async">
+    <div class="col-sm-3 col-md-2 sidebar">
+
+      <div class="form-group welcome" *ngIf="authService.user | async">
+        <h4>Willkommen {{ (authService.user | async)?.email }}!</h4>
+
         <button class="btn btn-default" type="button" icon="fa-sign-out" (click)="logout()" *ngIf="authService.user | async">
           <i class="fa fa-user"></i> Abmelden
         </button>
@@ -61,6 +51,19 @@
           <i class="fa fa-key"></i> Registrieren
         </button>
       </div>
+
+      <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipes']">Ihre Rezepte <span class="sr-only">(Aktuell)</span></a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipe-add']">Neues Rezept erfassen</a></li>
+      </ul>
+      <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-category']">Kategorie</a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-cuisine']">Länderküche</a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-difficulty']">Schwierigkeitsgrad</a></li>
+      </ul>
+      <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/crisis-center']">Wartungsarbeiten</a></li>
+      </ul>
     </div>
 
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
