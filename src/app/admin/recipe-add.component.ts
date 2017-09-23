@@ -10,6 +10,9 @@ import { listUnits } from '../global/list.units';
 import { Recipe } from '../services/recipe';
 import { RecipeService } from '../services/recipe.service';
 
+import { UploadService } from '../services/upload.service';
+import { Upload } from '../services/upload';
+
 class Step {
   constructor(
     public stepDescription: string,
@@ -40,6 +43,10 @@ export class RecipeAddComponent implements OnInit {
   steps = [];
   ingredients = [];
 
+  image = [];
+  selectedFiles: FileList;
+  currentUpload: Upload;
+
   // Initialize: For the validation
   // TODO: This doesn't work for now
   ingredient = { recipeQuantity: '', recipeIngredient: '' };
@@ -47,7 +54,18 @@ export class RecipeAddComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private recipeService: RecipeService) { }
+    private recipeService: RecipeService,
+    private upSvc: UploadService) { }
+
+  detectFiles(event) {
+    this.selectedFiles = event.target.files;
+  }
+
+  uploadSingle() {
+    const file = this.selectedFiles.item(0)
+    this.currentUpload = new Upload(file);
+    this.upSvc.pushUpload(this.currentUpload)
+  }
 
   add(name: string,
       description: string,
@@ -57,7 +75,8 @@ export class RecipeAddComponent implements OnInit {
       category: string,
       cuisine: string,
       steps: any[],
-      ingredients: any[]): void {
+      ingredients: any[],
+      image: any[]): void {
             name = name.trim();
             description = description.trim();
             portion = portion.trim();
@@ -67,8 +86,9 @@ export class RecipeAddComponent implements OnInit {
             cuisine = cuisine.trim();
             steps = this.steps;
             ingredients = this.ingredients;
+            image = this.image;
 
-            this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, steps, ingredients)
+            this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, steps, ingredients, image)
             .then(recipe => {
               // this.recipes.push(recipe);
               // this.selectedRecipe = null;

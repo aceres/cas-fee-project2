@@ -7,46 +7,80 @@
 </div>
 
 <div class="form-group">
-  <label for="name">Rezeptname:</label>
-  <input name="name" id="name" class="form-control" placeholder="Feldsalat mit Balsamico-Vinaigrette"  #recipeName />
+  <label class="col-md-4" for="name">Rezeptname:</label>
+  <div class="col-md-8">
+    <input name="name" id="name" class="form-control" placeholder="Feldsalat mit Balsamico-Vinaigrette"  #recipeName />
+  </div>
 </div>
 
 <div class="form-group">
-  <label for="description">Beschreibung:</label>
-  <textarea rows="2" name="description" id="description" class="form-control" placeholder="Feldsalat ist der beliebteste Wintersalat. "  #recipeDescription></textarea>
+  <label class="col-md-4" for="description">Beschreibung:</label>
+  <div class="col-md-8">
+    <textarea rows="2" name="description" id="description" class="form-control" placeholder="Feldsalat ist der beliebteste Wintersalat. "  #recipeDescription></textarea>
+  </div>
 </div>
 
 <div class="form-group">
-  <label>Anzahl Personen:</label>
-  <select name="portion" class="form-control" #recipePortion>
-    <option *ngFor="let portion of listPortions" [value]="portion.value">{{portion.display}}</option>
-  </select>
+  <label class="col-md-4">Anzahl Personen:</label>
+  <div class="col-md-8">
+    <select name="portion" class="form-control" #recipePortion>
+      <option *ngFor="let portion of listPortions" [value]="portion.value">{{portion.display}}</option>
+    </select>
+  </div>
 </div>
 
 <div class="form-group">
-  <label for="prepTime">Zubereitungszeit in Minuten:</label>
-  <input type="number" name="prepTime" id="prepTime" class="form-control" placeholder="90"  #recipePrepTime />
+  <label class="col-md-4" for="prepTime">Zubereitungszeit in Minuten:</label>
+  <div class="col-md-8">
+    <input type="number" name="prepTime" id="prepTime" class="form-control" placeholder="90"  #recipePrepTime />
+  </div>
 </div>
 
 <div class="form-group">
-  <label>Schwierigkeitsgrad:</label>
-  <select name="level" class="form-control" #recipeLevel>
-    <option *ngFor="let level of listLevels" [value]="level.value">{{level.display}}</option>
-  </select>
+  <label class="col-md-4">Schwierigkeitsgrad:</label>
+  <div class="col-md-8">
+    <select name="level" class="form-control" #recipeLevel>
+      <option *ngFor="let level of listLevels" [value]="level.value">{{level.display}}</option>
+    </select>
+  </div>
 </div>
 
 <div class="form-group">
-  <label>Kategorie:</label>
-  <select name="category" class="form-control" #recipeCategory>
-    <option *ngFor="let category of listCategories" [value]="category.value">{{category.display}}</option>
-  </select>
+  <label class="col-md-4">Kategorie:</label>
+  <div class="col-md-8">
+    <select name="category" class="form-control" #recipeCategory>
+      <option *ngFor="let category of listCategories" [value]="category.value">{{category.display}}</option>
+    </select>
+  </div>
 </div>
 
 <div class="form-group">
-  <label>Länderküche:</label>
-  <select name="cuisine" class="form-control" #recipeCuisine>
-    <option *ngFor="let cuisine of listCuisines" [value]="cuisine.value">{{cuisine.display}}</option>
-  </select>
+  <label class="col-md-4">Länderküche:</label>
+  <div class="col-md-8">
+    <select name="cuisine" class="form-control" #recipeCuisine>
+      <option *ngFor="let cuisine of listCuisines" [value]="cuisine.value">{{cuisine.display}}</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4">Bild hochladen</label>
+  <div class="col-md-8">
+    <div *ngIf="currentUpload">
+      <div class="progress">
+        <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': currentUpload?.progress + '%' }"></div>
+      </div>
+      Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
+    </div>
+    <label>
+      <input type="file" (change)="detectFiles($event)" class="form-control">
+    </label>
+    <button
+      [disabled]="!selectedFiles"
+      (click)="uploadSingle()" class="btn btn-default">
+      Upload Single
+    </button>
+  </div>
 </div>
 
 <hr>

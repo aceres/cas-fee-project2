@@ -199,3 +199,8 @@ Config: .angular-cli.json
     "component": {}
   }
 
+### Installation of ng2-file-upload (upload images for example)
+
+npm install ng2-file-upload --save
+
+https://github.com/valor-software/ng2-file-upload

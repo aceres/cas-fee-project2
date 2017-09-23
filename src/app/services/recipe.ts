@@ -10,4 +10,5 @@ export class Recipe {
   cuisine: string;
   steps: any[];
   ingredients: any[];
+  image: any[];
 }

@@ -68,10 +68,10 @@ export class RecipeService {
       .catch(this.handleError);
   }
 
-  create(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, steps: any[], ingredients: any[]): Promise<Recipe> {
+  create(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, steps: any[], ingredients: any[], image: any[]): Promise<Recipe> {
     const url = `${this.recipesUrl}.json`;
     return this.http
-      .post(url, JSON.stringify({receipt: name, description: description, portion: portion, prepTime: prepTime, level: level, category: category, cuisine: cuisine, steps: steps, ingredients: ingredients}), {headers: this.headers})
+      .post(url, JSON.stringify({receipt: name, description: description, portion: portion, prepTime: prepTime, level: level, category: category, cuisine: cuisine, steps: steps, ingredients: ingredients, image: image}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Recipe)
       .catch(this.handleError);

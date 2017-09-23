@@ -23,6 +23,7 @@ import { AuthService } from './services/auth.service';
 import { RecipeService } from './services/recipe.service';
 import { BasisDataCategoryService } from './services/basis-data-category.service';
 import { BasisDataCuisineService } from './services/basis-data-cuisine.service';
+import { UploadService } from './services/upload.service';
 
 // App
 import { AppComponent } from './app.component';
@@ -102,7 +103,7 @@ import { PaginationLimitComponent } from './directives/pagination/pagination.com
     AlertComponent,
     PaginationLimitComponent
   ],
-  providers: [AuthService, RecipeService, BasisDataCategoryService, BasisDataCuisineService],
+  providers: [AuthService, RecipeService, BasisDataCategoryService, BasisDataCuisineService, UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
