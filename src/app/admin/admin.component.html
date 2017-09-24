@@ -31,7 +31,7 @@
         <h4>Willkommen {{ (authService.user | async)?.email }}!</h4>
 
         <button class="btn btn-default" type="button" icon="fa-sign-out" (click)="logout()" *ngIf="authService.user | async">
-          <i class="fa fa-user"></i> Abmelden
+          <i class="fa fa-sign-out"></i> Abmelden
         </button>
       </div>
 
@@ -53,8 +53,8 @@
       </div>
 
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipes']">Ihre Rezepte <span class="sr-only">(Aktuell)</span></a></li>
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipe-add']">Neues Rezept erfassen</a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipes']"><i class="fa fa-list"></i> Ihre Rezepte <span class="sr-only">(Aktuell)</span></a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipe-add']"><i class="fa fa-plus-circle"></i> Neues Rezept erfassen</a></li>
       </ul>
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
         <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/basis-data-category']">Kategorie</a></li>

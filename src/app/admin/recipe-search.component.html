@@ -1,5 +1,8 @@
 <div class="form-group">
   <input name="searchRecipe" class="form-control" placeholder="Rezept suchen..." #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <button class="btn btn-default">
+    <i class="fa fa-search"></i> Suchen
+  </button>
   <div>
     <div *ngFor="let recipe of recipes | async"
          (click)="detail(recipe)" class="search-result" >
