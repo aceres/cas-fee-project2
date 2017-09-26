@@ -4,7 +4,7 @@
 
 - Rollen definieren (Admin, Register User, Public)
 - TODOs in der Code aufräumen
-- SASS (Umschalten auf SASS)
+- SASS (Umschalten auf SASS bzw. LESS)
 - AuthGuard fertig machen
 - Frage: Ob ab September möglich wäre, jeweils Mi. ab 16 Uhr, für eine Unterstützung oder allfällige Fragen vorbeizukommen
 - Alle CURLS vervollständigen
@@ -32,7 +32,7 @@
 #### TODO bei André
 
 - Templates auseinander nehmen und schön nach Themen strukturieren
-- Template / CSS testen (Umlagern)
+- Templates / CSS testen (Umlagern)
 - Suche: AutoComplete (via Firebase) - https://angular.io/tutorial/toh-pt6 (auf Firebase umstellen)
 - Angular 4 einarbeiten
 - LESS installieren
