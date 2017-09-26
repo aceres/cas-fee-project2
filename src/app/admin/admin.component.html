@@ -53,7 +53,7 @@
       </div>
 
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
-        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipes']"><i class="fa fa-list"></i> Ihre Rezepte <span class="sr-only">(Aktuell)</span></a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipes']"><i class="fa fa-list"></i> Meine Rezepte <span class="sr-only">(Aktuell)</span></a></li>
         <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipe-add']"><i class="fa fa-plus-circle"></i> Neues Rezept erfassen</a></li>
       </ul>
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">

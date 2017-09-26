@@ -1,10 +1,64 @@
 <app-alert></app-alert>
 
-<h1 class="page-header">Ihre Rezepte</h1>
+<h1 class="recipes-list-heading">Meine Rezepte</h1>
 
 <app-recipe-search></app-recipe-search>
 
-<div class="table-responsive">
+
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-3" *ngFor="let recipe of allRecipes | async" (click)="detail(recipe)">
+    <div class="recipes-list-item">
+      <div class="recipes-list-item-image">
+        <div class="recipes-list-item-buttons">
+          <ul class="recipes-list-item-buttons-list">
+            <li class="recipes-list-item-buttons-edit">
+              <button class="btn btn-default btn-circle" [routerLink]="['/admin/recipe-edit/' + recipe.$key]">
+                <i class="fa fa-pencil"></i>
+              </button>
+            </li>
+            <li class="recipes-list-item-buttons-delete">
+              <button class="btn btn-default btn-circle" (click)="remove(recipe); $event.stopPropagation()">
+                <i class="fa fa-trash-o"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="recipes-list-item-image-card">
+          <div class="recipes-list-item-image-img" style="background-image: url(https://static.pexels.com/photos/159887/pexels-photo-159887.jpeg)">
+            <a [routerLink]="['/admin/recipe-detail/' + recipe.$key]"></a>
+          </div>
+        </div>
+      </div>
+      <div class="recipes-list-item-meta-container">
+        <div class="recipes-list-item-meta-info">
+          <span class="recipes-list-item-meta-info-preptime">{{recipe.prepTime}} min.</span>
+        </div>
+        <div class="recipes-list-item-meta-info">
+          <span class="recipes-list-item-meta-info-level">{{recipe.level}}</span>
+        </div>
+        <div class="recipes-list-item-meta-info">
+          <span class="recipes-list-item-meta-info-likes">{{recipe.rating}}</span>
+        </div>
+      </div>
+      <div class="recipes-list-item-title">
+        <h5 class="recipes-list-item-title">{{recipe.receipt}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <app-pagination-limit></app-pagination-limit>
+    </div>
+  </div>
+
+
+
+
+
+
+<!--<div class="table-responsive">
   <table class="table table-striped table-hover">
     <thead>
       <tr>
@@ -56,5 +110,5 @@
         </td>
       </tr>
   </table>
-</div>
-<app-pagination-limit></app-pagination-limit>
+</div>-->
+
