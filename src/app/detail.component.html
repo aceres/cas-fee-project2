@@ -13,23 +13,23 @@
         </div>
       </div>
       <div class="col-md-6">
-        <h1 class="recipe-details-heading">{{(recipe | async).receipt}}</h1>
-        <p class="recipe-details-description">{{(recipe | async).description}}</p>
+        <h1 class="recipe-details-heading">{{(recipe | async)?.receipt}}</h1>
+        <p class="recipe-details-description">{{(recipe | async)?.description}}</p>
         <div class="row">
           <div class="col-md-12">
             <div class="meta-container">
               <ul class="meta-list">
                 <li>
                   <span class="meta-info-preptime">Zubereitungszeit:</span>
-                  <span class="meta-value">{{(recipe | async).prepTime}} min.</span>
+                  <span class="meta-value">{{(recipe | async)?.prepTime}} min.</span>
                 </li>
                 <li>
                   <span class="meta-info-level">Schwierigkeitsgrad:</span>
-                  <span class="meta-value">{{(recipe | async).level}}</span>
+                  <span class="meta-value">{{(recipe | async)?.level}}</span>
                 </li>
                 <li>
                   <span class="meta-info-cuisine">Länderküche:</span>
-                  <span class="meta-value">{{(recipe | async).cuisine}}</span>
+                  <span class="meta-value">{{(recipe | async)?.cuisine}}</span>
                 </li>
               </ul>
             </div>
@@ -157,13 +157,13 @@
       </div>
       <div class="col-md-6">
         <div class="preparation-steps">
-          <div class="preparation-steps-step">
-            <span class="step">1</span>
-            <p>Schweinefleisch würfeln, Hähnchen in Stücke zerlegen. Beides in einer tiefen Pfanne oder einem Topf mit gehackten Zwiebeln in der Hälfte des Öls anbraten und bräunen, salzen und pfeffern. In feine Streifen geschnittenen Schinken dazugeben und kurz mitrösten, mit Safran vermischte Brühe angießen und 3o Minuten kochen. Lorbeerblatt 20 Minuten mitkochen, dann herausnehmen. Reis hinzufügen, 15 Minuten weiterkochen.</p>
-          </div>
-          <div class="preparation-steps-step">
-            <span class="step">2</span>
-            <p>Unterdessen Paprikaschoten entkernen und in Streifen schneiden, Tomaten abziehen und in Scheiben schneiden. Beides im restlichen Öl anschmoren, Erbsen und Bohnen dazugeben und etwas Brühe angießen, das Gemüse fast garen und in den Reistopf geben, mit Muscheln, Krabben und geschnittenen Champignons unter den Reis heben, die Paella mit Salz, Pfeffer und Cayennepfeffer abschmecken und nochmals 1o Minuten durchziehen lassen.</p>
+          <div class="preparation-steps-step" *ngFor="let step of (recipe | async)?.steps; let i = index;">
+            <span class="step">
+              {{i+1}}
+            </span>
+            <p>
+              {{ step.stepDescription }}
+            </p>
           </div>
         </div>
       </div>
