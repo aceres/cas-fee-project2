@@ -40,7 +40,7 @@
             <div class="like-group">
               <ul class="like-list">
                 <li>
-                  <span class="like-list-likes">{{recipe.rating}}</span>
+                  <span class="like-list-likes">{{(recipe.rating | async)?.rating}}</span>
                 </li>
                 <li>
                   <a class="btn btn-default" href="#" role="button">Rezept speichern</a>
@@ -62,7 +62,7 @@
       </div>
       <div class="col-md-6">
         <div class="preparation-ingredients">
-          <h3 class="preparation-ingredients-heading">Zutaten für {{(recipe | async).portion}} Personen</h3>
+          <h3 class="preparation-ingredients-heading">Zutaten für {{(recipe | async)?.portion}} Personen</h3>
           <div class="preparation-ingredients-item">
             <span class="preparation-ingredients-quantity">250</span>
             <span class="preparation-ingredients-unit">g</span>
