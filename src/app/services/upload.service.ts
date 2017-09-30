@@ -9,10 +9,12 @@ import { Upload } from '../services/upload';
 export class UploadService {
 
   private basePath: string = '/uploads';
-  // uploads: FirebaseListObservable<Upload[]>;
+  uploads: FirebaseListObservable<Upload[]>;
+
   constructor(
     // private af: AngularFire,
     private db: AngularFireDatabase) { }
+
   pushUpload(upload: Upload) {
 
     const storageRef = firebase.storage().ref();
@@ -21,7 +23,8 @@ export class UploadService {
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) =>  {
         // upload in progress
-        // upload.progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        const snap = snapshot as firebase.storage.UploadTaskSnapshot;
+        upload.progress = (snap.bytesTransferred / snap.totalBytes) * 100
       },
       (error) => {
         // upload failed
