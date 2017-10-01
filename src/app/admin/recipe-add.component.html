@@ -1,5 +1,3 @@
-<app-alert></app-alert>
-
 <h1 class="page-header">Rezept erfassen</h1>
 
 <div class="info">
@@ -214,3 +212,14 @@
 <button [routerLink]="'/admin/recipes'" class="btn btn-default">
   <i class="fa fa-ban"></i> Abbrechen
 </button>
+
+<div *ngFor="let alert of alerts">
+  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" dismissible="true">
+    <h4 class="alert-heading">
+      Info
+    </h4>
+    <p>
+      {{ alert.msg }}
+    </p>
+  </alert>
+</div>

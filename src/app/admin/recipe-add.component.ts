@@ -34,6 +34,7 @@ class Ingredient {
   styleUrls: ['./recipe-add.component.less']
 })
 export class RecipeAddComponent implements OnInit {
+  response;
   recipes: Recipe[];
   listCategories = listCategories;
   listPortions = listPortions;
@@ -46,6 +47,8 @@ export class RecipeAddComponent implements OnInit {
   image = [];
   selectedFiles: FileList;
   currentUpload: Upload;
+
+  public alerts: any = [];
 
   // Initialize: For the validation
   // TODO: This doesn't work for now
@@ -89,11 +92,25 @@ export class RecipeAddComponent implements OnInit {
             image = this.image;
 
             this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, steps, ingredients, image)
-            .then(recipe => {
+              .then(response => {
+              this.response = response;
               // this.recipes.push(recipe);
               // this.selectedRecipe = null;
-      });
-  }
+              console.log('Response after created form: ', response);
+
+              // Show notification
+              this.alerts.push({
+                type: 'success',
+                msg: `Rezept wurde erfolgreich gespeichert! (Hinzugefügt am: ${(new Date()).toLocaleTimeString()})`,
+                timeout: 5000
+              });
+
+              // const file = this.selectedFiles.item(0)
+              // this.currentUpload = new Upload(file);
+              // this.upSvc.pushUpload(this.currentUpload)
+
+              });
+      }
 
   addStep(stepDescription: string, photo: string) {
     if (stepDescription) {

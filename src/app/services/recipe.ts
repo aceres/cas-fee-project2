@@ -11,4 +11,6 @@ export class Recipe {
   steps: any[];
   ingredients: any[];
   image: any[];
+  // createdDate: Date = new Date();
+  // createdBy: string;
 }

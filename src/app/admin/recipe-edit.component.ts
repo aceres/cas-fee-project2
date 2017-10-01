@@ -50,6 +50,8 @@ export class RecipeEditComponent implements OnInit {
   listCuisines = listCuisines;
   listUnits = listUnits;
 
+  public alerts: any = [];
+
   // Initialize: For the validation
   // TODO: This doesn't work for now
   ingredient = { recipeQuantity: '', recipeIngredient: '' };
@@ -112,6 +114,13 @@ export class RecipeEditComponent implements OnInit {
       .then(recipe => {
         // this.recipes.push(recipe);
         // this.selectedRecipe = null;
+
+        // Show notification
+        this.alerts.push({
+          type: 'success',
+          msg: `Rezept wurde erfolgreich aktualisiert! (Geändert am: ${(new Date()).toLocaleTimeString()})`,
+          timeout: 5000
+        });
       });
   }
 

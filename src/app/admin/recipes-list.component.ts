@@ -14,6 +14,8 @@ export class RecipesListComponent implements OnInit {
   recipes: Recipe[];
   allRecipes: FirebaseListObservable<any[]>;
 
+  public alerts: any = [];
+
   constructor(private router: Router, private recipeService: RecipeService, db: AngularFireDatabase) {
     this.allRecipes = db.list('/recipes');
   }
@@ -29,6 +31,12 @@ export class RecipesListComponent implements OnInit {
       .then(() => {
         // this.recipes = this.recipes.filter(h => h !== recipe);
         // if (this.selectedRecipe === recipe) { this.selectedRecipe = null; }
+
+        this.alerts.push({
+          type: 'success',
+          msg: `Rezept wurde erfolgreich entfernt! (Geändert am: ${(new Date()).toLocaleTimeString()})`,
+          timeout: 5000
+        });
       });
   }
 
