@@ -42,6 +42,9 @@
       </div>
     </div>
   </div>
+  <pagination [totalItems]="bigTotalItems" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize" class="pagination-sm"
+              [boundaryLinks]="true" [rotate]="false" (pageChanged)="pageChanged($event)" (numPages)="numPages = $event"></pagination>
+  <pre class="card card-block card-header">Seite: {{bigCurrentPage}} / {{numPages}}</pre>
 </div>
 
 <div *ngFor="let alert of alerts">
@@ -54,13 +57,6 @@
     </p>
   </alert>
 </div>
-
-<div class="row">
-  <div class="col-md-12">
-    <app-pagination-limit></app-pagination-limit>
-  </div>
-</div>
-
 
 
 

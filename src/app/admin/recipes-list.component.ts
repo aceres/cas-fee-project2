@@ -14,6 +14,12 @@ export class RecipesListComponent implements OnInit {
   recipes: Recipe[];
   allRecipes: FirebaseListObservable<any[]>;
 
+  public maxSize:number = 5;
+  public bigTotalItems:number = 175;
+  public bigCurrentPage:number = 1;
+  public numPages:number = 0;
+
+  // Alert
   public alerts: any = [];
 
   constructor(private router: Router, private recipeService: RecipeService, db: AngularFireDatabase) {
@@ -42,6 +48,11 @@ export class RecipesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRecipes();
+  }
+
+  public pageChanged(event: any): void {
+    console.log('Page changed to: ' + event.page);
+    console.log('Number items per page: ' + event.itemsPerPage);
   }
 
   detail(recipe): void {
