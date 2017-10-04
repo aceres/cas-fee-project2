@@ -1,13 +1,11 @@
 <h1 class="recipes-list-heading">Meine Rezepte</h1>
 
-<app-recipe-search></app-recipe-search>
-
 <div class="form-group">
-  <input name="searchRecipe" class="form-control" placeholder="Rezept suchen..." #txtFname id="search-box" />
+  <input name="searchRecipe" class="form-control" placeholder="Rezept suchen..." [(ngModel)]="searchTerm" id="search-box" />
 </div>
 
 <div class="row">
-  <div class="col-xs-6 col-sm-6 col-md-3" *ngFor="let recipe of allRecipes | async" (click)="detail(recipe)">
+  <div class="col-xs-6 col-sm-6 col-md-3" *ngFor="let recipe of allRecipes | async | filter:searchTerm" (click)="detail(recipe)">
     <div class="recipes-list-item">
       <div class="recipes-list-item-image">
         <div class="recipes-list-item-buttons">

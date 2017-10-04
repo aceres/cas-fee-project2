@@ -22,6 +22,8 @@ export class RecipesListComponent implements OnInit {
   // Alert
   public alerts: any = [];
 
+  public searchTerm;
+
   constructor(private router: Router, private recipeService: RecipeService, db: AngularFireDatabase) {
     this.allRecipes = db.list('/recipes');
   }
