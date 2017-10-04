@@ -1,5 +1,5 @@
 export class Upload {
-
+  key: string;
   $key: string;
   file: File;
   name: string;

@@ -9,7 +9,9 @@
     <div class="row">
       <div class="col-md-6">
         <div class="recipe-image">
-          <img class="featurette-image img-responsive center-block" src="http://via.placeholder.com/1125x750" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" src="{{ (recipe | async)?.image?.url }}" alt="{{(recipe | async)?.receipt}}">
+          <!--<img class="featurette-image img-responsive center-block" onError="this.src='http://via.placeholder.com/1125x750'" src="{{ (recipe | async)?.image.url }}" alt="Generic placeholder image">-->
+          <!--<img class="featurette-image img-responsive center-block" src="http://via.placeholder.com/1125x750" alt="Generic placeholder image">-->
         </div>
       </div>
       <div class="col-md-6">

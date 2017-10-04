@@ -15,6 +15,7 @@ import { RecipeService } from './services/recipe.service';
 export class PublicReceiptDetailComponent implements OnInit {
   title = 'What to cook?';
   recipe;
+  image;
   key;
 
   constructor(private recipeService: RecipeService, private route: ActivatedRoute, private location: Location) { }
@@ -23,6 +24,7 @@ export class PublicReceiptDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => {
       const id = urlParameters['id'];
       this.recipe = this.recipeService.getRecipe(id);
+      this.image = this.recipeService.getImage(id);
     });
     this.key = this.route.snapshot.params['id'];
   }

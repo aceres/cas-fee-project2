@@ -63,10 +63,11 @@ export class RecipeAddComponent implements OnInit {
     this.selectedFiles = event.target.files;
   }
 
+  // TODO: Not active at the moment
   uploadSingle() {
     const file = this.selectedFiles.item(0)
     this.currentUpload = new Upload(file);
-    this.upSvc.pushUpload(this.currentUpload)
+    this.upSvc.pushUpload(this.currentUpload, "")
   }
 
   add(name: string,
@@ -96,16 +97,16 @@ export class RecipeAddComponent implements OnInit {
               // this.selectedRecipe = null;
               console.log('Response after created form: ', response.name);
 
-              // Show notification
-              this.alerts.push({
-                type: 'success',
-                msg: `Rezept wurde erfolgreich gespeichert! (Hinzugefügt am: ${(new Date()).toLocaleTimeString()})`,
-                timeout: 5000
-              });
+              const file = this.selectedFiles.item(0)
+              this.currentUpload = new Upload(file);
+              this.upSvc.pushUpload(this.currentUpload, response.name)
 
-              // const file = this.selectedFiles.item(0)
-              // this.currentUpload = new Upload(file);
-              // this.upSvc.pushUpload(this.currentUpload)
+                // Show notification
+                this.alerts.push({
+                  type: 'success',
+                  msg: `Rezept wurde erfolgreich gespeichert! (Hinzugefügt am: ${(new Date()).toLocaleTimeString()})`,
+                  timeout: 5000
+                });
 
               });
       }

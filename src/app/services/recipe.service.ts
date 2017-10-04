@@ -6,13 +6,16 @@ import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/toPromise';
 
 import { Recipe } from './recipe';
+import { Upload } from './upload';
 
 @Injectable()
 export class RecipeService {
   recipe: FirebaseObjectObservable<any>;
+  image: FirebaseObjectObservable<any>;
 
   private headers = new Headers({'Content-Type': 'application/json;charset=utf-8'});
   private recipesUrl = environment.apiUrl + 'recipes';
+  private imagesUrl = environment.apiUrl + 'uploads';
 
   constructor(
     private http: Http,
@@ -51,6 +54,15 @@ export class RecipeService {
     return this.http.get(url)
       .toPromise()
       .then(response => response.json() as Recipe)
+      .catch(this.handleError);
+  }
+
+  // TODO: Refactoring
+  getImage(id: string): Promise<Upload> {
+    const url = `${this.imagesUrl}/${id}.json`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json() as Upload)
       .catch(this.handleError);
   }
 
