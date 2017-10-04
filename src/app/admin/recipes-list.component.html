@@ -2,6 +2,10 @@
 
 <app-recipe-search></app-recipe-search>
 
+<div class="form-group">
+  <input name="searchRecipe" class="form-control" placeholder="Rezept suchen..." #txtFname id="search-box" />
+</div>
+
 <div class="row">
   <div class="col-xs-6 col-sm-6 col-md-3" *ngFor="let recipe of allRecipes | async" (click)="detail(recipe)">
     <div class="recipes-list-item">

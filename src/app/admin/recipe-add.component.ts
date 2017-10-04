@@ -34,7 +34,6 @@ class Ingredient {
   styleUrls: ['./recipe-add.component.less']
 })
 export class RecipeAddComponent implements OnInit {
-  response;
   recipes: Recipe[];
   listCategories = listCategories;
   listPortions = listPortions;
@@ -92,11 +91,10 @@ export class RecipeAddComponent implements OnInit {
             image = this.image;
 
             this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, steps, ingredients, image)
-              .then(response => {
-              this.response = response;
+              .subscribe(response => {
               // this.recipes.push(recipe);
               // this.selectedRecipe = null;
-              console.log('Response after created form: ', response);
+              console.log('Response after created form: ', response.name);
 
               // Show notification
               this.alerts.push({

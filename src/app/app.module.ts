@@ -57,6 +57,9 @@ import { RegisterComponent } from './register/register.component';
 import { AlertComponent } from './directives/alert/alert.component';
 import { PaginationLimitComponent } from './directives/pagination/pagination.component';
 
+// Pipes
+import { FilterPipe } from './pipes/search-filter.pipe';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -101,7 +104,9 @@ import { PaginationLimitComponent } from './directives/pagination/pagination.com
     BasisDataCuisineComponent,
     // ngx-bootstrap
     AlertComponent,
-    PaginationLimitComponent
+    PaginationLimitComponent,
+    // Pipes
+    FilterPipe
   ],
   providers: [AuthService, RecipeService, BasisDataCategoryService, BasisDataCuisineService, UploadService],
   bootstrap: [AppComponent]
