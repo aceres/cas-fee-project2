@@ -22,15 +22,15 @@
             <div class="meta-container">
               <ul class="meta-list">
                 <li>
-                  <span class="meta-info-preptime">Zubereitungszeit:</span>
+                  <i class="icon flaticon-preptime"></i>Zubereitungszeit:
                   <span class="meta-value">{{(recipe | async)?.prepTime}} min.</span>
                 </li>
                 <li>
-                  <span class="meta-info-level">Schwierigkeitsgrad:</span>
+                  <i class="icon flaticon-level"></i>Schwierigkeitsgrad:
                   <span class="meta-value">{{(recipe | async)?.level}}</span>
                 </li>
                 <li>
-                  <span class="meta-info-cuisine">Länderküche:</span>
+                  <i class="icon flaticon-cuisine"></i>Länderküche:
                   <span class="meta-value">{{(recipe | async)?.cuisine}}</span>
                 </li>
               </ul>
@@ -42,7 +42,7 @@
             <div class="like-group">
               <ul class="like-list">
                 <li>
-                  <span class="like-list-likes">{{(recipe.rating | async)?.rating}}</span>
+                  <span class="icon flaticon-like">{{(recipe.rating | async)?.rating}}</span>
                 </li>
                 <li>
                   <a class="btn btn-default" href="#" role="button">Rezept speichern</a>

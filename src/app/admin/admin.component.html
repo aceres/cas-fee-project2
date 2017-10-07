@@ -28,11 +28,10 @@
     <div class="col-sm-3 col-md-2 sidebar">
 
       <div class="form-group welcome" *ngIf="authService.user | async">
-        <h4>Willkommen {{ (authService.user | async)?.email }}!</h4>
-
-        <button class="btn btn-default" type="button" icon="fa-sign-out" (click)="logout()" *ngIf="authService.user | async">
-          <i class="fa fa-sign-out"></i> Abmelden
-        </button>
+        <p>Willkommen {{ (authService.user | async)?.email }}!</p>
+        <a class="logout" (click)="logout()" *ngIf="authService.user | async">
+          <i class="flaticon-logout"></i> Abmelden
+        </a>
       </div>
 
       <div *ngIf="!(authService.user | async)">
@@ -54,55 +53,37 @@
 
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
         <li [routerLinkActive]="['active']"><a [routerLink]="['/admin/recipes']">
-          <svg viewBox="0 0 100 100" class="icon my-recipes-dark">
-            <use xlink:href="./assets/img/icons-collection-svg-sprite.svg#my-recipes"></use>
-          </svg>
-          Meine Rezepte
+          <i class="icon flaticon-recipes"></i>Meine Rezepte
           <span class="sr-only">(Aktuell)</span>
         </a>
         </li>
         <li [routerLinkActive]="['active']">
           <a [routerLink]="['/admin/recipe-add']">
-            <svg viewBox="0 0 100 100" class="icon add-recipe-dark">
-              <use xlink:href="./assets/img/icons-collection-svg-sprite.svg#add-recipe"></use>
-            </svg>
-            Neues Rezept
+            <i class="icon flaticon-add"></i>Neues Rezept
           </a>
         </li>
       </ul>
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
         <li [routerLinkActive]="['active']">
           <a [routerLink]="['/admin/basis-data-category']">
-            <svg viewBox="0 0 100 100" class="icon category-dark">
-              <use xlink:href="./assets/img/icons-collection-svg-sprite.svg#category"></use>
-            </svg>
-            Kategorie
+            <i class="icon flaticon-category"></i>Kategorie
           </a>
         </li>
         <li [routerLinkActive]="['active']">
           <a [routerLink]="['/admin/basis-data-cuisine']">
-          <svg viewBox="0 0 100 100" class="icon cuisine-dark">
-            <use xlink:href="./assets/img/icons-collection-svg-sprite.svg#cuisine"></use>
-          </svg>
-          Länderküche
+            <i class="icon flaticon-cuisine"></i>Länderküche
           </a>
         </li>
         <li [routerLinkActive]="['active']">
           <a [routerLink]="['/admin/basis-data-difficulty']">
-            <svg viewBox="0 0 100 100" class="icon level-dark">
-              <use xlink:href="./assets/img/icons-collection-svg-sprite.svg#level"></use>
-            </svg>
-            Schwierigkeitsgrad
+            <i class="icon flaticon-level"></i>Schwierigkeitsgrad
           </a>
         </li>
       </ul>
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
         <li [routerLinkActive]="['active']">
           <a [routerLink]="['/admin/crisis-center']">
-            <svg viewBox="0 0 100 100" class="icon maintenance-dark">
-              <use xlink:href="./assets/img/icons-collection-svg-sprite.svg#maintenance"></use>
-            </svg>
-            Wartungsarbeiten
+            <i class="icon flaticon-maintenance"></i>Wartungsarbeiten
           </a>
         </li>
       </ul>
