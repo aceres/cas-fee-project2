@@ -23,9 +23,10 @@
           </ul>
         </div>
         <div class="recipes-list-item-image-card">
-          <div class="recipes-list-item-image-img" style="background-image: url(https://static.pexels.com/photos/159887/pexels-photo-159887.jpeg)">
-            <a [routerLink]="['/admin/recipe-detail/' + recipe.$key]"></a>
-          </div>
+          <!--<div class="recipes-list-item-image-img" style="background-image: url(https://static.pexels.com/photos/159887/pexels-photo-159887.jpeg)">-->
+          <img class="recipes-list-item-image-img" src="{{ recipe.image?.url }}" alt="{{ recipe.receipt}}" />
+          <a [routerLink]="['/admin/recipe-detail/' + recipe.$key]"></a>
+          <!--</div>-->
         </div>
       </div>
       <div class="recipes-list-item-meta-container">
@@ -59,62 +60,3 @@
     </p>
   </alert>
 </div>
-
-
-
-
-
-<!--<div class="table-responsive">
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th>
-          Nr.
-        </th>
-        <th>
-          Rezept
-        </th>
-        <th>
-          Beschreibung
-        </th>
-        <th>
-          Kategorie
-        </th>
-        <th>
-          Länderküche
-        </th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let recipe of allRecipes | async" (click)="detail(recipe)">
-        <td>
-          {{recipe.$key}}
-        </td>
-        <td>
-          {{recipe.receipt}}
-        </td>
-        <td>
-          {{recipe.description}}
-        </td>
-        <td>
-          {{recipe.category}}
-        </td>
-        <td>
-          {{recipe.cuisine}}
-        </td>
-        <td style="text-align: right">
-          <button class="btn btn-default" (click)="detail(recipe)">
-            <i class="fa fa-eye"></i> Detailansicht
-          </button>
-          <button class="btn btn-default" [routerLink]="['/admin/recipe-edit/' + recipe.$key]">
-            <i class="fa fa-pencil"></i>
-          </button>
-          <button class="btn btn-default" (click)="remove(recipe); $event.stopPropagation()">
-            <i class="fa fa-trash-o"></i>
-          </button>
-        </td>
-      </tr>
-  </table>
-</div>-->
-

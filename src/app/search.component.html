@@ -5,7 +5,7 @@
   </div>
 </div>
 <div class="resultDropDown">
-  <div class="foundResult" *ngFor="let recipe of recipes">
+  <div class="foundResult" *ngFor="let recipe of recipes" (click)="detail(recipe)">
     <p>
       <a (click)="detail(recipe)">
         {{
