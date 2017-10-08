@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-pagination-limit',
-  templateUrl: './pagination.component.html'
+  templateUrl: './pagination.component.html',
+  styleUrls: ['./pagination.component.less']
 })
 export class PaginationLimitComponent {
   public maxSize:number = 5;
