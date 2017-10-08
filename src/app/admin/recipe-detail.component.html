@@ -94,6 +94,18 @@
       <!--</tbody>-->
     </table>
 
+    <hr>
+
+    <h3>Bild</h3>
+
+    <div class="recipes-list-item-image-card">
+      <img src="{{ (recipe | async)?.image?.url }}" alt="{{ (recipe | async)?.receipt }}" />
+    </div>
+
+    <!-- TODO: Restyle it when we can manage uploaded photos (edit / remove) -->
+    <br />
+    <br />
+
     <button class="btn btn-default" [routerLink]="['/admin/recipe-edit/' + key]">
       <i class="fa fa-pencil"></i> Bearbeiten
     </button>
