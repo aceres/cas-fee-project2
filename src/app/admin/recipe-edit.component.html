@@ -1,17 +1,13 @@
 <h1 class="page-header">Rezept: {{ receipt }}</h1>
 
 <div class="form-group">
-  <label class="col-sm-2" for="name">Name:</label>
-  <div class="col-sm-10">
-    <input name="name" id="name" class="form-control" [ngModel]="receipt" placeholder="Rezept" #recipeName />
-  </div>
+  <label for="name">Name:</label>
+  <input name="name" id="name" class="form-control" [ngModel]="receipt" placeholder="Rezept" #recipeName />
 </div>
 
 <div class="form-group">
-  <label class="col-sm-2" for="description">Beschreibung:</label>
-  <div class="col-sm-10">
-    <input name="description" id="description" class="form-control" [ngModel]="description" placeholder="Beschreibung" #recipeDescription />
-  </div>
+  <label for="description">Beschreibung:</label>
+  <input name="description" id="description" class="form-control" [ngModel]="description" placeholder="Beschreibung" #recipeDescription />
 </div>
 
 <div class="form-group">
@@ -49,9 +45,9 @@
 
 <hr>
 
-<h1 class="page-header">Einkaufsliste (Zutaten)</h1>
+<h3>Einkaufsliste (Zutaten)</h3>
 
-<form class="form-inline" #ingredientForm="ngForm">
+<form #ingredientForm="ngForm">
   <div class="form-group">
     <label for="recipeQuantity">Menge</label>
     <input type="number" placeholder="1" name="recipeQuantity" id="recipeQuantity" class="form-control" [(ngModel)]="ingredient.recipeQuantity" #recipeQuantity="ngModel" required>
@@ -115,9 +111,9 @@
 
 <hr>
 
-<h1 class="page-header">Zubereitungsschritte</h1>
+<h3>Zubereitungsschritte</h3>
 
-<form class="form-inline" #stepForm="ngForm">
+<form #stepForm="ngForm">
   <div class="form-group">
     <label for="stepDescription">Schrittbeschreibung</label>
     <input class="form-control" id="stepDescription" name="stepDescription" placeholder="..." required [(ngModel)]="step.stepDescription" #stepDescription="ngModel">
@@ -189,4 +185,3 @@
     </p>
   </alert>
 </div>
-
