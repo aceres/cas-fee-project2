@@ -168,6 +168,18 @@
   <!--</tbody>-->
 </table>
 
+<hr>
+
+<h3>Bild</h3>
+
+<div class="recipes-list-item-image-card">
+  <img src="{{ image?.url }}" alt="{{ receipt }}" />
+</div>
+
+<!-- TODO: Restyle it when we can manage uploaded photos (edit / remove) -->
+<br />
+<br />
+
 <button class="btn btn-default" (click)="update(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, recipeSteps, recipeIngredients)">
   <i class="fa fa-floppy-o"></i> Speichern
 </button>

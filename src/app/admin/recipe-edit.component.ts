@@ -29,7 +29,8 @@ class Ingredient {
 
 @Component({
   selector: 'app-recipe-edit',
-  templateUrl: './recipe-edit.component.html'
+  templateUrl: './recipe-edit.component.html',
+  styleUrls: ['./recipe-edit.component.less'],
 })
 export class RecipeEditComponent implements OnInit {
   id;
@@ -40,6 +41,7 @@ export class RecipeEditComponent implements OnInit {
   level;
   category;
   cuisine;
+  image;
 
   steps;
   ingredients;
@@ -76,6 +78,7 @@ export class RecipeEditComponent implements OnInit {
       this.cuisine = recipe.cuisine;
       this.steps = recipe.steps;
       this.ingredients = recipe.ingredients;
+      this.image = recipe.image;
     });
   }
 

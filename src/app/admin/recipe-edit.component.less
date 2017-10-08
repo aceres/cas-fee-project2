@@ -1,0 +1,40 @@
+/* Broken Images */
+/* TODO: Clean up here later - move it to the master CSS */
+
+.recipes-list-item-image-card {
+  position: relative;
+}
+
+.recipes-list-item-image-card img {
+  /* Same as first example */
+  min-height: 50px;
+}
+
+.recipes-list-item-image-card img:before {
+  content: " ";
+  display: block;
+
+  position: absolute;
+  top: -10px;
+  left: 0;
+  height: calc(100% + 10px);
+  width: 100%;
+  background-color: rgb(230, 230, 230);
+  border: 2px dotted rgb(200, 200, 200);
+  border-radius: 5px;
+}
+
+.recipes-list-item-image-card img:after {
+  content: "\f127" " Broken Image of " attr(alt);
+  display: block;
+  font-size: 16px;
+  font-style: normal;
+  font-family: FontAwesome;
+  color: rgb(100, 100, 100);
+
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
