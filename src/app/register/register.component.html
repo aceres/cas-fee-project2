@@ -32,20 +32,20 @@
       <section style="padding-top: 40px">
         <h1 class="page-header">Registrieren</h1>
         <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
-          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }" >
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !firstName.valid }" >
             <label for="firstName">Vorname</label>
             <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required />
             <div *ngIf="f.submitted && !firstName.valid" class="help-block">Vorname ist verlangt</div>
           </div>
-          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastName.valid }">
             <label for="lastName">Nachname</label>
             <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />
             <div *ngIf="f.submitted && !lastName.valid" class="help-block">Nachname ist verlangt</div>
           </div>
-          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-            <label for="username">Benutzername</label>
-            <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
-            <div *ngIf="f.submitted && !username.valid" class="help-block">Benuztername ist verlangt</div>
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+            <label for="email">E-Mail</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required />
+            <div *ngIf="f.submitted && !email.valid && !email.pattern" class="help-block">E-Mail ist verlangt</div>
           </div>
           <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
             <label for="password">Passwort</label>
