@@ -13,11 +13,6 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 // Router
 import { AppRoutingModule } from './app-routing.module';
 
-// TODO: Clean up
-// Imports for loading & configuring the in-memory web api
-// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { InMemoryDataService } from './services/in-memory-data.service';
-
 // Services
 import { AuthService } from './services/auth.service';
 import { RecipeService } from './services/recipe.service';
@@ -69,8 +64,6 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     FormsModule,
     AppRoutingModule,
     HttpModule,
-    // TODO: Clean up
-    // InMemoryWebApiModule.forRoot(InMemoryDataService),
     // Database
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
