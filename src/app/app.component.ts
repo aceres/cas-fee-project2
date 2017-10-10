@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from './services/auth.service';
 
 import { Recipe } from './services/recipe';
@@ -10,7 +10,6 @@ import { RecipeService } from './services/recipe.service';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  // Standard Angular CLI
   title = 'What to cook?';
 
   // Authentication

@@ -1,39 +1,65 @@
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="container">
-        <div class="row">
-          <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
-            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-              <label for="firstName">First Name</label>
-              <input type="text" class="form-control" name="firstName"  required />
-              <div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
-            </div>
-            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-              <label for="lastName">Last Name</label>
-              <input type="text" class="form-control" name="lastName"   required />
-              <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
-            </div>
-            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-              <label for="username">Username</label>
-              <input type="text" class="form-control" name="username"  required />
-              <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
-            </div>
-            <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" name="password" required />
-              <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
-            </div>
-            <div class="form-group">
-              <button [disabled]="loading" class="btn btn-default">
-                <i class="fa fa-key"></i> Registrieren
-              </button>
-              <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-              <a [routerLink]="['/login']" class="btn btn-default">Cancel</a>
-            </div>
-          </form>
-        </div>
-      </div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" [routerLink]="['/public']">{{title}}</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="(authService.user | async)"><a [routerLink]="['/admin']">Meine Rezepte</a></li>
+        <li><a [routerLink]="['/public']">Start</a></li>
+        <li><a [routerLink]="['/register']">Registrieren</a></li>
+        <li><a href="#">Über uns</a></li>
+        <li><a href="#">Hilfe</a></li>
+      </ul>
     </div>
   </div>
-</section>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-sm-3 col-md-2 sidebar">
+    </div>
+
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+      <section style="padding-top: 40px">
+        <h1 class="page-header">Registrieren</h1>
+        <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }" >
+            <label for="firstName">Vorname</label>
+            <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required />
+            <div *ngIf="f.submitted && !firstName.valid" class="help-block">Vorname ist verlangt</div>
+          </div>
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="lastName">Nachname</label>
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />
+            <div *ngIf="f.submitted && !lastName.valid" class="help-block">Nachname ist verlangt</div>
+          </div>
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="username">Benutzername</label>
+            <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+            <div *ngIf="f.submitted && !username.valid" class="help-block">Benuztername ist verlangt</div>
+          </div>
+          <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+            <label for="password">Passwort</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+            <div *ngIf="f.submitted && !password.valid" class="help-block">Passwort ist verlangt</div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-default">
+              <i class="fa fa-key"></i> Registrieren
+            </button>
+            <a [routerLink]="['/public']" class="btn btn-default">Abbrechen</a>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

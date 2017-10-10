@@ -11,7 +11,6 @@ import { RecipeService } from './services/recipe.service';
   styleUrls: ['./public.component.less']
 })
 export class PublicComponent {
-  // Standard Angular CLI
   title = 'What to cook?';
 
   allRecipes: FirebaseListObservable<any[]>;
@@ -26,8 +25,6 @@ export class PublicComponent {
   ngOnInit(): void {
     this.recipeService.getRecipes()
       .then(recipes => this.recipes);
-      // TODO: Why was this not working
-      // .then(recipes => this.recipes = recipes.slice(1, 5));
   }
 
   detail(recipe): void {

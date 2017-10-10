@@ -12,7 +12,6 @@ import { Subject } from 'rxjs/Subject'
   styleUrls: ['./search.component.less']
 })
 export class SearchComponent implements OnInit {
-  // Standard Angular CLI
   title = 'What to cook?';
 
   recipes;

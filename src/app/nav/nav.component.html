@@ -11,15 +11,14 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="active"><a href="#">What to cook?</a></li>
+        <li class="active"><a [routerLink]="['/public']">What to cook?</a></li>
         <li><a [routerLink]="['/admin']">Meine Rezepte</a></li>
+        <li><a [routerLink]="['/register']">Registrieren</a></li>
         <li><a href="#about">Über uns</a></li>
-        <li><a href="#contact">Kontakt</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Weitere ... <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a [routerLink]="['/register']">Registrieren</a></li>
-            <li><a href="#">Länderküche</a></li>
+            <li><a href="#contact">Kontakt</a></li>
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">Kategorie</li>
             <li><a href="#">Frühstück</a></li>

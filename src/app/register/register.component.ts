@@ -7,10 +7,10 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./register.component.less']
 })
 export class RegisterComponent {
-  // Standard Angular CLI
   title = 'What to cook?';
 
   // Authentication
+  model: any = {};
   email: string;
   password: string;
 
