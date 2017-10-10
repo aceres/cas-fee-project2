@@ -65,7 +65,7 @@ export class AdminComponent {
   }
 
   logout() {
-    this.authService.logout()
+    this.authService.logout();
 
     this.alerts.push({
       type: 'success',

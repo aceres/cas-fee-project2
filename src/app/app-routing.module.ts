@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 // App
-import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './not-found.component';
 import { CrisisCenterComponent } from './crisis-center.component';
 // Public

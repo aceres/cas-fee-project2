@@ -1,8 +1,12 @@
 export class Register {
-  constructor(
-    public id: number,
-    public name: string,
-    public country: string,
-    public inputStreet?: string
-  ) {  }
+  key: string;
+  uid: string;
+  firstName: string;
+  lastName: string;
+  role: string;
+  street: string;
+  houseNumber: string;
+  zip: number;
+  city: string;
+  country: string;
 }

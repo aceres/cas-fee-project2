@@ -24,6 +24,7 @@ import { RecipeService } from './services/recipe.service';
 import { BasisDataCategoryService } from './services/basis-data-category.service';
 import { BasisDataCuisineService } from './services/basis-data-cuisine.service';
 import { UploadService } from './services/upload.service';
+import { RegisterService } from './services/register.service';
 
 // App
 import { AppComponent } from './app.component';
@@ -108,7 +109,7 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     // Pipes
     FilterPipe
   ],
-  providers: [AuthService, RecipeService, BasisDataCategoryService, BasisDataCuisineService, UploadService],
+  providers: [AuthService, RecipeService, BasisDataCategoryService, BasisDataCuisineService, UploadService, RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
