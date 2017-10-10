@@ -63,95 +63,10 @@
       <div class="col-md-6">
         <div class="preparation-ingredients">
           <h3 class="preparation-ingredients-heading">Zutaten für {{(recipe | async)?.portion}} Personen</h3>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">250</span>
-            <span class="preparation-ingredients-unit">g</span>
-            <span class="preparation-ingredients-ingredient">Schweinefleisch</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">0.5</span>
-            <span class="preparation-ingredients-unit">Stk.</span>
-            <span class="preparation-ingredients-ingredient">Hähnchen</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">2</span>
-            <span class="preparation-ingredients-unit">Stk.</span>
-            <span class="preparation-ingredients-ingredient">Zwiebeln</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">125</span>
-            <span class="preparation-ingredients-unit">ml</span>
-            <span class="preparation-ingredients-ingredient">Öl</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">125</span>
-            <span class="preparation-ingredients-unit">g</span>
-            <span class="preparation-ingredients-ingredient">Schinken</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">2</span>
-            <span class="preparation-ingredients-unit">Stk.</span>
-            <span class="preparation-ingredients-ingredient">Safran</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">1</span>
-            <span class="preparation-ingredients-unit">l</span>
-            <span class="preparation-ingredients-ingredient">Fleischbrühe</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">350</span>
-            <span class="preparation-ingredients-unit">g</span>
-            <span class="preparation-ingredients-ingredient">Reis</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">2</span>
-            <span class="preparation-ingredients-unit">Stk.</span>
-            <span class="preparation-ingredients-ingredient">Paprikaschoten</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">4</span>
-            <span class="preparation-ingredients-unit">Stk.</span>
-            <span class="preparation-ingredients-ingredient">Tomaten</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">100</span>
-            <span class="preparation-ingredients-unit">g</span>
-            <span class="preparation-ingredients-ingredient">Erbsen</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">100</span>
-            <span class="preparation-ingredients-unit">g</span>
-            <span class="preparation-ingredients-ingredient">Brechbohnen</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">1</span>
-            <span class="preparation-ingredients-unit">Dose</span>
-            <span class="preparation-ingredients-ingredient">Muschel</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">125</span>
-            <span class="preparation-ingredients-unit">g</span>
-            <span class="preparation-ingredients-ingredient">Krabben (gekocht)</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity">65</span>
-            <span class="preparation-ingredients-unit">g</span>
-            <span class="preparation-ingredients-ingredient">Champignons</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity"></span>
-            <span class="preparation-ingredients-unit">etwas</span>
-            <span class="preparation-ingredients-ingredient">Cayennepfeffer</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity"></span>
-            <span class="preparation-ingredients-unit">etwas</span>
-            <span class="preparation-ingredients-ingredient">Salz</span>
-          </div>
-          <div class="preparation-ingredients-item">
-            <span class="preparation-ingredients-quantity"></span>
-            <span class="preparation-ingredients-unit">etwas</span>
-            <span class="preparation-ingredients-ingredient">Pfeffer</span>
+          <div class="preparation-ingredients-item" *ngFor="let ingredient of (recipe | async)?.ingredients; let i = index;">
+            <span class="preparation-ingredients-quantity">{{ ingredient.quantity }}</span>
+            <span class="preparation-ingredients-unit">{{ ingredient.unit }}</span>
+            <span class="preparation-ingredients-ingredient">{{ ingredient.ingredient }}</span>
           </div>
         </div>
       </div>
