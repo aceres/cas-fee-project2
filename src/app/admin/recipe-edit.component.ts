@@ -102,17 +102,6 @@ export class RecipeEditComponent implements OnInit {
     steps = this.steps;
     ingredients = this.ingredients;
 
-    console.log("id:", this.id);
-    console.log("receipt:", receipt);
-    console.log("description:", description);
-    console.log("portion:", portion);
-    console.log("prepTime:", prepTime);
-    console.log("level:", level);
-    console.log("category:", category);
-    console.log("cuisine:", cuisine);
-    console.log("steps:", steps);
-    console.log("ingredients:", ingredients);
-
     this.recipeService.update(this.id, receipt, description, portion, prepTime, level, category, cuisine, steps, ingredients)
       .then(recipe => {
         // this.recipes.push(recipe);

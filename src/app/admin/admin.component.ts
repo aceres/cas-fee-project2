@@ -1,8 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-
-import { Recipe } from '../services/recipe';
-import { RecipeService } from '../services/recipe.service';
 
 @Component({
   selector: 'app-admin',
@@ -17,7 +14,10 @@ export class AdminComponent {
   email: string;
   password: string;
 
-  constructor(public authService: AuthService, private recipeService: RecipeService) {}
+  // Notification
+  public alerts: any = [];
+
+  constructor(public authService: AuthService) {}
 
   signup() {
     this.authService.signup(this.email, this.password);
@@ -25,21 +25,52 @@ export class AdminComponent {
   }
 
   login() {
-    this.authService.login(this.email, this.password);
+    this.authService.login(this.email, this.password).then(
+      response => {
+
+        console.log('login response: ', response);
+
+        if (response.code === 'auth/invalid-email') {
+
+          this.alerts.push({
+            type: 'danger',
+            msg: `${ response.message }`,
+            timeout: 5000
+          });
+        } else if (response.code === 'auth/user-not-found') {
+
+          this.alerts.push({
+            type: 'info',
+            msg: `${ response.message }`,
+            timeout: 5000
+          });
+        } else if (response.code === 'auth/wrong-password') {
+
+          this.alerts.push({
+            type: 'info',
+            msg: `${ response.message }`,
+            timeout: 5000
+          });
+        } else {
+
+          this.alerts.push({
+            type: 'success',
+            msg: `Sie sind erfolgreich angemeldet ${ response.email }! (Angemeldet am: ${(new Date()).toLocaleTimeString()})`,
+            timeout: 5000
+          });
+        }
+      }
+    );
     this.email = this.password = '';
   }
 
   logout() {
-    this.authService.logout();
-  }
+    this.authService.logout()
 
-  // Search recipe
-  recipes: Recipe[] = [];
-
-  ngOnInit(): void {
-    this.recipeService.getRecipes()
-      .then(recipes => this.recipes);
-      // TODO: Why was this not working
-      // .then(recipes => this.recipes = recipes.slice(1, 5));
+    this.alerts.push({
+      type: 'success',
+      msg: `Sie wurden erfolgreich abgemeldet! (Abgemeldet am: ${(new Date()).toLocaleTimeString()})`,
+      timeout: 5000
+    });
   }
 }

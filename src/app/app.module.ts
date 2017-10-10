@@ -33,7 +33,7 @@ import { PageNotFoundComponent } from './not-found.component';
 // Public
 import { PublicComponent } from './public.component';
 import { NavComponent } from './nav/nav.component';
-import { CarouselComponent } from './carousel/carousel.component';
+import { CoverComponent } from './cover/cover.component';
 import { DetailCoverComponent } from './detailcover/detail-cover.component';
 import { SearchComponent } from './search.component';
 import { PublicReceiptDetailComponent } from './detail.component';
@@ -86,7 +86,7 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     // Public
     PublicComponent,
     NavComponent,
-    CarouselComponent,
+    CoverComponent,
     SearchComponent,
     PublicReceiptDetailComponent,
     DetailCoverComponent,

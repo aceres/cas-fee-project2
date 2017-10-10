@@ -11,13 +11,12 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="(authService.user | async)"><a [routerLink]="['/admin']">Administration</a></li>
+        <li *ngIf="(authService.user | async)"><a [routerLink]="['/admin']">Meine Rezepte</a></li>
+        <li><a [routerLink]="['/public']">Start</a></li>
+        <li><a [routerLink]="['/register']">Registrieren</a></li>
         <li><a href="#">Über uns</a></li>
         <li><a href="#">Hilfe</a></li>
       </ul>
-      <form *ngIf="(authService.user | async)" class="navbar-form navbar-right">
-        <input type="text" class="form-control" placeholder="Ihr Rezept finden...">
-      </form>
     </div>
   </div>
 </nav>
@@ -44,10 +43,7 @@
           <input type="password" class="form-control" id="inputPassword" [(ngModel)]="password" placeholder="Passwort">
         </div>
         <button type="button" class="btn btn-default" (click)="login()" [disabled]="!email || !password">
-          <i class="fa fa-envelope-o"></i> Anmelden
-        </button>
-        <button type="button" class="btn btn-default" (click)="signup()" [disabled]="!email || !password">
-          <i class="fa fa-key"></i> Registrieren
+          <i class="fa fa-sign-in"></i> Anmelden
         </button>
       </div>
 
@@ -97,3 +93,13 @@
   </div>
 </div>
 
+<div *ngFor="let alert of alerts">
+  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" dismissible="true" style="position: fixed; top: 20px; right: 20px; z-index: 1040;">
+    <h4 class="alert-heading">
+      Info
+    </h4>
+    <p>
+      {{ alert.msg }}
+    </p>
+  </alert>
+</div>

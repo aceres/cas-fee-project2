@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { Register } from '../services/register';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +8,7 @@ import { Register } from '../services/register';
 })
 export class RegisterComponent {
   // Standard Angular CLI
-  title = 'What to cook? - Registration';
+  title = 'What to cook?';
 
   // Authentication
   email: string;
@@ -22,15 +21,12 @@ export class RegisterComponent {
     this.email = this.password = '';
   }
 
-  countries = ['Germany', 'Switzerland', 'Italy', 'France'];
+  login() {
+    this.authService.login(this.email, this.password);
+    this.email = this.password = '';
+  }
 
-  model = new Register(1, 'André Ceres', this.countries[1], 'Waisenhausstrasse 23');
-
-  submitted = false;
-
-  onSubmit() { this.submitted = true; }
-
-  newRegister() {
-    this.model = new Register(2, '', '');
+  logout() {
+    this.authService.logout();
   }
 }
