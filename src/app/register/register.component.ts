@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { RegisterService } from '../services/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,8 @@ export class RegisterComponent {
 
   constructor(
     public authService: AuthService,
-    public registerService: RegisterService
+    public registerService: RegisterService,
+    private router: Router
   ) {}
 
   register() {
@@ -39,6 +41,7 @@ export class RegisterComponent {
 
             });
           this.authService.logout();
+          this.router.navigate(['/admin']);
         }
       }
     );

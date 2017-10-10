@@ -24,8 +24,11 @@ export class RecipesListComponent implements OnInit {
 
   public searchTerm;
 
-  constructor(private router: Router, private recipeService: RecipeService, db: AngularFireDatabase) {
-    this.allRecipes = db.list('/recipes');
+  constructor(
+    private router: Router,
+    private recipeService: RecipeService,
+    db: AngularFireDatabase) {
+      this.allRecipes = db.list('/recipes');
   }
 
   getRecipes(): void {

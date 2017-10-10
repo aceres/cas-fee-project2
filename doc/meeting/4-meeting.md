@@ -14,7 +14,7 @@
 
 #### TODO bei Tanja
 
-- ...
+- Seiten erstellen, Über uns, Kontakte, Hilfe
 
 ### Status bei André
 
