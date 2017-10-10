@@ -43,7 +43,8 @@ export class RegisterService {
           houseNumber: houseNumber,
           zip: zip,
           city: city,
-          country: country}), {headers: this.headers})
+          country: country,
+          createdAt: new Date()}), {headers: this.headers})
         .map(res => res.json())
         .catch(this.handleError);
   }

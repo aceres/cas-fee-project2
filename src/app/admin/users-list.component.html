@@ -48,7 +48,7 @@
         {{user.uid}}
       </td>
       <td>
-        Coming soon
+        {{ user.createdAt |  date: 'dd.MM.yyyy HH:MM:ss'}}
       </td>
     </tr>
   </table>
