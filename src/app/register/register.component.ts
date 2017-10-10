@@ -10,7 +10,7 @@ import { RegisterService } from '../services/register.service';
 export class RegisterComponent {
   title = 'What to cook?';
 
-  // Authentication
+  // Authentication / Role definition
   model: any = {};
   role = 'normal';
 
