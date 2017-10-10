@@ -53,6 +53,7 @@ import { BasisDataCuisineComponent } from './admin/basis-data-cuisine.component'
 
 // Register
 import { RegisterComponent } from './register/register.component';
+import { UsersListComponent } from './admin/users-list.component';
 
 // ngx-bootstrap
 import { AlertComponent } from './directives/alert/alert.component';
@@ -100,6 +101,7 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     RecipeSearchComponent,
     // Register
     RegisterComponent,
+    UsersListComponent,
     // Master Data (Basis),
     BasisDataCategoryComponent,
     BasisDataCuisineComponent,

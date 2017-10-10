@@ -85,7 +85,7 @@
       </ul>
       <ul *ngIf="(authService.user | async)" class="nav nav-sidebar">
         <li [routerLinkActive]="['active']">
-          <a href="">
+          <a [routerLink]="['/admin/users']">
             <i class="icon flaticon-maintenance"></i>Benutzer
           </a>
         </li>

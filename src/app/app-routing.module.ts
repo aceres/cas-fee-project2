@@ -15,6 +15,7 @@ import { RecipeAddComponent } from './admin/recipe-add.component';
 import { RecipeEditComponent } from './admin/recipe-edit.component';
 // Register
 import { RegisterComponent } from './register/register.component';
+import { UsersListComponent } from './admin/users-list.component';
 // Master Data Basis
 import {BasisDataCategoryComponent} from './admin/basis-data-category.component';
 import {BasisDataCuisineComponent} from './admin/basis-data-cuisine.component';
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
     { path: 'crisis-center', component: CrisisCenterComponent},
     { path: 'basis-data-category', component: BasisDataCategoryComponent},
     { path: 'basis-data-cuisine', component: BasisDataCuisineComponent},
+    { path: 'users', component: UsersListComponent}
   ] },
   { path: '', redirectTo: '/public', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }
