@@ -13,6 +13,7 @@ export const listUnits = [
   { value: 'Milliliter', display: 'Milliliter' },
   { value: 'Packung', display: 'Packung' },
   { value: 'Portion', display: 'Portion' },
+  { value: 'Prise', display: 'Prise' },
   { value: 'Riegel', display: 'Riegel' },
   { value: 'Scheibe', display: 'Scheibe' },
   { value: 'Stange', display: 'Stange' },
