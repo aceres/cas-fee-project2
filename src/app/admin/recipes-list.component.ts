@@ -28,7 +28,6 @@ export class RecipesListComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private activatedRoute: ActivatedRoute,
     private recipeService: RecipeService,
     db: AngularFireDatabase) {
 
@@ -63,13 +62,6 @@ export class RecipesListComponent implements OnInit {
     // Get the currentUser from the localStorage
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     console.log('this.currentUser: ', this.currentUser);
-
-    // this.getRecipes(this.currentUser);
-
-    this.activatedRoute.queryParams.subscribe(params => {
-      console.log(params);
-      this.currentUser.uid = params['uid'];
-    })
   }
 
   public pageChanged(event: any): void {
