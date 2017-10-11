@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { Recipe } from '../services/recipe';
 import { RecipeService } from '../services/recipe.service';
@@ -24,16 +24,24 @@ export class RecipesListComponent implements OnInit {
 
   public searchTerm;
 
+  currentUser;
+
   constructor(
     private router: Router,
+    private activatedRoute: ActivatedRoute,
     private recipeService: RecipeService,
     db: AngularFireDatabase) {
-      this.allRecipes = db.list('/recipes');
-  }
 
-  getRecipes(): void {
-    // this.recipeService.getRecipes().then(recipes => this.allRecipes = recipes);
-    this.recipeService.getRecipes().then(recipes => this.allRecipes);
+    // TODO: Not clean at the moment / Improve it! It is provisional version for now
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log('this.currentUser: ', this.currentUser);
+
+      this.allRecipes = db.list('/recipes', {
+        query: {
+          orderByChild: 'uid',
+          equalTo: this.currentUser.uid
+        }
+      })
   }
 
   remove(id): void {
@@ -52,7 +60,16 @@ export class RecipesListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getRecipes();
+    // Get the currentUser from the localStorage
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log('this.currentUser: ', this.currentUser);
+
+    // this.getRecipes(this.currentUser);
+
+    this.activatedRoute.queryParams.subscribe(params => {
+      console.log(params);
+      this.currentUser.uid = params['uid'];
+    })
   }
 
   public pageChanged(event: any): void {

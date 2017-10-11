@@ -18,16 +18,11 @@ export class UsersListComponent implements OnInit {
     this.allUsers = db.list('/users');
   }
 
-  getRecipes(): void {
+  getUsers(): void {
     this.registerService.getUsers().then(users => this.allUsers);
   }
 
   ngOnInit(): void {
-    this.getRecipes();
-  }
-
-  public pageChanged(event: any): void {
-    console.log('Page changed to: ' + event.page);
-    console.log('Number items per page: ' + event.itemsPerPage);
+    this.getUsers();
   }
 }

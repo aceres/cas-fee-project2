@@ -49,6 +49,8 @@ export class RecipeAddComponent implements OnInit {
 
   public alerts: any = [];
 
+  currentUser;
+
   // Initialize: For the validation
   // TODO: This doesn't work for now
   ingredient = { recipeQuantity: '', recipeIngredient: '' };
@@ -67,7 +69,7 @@ export class RecipeAddComponent implements OnInit {
   uploadSingle() {
     const file = this.selectedFiles.item(0)
     this.currentUpload = new Upload(file);
-    this.upSvc.pushUpload(this.currentUpload, "")
+    this.upSvc.pushUpload(this.currentUpload, '')
   }
 
   add(name: string,
@@ -79,7 +81,9 @@ export class RecipeAddComponent implements OnInit {
       cuisine: string,
       steps: any[],
       ingredients: any[],
-      image: any[]): void {
+      image: any[],
+      uid: string,
+      user: string): void {
             name = name.trim();
             description = description.trim();
             portion = portion.trim();
@@ -90,8 +94,10 @@ export class RecipeAddComponent implements OnInit {
             steps = this.steps;
             ingredients = this.ingredients;
             image = this.image;
+            uid = this.currentUser.uid;
+            user = this.currentUser.email;
 
-            this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, steps, ingredients, image)
+            this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, steps, ingredients, image, uid, user)
               .subscribe(response => {
               // this.recipes.push(recipe);
               // this.selectedRecipe = null;
@@ -129,5 +135,9 @@ export class RecipeAddComponent implements OnInit {
     this.ingredients.splice(index, 1);
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    // Get the currentUser from the localStorage
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log("this.currentUser: ", this.currentUser)
+  }
 }

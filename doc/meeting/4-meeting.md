@@ -14,7 +14,8 @@
 
 #### TODO bei Tanja
 
-- Seiten erstellen, Über uns, Kontakte, Hilfe
+- Seiten erstellen, Über uns, Kontakt
+- Liste der Kategorien (alle Rezepte mit der Kategorie: Frühstück)
 
 ### Status bei André
 

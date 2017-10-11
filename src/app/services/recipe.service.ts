@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, URLSearchParams } from '@angular/http';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { environment } from '../../environments/environment';
 
@@ -21,6 +21,15 @@ export class RecipeService {
     private http: Http,
     private db: AngularFireDatabase
   ) { }
+
+  getRecipesAdmin(currentUser): Promise<Recipe[]> {
+    console.log('service recipe current user: ', currentUser);
+    const url = `${this.recipesUrl}.json`;
+    return this.http.get(`${this.recipesUrl}.json??orderBy=$key&uid=${currentUser.uid}`)
+      .toPromise()
+      .then(response => response.json() as Recipe[])
+      .catch(this.handleError);
+  }
 
   getRecipes(): Promise<Recipe[]> {
     const url = `${this.recipesUrl}.json`;
@@ -71,30 +80,30 @@ export class RecipeService {
     return this.recipe;
   }
 
+  create(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, steps: any[], ingredients: any[], image: any[], uid: string, user: string) {
+    const url = `${this.recipesUrl}.json`;
+    return this.http
+      .post(url, JSON.stringify({receipt: name, description: description, portion: portion, prepTime: prepTime, level: level, category: category, cuisine: cuisine, steps: steps, ingredients: ingredients, image: image, uid: uid, user: user, createdAt: new Date()}), {headers: this.headers})
+      // .toPromise()
+      .map(res => res.json())
+      .catch(this.handleError);
+  }
+
+  update(id: string, name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, steps: any[], ingredients: any[], uid: string, user: string): Promise<Recipe> {
+    const url = `${this.recipesUrl}/${id}.json`;
+    return this.http
+      .put(url, JSON.stringify({receipt: name, description: description, portion: portion, prepTime: prepTime, level: level, category: category, cuisine: cuisine, steps: steps, ingredients: ingredients, uid: uid, user: user}), {headers: this.headers})
+      .toPromise()
+      .then(res => res.json().data as Recipe)
+      .catch(this.handleError);
+  }
+
   remove(recipe): Promise<void> {
     console.log('Remove' , recipe.$key);
     const url = `${this.recipesUrl}/${recipe.$key}.json`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)
-      .catch(this.handleError);
-  }
-
-  create(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, steps: any[], ingredients: any[], image: any[]) {
-    const url = `${this.recipesUrl}.json`;
-    return this.http
-      .post(url, JSON.stringify({receipt: name, description: description, portion: portion, prepTime: prepTime, level: level, category: category, cuisine: cuisine, steps: steps, ingredients: ingredients, image: image}), {headers: this.headers})
-      // .toPromise()
-      .map(res => res.json())
-      .catch(this.handleError);
-  }
-
-  update(id: string, name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, steps: any[], ingredients: any[]): Promise<Recipe> {
-    const url = `${this.recipesUrl}/${id}.json`;
-    return this.http
-      .put(url, JSON.stringify({receipt: name, description: description, portion: portion, prepTime: prepTime, level: level, category: category, cuisine: cuisine, steps: steps, ingredients: ingredients}), {headers: this.headers})
-      .toPromise()
-      .then(res => res.json().data as Recipe)
       .catch(this.handleError);
   }
 

@@ -7,10 +7,10 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./admin.component.less']
 })
 export class AdminComponent {
-  // Standard Angular CLI
   title = 'What to cook?';
 
   // Authentication
+  uid: string;
   email: string;
   password: string;
 
@@ -19,16 +19,9 @@ export class AdminComponent {
 
   constructor(public authService: AuthService) {}
 
-  signup() {
-    this.authService.signup(this.email, this.password);
-    this.email = this.password = '';
-  }
-
   login() {
     this.authService.login(this.email, this.password).then(
       response => {
-
-        console.log('login response: ', response);
 
         if (response.code === 'auth/invalid-email') {
 
@@ -58,6 +51,17 @@ export class AdminComponent {
             msg: `Sie sind erfolgreich angemeldet ${ response.email }! (Angemeldet am: ${(new Date()).toLocaleTimeString()})`,
             timeout: 5000
           });
+
+          // Save the logged in user in the storage
+          const currentUser = {
+            'uid': '',
+            'email': ''
+          };
+
+          currentUser.uid = response.uid;
+          currentUser.email = response.email;
+
+          localStorage.setItem('currentUser', JSON.stringify(currentUser));
         }
       }
     );
@@ -72,5 +76,7 @@ export class AdminComponent {
       msg: `Sie wurden erfolgreich abgemeldet! (Abgemeldet am: ${(new Date()).toLocaleTimeString()})`,
       timeout: 5000
     });
+
+    localStorage.removeItem('currentUser');
   }
 }

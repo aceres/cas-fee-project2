@@ -45,7 +45,7 @@ export class RegisterComponent {
         }
       }
     );
-
+    // TODO: Clean up this
     // this.model.firstName = this.model.lastName = this.model.email = this.model.password = '';
   }
 }

@@ -54,6 +54,8 @@ export class RecipeEditComponent implements OnInit {
 
   public alerts: any = [];
 
+  currentUser;
+
   // Initialize: For the validation
   // TODO: This doesn't work for now
   ingredient = { recipeQuantity: '', recipeIngredient: '' };
@@ -80,6 +82,11 @@ export class RecipeEditComponent implements OnInit {
       this.ingredients = recipe.ingredients;
       this.image = recipe.image;
     });
+
+    // Get the currentUser from the localStorage
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log("this.currentUser: ", this.currentUser)
+
   }
 
   update(
@@ -91,7 +98,9 @@ export class RecipeEditComponent implements OnInit {
       category: string,
       cuisine: string,
       steps: any[],
-      ingredients: any[]): void {
+      ingredients: any[],
+      uid: string,
+      user: string): void {
     receipt = receipt.trim();
     description = description.trim();
     portion = portion.trim();
@@ -101,10 +110,11 @@ export class RecipeEditComponent implements OnInit {
     cuisine = cuisine.trim();
     steps = this.steps;
     ingredients = this.ingredients;
+    uid = this.currentUser.uid;
+    user = this.currentUser.email;
 
-    this.recipeService.update(this.id, receipt, description, portion, prepTime, level, category, cuisine, steps, ingredients)
+    this.recipeService.update(this.id, receipt, description, portion, prepTime, level, category, cuisine, steps, ingredients, uid, user)
       .then(recipe => {
-        // this.recipes.push(recipe);
         // this.selectedRecipe = null;
 
         // Show notification

@@ -1,14 +1,4 @@
-# List of problems (We need help!)
+# List of problems (We need help or we have questions)
 
-- Without CDN?
-- Registration / AuthGard
-- // .then(recipes => this.recipes = recipes.slice(1, 5)); (wanted to show maximal 4 recipes in a page)
-
-// Imports for loading & configuring the in-memory web api
-// import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { InMemoryDataService } from './services/in-memory-data.service';
-
-// TODO: Clean up
-// InMemoryWebApiModule.forRoot(InMemoryDataService),
-
-- ...
+- Initial localStorage
+- Improve the QueryParams
