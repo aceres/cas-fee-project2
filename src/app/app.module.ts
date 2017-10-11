@@ -56,6 +56,7 @@ import { PaginationLimitComponent } from './directives/pagination/pagination.com
 
 // Pipes
 import { FilterPipe } from './pipes/search-filter.pipe';
+import { CategoryPipe } from './pipes/category.pipe';
 
 @NgModule({
   imports: [
@@ -102,7 +103,8 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     AlertComponent,
     PaginationLimitComponent,
     // Pipes
-    FilterPipe
+    FilterPipe,
+    CategoryPipe
   ],
   providers: [AuthService, RecipeService, BasisDataCategoryService, BasisDataCuisineService, UploadService, RegisterService],
   bootstrap: [AppComponent]
