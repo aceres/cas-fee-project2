@@ -22,14 +22,14 @@ export class RecipeService {
     private db: AngularFireDatabase
   ) { }
 
-  getRecipesAdmin(currentUser): Promise<Recipe[]> {
-    console.log('service recipe current user: ', currentUser);
-    const url = `${this.recipesUrl}.json`;
-    return this.http.get(`${this.recipesUrl}.json??orderBy=$key&uid=${currentUser.uid}`)
-      .toPromise()
-      .then(response => response.json() as Recipe[])
-      .catch(this.handleError);
-  }
+  // getRecipesAdmin(currentUser): Promise<Recipe[]> {
+  //   console.log('service recipe current user: ', currentUser);
+  //   const url = `${this.recipesUrl}.json`;
+  //   return this.http.get(`${this.recipesUrl}.json?orderBy=$key&uid=${currentUser.uid}`)
+  //     .toPromise()
+  //     .then(response => response.json() as Recipe[])
+  //     .catch(this.handleError);
+  // }
 
   getRecipes(): Promise<Recipe[]> {
     const url = `${this.recipesUrl}.json`;

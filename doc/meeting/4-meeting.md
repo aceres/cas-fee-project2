@@ -6,7 +6,7 @@
 
 ## Weiteres Vorgehen
 
-- ...
+- Rate (Wie stellen wir uns vor?)
 
 ### Status bei Tanja
 
@@ -27,4 +27,4 @@
 
 ## Pendenzen oder Probleme
 
-- ...
+- Refactoring

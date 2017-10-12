@@ -57,6 +57,15 @@ export class RegisterService {
       .catch(this.handleError);
   }
 
+  getUser(currentUser): Promise<Register[]> {
+    console.log('register service uid: ', currentUser.uid);
+    const url = `${this.usersUrl}.json`;
+    return this.http.get(`${this.usersUrl}.json?orderBy=$key&uid=${currentUser.uid}`)
+      .toPromise()
+      .then(response => response.json() as Register[])
+      .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);

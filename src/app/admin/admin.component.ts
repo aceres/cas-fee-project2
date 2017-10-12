@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Register } from '../services/register';
+import { RegisterService } from '../services/register.service';
 
 @Component({
   selector: 'app-admin',
@@ -10,14 +13,19 @@ export class AdminComponent {
   title = 'What to cook?';
 
   // Authentication
-  uid: string;
   email: string;
   password: string;
 
   // Notification
   public alerts: any = [];
 
-  constructor(public authService: AuthService) {}
+  // Role
+  public role: string;
+
+  constructor(
+    public authService: AuthService,
+    public db: AngularFireDatabase
+  ) {}
 
   login() {
     this.authService.login(this.email, this.password).then(
@@ -52,16 +60,34 @@ export class AdminComponent {
             timeout: 5000
           });
 
+          // Prepare for the localStorage
+          const currentUser = {};
+
+          currentUser['uid'] = response.uid;
+          currentUser['email'] = response.email;
+
+          // Get the role of user
+          // TODO - instead this -> this.db.object
+          this.db.list('/users', {
+            query: {
+              orderByChild: 'uid',
+              equalTo: response.uid,
+              limitToFirst: 1
+            }
+          })
+          .subscribe(user => {
+
+            // TODO: Clean up / Somehow dirty
+            this.role = user[0].role;
+            currentUser['role'] = this.role;
+            console.log('inside this.role: ', this.role);
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+          });
+
+          // console.log('outside this.role: ', this.role);
+          // currentUser['role'] = this.role;
           // Save the logged in user in the storage
-          const currentUser = {
-            'uid': '',
-            'email': ''
-          };
-
-          currentUser.uid = response.uid;
-          currentUser.email = response.email;
-
-          localStorage.setItem('currentUser', JSON.stringify(currentUser));
+          // localStorage.setItem('currentUser', JSON.stringify(currentUser));
         }
       }
     );
