@@ -156,8 +156,8 @@ TODO: Still not working - AOT problem -> Errors korrigieren nach ng build --prod
 
 Otherwise you can use: ng build --prod --aot=false
 
-URL: https://what-to-cook-1.firebaseapp.com
-URL: 
+URL Web App: https://what-to-cook-1.firebaseapp.com
+URL Firebase Console Admin: https://console.firebase.google.com/project/what-to-cook-1/overview
 
 More information:
 
