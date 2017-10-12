@@ -82,6 +82,7 @@ export class AdminComponent {
             currentUser['role'] = this.role;
             console.log('inside this.role: ', this.role);
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            this.router.navigate(['/admin/recipes']);
           });
 
           // console.log('outside this.role: ', this.role);
