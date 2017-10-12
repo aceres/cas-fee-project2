@@ -3,3 +3,4 @@
 - Initial localStorage
 - Improve the QueryParams
 - We do need coach for refactoring / Smelling Codes / Improve the code quality
+- Clean up TODOs / Dead Codes
