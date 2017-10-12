@@ -96,18 +96,10 @@
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
       <!-- TODO: Check the Styling - no style should be used in the tag -->
-      <router-outlet style="padding-top: 40px" *ngIf="authService.user | async"></router-outlet>
+      <!--<router-outlet style="padding-top: 40px" *ngIf="authService.user | async"></router-outlet>-->
+      <router-outlet style="padding-top: 40px"></router-outlet>
     </div>
   </div>
 </div>
 
-<div *ngFor="let alert of alerts">
-  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" dismissible="true" style="position: fixed; top: 20px; right: 20px; z-index: 1040;">
-    <h4 class="alert-heading">
-      Info
-    </h4>
-    <p>
-      {{ alert.msg }}
-    </p>
-  </alert>
-</div>
+<app-alert></app-alert>

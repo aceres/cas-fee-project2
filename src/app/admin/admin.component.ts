@@ -106,7 +106,11 @@ export class AdminComponent {
     localStorage.removeItem('currentUser');
 
     // TODO: Looking for a help
-    window.location.href = '/admin';
+    //
+    this.router.navigateByUrl('/admin');
+
+    // window.location.href = '/admin';
+
     // if (this.router.url === '/admin/recipes') {
     //   this.router.navigate(['/admin']);
     // }
