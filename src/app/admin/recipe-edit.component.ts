@@ -98,6 +98,7 @@ export class RecipeEditComponent implements OnInit {
       cuisine: string,
       steps: any[],
       ingredients: any[],
+      image: any[],
       uid: string,
       user: string): void {
     receipt = receipt.trim();
@@ -109,12 +110,12 @@ export class RecipeEditComponent implements OnInit {
     cuisine = cuisine.trim();
     steps = this.steps;
     ingredients = this.ingredients;
+    image = this.image;
     uid = this.currentUser.uid;
     user = this.currentUser.email;
 
-    this.recipeService.update(this.id, receipt, description, portion, prepTime, level, category, cuisine, steps, ingredients, uid, user)
+    this.recipeService.update(this.id, receipt, description, portion, prepTime, level, category, cuisine, steps, ingredients, image, uid, user)
       .then(recipe => {
-        // this.selectedRecipe = null;
 
         // Show notification
         this.alerts.push({

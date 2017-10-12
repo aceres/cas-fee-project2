@@ -66,11 +66,11 @@ export class RecipeAddComponent implements OnInit {
   }
 
   // TODO: Not active at the moment
-  uploadSingle() {
-    const file = this.selectedFiles.item(0)
-    this.currentUpload = new Upload(file);
-    this.upSvc.pushUpload(this.currentUpload, '')
-  }
+  // uploadSingle() {
+  //   const file = this.selectedFiles.item(0)
+  //   this.currentUpload = new Upload(file);
+  //   this.upSvc.pushUpload(this.currentUpload, '')
+  // }
 
   add(name: string,
       description: string,
@@ -99,8 +99,7 @@ export class RecipeAddComponent implements OnInit {
 
             this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, steps, ingredients, image, uid, user)
               .subscribe(response => {
-              // this.recipes.push(recipe);
-              // this.selectedRecipe = null;
+
               console.log('Response after created form: ', response.name);
 
               const file = this.selectedFiles.item(0)
@@ -138,6 +137,5 @@ export class RecipeAddComponent implements OnInit {
   ngOnInit(): void {
     // Get the currentUser from the localStorage
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    console.log("this.currentUser: ", this.currentUser)
   }
 }
