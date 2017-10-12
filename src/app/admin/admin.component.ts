@@ -84,11 +84,6 @@ export class AdminComponent {
             localStorage.setItem('currentUser', JSON.stringify(currentUser));
             this.router.navigate(['/admin/recipes']);
           });
-
-          // console.log('outside this.role: ', this.role);
-          // currentUser['role'] = this.role;
-          // Save the logged in user in the storage
-          // localStorage.setItem('currentUser', JSON.stringify(currentUser));
         }
       }
     );
@@ -105,15 +100,6 @@ export class AdminComponent {
     });
 
     localStorage.removeItem('currentUser');
-
-    // TODO: Looking for a help
-    //
     this.router.navigateByUrl('/admin');
-
-    // window.location.href = '/admin';
-
-    // if (this.router.url === '/admin/recipes') {
-    //   this.router.navigate(['/admin']);
-    // }
   }
 }

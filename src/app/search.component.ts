@@ -21,7 +21,10 @@ export class SearchComponent implements OnInit {
 
   lastKeypress: number = 0;
 
-  constructor(private router: Router, private recipeService: RecipeService) { }
+  constructor(
+    private router: Router,
+    private recipeService: RecipeService
+  ) {}
 
   ngOnInit() {
     this.recipeService.searchRecipes(this.startAt, this.endAt)

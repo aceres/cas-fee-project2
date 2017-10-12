@@ -4,4 +4,4 @@ import { Component } from '@angular/core';
   selector: 'app-crisis-center',
   templateUrl: './crisis-center.component.html'
 })
-export class CrisisCenterComponent { }
+export class CrisisCenterComponent {}

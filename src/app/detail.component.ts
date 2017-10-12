@@ -20,7 +20,7 @@ export class PublicReceiptDetailComponent implements OnInit {
     private recipeService: RecipeService,
     private route: ActivatedRoute,
     private location: Location)
-  { }
+  {}
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
