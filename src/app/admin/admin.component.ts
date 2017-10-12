@@ -3,6 +3,7 @@ import { AuthService } from '../services/auth.service';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Register } from '../services/register';
 import { RegisterService } from '../services/register.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -24,7 +25,8 @@ export class AdminComponent {
 
   constructor(
     public authService: AuthService,
-    public db: AngularFireDatabase
+    public db: AngularFireDatabase,
+    private router: Router
   ) {}
 
   login() {
@@ -104,5 +106,10 @@ export class AdminComponent {
     });
 
     localStorage.removeItem('currentUser');
+
+    // TODO: Looking for a help
+    // if (this.router.url === '/admin/recipes') {
+    //   this.router.navigate(['/admin']);
+    // }
   }
 }

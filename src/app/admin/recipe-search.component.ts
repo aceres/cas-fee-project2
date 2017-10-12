@@ -27,7 +27,8 @@ export class RecipeSearchComponent implements OnInit {
 
   constructor(
     private recipeSearchService: RecipeSearchService,
-    private router: Router) {}
+    private router: Router
+  ) {}
 
   // Push a search term into the observable stream.
   search(term: string): void {
