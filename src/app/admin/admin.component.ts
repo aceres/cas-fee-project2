@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { Register } from '../services/register';
-import { RegisterService } from '../services/register.service';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { Router } from '@angular/router';
 
 @Component({
@@ -108,6 +106,7 @@ export class AdminComponent {
     localStorage.removeItem('currentUser');
 
     // TODO: Looking for a help
+    window.location.href = '/admin';
     // if (this.router.url === '/admin/recipes') {
     //   this.router.navigate(['/admin']);
     // }
