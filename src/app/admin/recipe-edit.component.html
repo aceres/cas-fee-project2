@@ -19,7 +19,7 @@
 
 <div class="form-group">
   <label for="prepTime">Zubereitungszeit in Minuten:</label>
-  <input type="number" name="prepTime" id="prepTime" class="form-control" placeholder="90" [ngModel]="prepTime" #recipePrepTime />
+  <input type="number" name="prepTime" id="prepTime" class="form-control" placeholder="90" min="0" [ngModel]="prepTime" #recipePrepTime />
 </div>
 
 <div class="form-group">
@@ -176,16 +176,26 @@
   <img src="{{ image?.url }}" alt="{{ receipt }}" />
 </div>
 
+<hr>
+
+<h4>Bild wechseln</h4>
+
+<div class="form-group">
+  <label>Bild hochladen und ersetzen</label>
+  <div *ngIf="currentUpload">
+    <div class="progress">
+      <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': currentUpload?.progress + '%' }"></div>
+    </div>
+    Progress: {{currentUpload?.name}} | {{currentUpload?.progress}}% Complete
+  </div>
+  <label>
+    <input type="file" (change)="detectFiles($event)" class="form-control">
+  </label>
+</div>
+
 <!-- TODO: Restyle it when we can manage uploaded photos (edit / remove) -->
 <br />
 <br />
-
-<button class="btn btn-default" (click)="update(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, recipeSteps, recipeIngredients)">
-  <i class="fa fa-floppy-o"></i> Speichern
-</button>
-<button (click)="goBack()" class="btn btn-default">
-  <i class="fa fa-arrow-left"></i> Zurück
-</button>
 
 <div *ngFor="let alert of alerts">
   <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" dismissible="true">
@@ -197,3 +207,12 @@
     </p>
   </alert>
 </div>
+
+<br/>
+
+<button class="btn btn-default" (click)="update(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, recipeSteps, recipeIngredients)">
+  <i class="fa fa-floppy-o"></i> Speichern
+</button>
+<button (click)="goBack()" class="btn btn-default">
+  <i class="fa fa-arrow-left"></i> Zurück
+</button>

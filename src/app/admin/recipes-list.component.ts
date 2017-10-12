@@ -5,6 +5,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Recipe } from '../services/recipe';
 import { RecipeService } from '../services/recipe.service';
 
+import { BsModalService } from 'ngx-bootstrap/modal';
+// import { ModalContentComponent } from '../directives/modal/modal.component';
+// import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+
 @Component({
   selector: 'app-recipes-list',
   templateUrl: './recipes-list.component.html',
@@ -22,14 +26,20 @@ export class RecipesListComponent implements OnInit {
   // Alert
   public alerts: any = [];
 
+  // Search Pipe
   public searchTerm;
 
+  // LocalStorage
   currentUser;
+
+  // Modal
+  // bsModalRef: BsModalRef;
 
   constructor(
     private router: Router,
     private recipeService: RecipeService,
-    db: AngularFireDatabase) {
+    db: AngularFireDatabase,
+    private modalService: BsModalService) {
 
     // TODO: Not clean at the moment / Improve it! It is provisional version for now
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -42,6 +52,16 @@ export class RecipesListComponent implements OnInit {
         }
       })
   }
+
+  // public openModalWithComponent() {
+  //   const list = ['Open a modal with component', 'Pass your data', 'Do something else', '...'];
+  //   this.bsModalRef = this.modalService.show(ModalContentComponent);
+  //   this.bsModalRef.content.title = 'Modal with component';
+  //   this.bsModalRef.content.list = list;
+  //   setTimeout(() => {
+  //     list.push('PROFIT!!!');
+  //   }, 2000);
+  // }
 
   remove(id): void {
     this.recipeService

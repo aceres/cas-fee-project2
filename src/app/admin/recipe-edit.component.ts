@@ -12,6 +12,9 @@ import { listUnits } from '../global/list.units';
 import { Recipe } from '../services/recipe';
 import { RecipeService } from '../services/recipe.service';
 
+import { UploadService } from '../services/upload.service';
+import { Upload } from '../services/upload';
+
 class Step {
   constructor(
     public stepDescription: string,
@@ -34,6 +37,7 @@ class Ingredient {
 })
 export class RecipeEditComponent implements OnInit {
   id;
+  key;
   receipt;
   description;
   portion;
@@ -41,19 +45,26 @@ export class RecipeEditComponent implements OnInit {
   level;
   category;
   cuisine;
-  image;
 
   steps;
   ingredients;
 
+  // Image
+  image = [];
+  selectedFiles: FileList;
+  currentUpload: Upload;
+
+  // Select items
   listCategories = listCategories;
   listPortions = listPortions;
   listLevels = listLevels;
   listCuisines = listCuisines;
   listUnits = listUnits;
 
+  // Alert
   public alerts: any = [];
 
+  // LocalStorage
   currentUser;
 
   // Initialize: For the validation
@@ -65,12 +76,14 @@ export class RecipeEditComponent implements OnInit {
     private recipeService: RecipeService,
     private af: AngularFireDatabase,
     private route: ActivatedRoute,
-    private location: Location) { }
+    private location: Location,
+    private upSvc: UploadService) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
     this.recipeService.getRecipeDetail(this.id).subscribe(recipe => {
       console.log('Edit recipe: ', recipe);
+      this.key = recipe.$key;
       this.receipt = recipe.receipt;
       this.description = recipe.description;
       this.portion = recipe.portion;
@@ -85,7 +98,10 @@ export class RecipeEditComponent implements OnInit {
 
     // Get the currentUser from the localStorage
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  }
 
+  detectFiles(event) {
+    this.selectedFiles = event.target.files;
   }
 
   update(
@@ -115,7 +131,13 @@ export class RecipeEditComponent implements OnInit {
     user = this.currentUser.email;
 
     this.recipeService.update(this.id, receipt, description, portion, prepTime, level, category, cuisine, steps, ingredients, image, uid, user)
-      .then(recipe => {
+      .then(response => {
+
+        const file = this.selectedFiles.item(0);
+        console.log('File', file);
+        console.log('Key recipe', this.key);
+        this.currentUpload = new Upload(file);
+        this.upSvc.pushUpload(this.currentUpload, this.key)
 
         // Show notification
         this.alerts.push({

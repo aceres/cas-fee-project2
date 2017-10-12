@@ -20,7 +20,7 @@
 
   <div class="form-group">
     <label for="prepTime">Zubereitungszeit in Minuten:</label>
-    <input type="number" name="prepTime" id="prepTime" class="form-control" placeholder="90"  #recipePrepTime />
+    <input type="number" name="prepTime" id="prepTime" class="form-control" placeholder="90" min="0" #recipePrepTime />
   </div>
 
   <div class="form-group">
@@ -192,12 +192,8 @@
   <!--</button>-->
 </div>
 
-<button class="btn btn-default" (click)="add(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, steps, ingredients); recipeName.value=''; recipeDescription.value=''; recipePortion.value=''; recipePrepTime.value=''; recipeLevel.value=''; recipeCategory.value=''; recipeCuisine.value='';">
-  <i class="fa fa-floppy-o"></i> Speichern
-</button>
-<button [routerLink]="'/admin/recipes'" class="btn btn-default">
-  <i class="fa fa-ban"></i> Abbrechen
-</button>
+<br/>
+<br/>
 
 <div *ngFor="let alert of alerts">
   <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" dismissible="true">
@@ -209,3 +205,14 @@
     </p>
   </alert>
 </div>
+
+<br/>
+
+<button class="btn btn-default" (click)="add(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, steps, ingredients); recipeName.value=''; recipeDescription.value=''; recipePortion.value=''; recipePrepTime.value=''; recipeLevel.value=''; recipeCategory.value=''; recipeCuisine.value='';">
+  <i class="fa fa-floppy-o"></i> Speichern
+</button>
+<button [routerLink]="'/admin/recipes'" class="btn btn-default">
+  <i class="fa fa-ban"></i> Abbrechen
+</button>
+
+

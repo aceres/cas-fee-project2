@@ -9,6 +9,7 @@ import { environment } from '../environments/environment';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 // Router
 import { AppRoutingModule } from './app-routing.module';
@@ -53,6 +54,7 @@ import { UsersListComponent } from './admin/users-list.component';
 // ngx-bootstrap
 import { AlertComponent } from './directives/alert/alert.component';
 import { PaginationLimitComponent } from './directives/pagination/pagination.component';
+import { ModalContentComponent } from './directives/modal/modal.component';
 
 // Pipes
 import { FilterPipe } from './pipes/search-filter.pipe';
@@ -72,6 +74,7 @@ import { CategoryPipe } from './pipes/category.pipe';
     AngularFireAuthModule,
     // ngx-bootstrap
     AlertModule.forRoot(),
+    ModalModule.forRoot(),
     PaginationModule.forRoot()
   ],
   declarations: [
@@ -102,6 +105,7 @@ import { CategoryPipe } from './pipes/category.pipe';
     // ngx-bootstrap
     AlertComponent,
     PaginationLimitComponent,
+    ModalContentComponent,
     // Pipes
     FilterPipe,
     CategoryPipe

@@ -80,19 +80,72 @@ export class RecipeService {
     return this.recipe;
   }
 
-  create(name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, steps: any[], ingredients: any[], image: any[], uid: string, user: string) {
+  create(
+    name: string,
+    description: string,
+    portion: string,
+    prepTime: number,
+    level: string,
+    category: string,
+    cuisine: string,
+    steps: any[],
+    ingredients: any[],
+    image: any[],
+    uid: string,
+    user: string
+  ) {
     const url = `${this.recipesUrl}.json`;
     return this.http
-      .post(url, JSON.stringify({receipt: name, description: description, portion: portion, prepTime: prepTime, level: level, category: category, cuisine: cuisine, steps: steps, ingredients: ingredients, image: image, uid: uid, user: user, createdAt: new Date()}), {headers: this.headers})
+      .post(url, JSON.stringify({
+        receipt: name,
+        description: description,
+        portion: portion,
+        prepTime: prepTime,
+        level: level,
+        category: category,
+        cuisine: cuisine,
+        steps: steps,
+        ingredients: ingredients,
+        image: image,
+        uid: uid,
+        user: user,
+        createdAt: new Date()}), {headers: this.headers})
       // .toPromise()
       .map(res => res.json())
       .catch(this.handleError);
   }
 
-  update(id: string, name: string, description: string, portion: string, prepTime: number, level: string, category: string, cuisine: string, steps: any[], ingredients: any[], image: any[], uid: string, user: string): Promise<Recipe> {
+  update(
+    id: string,
+    name: string,
+    description: string,
+    portion: string,
+    prepTime: number,
+    level: string,
+    category: string,
+    cuisine: string,
+    steps: any[],
+    ingredients: any[],
+    image: any[],
+    uid: string,
+    user: string
+  ): Promise<Recipe> {
     const url = `${this.recipesUrl}/${id}.json`;
     return this.http
-      .put(url, JSON.stringify({receipt: name, description: description, portion: portion, prepTime: prepTime, level: level, category: category, cuisine: cuisine, steps: steps, ingredients: ingredients, image: image, uid: uid, user: user}), {headers: this.headers})
+      .put(url, JSON.stringify({
+        receipt: name,
+        description: description,
+        portion: portion,
+        prepTime: prepTime,
+        level: level,
+        category: category,
+        cuisine: cuisine,
+        steps: steps,
+        ingredients: ingredients,
+        image: image,
+        uid: uid,
+        user: user
+      }), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data as Recipe)
       .catch(this.handleError);
