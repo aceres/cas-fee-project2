@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "project2-60db1"
+    "default": "project2-60db1",
+    "production": "what-to-cook-1"
   }
 }

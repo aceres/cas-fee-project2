@@ -85,7 +85,6 @@ export class RecipeEditComponent implements OnInit {
 
     // Get the currentUser from the localStorage
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    console.log("this.currentUser: ", this.currentUser)
 
   }
 

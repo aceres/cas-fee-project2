@@ -123,6 +123,47 @@ Project Console: https://console.firebase.google.com/project/project2-60db1/over
 Hosting URL: https://project2-60db1.firebaseapp.com
 Google Cloud Platform (Dashboard): https://console.cloud.google.com/home/dashboard?project=project2-60db1
 
+#### Firebase: Deployment
+
+DEVELOPMENT
+***********
+
+a) firebase use
+
+Active Project: default (project2-60db1)
+
+firebase use default or firebase use project2-60db1
+
+PRODUCTION
+**********
+
+b) firebase use --add
+
+Created:
+Project: what-to-cook-1
+Alias project: production
+
+firebase use
+
+(Note: environment.prod.ts is configured)
+
+We also can serve in the production environment
+ng build --prod
+
+firebase deploy
+
+TODO: Still not working - AOT problem -> Errors korrigieren nach ng build --prod!
+
+Otherwise you can use: ng build --prod --aot=false
+
+URL: https://what-to-cook-1.firebaseapp.com
+URL: 
+
+More information:
+
+a) https://firebase.googleblog.com/2016/07/deploy-to-multiple-environments-with.html
+b) https://github.com/angular/angular-cli/issues/5429
+
 #### Firebase: Permissions for project
 
 The user: Tanja should be added!
