@@ -43,7 +43,9 @@ export class RecipesListComponent implements OnInit {
 
     // TODO: Not clean at the moment / Improve it! It is provisional version for now
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    console.log('this.currentUser: ', this.currentUser);
+
+    if (this.currentUser != null) {
+      console.log('this.currentUser: ', this.currentUser);
 
       this.allRecipes = db.list('/recipes', {
         query: {
@@ -51,6 +53,7 @@ export class RecipesListComponent implements OnInit {
           equalTo: this.currentUser.uid
         }
       })
+    }
   }
 
   // public openModalWithComponent() {
