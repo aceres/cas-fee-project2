@@ -1,0 +1,42 @@
+<div class="navbar-wrapper">
+  <div class="container">
+    <app-nav></app-nav>
+  </div>
+</div>
+
+<section class="recipe-details">
+  <div class="container">
+    <div class="row">
+      <h3>{{ category }}</h3>
+      <div *ngFor="let recipe of specificRecipes | async">
+        <p>
+          {{ recipe.receipt }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="back">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="back">
+          <button (click)="goBack()" class="btn">
+            <i class="fa fa-arrow-left"></i> Zurück
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container-fluid">
+  <hr class="featurette-divider">
+
+  <footer>
+    <p class="pull-right"><a href="#">Nach oben</a></p>
+    <p>&copy; 2017 What to cook? &middot; Alle Rechte vorbehalten. &middot; <a href="#">Privat</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+</div>
+

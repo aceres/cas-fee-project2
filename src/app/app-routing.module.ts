@@ -7,6 +7,7 @@ import { CrisisCenterComponent } from './crisis-center.component';
 // Public
 import { PublicComponent } from './public.component';
 import { PublicReceiptDetailComponent } from './detail.component';
+import { CategoryListComponent } from './category-list.component';
 // Admin
 import { AdminComponent } from './admin/admin.component';
 import { RecipesListComponent } from './admin/recipes-list.component';
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
   { path: 'public', component: PublicComponent },
   { path: 'recipe-detail/:id', component: PublicReceiptDetailComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'category-list/:category', component: CategoryListComponent },
   { path: 'admin', component: AdminComponent, children: [
     { path: 'recipes', component: RecipesListComponent},
     { path: 'recipe-detail/:id', component: RecipeDetailComponent},

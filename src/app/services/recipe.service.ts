@@ -66,6 +66,14 @@ export class RecipeService {
       .catch(this.handleError);
   }
 
+  getAllRecipeSpecificCategory(category: string): Promise<Recipe> {
+    const url = `${this.recipesUrl}/${category}.json`;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json() as Recipe)
+      .catch(this.handleError);
+  }
+
   // TODO: Refactoring
   getImage(id: string): Promise<Upload> {
     const url = `${this.imagesUrl}/${id}.json`;

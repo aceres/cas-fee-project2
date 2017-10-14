@@ -31,7 +31,7 @@ import { PageNotFoundComponent } from './not-found.component';
 import { PublicComponent } from './public.component';
 import { NavComponent } from './nav/nav.component';
 import { CoverComponent } from './cover/cover.component';
-import { DetailCoverComponent } from './detailcover/detail-cover.component';
+import { CategoryListComponent } from './category-list.component';
 import { SearchComponent } from './search.component';
 import { PublicReceiptDetailComponent } from './detail.component';
 
@@ -88,7 +88,7 @@ import { CategoryPipe } from './pipes/category.pipe';
     CoverComponent,
     SearchComponent,
     PublicReceiptDetailComponent,
-    DetailCoverComponent,
+    CategoryListComponent,
     // Admin
     AdminComponent,
     RecipesListComponent,
@@ -110,7 +110,15 @@ import { CategoryPipe } from './pipes/category.pipe';
     FilterPipe,
     CategoryPipe
   ],
-  providers: [AuthService, RecipeService, BasisDataCategoryService, BasisDataCuisineService, UploadService, RegisterService],
+  providers: [
+    AuthService,
+    RecipeService,
+    BasisDataCategoryService,
+    BasisDataCuisineService,
+    UploadService,
+    RegisterService,
+    AlertComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
