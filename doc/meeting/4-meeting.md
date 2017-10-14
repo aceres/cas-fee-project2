@@ -27,7 +27,7 @@
 
 #### TODO bei André
 
-- ...
+- Class (auch Service) nutzen für Recipe etc., Rolle verbessern in Admin (wählen), User speeren können (in der Admin)
 
 ## Pendenzen oder Probleme
 
