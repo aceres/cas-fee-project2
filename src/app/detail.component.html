@@ -40,7 +40,8 @@
             <div class="like-group">
               <ul class="like-list">
                 <li>
-                  <span class="icon flaticon-like">{{(recipe.rating | async)?.rating}}</span>
+                  <span (click)="rateReceipt()" class="icon flaticon-like"></span>
+                  {{(recipe | async)?.rating}}
                 </li>
                 <li>
                   <a class="btn btn-default" href="#" role="button">Rezept speichern</a>
