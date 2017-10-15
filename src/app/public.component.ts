@@ -21,4 +21,8 @@ export class PublicComponent {
   detail(recipe): void {
     this.router.navigate(['/recipe-detail', recipe.$key]);
   }
+
+  listRecipeSpecificCategory(category): void {
+    this.router.navigate(['/category-list', category]);
+  }
 }
