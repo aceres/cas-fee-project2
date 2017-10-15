@@ -53,13 +53,19 @@ export class PublicReceiptDetailComponent implements OnInit {
 
     const databaseRef = this.db.database.ref('recipes').child(this.key).child('rating');
 
+    console.log('databaseRef: ', databaseRef);
+
     databaseRef.transaction(function(rating) {
-      if (rating) {
-        rating = rating + 1;
-        // return (rating || 0) + 1;
+
+      if (rating || (rating === 0)) {
+        rating++;
       }
       return rating;
-      // return (rating || 0) + 1;
+
+      // if (rating) {
+      //   rating = (rating || 0) + 1;
+      // }
+      // return rating;
     });
 
     // this.recipe = this.recipeService.getRecipe(this.key);
