@@ -48,8 +48,8 @@ export class RecipeEditComponent implements OnInit {
   category;
   cuisine;
 
-  steps;
-  ingredients;
+  steps = [];
+  ingredients = [];
 
   // Image
   image = [];
@@ -135,11 +135,13 @@ export class RecipeEditComponent implements OnInit {
     this.recipeService.update(this.id, receipt, description, portion, prepTime, level, category, cuisine, steps, ingredients, image, uid, user)
       .then(response => {
 
-        const file = this.selectedFiles.item(0);
-        console.log('File', file);
-        console.log('Key recipe', this.key);
-        this.currentUpload = new Upload(file);
-        this.upSvc.pushUpload(this.currentUpload, this.key)
+        if (this.selectedFiles !== undefined) {
+          const file = this.selectedFiles.item(0);
+          console.log('File', file);
+          console.log('Key recipe', this.key);
+          this.currentUpload = new Upload(file);
+          this.upSvc.pushUpload(this.currentUpload, this.key)
+        }
 
         // Show notification
         this.childAlert.showAlert('success', `Rezept wurde erfolgreich aktualisiert! (Geändert am: ${(new Date()).toLocaleTimeString()})`);

@@ -37,11 +37,13 @@ class Ingredient {
 })
 export class RecipeAddComponent implements OnInit {
   recipes: Recipe[];
+
   listCategories = listCategories;
   listPortions = listPortions;
   listLevels = listLevels;
   listCuisines = listCuisines;
   listUnits = listUnits;
+
   steps = [];
   ingredients = [];
 
@@ -100,17 +102,22 @@ export class RecipeAddComponent implements OnInit {
             uid = this.currentUser.uid;
             user = this.currentUser.email;
 
-            this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, steps, ingredients, image, uid, user)
-              .subscribe(response => {
+            console.log('this.selectedFiles: ', this.selectedFiles);
+            if (this.selectedFiles !== undefined) {
+              this.recipeService.create(name, description, portion, prepTime, level, category, cuisine, steps, ingredients, image, uid, user)
+                .subscribe(response => {
 
-              console.log('Response after created form: ', response.name);
+                  console.log('Response after created form: ', response.name);
 
-              const file = this.selectedFiles.item(0)
-              this.currentUpload = new Upload(file);
-              this.upSvc.pushUpload(this.currentUpload, response.name)
+                  const file = this.selectedFiles.item(0)
+                  this.currentUpload = new Upload(file);
+                  this.upSvc.pushUpload(this.currentUpload, response.name)
 
-              this.childAlert.showAlert('success', `Rezept wurde erfolgreich gespeichert! (Hinzugefügt am: ${(new Date()).toLocaleTimeString()})`);
-              });
+                  this.childAlert.showAlert('success', `Rezept wurde erfolgreich gespeichert! (Hinzugefügt am: ${(new Date()).toLocaleTimeString()})`);
+                });
+            } else {
+              this.childAlert.showAlert('danger', `Bitte wählen Sie das Bild aus!`);
+            }
       }
 
   addStep(stepDescription: string, photo: string) {
