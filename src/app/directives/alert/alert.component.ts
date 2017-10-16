@@ -8,8 +8,6 @@ export class AlertComponent {
   public alerts: any = [];
 
   showAlert(type, message) {
-    console.log('type: ', type);
-    console.log('message: ', message);
     this.alerts.push({
       type: type,
       msg: message,
