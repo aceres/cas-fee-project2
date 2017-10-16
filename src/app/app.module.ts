@@ -37,11 +37,11 @@ import { PublicReceiptDetailComponent } from './detail.component';
 
 // Admin
 import { AdminComponent } from './admin/admin.component';
-import { RecipesListComponent } from './admin/recipes-list.component';
-import { RecipeDetailComponent } from './admin/recipe-detail.component';
-import { RecipeAddComponent } from './admin/recipe-add.component';
-import { RecipeEditComponent } from './admin/recipe-edit.component';
-import { RecipeSearchComponent } from './admin/recipe-search.component';
+import { RecipesListComponent } from './admin/view-list/recipes-list.component';
+import { RecipeDetailComponent } from './admin/view-form/recipe-detail.component';
+import { RecipeAddComponent } from './admin/view-form/recipe-add.component';
+import { RecipeEditComponent } from './admin/view-form/recipe-edit.component';
+import { RecipeSearchComponent } from './admin/view-search/recipe-search.component';
 
 // Master Data Basis
 import { BasisDataCategoryComponent } from './admin/basis-data-category.component';
@@ -49,7 +49,7 @@ import { BasisDataCuisineComponent } from './admin/basis-data-cuisine.component'
 
 // Register
 import { RegisterComponent } from './register/register.component';
-import { UsersListComponent } from './admin/users-list.component';
+import { UsersListComponent } from './admin/view-list/users-list.component';
 
 // ngx-bootstrap
 import { AlertComponent } from './directives/alert/alert.component';

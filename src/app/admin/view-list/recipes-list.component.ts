@@ -2,10 +2,10 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 
-import { Recipe } from '../services/recipe';
-import { RecipeService } from '../services/recipe.service';
+import { Recipe } from '../../services/recipe';
+import { RecipeService } from '../../services/recipe.service';
 
-import { AlertComponent } from '../directives/alert/alert.component';
+import { AlertComponent } from '../../directives/alert/alert.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
 // import { ModalContentComponent } from '../directives/modal/modal.component';
 // import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';

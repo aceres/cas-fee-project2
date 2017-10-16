@@ -4,8 +4,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
-import { Recipe } from '../services/recipe';
-import { RecipeService } from '../services/recipe.service';
+import { Recipe } from '../../services/recipe';
+import { RecipeService } from '../../services/recipe.service';
 
 @Component({
   selector: 'app-recipe-detail',

@@ -3,19 +3,19 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
-import { listCategories } from '../global/list.categories';
-import { listPortions } from '../global/list.portions';
-import { listLevels } from '../global/list.levels';
-import { listCuisines } from '../global/list.cuisines';
-import { listUnits } from '../global/list.units';
+import { listCategories } from '../../global/list.categories';
+import { listPortions } from '../../global/list.portions';
+import { listLevels } from '../../global/list.levels';
+import { listCuisines } from '../../global/list.cuisines';
+import { listUnits } from '../../global/list.units';
 
-import { Recipe } from '../services/recipe';
-import { RecipeService } from '../services/recipe.service';
+import { Recipe } from '../../services/recipe';
+import { RecipeService } from '../../services/recipe.service';
 
-import { UploadService } from '../services/upload.service';
-import { Upload } from '../services/upload';
+import { UploadService } from '../../services/upload.service';
+import { Upload } from '../../services/upload';
 
-import { AlertComponent } from '../directives/alert/alert.component';
+import { AlertComponent } from '../../directives/alert/alert.component';
 
 class Step {
   constructor(
