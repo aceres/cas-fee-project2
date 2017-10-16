@@ -84,11 +84,7 @@ export class AdminComponent {
   logout() {
     this.authService.logout();
 
-    this.alerts.push({
-      type: 'success',
-      msg: `Sie wurden erfolgreich abgemeldet! (Abgemeldet am: ${(new Date()).toLocaleTimeString()})`,
-      timeout: 5000
-    });
+    this.childAlert.showAlert('success', `Sie sind erfolgreich abgemeldet am: ${(new Date()).toLocaleTimeString()})`);
 
     localStorage.removeItem('currentUser');
     this.router.navigateByUrl('/admin');
