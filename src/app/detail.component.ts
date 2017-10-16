@@ -68,6 +68,8 @@ export class PublicReceiptDetailComponent implements OnInit {
       // return rating;
     });
 
+    this.recipe = this.recipeService.getRecipe(this.key);
+
     // this.recipe = this.recipeService.getRecipe(this.key);
     // this.rating = this.db.list('/recipes', {
     //   query: {
