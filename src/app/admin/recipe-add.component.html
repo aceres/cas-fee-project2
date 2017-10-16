@@ -192,21 +192,7 @@
   <!--</button>-->
 </div>
 
-<br/>
-<br/>
-
-<div *ngFor="let alert of alerts">
-  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" dismissible="true">
-    <h4 class="alert-heading">
-      Info
-    </h4>
-    <p>
-      {{ alert.msg }}
-    </p>
-  </alert>
-</div>
-
-<br/>
+<app-alert #childAlert></app-alert>
 
 <button class="btn btn-default" (click)="add(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, steps, ingredients); recipeName.value=''; recipeDescription.value=''; recipePortion.value=''; recipePrepTime.value=''; recipeLevel.value=''; recipeCategory.value=''; recipeCuisine.value='';">
   <i class="fa fa-floppy-o"></i> Speichern

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
@@ -14,6 +14,8 @@ import { RecipeService } from '../services/recipe.service';
 
 import { UploadService } from '../services/upload.service';
 import { Upload } from '../services/upload';
+
+import { AlertComponent } from '../directives/alert/alert.component';
 
 class Step {
   constructor(
@@ -62,7 +64,7 @@ export class RecipeEditComponent implements OnInit {
   listUnits = listUnits;
 
   // Alert
-  public alerts: any = [];
+  @ViewChild('childAlert') public childAlert: AlertComponent;
 
   // LocalStorage
   currentUser;
@@ -140,11 +142,7 @@ export class RecipeEditComponent implements OnInit {
         this.upSvc.pushUpload(this.currentUpload, this.key)
 
         // Show notification
-        this.alerts.push({
-          type: 'success',
-          msg: `Rezept wurde erfolgreich aktualisiert! (Geändert am: ${(new Date()).toLocaleTimeString()})`,
-          timeout: 5000
-        });
+        this.childAlert.showAlert('success', `Rezept wurde erfolgreich aktualisiert! (Geändert am: ${(new Date()).toLocaleTimeString()})`);
       });
   }
 

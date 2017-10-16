@@ -194,21 +194,7 @@
 </div>
 
 <!-- TODO: Restyle it when we can manage uploaded photos (edit / remove) -->
-<br />
-<br />
-
-<div *ngFor="let alert of alerts">
-  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout" dismissible="true">
-    <h4 class="alert-heading">
-      Info
-    </h4>
-    <p>
-      {{ alert.msg }}
-    </p>
-  </alert>
-</div>
-
-<br/>
+<app-alert #childAlert></app-alert>
 
 <button class="btn btn-default" (click)="update(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, recipeSteps, recipeIngredients)">
   <i class="fa fa-floppy-o"></i> Speichern

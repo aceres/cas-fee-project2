@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { listCategories } from '../global/list.categories';
@@ -12,6 +12,8 @@ import { RecipeService } from '../services/recipe.service';
 
 import { UploadService } from '../services/upload.service';
 import { Upload } from '../services/upload';
+
+import { AlertComponent } from '../directives/alert/alert.component';
 
 class Step {
   constructor(
@@ -47,7 +49,9 @@ export class RecipeAddComponent implements OnInit {
   selectedFiles: FileList;
   currentUpload: Upload;
 
+  // Alert
   public alerts: any = [];
+  @ViewChild('childAlert') public childAlert: AlertComponent;
 
   currentUser;
 
@@ -106,13 +110,7 @@ export class RecipeAddComponent implements OnInit {
               this.currentUpload = new Upload(file);
               this.upSvc.pushUpload(this.currentUpload, response.name)
 
-                // Show notification
-                this.alerts.push({
-                  type: 'success',
-                  msg: `Rezept wurde erfolgreich gespeichert! (Hinzugefügt am: ${(new Date()).toLocaleTimeString()})`,
-                  timeout: 5000
-                });
-
+              this.childAlert.showAlert('success', `Rezept wurde erfolgreich gespeichert! (Hinzugefügt am: ${(new Date()).toLocaleTimeString()})`);
               });
       }
 

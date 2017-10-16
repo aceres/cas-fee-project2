@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { Recipe } from '../services/recipe';
 import { RecipeService } from '../services/recipe.service';
 
+import { AlertComponent } from '../directives/alert/alert.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
 // import { ModalContentComponent } from '../directives/modal/modal.component';
 // import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
@@ -25,6 +26,7 @@ export class RecipesListComponent implements OnInit {
 
   // Alert
   public alerts: any = [];
+  @ViewChild('childAlert') public childAlert: AlertComponent;
 
   // Search Pipe
   public searchTerm;
@@ -70,14 +72,7 @@ export class RecipesListComponent implements OnInit {
     this.recipeService
       .remove(id)
       .then(() => {
-        // this.recipes = this.recipes.filter(h => h !== recipe);
-        // if (this.selectedRecipe === recipe) { this.selectedRecipe = null; }
-
-        this.alerts.push({
-          type: 'success',
-          msg: `Rezept wurde erfolgreich entfernt! (Geändert am: ${(new Date()).toLocaleTimeString()})`,
-          timeout: 5000
-        });
+        this.childAlert.showAlert('success', `Rezept wurde erfolgreich entfernt! (Geändert am: ${(new Date()).toLocaleTimeString()})`);
       });
   }
 
