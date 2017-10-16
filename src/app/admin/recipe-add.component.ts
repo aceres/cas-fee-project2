@@ -50,7 +50,6 @@ export class RecipeAddComponent implements OnInit {
   currentUpload: Upload;
 
   // Alert
-  public alerts: any = [];
   @ViewChild('childAlert') public childAlert: AlertComponent;
 
   currentUser;

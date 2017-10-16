@@ -1,4 +1,4 @@
-import {Component, ViewChild, OnInit} from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Router } from '@angular/router';
@@ -15,9 +15,6 @@ export class AdminComponent {
   // Authentication
   email: string;
   password: string;
-
-  // Notification
-  public alerts: any = [];
 
   // Role
   public role: string;

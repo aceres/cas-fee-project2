@@ -25,7 +25,6 @@ export class RecipesListComponent implements OnInit {
   public numPages : number = 0;
 
   // Alert
-  public alerts: any = [];
   @ViewChild('childAlert') public childAlert: AlertComponent;
 
   // Search Pipe
