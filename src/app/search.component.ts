@@ -33,8 +33,8 @@ export class SearchComponent implements OnInit {
 
   searchRecipe($event) {
     if ($event.timeStamp - this.lastKeypress > 200) {
-      let q = $event.target.value;
-      // let q = $event.target.value.toUpperCase();
+      // let q = $event.target.value;
+      let q = $event.target.value.charAt(0).toUpperCase();
       this.startAt.next(q);
       this.endAt.next(q+"\uf8ff")
     }
