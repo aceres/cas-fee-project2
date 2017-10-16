@@ -5,13 +5,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './not-found.component';
 import { CrisisCenterComponent } from './crisis-center.component';
 // Public
-import { PublicComponent } from './public.component';
-import { PublicReceiptDetailComponent } from './detail.component';
-import { CategoryListComponent } from './category-list.component';
+import { PublicComponent } from './public/public.component';
+import { PublicReceiptDetailComponent } from './public/detail.component';
+import { CategoryListComponent } from './public/category-list.component';
 // Admin
 import { AdminComponent } from './admin/admin.component';
 import { RecipesListComponent } from './admin/view-list/recipes-list.component';
-import { RecipeDetailComponent } from './admin/view-form/recipe-detail.component';
+import { RecipeDetailComponent } from './admin/view-detail/recipe-detail.component';
 import { RecipeAddComponent } from './admin/view-form/recipe-add.component';
 import { RecipeEditComponent } from './admin/view-form/recipe-edit.component';
 // Register

@@ -54,6 +54,7 @@ export class RecipeAddComponent implements OnInit {
   // Alert
   @ViewChild('childAlert') public childAlert: AlertComponent;
 
+  // LocalStorage
   currentUser;
 
   // Initialize: For the validation

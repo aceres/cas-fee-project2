@@ -21,12 +21,12 @@
             <li><a href="#contact">Kontakt</a></li>
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">Kategorie</li>
-            <li><a href="#">Frühstück</a></li>
-            <li><a href="#">Vorspeise</a></li>
-            <li><a href="#">Hauptgericht</a></li>
-            <li><a href="#">Snack</a></li>
-            <li><a href="#">Beilage</a></li>
-            <li><a href="#">Dessert</a></li>
+            <li><a [routerLink]="['/category-list/breakfast']">Frühstück</a></li>
+            <li><a [routerLink]="['/category-list/starter']">Vorspeise</a></li>
+            <li><a [routerLink]="['/category-list/mainCourse']">Hauptgericht</a></li>
+            <li><a [routerLink]="['/category-list/snack']">Snack</a></li>
+            <li><a [routerLink]="['/category-list/sideDish']">Beilage</a></li>
+            <li><a [routerLink]="['/category-list/dessert']">Dessert</a></li>
           </ul>
         </li>
       </ul>
