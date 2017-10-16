@@ -58,7 +58,6 @@ import { ModalContentComponent } from './directives/modal/modal.component';
 
 // Pipes
 import { FilterPipe } from './pipes/search-filter.pipe';
-import { CategoryPipe } from './pipes/category.pipe';
 
 @NgModule({
   imports: [
@@ -107,8 +106,7 @@ import { CategoryPipe } from './pipes/category.pipe';
     PaginationLimitComponent,
     ModalContentComponent,
     // Pipes
-    FilterPipe,
-    CategoryPipe
+    FilterPipe
   ],
   providers: [
     AuthService,
