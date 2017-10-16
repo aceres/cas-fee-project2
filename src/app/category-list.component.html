@@ -4,14 +4,39 @@
   </div>
 </div>
 
-<section class="recipe-details">
+<section class="category-details">
   <div class="container">
     <div class="row">
-      <h3>{{ category }}</h3>
-      <div *ngFor="let recipe of specificRecipes | async">
-        <p>
-          {{ recipe.receipt }}
-        </p>
+      <div class="col-md-12">
+        <h1 class="category-list-heading">{{ category }}</h1>
+
+        <div class="col-xs-6 col-sm-4 col-md-3" *ngFor="let recipe of specificRecipes | async">
+          <div class="category-list-item">
+            <div class="category-list-item-image">
+              <div class="category-list-item-image-card">
+                <!--<div class="recipes-list-item-image-img" style="background-image: url(https://static.pexels.com/photos/159887/pexels-photo-159887.jpeg)">-->
+                <img class="category-list-item-image-img" src="{{ recipe.image?.url }}" alt="{{ recipe.receipt}}" />
+                <a [routerLink]="['/admin/recipe-detail/' + recipe.$key]"></a>
+                <!--</div>-->
+              </div>
+            </div>
+            <div class="category-list-item-meta-container">
+              <div class="category-list-item-meta-info">
+                <i class="icon flaticon-preptime"></i>{{recipe.prepTime}} min.
+              </div>
+              <div class="category-list-item-meta-info">
+                <i class="icon flaticon-level"></i>{{recipe.level}}
+              </div>
+              <div class="category-list-item-meta-info">
+                <span class="icon flaticon-like">{{recipe.rating}}</span>
+              </div>
+            </div>
+            <div class="category-list-item-title">
+              <h5 class="category-list-item-title">{{recipe.receipt}}</h5>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -39,4 +64,8 @@
     <p>&copy; 2017 What to cook? &middot; Alle Rechte vorbehalten. &middot; <a href="#">Privat</a> &middot; <a href="#">Terms</a></p>
   </footer>
 </div>
+
+
+
+
 
