@@ -117,7 +117,7 @@ export class RecipeAddComponent implements OnInit {
                   this.childAlert.showAlert('success', `Rezept wurde erfolgreich gespeichert! (Hinzugefügt am: ${(new Date()).toLocaleTimeString()})`);
                 });
             } else {
-              this.childAlert.showAlert('danger', `Bitte wählen Sie das Bild aus!`);
+              this.childAlert.showAlert('danger', `Bitte wählen Sie ein Bild aus!`);
             }
       }
 
