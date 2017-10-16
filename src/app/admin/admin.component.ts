@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild, OnInit} from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Router } from '@angular/router';
+import { AlertComponent } from '../directives/alert/alert.component';
 
 @Component({
   selector: 'app-admin',
@@ -21,6 +22,9 @@ export class AdminComponent {
   // Role
   public role: string;
 
+  // Alert
+  @ViewChild('childAlert') public childAlert: AlertComponent;
+
   constructor(
     public authService: AuthService,
     public db: AngularFireDatabase,
@@ -33,32 +37,19 @@ export class AdminComponent {
 
         if (response.code === 'auth/invalid-email') {
 
-          this.alerts.push({
-            type: 'danger',
-            msg: `${ response.message }`,
-            timeout: 5000
-          });
+          this.childAlert.showAlert('danger', `${ response.message }!`);
+
         } else if (response.code === 'auth/user-not-found') {
 
-          this.alerts.push({
-            type: 'info',
-            msg: `${ response.message }`,
-            timeout: 5000
-          });
+          this.childAlert.showAlert('info', `${ response.message }!`);
+
         } else if (response.code === 'auth/wrong-password') {
 
-          this.alerts.push({
-            type: 'info',
-            msg: `${ response.message }`,
-            timeout: 5000
-          });
+          this.childAlert.showAlert('info', `${ response.message }!`);
+
         } else {
 
-          this.alerts.push({
-            type: 'success',
-            msg: `Sie sind erfolgreich angemeldet ${ response.email }! (Angemeldet am: ${(new Date()).toLocaleTimeString()})`,
-            timeout: 5000
-          });
+          this.childAlert.showAlert('success', `Sie sind erfolgreich angemeldet ${ response.email }! (Angemeldet am: ${(new Date()).toLocaleTimeString()})`);
 
           // Prepare for the localStorage
           const currentUser = {};

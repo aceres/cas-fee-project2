@@ -5,4 +5,16 @@ import { Component } from '@angular/core';
   templateUrl: './alert.component.html'
 })
 export class AlertComponent {
+  public alerts: any = [];
+
+  showAlert(type, message) {
+    console.log('type: ', type);
+    console.log('message: ', message);
+    this.alerts.push({
+      type: type,
+      msg: message,
+      timeout: 5000
+    });
+    return this.alerts;
+  }
 }
