@@ -16,4 +16,4 @@ Ausprobieren:
 - JWT Token
 - Was würden wir gernen noch ausbauen?
 - Ev. Login Prozess beschreiben (Login)? - mit XMind App?
-- env --prod
+- env --prod (aot)

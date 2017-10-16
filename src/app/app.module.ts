@@ -28,17 +28,17 @@ import { CrisisCenterComponent } from './crisis-center.component';
 import { PageNotFoundComponent } from './not-found.component';
 
 // Public
-import { PublicComponent } from './public.component';
+import { PublicComponent } from './public/public.component';
 import { NavComponent } from './nav/nav.component';
 import { CoverComponent } from './cover/cover.component';
-import { CategoryListComponent } from './category-list.component';
-import { SearchComponent } from './search.component';
-import { PublicReceiptDetailComponent } from './detail.component';
+import { CategoryListComponent } from './public/category-list.component';
+import { SearchComponent } from './public/search.component';
+import { PublicReceiptDetailComponent } from './public/detail.component';
 
 // Admin
 import { AdminComponent } from './admin/admin.component';
 import { RecipesListComponent } from './admin/view-list/recipes-list.component';
-import { RecipeDetailComponent } from './admin/view-form/recipe-detail.component';
+import { RecipeDetailComponent } from './admin/view-detail/recipe-detail.component';
 import { RecipeAddComponent } from './admin/view-form/recipe-add.component';
 import { RecipeEditComponent } from './admin/view-form/recipe-edit.component';
 import { RecipeSearchComponent } from './admin/view-search/recipe-search.component';

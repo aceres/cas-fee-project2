@@ -9,5 +9,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 export class ModalContentComponent {
   public title: string;
   public list: any[] = [];
-  constructor(public bsModalRef: BsModalRef) {}
+  constructor(
+    public bsModalRef: BsModalRef
+  ) {}
 }
