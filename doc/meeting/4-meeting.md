@@ -20,6 +20,7 @@
 - Richtung: QueryParams, 1 Seite list-category
 - DetailCoverComponent -> listCategory
 - Public Detail: Einkaufsliste -> Hintergrund: Notiz / schräges Notiz
+- Elipsis -> ToolTip Bootstrap
 
 ### Status bei André
 
@@ -33,16 +34,13 @@
 
 - Refactoring
 
-- Suche im Public: Ab Kleinbuchstaben soll auch möglich sein
-- Notification beim Fehler der Anmeldung
+- OK 👌 Suche im Public: Ab Kleinbuchstaben soll auch möglich sein
 - Versuchen - Background (Image: Ev. besser?)
-- Elipsis -> ToolTip Bootstrap
-- Like -> anzahl geliked recipe
 - Admin - alle Rezepte sollte anzeigen!
 - Neuer Rubrik - Alle Rezepte -> zum Aktivieren -> Auch schon probiert
 - Public -> 3 -> die beste geliked rezepte
-- Admin: Herz - nur zum Anzeigen, wieviele wurde dies geliked!
-- Public: Herz - Alle können liken
+- OK 👌 Admin: Herz - nur zum Anzeigen, wieviele wurde dies geliked!
+- Public: Herz - Alle können liken / IP ?? - 1x liken möglich
 
 - npm package installieren anstelle url verwenden /javascript/
 
