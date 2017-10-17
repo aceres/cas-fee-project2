@@ -64,11 +64,13 @@
       <div class="col-md-6">
         <div class="preparation-ingredients">
           <h3 class="preparation-ingredients-heading">Zutaten für {{(recipe | async)?.portion}} Personen</h3>
-          <div class="preparation-ingredients-item" *ngFor="let ingredient of (recipe | async)?.ingredients; let i = index;">
-            <span class="preparation-ingredients-quantity">{{ ingredient.quantity }}</span>
-            <span class="preparation-ingredients-unit">{{ ingredient.unit }}</span>
-            <span class="preparation-ingredients-ingredient">{{ ingredient.ingredient }}</span>
-          </div>
+            <table >
+              <tr class="preparation-ingredients-item" *ngFor="let ingredient of (recipe | async)?.ingredients; let i = index;">
+                <td class="preparation-ingredients-quantity">{{ ingredient.quantity }}</td>
+                <td class="preparation-ingredients-unit">{{ ingredient.unit }}</td>
+                <td class="preparation-ingredients-ingredient">{{ ingredient.ingredient }} </td>
+              </tr>
+            </table>
         </div>
       </div>
       <div class="col-md-6">
