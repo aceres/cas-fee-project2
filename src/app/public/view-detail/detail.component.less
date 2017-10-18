@@ -106,10 +106,10 @@
 .preparation-ingredients {
   background: #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  margin: 26px auto 0;
+  margin: 26px auto;
   max-width: 550px;
   min-height: 300px;
-  padding: 24px;
+  padding: 24px 24px 50px 24px;
   position: relative;
 }
 
@@ -185,10 +185,16 @@ span.step {
   padding: 20px;
 }
 
+@media (min-width: 568px) {
+  .preparation-ingredients {
+    margin: 26px auto 50px auto;
+  }
+}
+
 @media (min-width: 768px) {
   .preparation-ingredients {
-    padding: 20px 100px;
-    margin: 0 100px;
+    margin: 26px auto 50px auto;
+    padding: 24px 50px 50px 50px;
   }
 
   .preparation-steps {
@@ -202,7 +208,6 @@ span.step {
   }
 
   .preparation-ingredients {
-    padding: 20px 80px;
     margin: 0;
   }
 }
