@@ -5,6 +5,7 @@ export class Recipe {
   description: string;
   portion: string;
   prepTime: number;
+  rating: number;
   level: string;
   category: string;
   cuisine: string;

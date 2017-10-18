@@ -23,6 +23,11 @@
 </div>
 
 <div class="form-group">
+  <label for="prepTime">Rating:</label>
+  <input type="number" name="rating" id="rating" class="form-control" [ngModel]="rating" #recipeRating readonly />
+</div>
+
+<div class="form-group">
   <label for="level">Schwierigkeitsgrad:</label>
   <select name="level" id="level" class="form-control" [ngModel]="level" #recipeLevel>
     <option *ngFor="let level of listLevels" [value]="level.value">{{level.display}}</option>
@@ -50,7 +55,7 @@
 <form #ingredientForm="ngForm">
   <div class="form-group">
     <label for="recipeQuantity">Menge</label>
-    <input type="number" placeholder="1" name="recipeQuantity" id="recipeQuantity" class="form-control" [(ngModel)]="ingredient.recipeQuantity" #recipeQuantity="ngModel" required>
+    <input type="number" placeholder="1" min="0" name="recipeQuantity" id="recipeQuantity" class="form-control" [(ngModel)]="ingredient.recipeQuantity" #recipeQuantity="ngModel" required>
     <div [hidden]="recipeQuantity.valid || recipeQuantity.pristine" class="alert alert-danger">
       Menge ist verlangt.
     </div>
@@ -87,7 +92,7 @@
   <tbody>
   <tr *ngFor="let ingredient of ingredients; let i = index;">
     <td>
-      <input type="number" [ngModel]="ingredient.quantity" name="quantity" class="form-control" #recipeQuantity>
+      <input type="number" [ngModel]="ingredient.quantity" name="quantity" class="form-control" min="0" #recipeQuantity>
     </td>
     <td>
       <select name="unit" form="unit" [(ngModel)]="ingredient.unit" class="form-control" #recipeUnit>
@@ -196,7 +201,7 @@
 <!-- TODO: Restyle it when we can manage uploaded photos (edit / remove) -->
 <app-alert #childAlert></app-alert>
 
-<button class="btn btn-default" (click)="update(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, recipeSteps, recipeIngredients)">
+<button class="btn btn-default" (click)="update(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeRating.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, recipeSteps, recipeIngredients)">
   <i class="fa fa-floppy-o"></i> Speichern
 </button>
 <button (click)="goBack()" class="btn btn-default">

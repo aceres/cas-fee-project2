@@ -44,6 +44,7 @@ export class RecipeEditComponent implements OnInit {
   description;
   portion;
   prepTime;
+  rating;
   level;
   category;
   cuisine;
@@ -90,6 +91,7 @@ export class RecipeEditComponent implements OnInit {
       this.description = recipe.description;
       this.portion = recipe.portion;
       this.prepTime = recipe.prepTime;
+      this.rating = recipe.rating;
       this.level = recipe.level;
       this.category = recipe.category;
       this.cuisine = recipe.cuisine;
@@ -111,6 +113,7 @@ export class RecipeEditComponent implements OnInit {
       description: string,
       portion: string,
       prepTime: number,
+      rating: number,
       level: string,
       category: string,
       cuisine: string,
@@ -123,6 +126,7 @@ export class RecipeEditComponent implements OnInit {
     description = description.trim();
     portion = portion.trim();
     prepTime = prepTime;
+    rating = rating;
     level = level.trim();
     category = category.trim();
     cuisine = cuisine.trim();
@@ -132,7 +136,7 @@ export class RecipeEditComponent implements OnInit {
     uid = this.currentUser.uid;
     user = this.currentUser.email;
 
-    this.recipeService.update(this.id, receipt, description, portion, prepTime, level, category, cuisine, steps, ingredients, image, uid, user)
+    this.recipeService.update(this.id, receipt, description, portion, prepTime, rating, level, category, cuisine, steps, ingredients, image, uid, user)
       .then(response => {
 
         if (this.selectedFiles !== undefined) {

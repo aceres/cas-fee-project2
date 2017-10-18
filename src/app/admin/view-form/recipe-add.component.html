@@ -52,7 +52,7 @@
 <form #ingredientForm="ngForm">
   <div class="form-group">
     <label for="recipeQuantity">Menge</label>
-    <input type="number" placeholder="1" name="recipeQuantity" id="recipeQuantity" class="form-control" [(ngModel)]="ingredient.recipeQuantity" #recipeQuantity="ngModel" required>
+    <input type="number" placeholder="1" min="0" name="recipeQuantity" id="recipeQuantity" class="form-control" [(ngModel)]="ingredient.recipeQuantity" #recipeQuantity="ngModel" required>
     <div [hidden]="recipeQuantity.valid || recipeQuantity.pristine" class="alert alert-danger">
       Menge ist verlangt.
     </div>
@@ -89,7 +89,7 @@
   <tbody>
     <tr *ngFor="let ingredient of ingredients; let i = index;">
       <td>
-        <input type="number" [ngModel]="ingredient.quantity" name="quantity" class="form-control" #recipeQuantity>
+        <input type="number" [ngModel]="ingredient.quantity" min="0" name="quantity" class="form-control" #recipeQuantity>
       </td>
       <td>
         <select name="unit" form="unit" [(ngModel)]="ingredient.unit" class="form-control" #recipeUnit>
