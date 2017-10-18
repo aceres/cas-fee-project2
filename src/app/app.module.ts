@@ -29,11 +29,11 @@ import { PageNotFoundComponent } from './not-found.component';
 
 // Public
 import { PublicComponent } from './public/public.component';
-import { NavComponent } from './nav/nav.component';
-import { CoverComponent } from './cover/cover.component';
-import { CategoryListComponent } from './public/category-list.component';
-import { SearchComponent } from './public/search.component';
-import { PublicReceiptDetailComponent } from './public/detail.component';
+import { NavComponent } from './public/view-nav/nav.component';
+import { CoverComponent } from './public/view-cover/cover.component';
+import { CategoryListComponent } from './public/view-list/category-list.component';
+import { SearchComponent } from './public/view-search/search.component';
+import { PublicReceiptDetailComponent } from './public/view-detail/detail.component';
 
 // Admin
 import { AdminComponent } from './admin/admin.component';
@@ -42,6 +42,7 @@ import { RecipeDetailComponent } from './admin/view-detail/recipe-detail.compone
 import { RecipeAddComponent } from './admin/view-form/recipe-add.component';
 import { RecipeEditComponent } from './admin/view-form/recipe-edit.component';
 import { RecipeSearchComponent } from './admin/view-search/recipe-search.component';
+import { NavAdminComponent } from './admin/view-nav/nav-admin.component';
 
 // Master Data Basis
 import { BasisDataCategoryComponent } from './admin/basis-data-category.component';
@@ -95,6 +96,7 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     RecipeDetailComponent,
     RecipeEditComponent,
     RecipeSearchComponent,
+    NavAdminComponent,
     // Register
     RegisterComponent,
     UsersListComponent,

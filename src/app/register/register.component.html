@@ -13,7 +13,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li *ngIf="(authService.user | async)"><a [routerLink]="['/admin']">Meine Rezepte</a></li>
         <li><a [routerLink]="['/public']">Start</a></li>
-        <li><a [routerLink]="['/register']">Registrieren</a></li>
+        <li [routerLinkActive]="['active']"><a [routerLink]="['/register']">Registrieren</a></li>
         <li><a href="#">Über uns</a></li>
         <li><a href="#">Hilfe</a></li>
       </ul>
