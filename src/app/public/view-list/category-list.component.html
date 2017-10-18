@@ -15,8 +15,9 @@
             <div class="category-list-item-image">
               <div class="category-list-item-image-card">
                 <!--<div class="recipes-list-item-image-img" style="background-image: url(https://static.pexels.com/photos/159887/pexels-photo-159887.jpeg)">-->
-                <img class="category-list-item-image-img" src="{{ recipe.image?.url }}" alt="{{ recipe.receipt}}" />
-                <a [routerLink]="['/admin/recipe-detail/' + recipe.$key]"></a>
+                <a class="category-list-item-link" [routerLink]="['/recipe-detail/' + recipe.$key]">
+                  <img class="category-list-item-image-img" src="{{ recipe.image?.url }}" alt="{{ recipe.receipt}}" />
+                </a>
                 <!--</div>-->
               </div>
             </div>
@@ -64,8 +65,3 @@
     <p>&copy; 2017 What to cook? &middot; Alle Rechte vorbehalten. &middot; <a href="#">Privat</a> &middot; <a href="#">Terms</a></p>
   </footer>
 </div>
-
-
-
-
-
