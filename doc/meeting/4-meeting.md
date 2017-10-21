@@ -38,9 +38,9 @@
 - Versuchen - Background (Image: Ev. besser?)
 - Admin - alle Rezepte sollte anzeigen!
 - Neuer Rubrik - Alle Rezepte -> zum Aktivieren -> Auch schon probiert
-- Public -> 3 -> die beste geliked rezepte
+- OK 👌 Public -> 3 -> die beste geliked rezepte
 - OK 👌 Admin: Herz - nur zum Anzeigen, wieviele wurde dies geliked!
-- Public: Herz - Alle können liken / IP ?? - 1x liken möglich
+- Almost OK 👌 Public: Herz - Alle können liken / IP ?? - 1x liken möglich
 
 - npm package installieren anstelle url verwenden /javascript/
 
