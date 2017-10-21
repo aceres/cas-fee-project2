@@ -15,7 +15,12 @@ export class PublicComponent {
   constructor(
     private router: Router,
     db: AngularFireDatabase) {
-      this.allRecipes = db.list('/recipes');
+      this.allRecipes = db.list('/recipes', {
+        query: {
+          orderByChild: 'rating'
+        }
+      })
+      .map(items => items.sort((a, b) => b.rating - a.rating)) as FirebaseListObservable<any[]>;
   }
 
   detail(recipe): void {

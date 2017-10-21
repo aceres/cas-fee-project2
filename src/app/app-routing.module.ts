@@ -6,8 +6,8 @@ import { PageNotFoundComponent } from './not-found.component';
 import { CrisisCenterComponent } from './crisis-center.component';
 // Public
 import { PublicComponent } from './public/public.component';
-import { PublicReceiptDetailComponent } from './public/view-detail/detail.component';
-import { CategoryListComponent } from './public/view-list/category-list.component';
+import { PublicReceiptDetailComponent } from './public/view-recipe/view-detail/detail.component';
+import { CategoryListComponent } from './public/view-category/view-list/category-list.component';
 // Admin
 import { AdminComponent } from './admin/admin.component';
 import { RecipesListComponent } from './admin/view-list/recipes-list.component';

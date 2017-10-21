@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
-import { RecipeService } from '../../services/recipe.service';
+import { RecipeService } from '../../../services/recipe.service';
 
 @Component({
   selector: 'app-public-recipe-detail',

@@ -30,10 +30,10 @@ import { PageNotFoundComponent } from './not-found.component';
 // Public
 import { PublicComponent } from './public/public.component';
 import { NavComponent } from './public/view-nav/nav.component';
-import { CoverComponent } from './public/view-cover/cover.component';
-import { CategoryListComponent } from './public/view-list/category-list.component';
+import { CoverComponent } from './public/view-recipe/view-cover/cover.component';
+import { CategoryListComponent } from './public/view-category/view-list/category-list.component';
 import { SearchComponent } from './public/view-search/search.component';
-import { PublicReceiptDetailComponent } from './public/view-detail/detail.component';
+import { PublicReceiptDetailComponent } from './public/view-recipe/view-detail/detail.component';
 
 // Admin
 import { AdminComponent } from './admin/admin.component';

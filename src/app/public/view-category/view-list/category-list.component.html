@@ -14,11 +14,9 @@
           <div class="category-list-item">
             <div class="category-list-item-image">
               <div class="category-list-item-image-card">
-                <!--<div class="recipes-list-item-image-img" style="background-image: url(https://static.pexels.com/photos/159887/pexels-photo-159887.jpeg)">-->
                 <a class="category-list-item-link" [routerLink]="['/recipe-detail/' + recipe.$key]">
                   <img class="category-list-item-image-img" src="{{ recipe.image?.url }}" alt="{{ recipe.receipt}}" />
                 </a>
-                <!--</div>-->
               </div>
             </div>
             <div class="category-list-item-meta-container">
