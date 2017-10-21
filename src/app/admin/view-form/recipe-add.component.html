@@ -1,14 +1,20 @@
 <h1 class="page-header">Rezept erfassen</h1>
 
-<form>
+<form #recipeForm="ngForm">
   <div class="form-group">
-    <label for="name">Rezeptname:</label>
-    <input name="name" id="name" class="form-control" placeholder="Feldsalat mit Balsamico-Vinaigrette"  #recipeName />
+    <label for="recipeName">Rezeptname:</label>
+    <input name="recipeName" id="recipeName" class="form-control" placeholder="Feldsalat mit Balsamico-Vinaigrette" ngModel #recipeName="ngModel" required />
+    <div [hidden]="recipeName.valid || recipeName.pristine" class="alert alert-danger">
+      Rezeptname ist verlangt.
+    </div>
   </div>
 
   <div class="form-group">
-    <label for="description">Beschreibung:</label>
-    <textarea rows="2" name="description" id="description" class="form-control" placeholder="Feldsalat ist der beliebteste Wintersalat. "  #recipeDescription></textarea>
+    <label for="recipeDescription">Beschreibung:</label>
+    <textarea rows="2" name="recipeDescription" id="recipeDescription" class="form-control" placeholder="Feldsalat ist der beliebteste Wintersalat." ngModel #recipeDescription="ngModel" required></textarea>
+    <div [hidden]="recipeDescription.valid || recipeDescription.pristine" class="alert alert-danger">
+      Beschreibung ist verlangt.
+    </div>
   </div>
 
   <div class="form-group">
@@ -19,8 +25,11 @@
   </div>
 
   <div class="form-group">
-    <label for="prepTime">Zubereitungszeit in Minuten:</label>
-    <input type="number" name="prepTime" id="prepTime" class="form-control" placeholder="90" min="0" #recipePrepTime />
+    <label for="recipePrepTime">Zubereitungszeit in Minuten:</label>
+    <input type="number" name="recipePrepTime" id="recipePrepTime" class="form-control" placeholder="90" min="0" ngModel #recipePrepTime="ngModel" required />
+    <div [hidden]="recipePrepTime.valid || recipePrepTime.pristine" class="alert alert-danger">
+      Zubereitungszeit in Minuten ist verlangt.
+    </div>
   </div>
 
   <div class="form-group">
@@ -183,7 +192,7 @@
 
 <app-alert #childAlert></app-alert>
 
-<button class="btn btn-default" (click)="add(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, steps, ingredients); recipeName.value=''; recipeDescription.value=''; recipePortion.value=''; recipePrepTime.value=''; recipeLevel.value=''; recipeCategory.value=''; recipeCuisine.value='';">
+<button class="btn btn-default" [disabled]="!recipeForm.form.valid" (click)="add(recipeName.value, recipeDescription.value, recipePortion.value, recipePrepTime.value, recipeLevel.value, recipeCategory.value, recipeCuisine.value, steps, ingredients); recipeName.value=''; recipeDescription.value=''; recipePortion.value=''; recipePrepTime.value=''; recipeLevel.value=''; recipeCategory.value=''; recipeCuisine.value='';">
   <i class="fa fa-floppy-o"></i> Speichern
 </button>
 <button [routerLink]="'/admin/recipes'" class="btn btn-default">

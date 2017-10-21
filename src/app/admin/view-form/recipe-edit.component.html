@@ -140,19 +140,15 @@
   <thead>
   <th>Schritt</th>
   <th>Beschreibung</th>
-  <th>Foto</th>
   <th></th>
   </thead>
   <tbody>
   <tr *ngFor="let step of steps; let i = index;">
     <td>
-      Schritt: {{i}}
+      Schritt: {{i+1}}
     </td>
     <td>
       {{ step.stepDescription }}
-    </td>
-    <td>
-      {{ step.photo }}
     </td>
     <td style="text-align: right;">
       <button (click)="removeStep(step)" class="btn btn-default">
