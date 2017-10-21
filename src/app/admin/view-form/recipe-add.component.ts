@@ -17,8 +17,7 @@ import { AlertComponent } from '../../directives/alert/alert.component';
 
 class Step {
   constructor(
-    public stepDescription: string,
-    public photo: string
+    public stepDescription: string
   ) { }
 }
 
@@ -57,10 +56,14 @@ export class RecipeAddComponent implements OnInit {
   // LocalStorage
   currentUser;
 
-  // Initialize: For the validation
-  // TODO: This doesn't work for now
-  ingredient = { recipeQuantity: '', recipeIngredient: '' };
-  step = { description: '', photo: '' };
+  // Initialize fields (validation)
+  ingredient = {
+    recipeQuantity: '',
+    recipeIngredient: ''
+  };
+  step = {
+    description: ''
+  };
 
   constructor(
     private router: Router,
@@ -121,9 +124,9 @@ export class RecipeAddComponent implements OnInit {
             }
       }
 
-  addStep(stepDescription: string, photo: string) {
+  addStep(stepDescription: string) {
     if (stepDescription) {
-      this.steps.push(new Step(stepDescription, photo));
+      this.steps.push(new Step(stepDescription));
     }
   }
 

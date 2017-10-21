@@ -19,8 +19,7 @@ import { AlertComponent } from '../../directives/alert/alert.component';
 
 class Step {
   constructor(
-    public stepDescription: string,
-    public photo: string
+    public stepDescription: string
   ) { }
 }
 
@@ -73,7 +72,7 @@ export class RecipeEditComponent implements OnInit {
   // Initialize: For the validation
   // TODO: This doesn't work for now
   ingredient = { recipeQuantity: '', recipeIngredient: '' };
-  step = { description: '', photo: '' };
+  step = { description: '' };
 
   constructor(
     private recipeService: RecipeService,
@@ -152,9 +151,9 @@ export class RecipeEditComponent implements OnInit {
       });
   }
 
-  addStep(stepDescription: string, photo: string) {
+  addStep(stepDescription: string) {
     if (stepDescription) {
-      this.steps.push(new Step(stepDescription, photo));
+      this.steps.push(new Step(stepDescription));
     }
   }
 

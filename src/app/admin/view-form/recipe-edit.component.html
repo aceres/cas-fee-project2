@@ -127,15 +127,8 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="photo">Foto</label>
-    <input class="form-control" id="photo" name="photo" placeholder="..." required [(ngModel)]="step.photo" #photo="ngModel">
-    <div [hidden]="photo.valid || photo.pristine" class="alert alert-danger">
-      Foto ist verlangt.
-    </div>
-  </div>
-  <div class="form-group">
     <label></label>
-    <button (click)="addStep(stepDescription.value, photo.value); stepDescription.value=''; photo.value=''" [disabled]="!stepForm.form.valid" class="btn btn-default">
+    <button (click)="addStep(stepDescription.value); stepDescription.value=''" [disabled]="!stepForm.form.valid" class="btn btn-default">
       <i class="fa fa-floppy-o"></i> Hinzufügen
     </button>
   </div>
