@@ -66,7 +66,7 @@ export class RecipeEditComponent implements OnInit {
   // Alert
   @ViewChild('childAlert') public childAlert: AlertComponent;
 
-  // LocalStorage
+  // sessionStorage
   currentUser;
 
   // Initialize: For the validation
@@ -79,7 +79,8 @@ export class RecipeEditComponent implements OnInit {
     private af: AngularFireDatabase,
     private route: ActivatedRoute,
     private location: Location,
-    private upSvc: UploadService) { }
+    private upSvc: UploadService
+  ) {}
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
@@ -99,7 +100,7 @@ export class RecipeEditComponent implements OnInit {
       this.image = recipe.image;
     });
 
-    // Get the currentUser from the localStorage
+    // Get the currentUser from the sessionStorage
     this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
   }
 

@@ -9,12 +9,15 @@ import { AlertComponent } from '../directives/alert/alert.component';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.less']
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit {
   title = 'What to cook?';
 
   // Authentication
   email: string;
   password: string;
+
+  // sessionStorage
+  currentUser;
 
   // Role
   public role: string;
@@ -27,6 +30,15 @@ export class AdminComponent {
     public db: AngularFireDatabase,
     private router: Router
   ) {}
+
+  ngOnInit() {
+    this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    console.log('currentUser: ', this.currentUser);
+    if (this.currentUser !== null) {
+      this.role = this.currentUser.role;
+      console.log('role: ', this.role);
+    }
+  }
 
   login() {
     this.authService.login(this.email, this.password).then(
@@ -48,7 +60,7 @@ export class AdminComponent {
 
           this.childAlert.showAlert('success', `Sie sind erfolgreich angemeldet ${ response.email }! (Angemeldet am: ${(new Date()).toLocaleTimeString()})`);
 
-          // Prepare for the localStorage
+          // Prepare for the sessionStorage
           const currentUser = {};
 
           currentUser['uid'] = response.uid;

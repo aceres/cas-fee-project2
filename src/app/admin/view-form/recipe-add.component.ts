@@ -53,7 +53,7 @@ export class RecipeAddComponent implements OnInit {
   // Alert
   @ViewChild('childAlert') public childAlert: AlertComponent;
 
-  // LocalStorage
+  // sessionStorage
   currentUser;
 
   // Initialize fields (validation)
@@ -140,7 +140,7 @@ export class RecipeAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Get the currentUser from the localStorage
+    // Get the currentUser from the sessionStorage
     this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
   }
 }

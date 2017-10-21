@@ -30,7 +30,7 @@ export class RecipesListComponent implements OnInit {
   // Search Pipe
   public searchTerm;
 
-  // LocalStorage
+  // sessionStorage
   currentUser;
 
   // Modal
@@ -76,7 +76,7 @@ export class RecipesListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Get the currentUser from the localStorage
+    // Get the currentUser from the sessionStorage
     this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
     console.log('this.currentUser: ', this.currentUser);
   }
