@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { RegisterService } from '../services/register.service';
 import { Router } from '@angular/router';
+
+import { AlertComponent } from '../directives/alert/alert.component';
 
 @Component({
   selector: 'app-register',
@@ -15,8 +17,8 @@ export class RegisterComponent {
   model: any = {};
   role = 'normal';
 
-  // Notification
-  public alerts: any = [];
+  // Alert
+  @ViewChild('childAlert') public childAlert: AlertComponent;
 
   constructor(
     public authService: AuthService,
@@ -27,25 +29,22 @@ export class RegisterComponent {
   register() {
     this.authService.signup(this.model.email, this.model.password).then(
       response => {
-        if (response.uid !== '') {
+
+        console.log('response.uid: ', response.uid);
+
+        if (response.uid !== undefined) {
           this.registerService.add(response.uid, this.model.firstName, this.model.lastName, this.model.email, this.role,
           this.model.street, this.model.houseNumber, this.model.zip, this.model.city, this.model.country)
             .subscribe(response => {
 
-              // Show notification
-              this.alerts.push({
-                type: 'success',
-                msg: `Sie wurden erfolgreich registriert! (Erstellt am: ${(new Date()).toLocaleTimeString()})`,
-                timeout: 5000
-              });
-
+              this.childAlert.showAlert('success', `Sie wurden erfolgreich registriert! (Erstellt am: ${(new Date()).toLocaleTimeString()})`);
             });
-          this.authService.logout();
-          this.router.navigate(['/admin']);
+          // this.authService.logout();
+          // this.router.navigate(['/admin']);
+        } else if (response.uid === undefined) {
+          this.childAlert.showAlert('danger', response);
         }
       }
     );
-    // TODO: Clean up this
-    // this.model.firstName = this.model.lastName = this.model.email = this.model.password = '';
   }
 }
