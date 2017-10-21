@@ -100,7 +100,7 @@ export class RecipeEditComponent implements OnInit {
     });
 
     // Get the currentUser from the localStorage
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
   }
 
   detectFiles(event) {

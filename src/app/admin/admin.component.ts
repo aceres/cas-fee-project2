@@ -69,7 +69,7 @@ export class AdminComponent {
             this.role = user[0].role;
             currentUser['role'] = this.role;
             console.log('inside this.role: ', this.role);
-            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
             this.router.navigate(['/admin/recipes']);
           });
         }
@@ -83,7 +83,7 @@ export class AdminComponent {
 
     this.childAlert.showAlert('success', `Sie sind erfolgreich abgemeldet am: ${(new Date()).toLocaleTimeString()})`);
 
-    localStorage.removeItem('currentUser');
+    sessionStorage.removeItem('currentUser');
     this.router.navigateByUrl('/admin');
   }
 }

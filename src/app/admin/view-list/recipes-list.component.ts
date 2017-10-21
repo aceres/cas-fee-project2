@@ -43,7 +43,7 @@ export class RecipesListComponent implements OnInit {
     private modalService: BsModalService) {
 
     // TODO: Not clean at the moment / Improve it! It is provisional version for now
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
 
     if (this.currentUser != null) {
       console.log('this.currentUser: ', this.currentUser);
@@ -77,7 +77,7 @@ export class RecipesListComponent implements OnInit {
 
   ngOnInit(): void {
     // Get the currentUser from the localStorage
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
     console.log('this.currentUser: ', this.currentUser);
   }
 
