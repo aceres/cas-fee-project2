@@ -57,7 +57,6 @@ export class RecipeAddComponent implements OnInit {
   currentUser;
 
   // Initialize fields (validation)
-  public recipeName = '';
   ingredient = {
     recipeQuantity: '',
     recipeIngredient: ''
