@@ -1,8 +1,15 @@
-<div class="container-fluid">
-  <hr class="featurette-divider">
-
-  <footer>
-    <p class="pull-right"><a onclick="window.scrollTo(0, 0)">Nach oben</a></p>
-    <p>&copy; 2017 What to cook?  <a [routerLink]="['/impressum']">Impressum</a></p>
-  </footer>
-</div>
+<footer>
+  <div class="footer-bottom">
+    <div class="container">
+      <hr class="featurette-divider">
+      <p class="pull-left">© 2017 What to cook?</p>
+      <div class="pull-right">
+        <ul class="nav nav-pills payments">
+          <a class="footer__link" [routerLink]="['/impressum']">Impressum </a>
+          <a class="footer__link" [routerLink]="['/contact']">Kontakt</a>
+          <a class="footer__link" onclick="window.scrollTo(0, 0)">Nach oben</a>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
