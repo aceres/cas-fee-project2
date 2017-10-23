@@ -19,7 +19,7 @@
 
   <div class="form-group">
     <label>Anzahl Personen:</label>
-    <select name="portion" class="form-control" #recipePortion>
+    <select name="portion" class="form-control" ngModel #recipePortion="ngModel">
       <option *ngFor="let portion of listPortions" [value]="portion.value">{{portion.display}}</option>
     </select>
   </div>
@@ -34,21 +34,21 @@
 
   <div class="form-group">
     <label>Schwierigkeitsgrad:</label>
-    <select name="level" class="form-control" #recipeLevel>
+    <select name="level" class="form-control" ngModel #recipeLevel="ngModel">
       <option *ngFor="let level of listLevels" [value]="level.value">{{level.display}}</option>
     </select>
   </div>
 
   <div class="form-group">
     <label>Kategorie:</label>
-    <select name="category" class="form-control" #recipeCategory>
+    <select name="category" class="form-control" ngModel #recipeCategory="ngModel">
       <option *ngFor="let category of listCategories" [value]="category.value">{{category.display}}</option>
     </select>
   </div>
 
   <div class="form-group">
     <label>Länderküche:</label>
-    <select name="cuisine" class="form-control" #recipeCuisine>
+    <select name="cuisine" class="form-control" ngModel #recipeCuisine="ngModel">
       <option *ngFor="let cuisine of listCuisines" [value]="cuisine.value">{{cuisine.display}}</option>
     </select>
   </div>
