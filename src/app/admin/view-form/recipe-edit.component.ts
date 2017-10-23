@@ -48,8 +48,8 @@ export class RecipeEditComponent implements OnInit {
   category;
   cuisine;
 
-  steps = [];
-  ingredients = [];
+  steps;
+  ingredients;
 
   // Image
   image = [];
@@ -69,10 +69,14 @@ export class RecipeEditComponent implements OnInit {
   // sessionStorage
   currentUser;
 
-  // Initialize: For the validation
-  // TODO: This doesn't work for now
-  ingredient = { recipeQuantity: '', recipeIngredient: '' };
-  step = { description: '' };
+  // Initialize fields (validation)
+  ingredient = {
+    recipeQuantity: '',
+    recipeIngredient: ''
+  };
+  step = {
+    description: ''
+  };
 
   constructor(
     private recipeService: RecipeService,
@@ -95,8 +99,19 @@ export class RecipeEditComponent implements OnInit {
       this.level = recipe.level;
       this.category = recipe.category;
       this.cuisine = recipe.cuisine;
-      this.steps = recipe.steps;
-      this.ingredients = recipe.ingredients;
+
+      if (recipe.ingredients === undefined) {
+        this.ingredients = [];
+      } else {
+        this.ingredients = recipe.ingredients;
+      }
+
+      if (recipe.steps === undefined) {
+          this.steps = [];
+      } else {
+        this.steps = recipe.steps;
+      }
+
       this.image = recipe.image;
     });
 
