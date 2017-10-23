@@ -29,6 +29,7 @@ import { PageNotFoundComponent } from './not-found.component';
 
 // Public
 import { PublicComponent } from './public/public.component';
+import { ImpressumComponent } from './public/impressum.component';
 import { NavComponent } from './public/view-nav/nav.component';
 import { CoverComponent } from './public/view-recipe/view-cover/cover.component';
 import { CategoryListComponent } from './public/view-category/view-list/category-list.component';
@@ -84,6 +85,7 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     CrisisCenterComponent,
     // Public
     PublicComponent,
+    ImpressumComponent,
     NavComponent,
     CoverComponent,
     SearchComponent,
