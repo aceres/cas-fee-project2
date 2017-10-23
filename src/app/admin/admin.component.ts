@@ -37,6 +37,7 @@ export class AdminComponent implements OnInit {
     if (this.currentUser !== null) {
       this.role = this.currentUser.role;
       console.log('role: ', this.role);
+      this.router.navigate(['/admin/recipes']);
     }
   }
 
