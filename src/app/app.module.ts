@@ -31,6 +31,7 @@ import { PageNotFoundComponent } from './not-found.component';
 import { PublicComponent } from './public/public.component';
 import { ImpressumComponent } from './public/impressum.component';
 import { NavComponent } from './public/view-nav/nav.component';
+import { FooterComponent } from './public/view-footer/footer.component';
 import { CoverComponent } from './public/view-recipe/view-cover/cover.component';
 import { CategoryListComponent } from './public/view-category/view-list/category-list.component';
 import { SearchComponent } from './public/view-search/search.component';
@@ -87,6 +88,7 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     PublicComponent,
     ImpressumComponent,
     NavComponent,
+    FooterComponent,
     CoverComponent,
     SearchComponent,
     PublicReceiptDetailComponent,
