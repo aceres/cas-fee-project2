@@ -7,6 +7,7 @@ import { CrisisCenterComponent } from './crisis-center.component';
 // Public
 import { PublicComponent } from './public/public.component';
 import { ImpressumComponent } from './public/impressum.component';
+import { ContactComponent } from './public/contact.component';
 import { PublicReceiptDetailComponent } from './public/view-recipe/view-detail/detail.component';
 import { CategoryListComponent } from './public/view-category/view-list/category-list.component';
 // Admin
@@ -25,6 +26,7 @@ import {BasisDataCuisineComponent} from './admin/basis-data-cuisine.component';
 const appRoutes: Routes = [
   { path: 'public', component: PublicComponent },
   { path: 'impressum', component: ImpressumComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'recipe-detail/:id', component: PublicReceiptDetailComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'category-list/:category', component: CategoryListComponent },

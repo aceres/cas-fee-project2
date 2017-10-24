@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 07/10/2017 10:23
+  	Creation date: 24/10/2017 20:45
   	*/
 
 @font-face {
@@ -29,14 +29,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.flaticon-logout:before { content: "\f100"; }
-.flaticon-edit:before { content: "\f101"; }
-.flaticon-delete:before { content: "\f102"; }
-.flaticon-add:before { content: "\f103"; }
-.flaticon-recipes:before { content: "\f104"; }
-.flaticon-preptime:before { content: "\f105"; }
-.flaticon-category:before { content: "\f106"; }
-.flaticon-like:before { content: "\f107"; }
-.flaticon-cuisine:before { content: "\f108"; }
-.flaticon-level:before { content: "\f109"; }
-.flaticon-maintenance:before { content: "\f10a"; }
+.flaticon-email:before { content: "\f100"; }
+.flaticon-like:before { content: "\f101"; }
+.flaticon-cuisine:before { content: "\f102"; }
+.flaticon-preptime:before { content: "\f103"; }
+.flaticon-edit:before { content: "\f104"; }
+.flaticon-maintenance:before { content: "\f105"; }
+.flaticon-delete:before { content: "\f106"; }
+.flaticon-logout:before { content: "\f107"; }
+.flaticon-recipes:before { content: "\f108"; }
+.flaticon-category:before { content: "\f109"; }
+.flaticon-add:before { content: "\f10a"; }
+.flaticon-level:before { content: "\f10b"; }
