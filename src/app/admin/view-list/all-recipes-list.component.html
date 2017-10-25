@@ -43,15 +43,13 @@
       </div>
     </div>
   </div>
-
 </div>
-
 
 <div class="row">
   <div class="custom-pagination">
-  <pagination [totalItems]="bigTotalItems" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize" class="pagination-sm"
-              [boundaryLinks]="true" [rotate]="false" (pageChanged)="pageChanged($event)" (numPages)="numPages = $event"></pagination>
-  <div class="pagination-sites">Seite: {{bigCurrentPage}} / {{numPages}}</div>
+    <pagination [totalItems]="bigTotalItems" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize" class="pagination-sm"
+                [boundaryLinks]="true" [rotate]="false" (pageChanged)="pageChanged($event)" (numPages)="numPages = $event"></pagination>
+    <div class="pagination-sites">Seite: {{bigCurrentPage}} / {{numPages}}</div>
   </div>
 </div>
 

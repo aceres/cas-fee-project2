@@ -19,11 +19,6 @@ export class RecipesListComponent implements OnInit {
   recipes: Recipe[];
   allRecipes: FirebaseListObservable<any[]>;
 
-  public maxSize : number = 5;
-  public bigTotalItems : number = 175;
-  public bigCurrentPage : number = 1;
-  public numPages : number = 0;
-
   // Alert
   @ViewChild('childAlert') public childAlert: AlertComponent;
 
