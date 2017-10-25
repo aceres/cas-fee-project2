@@ -6,7 +6,7 @@
 
 ## Weiteres Vorgehen
 
-- Rate (Wie stellen wir uns vor?)
+- OK 👌 Rate (Wie stellen wir uns vor?)
 
 ### Status bei Tanja
 
@@ -15,11 +15,11 @@
 #### TODO bei Tanja
 
 - Seiten erstellen, Über uns, Kontakt
-- Liste der Kategorien (alle Rezepte mit der Kategorie: Frühstück)
-- https://angular-2-training-book.rangle.io/handout/routing/query_params.html
-- Richtung: QueryParams, 1 Seite list-category
-- DetailCoverComponent -> listCategory
-- Public Detail: Einkaufsliste -> Hintergrund: Notiz / schräges Notiz
+- OK 👌 Liste der Kategorien (alle Rezepte mit der Kategorie: Frühstück)
+- OK 👌 https://angular-2-training-book.rangle.io/handout/routing/query_params.html
+- OK 👌 Richtung: QueryParams, 1 Seite list-category
+- OK 👌 DetailCoverComponent -> listCategory
+- OK 👌 Public Detail: Einkaufsliste -> Hintergrund: Notiz / schräges Notiz
 - Elipsis -> ToolTip Bootstrap
 
 ### Status bei André
@@ -35,8 +35,8 @@
 - Refactoring
 
 - OK 👌 Suche im Public: Ab Kleinbuchstaben soll auch möglich sein
-- Versuchen - Background (Image: Ev. besser?)
-- Admin - alle Rezepte sollte anzeigen!
+- OK 👌 Versuchen - Background (Image: Ev. besser?)
+- OK 👌 Admin - alle Rezepte sollte anzeigen!
 - Neuer Rubrik - Alle Rezepte -> zum Aktivieren -> Auch schon probiert
 - OK 👌 Public -> 3 -> die beste geliked rezepte
 - OK 👌 Admin: Herz - nur zum Anzeigen, wieviele wurde dies geliked!
