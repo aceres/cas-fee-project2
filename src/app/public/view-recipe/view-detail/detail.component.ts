@@ -39,6 +39,7 @@ export class PublicReceiptDetailComponent implements OnInit {
   favoriteRecipe(recipeKey) {
     console.log('recipeKey: ', recipeKey);
 
+    event.preventDefault();
     // TODO: How to save recipe key with the user information
   }
 
