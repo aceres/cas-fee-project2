@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, URLSearchParams } from '@angular/http';
+import { Headers, Http } from '@angular/http';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { environment } from '../../environments/environment';
 
@@ -15,21 +15,11 @@ export class RecipeService {
 
   private headers = new Headers({'Content-Type': 'application/json;charset=utf-8'});
   private recipesUrl = environment.apiUrl + 'recipes';
-  private imagesUrl = environment.apiUrl + 'uploads';
 
   constructor(
     private http: Http,
     private db: AngularFireDatabase
-  ) { }
-
-  // getRecipesAdmin(currentUser): Promise<Recipe[]> {
-  //   console.log('service recipe current user: ', currentUser);
-  //   const url = `${this.recipesUrl}.json`;
-  //   return this.http.get(`${this.recipesUrl}.json?orderBy=$key&uid=${currentUser.uid}`)
-  //     .toPromise()
-  //     .then(response => response.json() as Recipe[])
-  //     .catch(this.handleError);
-  // }
+  ) {}
 
   getRecipes(): Promise<Recipe[]> {
     const url = `${this.recipesUrl}.json`;
@@ -63,23 +53,6 @@ export class RecipeService {
     return this.http.get(url)
       .toPromise()
       .then(response => response.json() as Recipe)
-      .catch(this.handleError);
-  }
-
-  getAllRecipeSpecificCategory(category: string): Promise<Recipe> {
-    const url = `${this.recipesUrl}/${category}.json`;
-    return this.http.get(url)
-      .toPromise()
-      .then(response => response.json() as Recipe)
-      .catch(this.handleError);
-  }
-
-  // TODO: Refactoring
-  getImage(id: string): Promise<Upload> {
-    const url = `${this.imagesUrl}/${id}.json`;
-    return this.http.get(url)
-      .toPromise()
-      .then(response => response.json() as Upload)
       .catch(this.handleError);
   }
 
