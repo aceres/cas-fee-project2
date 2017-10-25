@@ -36,7 +36,13 @@ export class PublicReceiptDetailComponent implements OnInit {
     this.key = this.route.snapshot.params['id'];
   }
 
-  rateReceipt(): void {
+  favoriteRecipe(recipeKey) {
+    console.log('recipeKey: ', recipeKey);
+
+    // TODO: How to save recipe key with the user information
+  }
+
+  rateRecipe(): void {
 
     this.key = this.route.snapshot.params['id'];
     // console.log('this.key: ', this.key);
