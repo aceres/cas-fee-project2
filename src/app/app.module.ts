@@ -46,6 +46,7 @@ import { RecipeAddComponent } from './admin/view-form/recipe-add.component';
 import { RecipeEditComponent } from './admin/view-form/recipe-edit.component';
 import { RecipeSearchComponent } from './admin/view-search/recipe-search.component';
 import { NavAdminComponent } from './admin/view-nav/nav-admin.component';
+import { AllRecipesListComponent } from './admin/view-list/all-recipes-list.component';
 
 // Master Data Basis
 import { BasisDataCategoryComponent } from './admin/basis-data-category.component';
@@ -103,6 +104,7 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     RecipeEditComponent,
     RecipeSearchComponent,
     NavAdminComponent,
+    AllRecipesListComponent,
     // Register
     RegisterComponent,
     UsersListComponent,

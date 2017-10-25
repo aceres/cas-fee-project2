@@ -16,12 +16,13 @@ import { RecipesListComponent } from './admin/view-list/recipes-list.component';
 import { RecipeDetailComponent } from './admin/view-detail/recipe-detail.component';
 import { RecipeAddComponent } from './admin/view-form/recipe-add.component';
 import { RecipeEditComponent } from './admin/view-form/recipe-edit.component';
+import { AllRecipesListComponent } from './admin/view-list/all-recipes-list.component';
 // Register
 import { RegisterComponent } from './register/register.component';
 import { UsersListComponent } from './admin/view-list/users-list.component';
 // Master Data Basis
-import {BasisDataCategoryComponent} from './admin/basis-data-category.component';
-import {BasisDataCuisineComponent} from './admin/basis-data-cuisine.component';
+import { BasisDataCategoryComponent } from './admin/basis-data-category.component';
+import { BasisDataCuisineComponent } from './admin/basis-data-cuisine.component';
 
 const appRoutes: Routes = [
   { path: 'public', component: PublicComponent },
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     { path: 'crisis-center', component: CrisisCenterComponent},
     { path: 'basis-data-category', component: BasisDataCategoryComponent},
     { path: 'basis-data-cuisine', component: BasisDataCuisineComponent},
-    { path: 'users', component: UsersListComponent}
+    { path: 'users', component: UsersListComponent},
+    { path: 'all-recipes', component: AllRecipesListComponent}
   ] },
   { path: '', redirectTo: '/public', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }

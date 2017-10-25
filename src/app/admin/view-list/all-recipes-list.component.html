@@ -1,0 +1,58 @@
+<h1 class="recipes-list-heading">Alle Rezepte</h1>
+
+<div class="form-group">
+  <input name="searchRecipe" class="form-control" placeholder="Rezept suchen..." [(ngModel)]="searchTerm" id="search-box" />
+</div>
+
+<div class="row">
+  <div class="col-xs-6 col-sm-6 col-md-3" *ngFor="let recipe of allRecipes | async | filter:searchTerm" (click)="detail(recipe)">
+    <div class="recipes-list-item">
+      <div class="recipes-list-item-image">
+        <div class="recipes-list-item-buttons">
+          <ul class="recipes-list-item-buttons-list">
+            <li class="recipes-list-item-buttons-edit">
+              <button class="btn btn-default btn-circle" [routerLink]="['/admin/recipe-edit/' + recipe.$key]">
+                <i class="fa fa-pencil"></i>
+              </button>
+            </li>
+            <li class="recipes-list-item-buttons-delete">
+              <button class="btn btn-default btn-circle" (click)="remove(recipe); $event.stopPropagation()">
+                <i class="fa fa-trash-o"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="recipes-list-item-image-card">
+          <img class="recipes-list-item-image-img" src="{{ recipe.image?.url }}" alt="{{ recipe.receipt}}" />
+          <a [routerLink]="['/admin/recipe-detail/' + recipe.$key]"></a>
+        </div>
+      </div>
+      <div class="recipes-list-item-meta-container">
+        <div class="recipes-list-item-meta-info">
+          <i class="icon flaticon-preptime"></i>{{recipe.prepTime}} min.
+        </div>
+        <div class="recipes-list-item-meta-info">
+          <i class="icon flaticon-level"></i>{{recipe.level}}
+        </div>
+        <div class="recipes-list-item-meta-info">
+          <span class="icon flaticon-like">{{recipe.rating}}</span>
+        </div>
+      </div>
+      <div class="recipes-list-item-title">
+        <h5 class="recipes-list-item-title">{{recipe.receipt}}</h5>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="row">
+  <div class="custom-pagination">
+  <pagination [totalItems]="bigTotalItems" [(ngModel)]="bigCurrentPage" [maxSize]="maxSize" class="pagination-sm"
+              [boundaryLinks]="true" [rotate]="false" (pageChanged)="pageChanged($event)" (numPages)="numPages = $event"></pagination>
+  <div class="pagination-sites">Seite: {{bigCurrentPage}} / {{numPages}}</div>
+  </div>
+</div>
+
+<app-alert #childAlert></app-alert>

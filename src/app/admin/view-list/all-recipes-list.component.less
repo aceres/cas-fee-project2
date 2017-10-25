@@ -1,0 +1,119 @@
+.recipes-list-item {
+  padding-bottom: 25px;
+}
+
+.recipes-list-item-image {
+  position: relative;
+}
+
+.recipes-list-item-image-card,
+.recipes-list-item-image-img {
+  height: 151.5px;
+}
+
+.recipes-list-item-image-card {
+  background: #F4F2EE;
+  display: block;
+  overflow: hidden;
+}
+
+.recipes-list-item-image-img {
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  width: 100%;
+}
+
+.recipes-list-item-buttons {
+  bottom: 0;
+  position: absolute;
+  text-align: right;
+  width: 100%;
+  z-index: 1;
+}
+
+.recipes-list-item-buttons-list {
+  list-style: none;
+  margin: 10px;
+  padding: 0;
+}
+
+.recipes-list-item-buttons-edit,
+.recipes-list-item-buttons-delete {
+  display: inline-block;
+  margin: 0 0 0 8px;
+  position: relative;
+}
+
+.recipes-list-item-meta-container {
+  display: none;
+}
+
+.recipes-list-item-meta-info {
+  flex: auto;
+  line-height: 16px;
+}
+
+/* Broken Images */
+/* TODO: Clean up here later - move it to the master CSS */
+
+.recipes-list-item-image {
+  position: relative;
+}
+
+.recipes-list-item-image img {
+  /* Same as first example */
+  min-height: 50px;
+  object-fit: cover;
+}
+
+.recipes-list-item-image img:hover {
+  opacity: 0.7;
+}
+
+.recipes-list-item-image img:before {
+  content: " ";
+  display: block;
+
+  position: absolute;
+  left: 0;
+  height: calc(100%);
+  width: 100%;
+  background-color: rgb(230, 230, 230);
+  border: 2px dotted rgb(200, 200, 200);
+  border-radius: 5px;
+}
+
+.recipes-list-item-image img:after {
+  content: "\f127" " Broken Image of " attr(alt);
+  display: block;
+  font-size: 16px;
+  font-style: normal;
+  font-family: FontAwesome;
+  color: rgb(100, 100, 100);
+
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+  .recipes-list-item-title {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .recipes-list-item-meta-container {
+    display: flex;
+    padding: 6px 0 0 0;
+  }
+}
+
+
