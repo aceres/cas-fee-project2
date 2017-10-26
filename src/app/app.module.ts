@@ -21,6 +21,7 @@ import { BasisDataCategoryService } from './services/basis-data-category.service
 import { BasisDataCuisineService } from './services/basis-data-cuisine.service';
 import { UploadService } from './services/upload.service';
 import { RegisterService } from './services/register.service';
+import { FavoriteService } from './services/favorite.service';
 
 // App
 import { AppComponent } from './app.component';
@@ -41,6 +42,7 @@ import { PublicReceiptDetailComponent } from './public/view-recipe/view-detail/d
 // Admin
 import { AdminComponent } from './admin/admin.component';
 import { RecipesListComponent } from './admin/view-list/recipes-list.component';
+import { FavoritesListComponent } from './admin/view-list/favorites-list.component';
 import { RecipeDetailComponent } from './admin/view-detail/recipe-detail.component';
 import { RecipeAddComponent } from './admin/view-form/recipe-add.component';
 import { RecipeEditComponent } from './admin/view-form/recipe-edit.component';
@@ -99,6 +101,7 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     // Admin
     AdminComponent,
     RecipesListComponent,
+    FavoritesListComponent,
     RecipeAddComponent,
     RecipeDetailComponent,
     RecipeEditComponent,
@@ -125,6 +128,7 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     BasisDataCuisineService,
     UploadService,
     RegisterService,
+    FavoriteService,
     AlertComponent
   ],
   bootstrap: [AppComponent]

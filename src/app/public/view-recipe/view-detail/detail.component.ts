@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import { RecipeService } from '../../../services/recipe.service';
+import { FavoriteService } from '../../../services/favorite.service';
 
 @Component({
   selector: 'app-public-recipe-detail',
@@ -18,8 +19,18 @@ export class PublicReceiptDetailComponent implements OnInit {
   key;
   rating: FirebaseListObservable<any[]>;
 
+  // sessionStorage
+  currentUser;
+  userId;
+  recipeId;
+  showAddFavorite;
+
+  recipeName;
+  imageUrl;
+
   constructor(
     private recipeService: RecipeService,
+    private favoriteService: FavoriteService,
     private route: ActivatedRoute,
     private location: Location,
     public db: AngularFireDatabase
@@ -31,17 +42,60 @@ export class PublicReceiptDetailComponent implements OnInit {
       this.recipe = this.recipeService.getRecipe(id);
     });
     this.key = this.route.snapshot.params['id'];
+
+    // Save Favorite Recipe allowed or not
+    this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    if (this.currentUser !== null) {
+
+      this.db.list('favorites', {
+        query: {
+          orderByChild: 'uid',
+          equalTo: this.currentUser.uid
+        }
+      }).subscribe(items => {
+        console.log('items:', items);
+        const filtered = items.filter(item => item.recipeId === this.key);
+        if (filtered.length !== 0) {
+          if (filtered[0].recipeId === this.key && filtered[0].uid === this.currentUser.uid) {
+            this.showAddFavorite = false;
+          } else {
+            this.showAddFavorite = true;
+          }
+        } else {
+          this.showAddFavorite = true;
+        }
+      });
+
+    }
   }
 
   favoriteRecipe(recipeKey) {
-    console.log('recipeKey: ', recipeKey);
     event.preventDefault();
 
-    // TODO: How to save recipe key with the user information
+    console.log('recipeKey: ', recipeKey);
+
+    this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    if (this.currentUser !== null) {
+
+      console.log('currentUser: ', this.currentUser.uid);
+
+      const key = this.key;
+      // let recipeName;
+      // let imageUrl;
+      this.db
+        .object(`recipes/${key}`)
+        .subscribe((result) => {
+
+          console.log('result: ', result);
+          // this.recipeName = result.receipt;
+          // this.imageUrl = result.image.url;
+
+        });
+      this.favoriteService.addFavoriteRecipe(this.currentUser.uid, recipeKey);
+    }
   }
 
-  rateRecipe(): void {
-
+  rateRecipe() {
     this.key = this.route.snapshot.params['id'];
     const databaseRef = this.db.database.ref('recipes').child(this.key).child('rating');
 

@@ -13,6 +13,7 @@ import { CategoryListComponent } from './public/view-category/view-list/category
 // Admin
 import { AdminComponent } from './admin/admin.component';
 import { RecipesListComponent } from './admin/view-list/recipes-list.component';
+import { FavoritesListComponent } from './admin/view-list/favorites-list.component';
 import { RecipeDetailComponent } from './admin/view-detail/recipe-detail.component';
 import { RecipeAddComponent } from './admin/view-form/recipe-add.component';
 import { RecipeEditComponent } from './admin/view-form/recipe-edit.component';
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
   { path: 'category-list/:category', component: CategoryListComponent },
   { path: 'admin', component: AdminComponent, children: [
     { path: 'recipes', component: RecipesListComponent},
+    { path: 'favorites', component: FavoritesListComponent},
     { path: 'recipe-detail/:id', component: RecipeDetailComponent},
     { path: 'recipe-add', component: RecipeAddComponent},
     { path: 'recipe-edit/:id', component: RecipeEditComponent},

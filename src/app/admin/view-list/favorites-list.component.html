@@ -1,0 +1,35 @@
+<h1 class="recipes-list-heading">Meine Lieblingsrezepte</h1>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+      <th>
+        UID
+      </th>
+      <th>
+        Rezept ID
+      </th>
+      <th>
+
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let favorite of allFavorites | async">
+      <td>
+        {{favorite.uid}}
+      </td>
+      <td>
+        {{favorite.recipeId}}
+      </td>
+      <td style="text-align: right">
+        <button class="btn" (click)="remove(favorite); $event.stopPropagation()">
+          <i class="fa fa-trash-o"></i> Löschen
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<app-alert #childAlert></app-alert>
