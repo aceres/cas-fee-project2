@@ -10,7 +10,11 @@
       <div class="col-md-12">
         <h1 class="category-list-heading">{{ category }}</h1>
 
-        <div class="col-xs-6 col-sm-4 col-md-3" *ngFor="let recipe of specificRecipes | async">
+        <div class="form-group">
+          <input name="searchRecipe" class="form-control" placeholder="Rezept suchen..." [(ngModel)]="searchTerm" id="search-box" />
+        </div>
+
+        <div class="col-xs-6 col-sm-4 col-md-3" *ngFor="let recipe of specificRecipes | async | filter:searchTerm">
           <div class="category-list-item">
             <div class="category-list-item-image">
               <div class="category-list-item-image-card">
