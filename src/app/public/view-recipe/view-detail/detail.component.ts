@@ -70,6 +70,7 @@ export class PublicReceiptDetailComponent implements OnInit {
       });
 
     }
+    window.scrollTo(0,0);
   }
 
   getRecipe() {
