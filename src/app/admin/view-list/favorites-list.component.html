@@ -5,23 +5,18 @@
     <thead>
     <tr>
       <th>
-        UID
+        Rezept
       </th>
       <th>
-        Rezept ID
-      </th>
-      <th>
-
       </th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let favorite of allFavorites | async">
       <td>
-        {{favorite.uid}}
-      </td>
-      <td>
-        {{favorite.recipeId}}
+        <a [routerLink]="['/recipe-detail', favorite.recipeId]">
+          {{favorite.recipeName}}
+        </a>
       </td>
       <td style="text-align: right">
         <button class="btn" (click)="remove(favorite); $event.stopPropagation()">

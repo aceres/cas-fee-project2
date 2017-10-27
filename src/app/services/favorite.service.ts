@@ -23,15 +23,13 @@ export class FavoriteService {
   addFavoriteRecipe(
     uid: string,
     recipeId: string,
-    // recipeName: string,
-    // imageUrl: string
+    recipeName: string
   ) {
     const itemRef = this.db.list('favorites');
     itemRef.push({
       uid: uid,
       recipeId: recipeId,
-      // recipeName: recipeName,
-      // imageUrl: imageUrl
+      recipeName: recipeName
     });
   }
 

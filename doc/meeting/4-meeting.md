@@ -21,6 +21,7 @@
 - OK 👌 DetailCoverComponent -> listCategory
 - OK 👌 Public Detail: Einkaufsliste -> Hintergrund: Notiz / schräges Notiz
 - Elipsis -> ToolTip Bootstrap
+- Pagination
 
 ### Status bei André
 
@@ -48,7 +49,7 @@
 
 - Public, private - TypeScript Grundlagen verstehen
 
-- Rezept speichern - In der Administration: Favoriten anziegen (nur für User)
+- OK 👌 Rezept speichern - In der Administration: Favoriten anziegen (nur für User)
 - Menge berechnen
 - Migrieren - Global Basis Data (Menge, Kategorie, ) -> Firebase (Später die Daten im Admin einpflegen)
 

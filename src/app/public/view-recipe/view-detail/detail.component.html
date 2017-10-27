@@ -9,27 +9,27 @@
     <div class="row">
       <div class="col-md-6">
         <div class="recipe-image">
-          <img class="featurette-image img-responsive center-block" src="{{ (recipe | async)?.image?.url }}" alt="{{(recipe | async)?.receipt}}">
+          <img class="featurette-image img-responsive center-block" src="{{ (recipe)?.image?.url }}" alt="{{(recipe)?.receipt}}">
         </div>
       </div>
       <div class="col-md-6">
-        <h1 class="recipe-details-heading">{{(recipe | async)?.receipt}}</h1>
-        <p class="recipe-details-description">{{(recipe | async)?.description}}</p>
+        <h1 class="recipe-details-heading">{{(recipe)?.receipt}}</h1>
+        <p class="recipe-details-description">{{(recipe)?.description}}</p>
         <div class="row">
           <div class="col-md-12">
             <div class="meta-container">
               <ul class="meta-list">
                 <li>
                   <i class="icon flaticon-preptime"></i>Zubereitungszeit:
-                  <span class="meta-value">{{(recipe | async)?.prepTime}} min.</span>
+                  <span class="meta-value">{{(recipe)?.prepTime}} min.</span>
                 </li>
                 <li>
                   <i class="icon flaticon-level"></i>Schwierigkeitsgrad:
-                  <span class="meta-value">{{(recipe | async)?.level}}</span>
+                  <span class="meta-value">{{(recipe)?.level}}</span>
                 </li>
                 <li>
                   <i class="icon flaticon-cuisine"></i>Länderküche:
-                  <span class="meta-value">{{(recipe | async)?.cuisine}}</span>
+                  <span class="meta-value">{{(recipe)?.cuisine}}</span>
                 </li>
               </ul>
             </div>
@@ -41,10 +41,10 @@
               <ul class="like-list">
                 <li>
                   <span (click)="rateRecipe()" class="icon flaticon-like"></span>
-                  {{(recipe | async)?.rating}}
+                  {{(recipe)?.rating}}
                 </li>
                 <li *ngIf="currentUser">
-                  <button type="button" class="btn btn-default" [disabled]="!this.showAddFavorite" href="#" (click)="favoriteRecipe(key)" role="button">Rezept speichern</button>
+                  <button type="button" class="btn btn-default" [disabled]="!this.showAddFavorite" href="#" (click)="favoriteRecipe(key, recipe.receipt)" role="button">Rezept speichern</button>
                 </li>
               </ul>
             </div>
@@ -63,9 +63,9 @@
       </div>
       <div class="col-md-6">
         <div class="preparation-ingredients">
-          <h3 class="preparation-ingredients-heading">Zutaten für {{(recipe | async)?.portion}} Personen</h3>
+          <h3 class="preparation-ingredients-heading">Zutaten für {{(recipe)?.portion}} Personen</h3>
             <table >
-              <tr class="preparation-ingredients-item" *ngFor="let ingredient of (recipe | async)?.ingredients; let i = index;">
+              <tr class="preparation-ingredients-item" *ngFor="let ingredient of (recipe)?.ingredients; let i = index;">
                 <td class="preparation-ingredients-quantity">{{ ingredient.quantity }}</td>
                 <td class="preparation-ingredients-unit">{{ ingredient.unit }}</td>
                 <td class="preparation-ingredients-ingredient">{{ ingredient.ingredient }} </td>
@@ -75,7 +75,7 @@
       </div>
       <div class="col-md-6">
         <div class="preparation-steps">
-          <div class="preparation-steps-step" *ngFor="let step of (recipe | async)?.steps; let i = index;">
+          <div class="preparation-steps-step" *ngFor="let step of (recipe)?.steps; let i = index;">
             <span class="step">
               {{i+1}}
             </span>
@@ -102,5 +102,7 @@
     </div>
   </div>
 </section>
+
+<app-alert #childAlert></app-alert>
 
 <app-footer></app-footer>

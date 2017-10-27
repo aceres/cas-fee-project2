@@ -1,8 +1,11 @@
+import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
+import { AlertComponent } from '../../../directives/alert/alert.component';
 
 import { RecipeService } from '../../../services/recipe.service';
 import { FavoriteService } from '../../../services/favorite.service';
@@ -28,6 +31,9 @@ export class PublicReceiptDetailComponent implements OnInit {
   recipeName;
   imageUrl;
 
+  // Alert
+  @ViewChild('childAlert') public childAlert: AlertComponent;
+
   constructor(
     private recipeService: RecipeService,
     private favoriteService: FavoriteService,
@@ -37,11 +43,13 @@ export class PublicReceiptDetailComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params.forEach((urlParameters) => {
-      const id = urlParameters['id'];
-      this.recipe = this.recipeService.getRecipe(id);
-    });
+
     this.key = this.route.snapshot.params['id'];
+
+    this.recipeService.getRecipe(this.key).then(data => {
+      console.log('data: ', data);
+      this.recipe = data;
+    });
 
     // Save Favorite Recipe allowed or not
     this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
@@ -69,29 +77,13 @@ export class PublicReceiptDetailComponent implements OnInit {
     }
   }
 
-  favoriteRecipe(recipeKey) {
+  favoriteRecipe(recipeKey, recipeName) {
     event.preventDefault();
-
-    console.log('recipeKey: ', recipeKey);
 
     this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
     if (this.currentUser !== null) {
-
-      console.log('currentUser: ', this.currentUser.uid);
-
-      const key = this.key;
-      // let recipeName;
-      // let imageUrl;
-      this.db
-        .object(`recipes/${key}`)
-        .subscribe((result) => {
-
-          console.log('result: ', result);
-          // this.recipeName = result.receipt;
-          // this.imageUrl = result.image.url;
-
-        });
-      this.favoriteService.addFavoriteRecipe(this.currentUser.uid, recipeKey);
+      this.favoriteService.addFavoriteRecipe(this.currentUser.uid, recipeKey, recipeName);
+      this.childAlert.showAlert('success', `Super! Ihr Lieblingsrezept wurde in Ihrem Favoriten hinzugefügt! (Hinzugefügt am: ${(new Date()).toLocaleTimeString()})`);
     }
   }
 
