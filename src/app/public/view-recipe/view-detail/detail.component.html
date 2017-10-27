@@ -43,7 +43,7 @@
                   <span (click)="rateRecipe()" class="icon flaticon-like"></span>
                   {{(recipe | async)?.rating}}
                 </li>
-                <li>
+                <li *ngIf="currentUser">
                   <button type="button" class="btn btn-default" [disabled]="!this.showAddFavorite" href="#" (click)="favoriteRecipe(key)" role="button">Rezept speichern</button>
                 </li>
               </ul>
