@@ -44,7 +44,7 @@
                   {{(recipe)?.rating}}
                 </li>
                 <li *ngIf="currentUser">
-                  <button type="button" class="btn btn-default" [disabled]="!this.showAddFavorite" href="#" (click)="favoriteRecipe(key, recipe.receipt)" role="button">Rezept speichern</button>
+                  <button type="button" class="btn btn-default" [disabled]="!this.showAddFavorite" href="#" (click)="addRecipeToFavorites(key, recipe.receipt)" role="button">Rezept speichern</button>
                 </li>
               </ul>
             </div>

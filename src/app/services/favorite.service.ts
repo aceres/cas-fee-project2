@@ -20,7 +20,7 @@ export class FavoriteService {
     private db: AngularFireDatabase
   ) {}
 
-  addFavoriteRecipe(
+  addRecipeToFavorites(
     uid: string,
     recipeId: string,
     recipeName: string

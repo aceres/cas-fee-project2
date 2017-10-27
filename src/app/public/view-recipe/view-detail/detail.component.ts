@@ -1,9 +1,9 @@
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
 
 import { AlertComponent } from '../../../directives/alert/alert.component';
 
@@ -24,12 +24,10 @@ export class PublicReceiptDetailComponent implements OnInit {
 
   // sessionStorage
   currentUser;
-  userId;
   recipeId;
   showAddFavorite;
 
   recipeName;
-  imageUrl;
 
   // Alert
   @ViewChild('childAlert') public childAlert: AlertComponent;
@@ -40,16 +38,13 @@ export class PublicReceiptDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private location: Location,
     public db: AngularFireDatabase
-  ) {}
+  ) {
+    this.key = this.route.snapshot.params['id'];
+  }
 
   ngOnInit() {
 
-    this.key = this.route.snapshot.params['id'];
-
-    this.recipeService.getRecipe(this.key).then(data => {
-      console.log('data: ', data);
-      this.recipe = data;
-    });
+    this.getRecipe();
 
     // Save Favorite Recipe allowed or not
     this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
@@ -77,18 +72,26 @@ export class PublicReceiptDetailComponent implements OnInit {
     }
   }
 
-  favoriteRecipe(recipeKey, recipeName) {
+  getRecipe() {
+    this.recipeService.getRecipe(this.key).then(data => {
+      console.log('data: ', data);
+      this.recipe = data;
+    });
+  }
+
+  addRecipeToFavorites(recipeKey, recipeName) {
     event.preventDefault();
 
     this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+
     if (this.currentUser !== null) {
-      this.favoriteService.addFavoriteRecipe(this.currentUser.uid, recipeKey, recipeName);
+
+      this.favoriteService.addRecipeToFavorites(this.currentUser.uid, recipeKey, recipeName);
       this.childAlert.showAlert('success', `Super! Ihr Lieblingsrezept wurde in Ihrem Favoriten hinzugefügt! (Hinzugefügt am: ${(new Date()).toLocaleTimeString()})`);
     }
   }
 
   rateRecipe() {
-    this.key = this.route.snapshot.params['id'];
     const databaseRef = this.db.database.ref('recipes').child(this.key).child('rating');
 
     console.log('databaseRef: ', databaseRef);
@@ -100,8 +103,7 @@ export class PublicReceiptDetailComponent implements OnInit {
       }
       return rating;
     });
-
-    this.recipe = this.recipeService.getRecipe(this.key);
+    this.getRecipe();
   }
 
   goBack(): void {
