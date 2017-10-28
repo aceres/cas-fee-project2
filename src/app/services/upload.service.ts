@@ -19,7 +19,7 @@ export class UploadService {
   pushUpload(upload: Upload, key) {
 
     const storageRef = firebase.storage().ref();
-    const uploadTask = storageRef.child(`${this.basePath}/${upload.file.name}`).put(upload.file);
+    const uploadTask = storageRef.child(`${this.basePath}/${key}`).put(upload.file);
 
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) =>  {
@@ -46,5 +46,19 @@ export class UploadService {
     const refRecipe =  firebase.database().ref('recipes/' + key);
     // this.db.list(`${this.basePath}/${key}`).set(upload);
     refRecipe.child('image').set(upload);
+  }
+
+  public deleteFileData(key) {
+
+    // Create a reference to the file to delete
+    const storageRef = firebase.storage().ref();
+    const desertRef = storageRef.child(`${this.basePath}/${key}`)
+
+    // Delete the file
+    desertRef.delete().then(function() {
+      // File deleted successfully
+    }).catch(function(error) {
+      // Uh-oh, an error occurred!
+    });
   }
 }

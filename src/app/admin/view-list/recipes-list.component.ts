@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 
 import { Recipe } from '../../services/recipe';
 import { RecipeService } from '../../services/recipe.service';
+import { UploadService } from '../../services/upload.service';
+import { Upload } from '../../services/upload';
 
 import { AlertComponent } from '../../directives/alert/alert.component';
 import { BsModalService } from 'ngx-bootstrap/modal';
@@ -34,6 +36,7 @@ export class RecipesListComponent implements OnInit {
   constructor(
     private router: Router,
     private recipeService: RecipeService,
+    private uploadService: UploadService,
     db: AngularFireDatabase,
     private modalService: BsModalService) {
 
@@ -62,12 +65,14 @@ export class RecipesListComponent implements OnInit {
   //   }, 2000);
   // }
 
-  remove(id): void {
+  remove(recipe): void {
     this.recipeService
-      .remove(id)
+      .remove(recipe)
       .then(() => {
         this.childAlert.showAlert('success', `Rezept wurde erfolgreich entfernt! (Geändert am: ${(new Date()).toLocaleTimeString()})`);
       });
+    console.log('recipe', recipe);
+    this.uploadService.deleteFileData(recipe.$key);
   }
 
   ngOnInit(): void {
