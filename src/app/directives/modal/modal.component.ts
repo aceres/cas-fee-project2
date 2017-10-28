@@ -3,7 +3,8 @@ import { Subject } from 'rxjs/Subject';
 import { BsModalRef } from 'ngx-bootstrap';
 
 @Component({
-  templateUrl: './modal.component.html'
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.less']
 })
 export class ModalComponent implements OnInit {
 
