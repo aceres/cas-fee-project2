@@ -47,7 +47,7 @@
 
 - Created Date - implemeent interface class -> register, recipe nochmals anschauen (Refactoring)
 
-- Public, private - TypeScript Grundlagen verstehen
+- TypeScript Grundlagen verstehen
 
 - OK 👌 Rezept speichern - In der Administration: Favoriten anziegen (nur für User)
 - Menge berechnen

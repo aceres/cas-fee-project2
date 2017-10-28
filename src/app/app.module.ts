@@ -61,7 +61,7 @@ import { UsersListComponent } from './admin/view-list/users-list.component';
 // ngx-bootstrap
 import { AlertComponent } from './directives/alert/alert.component';
 import { PaginationLimitComponent } from './directives/pagination/pagination.component';
-import { ModalContentComponent } from './directives/modal/modal.component';
+import { ModalComponent } from './directives/modal/modal.component';
 
 // Pipes
 import { FilterPipe } from './pipes/search-filter.pipe';
@@ -117,9 +117,12 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     // ngx-bootstrap
     AlertComponent,
     PaginationLimitComponent,
-    ModalContentComponent,
+    ModalComponent,
     // Pipes
     FilterPipe
+  ],
+  entryComponents: [
+    ModalComponent,
   ],
   providers: [
     AuthService,
@@ -129,7 +132,8 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     UploadService,
     RegisterService,
     FavoriteService,
-    AlertComponent
+    AlertComponent,
+    ModalComponent
   ],
   bootstrap: [AppComponent]
 })

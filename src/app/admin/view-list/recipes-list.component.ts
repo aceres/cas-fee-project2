@@ -5,12 +5,13 @@ import { Router } from '@angular/router';
 import { Recipe } from '../../services/recipe';
 import { RecipeService } from '../../services/recipe.service';
 import { UploadService } from '../../services/upload.service';
-import { Upload } from '../../services/upload';
 
 import { AlertComponent } from '../../directives/alert/alert.component';
+
 import { BsModalService } from 'ngx-bootstrap/modal';
-// import { ModalContentComponent } from '../directives/modal/modal.component';
-// import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+import { ModalComponent } from '../../directives/modal/modal.component';
+
 
 @Component({
   selector: 'app-recipes-list',
@@ -24,25 +25,25 @@ export class RecipesListComponent implements OnInit {
   // Alert
   @ViewChild('childAlert') public childAlert: AlertComponent;
 
+  // Modal
+  public modalRef: BsModalRef;
+  private result;
+
   // Search Pipe
   public searchTerm;
 
   // sessionStorage
   currentUser;
 
-  // Modal
-  // bsModalRef: BsModalRef;
-
   constructor(
     private router: Router,
     private recipeService: RecipeService,
     private uploadService: UploadService,
-    db: AngularFireDatabase,
-    private modalService: BsModalService) {
+    private modalService: BsModalService,
+    db: AngularFireDatabase
+  ) {
 
-    // TODO: Not clean at the moment / Improve it! It is provisional version for now
     this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-
     if (this.currentUser != null) {
       console.log('this.currentUser: ', this.currentUser);
 
@@ -55,24 +56,25 @@ export class RecipesListComponent implements OnInit {
     }
   }
 
-  // public openModalWithComponent() {
-  //   const list = ['Open a modal with component', 'Pass your data', 'Do something else', '...'];
-  //   this.bsModalRef = this.modalService.show(ModalContentComponent);
-  //   this.bsModalRef.content.title = 'Modal with component';
-  //   this.bsModalRef.content.list = list;
-  //   setTimeout(() => {
-  //     list.push('PROFIT!!!');
-  //   }, 2000);
-  // }
-
   remove(recipe): void {
-    this.recipeService
-      .remove(recipe)
-      .then(() => {
-        this.childAlert.showAlert('success', `Rezept wurde erfolgreich entfernt! (Geändert am: ${(new Date()).toLocaleTimeString()})`);
-      });
-    console.log('recipe', recipe);
-    this.uploadService.deleteFileData(recipe.$key);
+
+    event.stopPropagation();
+
+    this.modalRef = this.modalService.show(ModalComponent);
+    this.modalRef.content.onClose.subscribe(result => {
+      this.result = result;
+      console.log('this.result: ', this.result);
+
+      if (this.result === true) {
+        this.recipeService
+          .remove(recipe)
+          .then(() => {
+            this.childAlert.showAlert('success', `Rezept wurde erfolgreich entfernt! (Geändert am: ${(new Date()).toLocaleTimeString()})`);
+          });
+        console.log('recipe', recipe);
+        this.uploadService.deleteFileData(recipe.$key);
+      }
+    })
   }
 
   ngOnInit(): void {

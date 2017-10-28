@@ -1,15 +1,29 @@
-import { Component } from '@angular/core';
-import { BsModalService } from 'ngx-bootstrap/modal';
-import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
+import { BsModalRef } from 'ngx-bootstrap';
 
 @Component({
-  selector: 'app-modal-small',
   templateUrl: './modal.component.html'
 })
-export class ModalContentComponent {
-  public title: string;
-  public list: any[] = [];
+export class ModalComponent implements OnInit {
+
+  public onClose: Subject<boolean>;
+
   constructor(
-    public bsModalRef: BsModalRef
+    private bsModalRef: BsModalRef
   ) {}
+
+  public ngOnInit(): void {
+    this.onClose = new Subject();
+  }
+
+  public onConfirm(): void {
+    this.onClose.next(true);
+    this.bsModalRef.hide();
+  }
+
+  public onCancel(): void {
+    this.onClose.next(false);
+    this.bsModalRef.hide();
+  }
 }

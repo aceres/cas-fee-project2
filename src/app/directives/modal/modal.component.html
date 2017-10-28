@@ -1,14 +1,15 @@
-<div class="modal-header">
-  <h4 class="modal-title pull-left">{{title}}</h4>
-  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-<div class="modal-body">
-  <ul *ngIf="list.length">
-    <li *ngFor="let item of list">{{item}}</li>
-  </ul>
-</div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Close</button>
+<div class="alert-box">
+  <div class="modal-header">
+    <h5 class="modal-title">Bestätgung</h5>
+    <button type="button" class="close" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Sind Sie sicher, dass Sie dies löschen möchten?
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="onConfirm()">Ja</button>
+    <button type="button" class="btn btn-secondary" (click)="onCancel()">Nein</button>
+  </div>
 </div>

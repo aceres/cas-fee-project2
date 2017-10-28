@@ -16,18 +16,15 @@
               </button>
             </li>
             <li class="recipes-list-item-buttons-delete">
-              <button class="btn btn-default btn-circle" (click)="remove(recipe); $event.stopPropagation()">
-              <!--<button class="btn btn-default btn-circle" (click)="openModalWithComponent(); $event.stopPropagation()">-->
+              <button class="btn btn-default btn-circle" (click)="remove(recipe)">
                 <i class="fa fa-trash-o"></i>
               </button>
             </li>
           </ul>
         </div>
         <div class="recipes-list-item-image-card">
-          <!--<div class="recipes-list-item-image-img" style="background-image: url(https://static.pexels.com/photos/159887/pexels-photo-159887.jpeg)">-->
           <img class="recipes-list-item-image-img" src="{{ recipe.image?.url }}" alt="{{ recipe.receipt}}" />
           <a [routerLink]="['/admin/recipe-detail/' + recipe.$key]"></a>
-          <!--</div>-->
         </div>
       </div>
       <div class="recipes-list-item-meta-container">
