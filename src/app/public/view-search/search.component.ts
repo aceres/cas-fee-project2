@@ -14,10 +14,9 @@ import { Subject } from 'rxjs/Subject'
 export class SearchComponent implements OnInit {
   title = 'What to cook?';
 
-  recipes;
-
-  startAt = new Subject()
-  endAt = new Subject()
+  startAt = new Subject();
+  endAt = new Subject();
+  recipes: any[];
 
   lastKeypress: number = 0;
 
@@ -27,6 +26,7 @@ export class SearchComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
     this.recipeService.searchRecipes(this.startAt, this.endAt)
       .subscribe(recipes => this.recipes = recipes)
   }
@@ -34,9 +34,10 @@ export class SearchComponent implements OnInit {
   searchRecipe($event) {
     if ($event.timeStamp - this.lastKeypress > 200) {
       // let q = $event.target.value;
-      let q = $event.target.value.charAt(0).toUpperCase();
+      // let q = $event.target.value.charAt(0).toUpperCase();
+      const q = $event.target.value.charAt(0).toUpperCase();
       this.startAt.next(q);
-      this.endAt.next(q+"\uf8ff")
+      this.endAt.next(q + '\uf8ff');
     }
     this.lastKeypress = $event.timeStamp
   }
