@@ -29,7 +29,8 @@
 
 #### TODO bei André
 
-- Class (auch Service) nutzen für Recipe etc., Rolle verbessern in Admin (wählen), User sperren können (in der Admin)
+- Class (auch Service) nutzen für Recipe etc.
+- OK 👌 Rolle verbessern in Admin (wählen), User sperren können (in der Admin) - not possible via Firebase
 
 ## Pendenzen oder Probleme
 
@@ -53,11 +54,11 @@
 - Menge berechnen
 - Migrieren - Global Basis Data (Menge, Kategorie, ) -> Firebase (Später die Daten im Admin einpflegen)
 
-- Beim Hinzufügen:
+- OK 👌 Beim Hinzufügen:
 
-: starter
+- OK 👌 starter
 
-: {
+- OK 👌 {
     value: starter,
     display: Starter
   }
