@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { listCategories } from "../../../global/list.categories";
 
 @Component({
   selector: 'app-category-list',
@@ -24,8 +25,12 @@ export class CategoryListComponent implements OnInit {
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
       const category = urlParameters['category'];
-      console.log('category: ', category);
-      this.category = category;
+
+      for (let i = 0; i < listCategories.length; i++) {
+        if (listCategories[i].value === category) {
+          this.category = listCategories[i].display;
+        }
+      }
 
       this.specificRecipes = this.db.list('/recipes', {
         query: {
@@ -35,15 +40,8 @@ export class CategoryListComponent implements OnInit {
       });
       this.specificRecipes.subscribe((res) => {
         this.itemsReturned = res;
-
-        console.log('this.specificRecipes: ', this.itemsReturned);
       });
-
-
-      // this.specificRecipes = this.db.list('/recipes', ref => ref.orderByChild('category').equalTo(category))
-      // console.log('specificRecipes: ', this.specificRecipes);
     });
-    // this.category = this.route.snapshot.params['category'];
   }
 
   goBack(): void {
