@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { listCategories } from "../../../global/list.categories";
+import { listCategories } from '../../../global/list.categories';
 
 @Component({
   selector: 'app-category-list',
