@@ -4,7 +4,6 @@
 
 /* Move down content because we have a fixed navbar that is 50px tall */
 
-
 body {
   font-family: "Merriweather Sans", Arial, sans-serif;
   color: #5a5a5a;
@@ -80,9 +79,14 @@ input[type="search"] {
  * Sidebar
  */
 
-/* Hide for mobile, show later */
-.sidebar {
-  display: none;
+/* Adapt sidebar for the mobile version */
+@media (max-width: 768px) {
+  .sidebar {
+    margin-top: 80px;
+  }
+  .main {
+    padding-top: 0;
+  }
 }
 
 /*
