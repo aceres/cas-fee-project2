@@ -153,8 +153,8 @@ export class RecipeEditComponent implements OnInit {
 
     this.recipeService.update(this.id, receipt, description, portion, prepTime, rating, level, category, cuisine, steps, ingredients, image, uid, user)
       .then(response => {
-
         if (this.selectedFiles !== undefined) {
+          this.removeExistedImage(this.id);
           const file = this.selectedFiles.item(0);
           console.log('File', file);
           console.log('Key recipe', this.key);
@@ -165,6 +165,10 @@ export class RecipeEditComponent implements OnInit {
         // Show notification
         this.childAlert.showAlert('success', `Rezept wurde erfolgreich aktualisiert! (Geändert am: ${(new Date()).toLocaleTimeString()})`);
       });
+  }
+
+  removeExistedImage(key) {
+    this.upSvc.deleteFileData(key);
   }
 
   addStep(stepDescription: string) {
