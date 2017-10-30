@@ -32,6 +32,7 @@ import { PageNotFoundComponent } from './not-found.component';
 import { PublicComponent } from './public/public.component';
 import { ImpressumComponent } from './public/impressum.component';
 import { ContactComponent } from './public/contact.component';
+import { AboutComponent } from './public/about.component';
 import { NavComponent } from './public/view-nav/nav.component';
 import { FooterComponent } from './public/view-footer/footer.component';
 import { CoverComponent } from './public/view-recipe/view-cover/cover.component';
@@ -92,6 +93,7 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     PublicComponent,
     ImpressumComponent,
     ContactComponent,
+    AboutComponent,
     NavComponent,
     FooterComponent,
     CoverComponent,

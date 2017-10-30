@@ -8,6 +8,7 @@ import { CrisisCenterComponent } from './crisis-center.component';
 import { PublicComponent } from './public/public.component';
 import { ImpressumComponent } from './public/impressum.component';
 import { ContactComponent } from './public/contact.component';
+import { AboutComponent } from './public/about.component';
 import { PublicReceiptDetailComponent } from './public/view-recipe/view-detail/detail.component';
 import { CategoryListComponent } from './public/view-category/view-list/category-list.component';
 // Admin
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
   { path: 'public', component: PublicComponent },
   { path: 'impressum', component: ImpressumComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'recipe-detail/:id', component: PublicReceiptDetailComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'category-list/:category', component: CategoryListComponent },

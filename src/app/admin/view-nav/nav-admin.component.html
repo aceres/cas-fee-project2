@@ -14,7 +14,7 @@
         <li [routerLinkActive]="['active']" *ngIf="(user | async)"><a [routerLink]="['/admin']">Meine Rezepte</a></li>
         <li><a [routerLink]="['/public']">Alle Rezepte</a></li>
         <li [routerLinkActive]="['active']"><a [routerLink]="['/register']">Registrieren</a></li>
-        <li><a href="#">Über uns</a></li>
+        <li><a [routerLink]="['/about']">Über manducare</a></li>
         <li><a [routerLink]="['/contact']">Kontakt</a></li>
       </ul>
     </div>
