@@ -1,4 +1,5 @@
 .recipes-list-item {
+  height: 250px;
   padding-bottom: 25px;
 }
 
@@ -43,6 +44,11 @@
   display: inline-block;
   margin: 0 0 0 8px;
   position: relative;
+}
+
+.recipes-list-item-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .recipes-list-item-meta-container {
@@ -114,6 +120,10 @@
 }
 
 @media (min-width: 1200px) {
+  .recipes-list-item {
+    height: 250px;
+  }
+
   .recipes-list-item-meta-container {
     display: flex;
     padding: 6px 0 0 0;
