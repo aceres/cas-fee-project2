@@ -91,6 +91,8 @@ export class PublicReceiptDetailComponent implements OnInit {
   rateRecipe() {
     const databaseRef = this.db.database.ref('recipes').child(this.key).child('rating');
     databaseRef.transaction(rating => rating + 1);
+    // TODO: Look it with Tutor
+    this.getRecipe();
   }
 
   goBack(): void {
