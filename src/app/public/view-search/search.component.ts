@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 
-import { Recipe } from '../../services/recipe';
+import { Recipe } from '../../services/models/recipe';
 import { RecipeService } from '../../services/recipe.service';
 import { Subject } from 'rxjs/Subject'
 
@@ -33,8 +33,6 @@ export class SearchComponent implements OnInit {
 
   searchRecipe($event) {
     if ($event.timeStamp - this.lastKeypress > 200) {
-      // let q = $event.target.value;
-      // let q = $event.target.value.charAt(0);
       const q = $event.target.value.charAt(0).toUpperCase();
       this.startAt.next(q);
       this.endAt.next(q + '\uf8ff');

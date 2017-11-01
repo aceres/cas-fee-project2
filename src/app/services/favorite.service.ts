@@ -5,7 +5,7 @@ import { environment } from '../../environments/environment';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Favorite } from './favorite';
+import { Favorite } from './models/favorite';
 
 @Injectable()
 export class FavoriteService {

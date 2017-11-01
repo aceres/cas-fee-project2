@@ -2,7 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 
-import { Recipe } from '../../services/recipe';
+import { Recipe } from '../../services/models/recipe';
 import { RecipeService } from '../../services/recipe.service';
 
 import { AlertComponent } from '../../directives/alert/alert.component';

@@ -3,7 +3,7 @@ import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable }
 import { environment } from '../../environments/environment';
 import * as firebase from 'firebase';
 
-import { Upload } from '../services/upload';
+import { Upload } from './models/upload';
 
 @Injectable()
 export class UploadService {

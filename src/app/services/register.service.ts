@@ -5,7 +5,7 @@ import { environment } from '../../environments/environment';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Register } from './register';
+import { Register } from './models/register';
 
 @Injectable()
 export class RegisterService {

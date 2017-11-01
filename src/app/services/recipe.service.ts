@@ -5,8 +5,8 @@ import { environment } from '../../environments/environment';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Recipe } from './recipe';
-import { Upload } from './upload';
+import { Recipe } from './models/recipe';
+import { Upload } from './models/upload';
 
 @Injectable()
 export class RecipeService {

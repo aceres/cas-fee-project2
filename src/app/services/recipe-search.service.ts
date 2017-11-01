@@ -5,7 +5,7 @@ import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { Recipe } from './recipe';
+import { Recipe } from './models/recipe';
 
 @Injectable()
 export class RecipeSearchService {

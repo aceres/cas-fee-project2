@@ -7,11 +7,11 @@ import { listLevels } from '../../global/list.levels';
 import { listCuisines } from '../../global/list.cuisines';
 import { listUnits } from '../../global/list.units';
 
-import { Recipe } from '../../services/recipe';
+import { Recipe } from '../../services/models/recipe';
 import { RecipeService } from '../../services/recipe.service';
 
 import { UploadService } from '../../services/upload.service';
-import { Upload } from '../../services/upload';
+import { Upload } from '../../services/models/upload';
 
 import { AlertComponent } from '../../directives/alert/alert.component';
 

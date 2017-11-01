@@ -2,7 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Router } from '@angular/router';
 
-import { Favorite } from '../../services/favorite';
+import { Favorite } from '../../services/models/favorite';
 import { FavoriteService } from '../../services/favorite.service';
 
 import { AlertComponent } from '../../directives/alert/alert.component';

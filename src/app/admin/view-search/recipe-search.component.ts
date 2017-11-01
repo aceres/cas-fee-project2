@@ -13,7 +13,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
 import { RecipeSearchService } from '../../services/recipe-search.service';
-import { Recipe } from '../../services/recipe';
+import { Recipe } from '../../services/models/recipe';
 
 @Component({
   selector: 'app-recipe-search',
