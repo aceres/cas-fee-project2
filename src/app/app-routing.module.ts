@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 // App
 import { PageNotFoundComponent } from './not-found.component';
-import { CrisisCenterComponent } from './crisis-center.component';
 // Public
 import { PublicComponent } from './public/public.component';
 import { ImpressumComponent } from './public/impressum.component';
@@ -40,7 +39,6 @@ const appRoutes: Routes = [
     { path: 'recipe-detail/:id', component: RecipeDetailComponent},
     { path: 'recipe-add', component: RecipeAddComponent},
     { path: 'recipe-edit/:id', component: RecipeEditComponent},
-    { path: 'crisis-center', component: CrisisCenterComponent},
     { path: 'basis-data-category', component: BasisDataCategoryComponent},
     { path: 'basis-data-cuisine', component: BasisDataCuisineComponent},
     { path: 'users', component: UsersListComponent},

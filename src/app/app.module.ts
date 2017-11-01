@@ -25,7 +25,6 @@ import { FavoriteService } from './services/favorite.service';
 
 // App
 import { AppComponent } from './app.component';
-import { CrisisCenterComponent } from './crisis-center.component';
 import { PageNotFoundComponent } from './not-found.component';
 
 // Public
@@ -88,7 +87,6 @@ import { FilterPipe } from './pipes/search-filter.pipe';
     // App
     AppComponent,
     PageNotFoundComponent,
-    CrisisCenterComponent,
     // Public
     PublicComponent,
     ImpressumComponent,
