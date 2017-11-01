@@ -1,7 +1,6 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 import { listCategories } from '../../global/list.categories';
 import { listPortions } from '../../global/list.portions';
