@@ -25,6 +25,8 @@ import { AlertComponent } from '../../directives/alert/alert.component';
   styleUrls: ['./recipe-edit.component.less'],
 })
 export class RecipeEditComponent implements OnInit {
+
+  // TODO: Refactor this (we can use model instead)
   id;
   key;
   receipt;
@@ -35,9 +37,6 @@ export class RecipeEditComponent implements OnInit {
   level;
   category;
   cuisine;
-
-  steps;
-  ingredients;
 
   // Image
   image = [];
@@ -57,7 +56,10 @@ export class RecipeEditComponent implements OnInit {
   // sessionStorage
   currentUser;
 
-  // Initialize fields (validation)
+  // Initialize
+  ingredients;
+  steps;
+
   ingredient = {
     recipeQuantity: '',
     recipeIngredient: ''
@@ -68,7 +70,6 @@ export class RecipeEditComponent implements OnInit {
 
   constructor(
     private recipeService: RecipeService,
-    private af: AngularFireDatabase,
     private route: ActivatedRoute,
     private location: Location,
     private upSvc: UploadService
@@ -159,6 +160,14 @@ export class RecipeEditComponent implements OnInit {
     this.upSvc.deleteFileData(key);
   }
 
+  addIngredient(quantity: number, unit: string, ingredient: string) {
+    this.ingredients.push(new Ingredient(quantity, unit, ingredient));
+  }
+
+  removeIngredient(index) {
+    this.ingredients.splice(index, 1);
+  }
+
   addStep(stepDescription: string) {
     if (stepDescription) {
       this.steps.push(new Step(stepDescription));
@@ -167,14 +176,6 @@ export class RecipeEditComponent implements OnInit {
 
   removeStep(index) {
     this.steps.splice(index, 1);
-  }
-
-  addIngredient(quantity: number, unit: string, ingredient: string) {
-    this.ingredients.push(new Ingredient(quantity, unit, ingredient));
-  }
-
-  removeIngredient(index) {
-    this.ingredients.splice(index, 1);
   }
 
   goBack(): void {

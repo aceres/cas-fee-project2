@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { listCategories } from '../../global/list.categories';
 import { listPortions } from '../../global/list.portions';
@@ -31,9 +30,6 @@ export class RecipeAddComponent implements OnInit {
   listCuisines = listCuisines;
   listUnits = listUnits;
 
-  steps = [];
-  ingredients = [];
-
   image = [];
   selectedFiles: FileList;
   currentUpload: Upload;
@@ -44,7 +40,10 @@ export class RecipeAddComponent implements OnInit {
   // sessionStorage
   currentUser;
 
-  // Initialize fields (validation)
+  // Initialize Step / Ingredient
+  ingredients = [];
+  steps = [];
+
   ingredient = {
     recipeQuantity: '',
     recipeIngredient: ''
@@ -54,20 +53,12 @@ export class RecipeAddComponent implements OnInit {
   };
 
   constructor(
-    private router: Router,
     private recipeService: RecipeService,
     private upSvc: UploadService) { }
 
   detectFiles(event) {
     this.selectedFiles = event.target.files;
   }
-
-  // TODO: Not active at the moment
-  // uploadSingle() {
-  //   const file = this.selectedFiles.item(0)
-  //   this.currentUpload = new Upload(file);
-  //   this.upSvc.pushUpload(this.currentUpload, '')
-  // }
 
   add(name: string,
       description: string,
@@ -107,7 +98,15 @@ export class RecipeAddComponent implements OnInit {
             } else {
               this.childAlert.showAlert('danger', `Bitte wählen Sie ein Bild aus!`);
             }
-      }
+  }
+
+  addIngredient(quantity: number, unit: string, ingredient: string) {
+    this.ingredients.push(new Ingredient(quantity, unit, ingredient));
+  }
+
+  removeIngredient(index) {
+    this.ingredients.splice(index, 1);
+  }
 
   addStep(stepDescription: string) {
     if (stepDescription) {
@@ -119,16 +118,7 @@ export class RecipeAddComponent implements OnInit {
     this.steps.splice(index, 1);
   }
 
-  addIngredient(quantity: number, unit: string, ingredient: string) {
-    this.ingredients.push(new Ingredient(quantity, unit, ingredient));
-  }
-
-  removeIngredient(index) {
-    this.ingredients.splice(index, 1);
-  }
-
   ngOnInit(): void {
-    // Get the currentUser from the sessionStorage
     this.currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
   }
 }
