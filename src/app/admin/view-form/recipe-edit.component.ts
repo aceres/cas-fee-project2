@@ -14,22 +14,10 @@ import { RecipeService } from '../../services/recipe.service';
 
 import { UploadService } from '../../services/upload.service';
 import { Upload } from '../../services/models/upload';
+import { Step } from '../../services/models/step';
+import { Ingredient } from '../../services/models/ingredient';
 
 import { AlertComponent } from '../../directives/alert/alert.component';
-
-class Step {
-  constructor(
-    public stepDescription: string
-  ) { }
-}
-
-class Ingredient {
-  constructor(
-    public quantity: number,
-    public unit: string,
-    public ingredient: string
-  ) { }
-}
 
 @Component({
   selector: 'app-recipe-edit',
