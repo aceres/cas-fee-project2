@@ -11,7 +11,7 @@ import { AlertComponent } from '../directives/alert/alert.component';
   styleUrls: ['./register.component.less']
 })
 export class RegisterComponent {
-  title = 'What to cook?';
+  title = 'Manducare';
 
   // Authentication / Role definition
   model: any = {};

@@ -10,7 +10,7 @@ import { RecipeService } from './services/recipe.service';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent implements OnInit {
-  title = 'What to cook?';
+  title = 'Manducare';
 
   constructor(
     public authService: AuthService,

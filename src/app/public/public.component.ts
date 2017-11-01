@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./public.component.less']
 })
 export class PublicComponent {
-  title = 'What to cook?';
+  title = 'Manducare';
 
   allRecipes: FirebaseListObservable<any[]>;
 

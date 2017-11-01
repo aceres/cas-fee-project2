@@ -16,7 +16,7 @@ import { FavoriteService } from '../../../services/favorite.service';
   styleUrls: ['./detail.component.less']
 })
 export class PublicReceiptDetailComponent implements OnInit {
-  title = 'What to cook?';
+  title = 'Manducare';
   recipe;
   image;
   key;
@@ -56,7 +56,6 @@ export class PublicReceiptDetailComponent implements OnInit {
           equalTo: this.currentUser.uid
         }
       }).subscribe(items => {
-        console.log('items:', items);
         const filtered = items.filter(item => item.recipeId === this.key);
         if (filtered.length !== 0) {
           if (filtered[0].recipeId === this.key && filtered[0].uid === this.currentUser.uid) {
@@ -74,10 +73,7 @@ export class PublicReceiptDetailComponent implements OnInit {
   }
 
   getRecipe() {
-    this.recipeService.getRecipe(this.key).then(data => {
-      console.log('data: ', data);
-      this.recipe = data;
-    });
+    this.recipeService.getRecipe(this.key).then(data => this.recipe = data);
   }
 
   addRecipeToFavorites(recipeKey, recipeName) {
@@ -94,17 +90,7 @@ export class PublicReceiptDetailComponent implements OnInit {
 
   rateRecipe() {
     const databaseRef = this.db.database.ref('recipes').child(this.key).child('rating');
-
-    console.log('databaseRef: ', databaseRef);
-
-    databaseRef.transaction(function(rating) {
-
-      if (rating || (rating === 0)) {
-        rating++;
-      }
-      return rating;
-    });
-    this.getRecipe();
+    databaseRef.transaction(rating => rating + 1);
   }
 
   goBack(): void {

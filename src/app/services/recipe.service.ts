@@ -1,9 +1,9 @@
+import 'rxjs/add/operator/toPromise';
+
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import { environment } from '../../environments/environment';
-
-import 'rxjs/add/operator/toPromise';
 
 import { Recipe } from './models/recipe';
 import { Upload } from './models/upload';

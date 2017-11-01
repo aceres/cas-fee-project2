@@ -10,7 +10,7 @@ import { AlertComponent } from '../directives/alert/alert.component';
   styleUrls: ['./admin.component.less']
 })
 export class AdminComponent implements OnInit {
-  title = 'What to cook?';
+  title = 'Manducare';
 
   // Authentication
   email: string;

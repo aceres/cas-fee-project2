@@ -11,7 +11,7 @@ import { listCategories } from '../../../global/list.categories';
   styleUrls: ['./category-list.component.less']
 })
 export class CategoryListComponent implements OnInit {
-  title = 'What to cook?';
+  title = 'Manducare';
   category;
   specificRecipes: FirebaseListObservable<any[]>;
   itemsReturned: Array<any>;

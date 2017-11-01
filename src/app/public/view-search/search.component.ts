@@ -12,7 +12,7 @@ import { Subject } from 'rxjs/Subject'
   styleUrls: ['./search.component.less']
 })
 export class SearchComponent implements OnInit {
-  title = 'What to cook?';
+  title = 'Manducare';
 
   startAt = new Subject();
   endAt = new Subject();
